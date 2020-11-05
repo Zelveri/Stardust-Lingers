@@ -34,7 +34,7 @@ position: -1417,-664
 title: Notes
 tags: 
 colorID: 0
-position: -1915,-1152
+position: -1916,-1152
 ---
 //Transition:
 //Used for determining the transition used in a scene.
@@ -52,7 +52,11 @@ position: -1915,-1152
 title: Awake
 tags: 
 colorID: 0
-position: -903,-1150
+position: -902,-1151
 ---
-Empty Text
+<< transition Slide >>
+<< backdrop Bedroom_Night_B >>
+The prickling sensation of nervous anticipation was making it far too easy to ignore my exhaustion.
+Usually, bursts of inspiration at this time led to words flowing on paper.
+Now it was my blood flowing as I cleared space to heft boxes into a mountainous collective on one side of the room, a few cans clattering onto the floor as they were moved out of the way.
 ===
