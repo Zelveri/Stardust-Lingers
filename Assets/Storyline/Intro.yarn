@@ -1,19 +1,19 @@
 title: Start
-tags: 
+tags:
 colorID: 0
 position: -1243,-930
 ---
-<< transition Fade_In >>
-<< backdrop Cabin_Night >> 
-<< nametag Mira >> 
+<< backdrop Cabin_Night >>
+<< nametag Mira >>
 It was dark by the time I arrived to the cabin.
 I had almost expected the lights to be on, extending its shine toward me with a comforting warmth.
 This time, only shadow shrouded the windows. In a way, that too was comforting.
 It meant that this place had been left perfectly undisturbed.
 Reaching into my bag, I pulled out a brass key. Thankfully, I'd kept the copy safe through all these years. Could never bring myself to get rid of it.
 The reminder of regret was now only fueling a sense of strange satisfaction as I opened up the door after a few hurried jiggles.
-<< transition Slide >> 
-<< backdrop Livingroom_Night_A >>
+<< hide_dialogue >>
+<< transition Slide Livingroom_Night_A>>
+<< show_dialogue >>
 "Geez.., what a mess."
 He had always been a hoarder, so this was to be expected. The main question was whether he'd burned what I was looking for or not.
 I moved some of the items piled on the couch onto the already precarious stack on the table and sat down with a huff.
@@ -23,7 +23,7 @@ I moved some of the items piled on the couch onto the already precarious stack o
 [[ I can start. Who needs sleep? |Awake]]
 ===
 title: Sleep
-tags: 
+tags:
 colorID: 0
 position: -1432,-701
 ---
@@ -31,7 +31,7 @@ position: -1432,-701
 << backdrop Bedroom_Night_A >>
 ===
 title: Notes
-tags: 
+tags:
 colorID: 0
 position: -1916,-1152
 ---
@@ -46,7 +46,7 @@ position: -1916,-1152
 //Ideally it should change the appearance depending on who is speaking, by color.
 ===
 title: Awake
-tags: 
+tags:
 colorID: 0
 position: -902,-1151
 ---

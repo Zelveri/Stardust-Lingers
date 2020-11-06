@@ -7,11 +7,13 @@ using Yarn.Unity;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(DialogueRunner))]
+//[RequireComponent(typeof(VariableStorage))]
 public class BackgroundChange : MonoBehaviour
 {
 
     public SpriteRenderer spriteRenderer;
     public DialogueRunner dialogueRunner;
+    public VariableStorageBehaviour variableStorage;
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +24,36 @@ public class BackgroundChange : MonoBehaviour
     private void Awake()
     {
         dialogueRunner.AddCommandHandler("backdrop", ChangeBackdrop);
+        //dialogueRunner.AddCommandHandler("transition", ScreenTransition);
+        // dialogueRunner.AddCommandHandler("time", SetTime);
     }
 
     public void ChangeBackdrop(string[] parameters)
     {
-        string backdropName = parameters[0];
-        string spritePath = Application.dataPath + "/Artwork/Backgrounds/" + backdropName + ".png";// + "_" + timeName;
-        byte[] data = File.ReadAllBytes(spritePath);
-        Texture2D texture = new Texture2D(1920, 1080, TextureFormat.ARGB32, false);
-        texture.LoadImage(data);
-        texture.name = Path.GetFileNameWithoutExtension(spritePath);
-        Sprite icon = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+        StartCoroutine(DoChange(parameters[0]));
+    }
+    
+    public IEnumerator DoChange(string backdrop)
+    {
+        // string timeName = variableStorage.GetValue("time").AsString;
+        string spritePath = "Artwork/Backgrounds/" + backdrop;// + "_" + timeName;
+        spriteRenderer.sprite = Resources.Load<Sprite>(spritePath);
+        yield return null;
 
-        spriteRenderer.sprite = icon;
-
+        //switch (backdropName)
+        //{
+        //    case "Cabin_Dawn":
+        //        spriteRenderer.sprite = backgrounds[0];
+        //        break;
+        //    case "Cabin_Day":
+        //        spriteRenderer.sprite = backgrounds[1];
+        //        break;
+        //    case "Cabin_Night":
+        //        spriteRenderer.sprite = backgrounds[2];
+        //        break;
+        //    default:
+        //        spriteRenderer.sprite = null;
+        //        break;
+        //}
     }
 }

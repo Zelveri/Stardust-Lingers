@@ -1,47 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
-using UnityEngine.UI;
 using Yarn.Unity;
 
-public class Fader : MonoBehaviour
+public class TransitionScript : MonoBehaviour
 {
-    public CanvasGroup myCanvas;
     public DialogueRunner dialogueRunner;
-    public float fadeDuration = 0.8f;
+    public CanvasGroup myCanvas;
+    public Animator transition;
+    public float transitionTime = 1f;
+    private string newBackground = "";
 
-
-    private void Awake()
+    bool isFading = false;
+    BackgroundChange backgroundHandler;
+    // Start is called before the first frame update
+    void Awake()
     {
-        //dialogueRunner.AddCommandHandler("transition", ScreenTransition);
+        dialogueRunner.AddCommandHandler("transition", ScreenTransition);
+        backgroundHandler = FindObjectOfType<BackgroundChange>();
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    StartCoroutine(Slide("Cabin_Day"));
+        //}
     }
 
-    public void ScreenTransition(string[] parameters)
+    public void ScreenTransition(string[] parameters, System.Action onComplete)
     {
         string transitionType = parameters[0];
-        switch(transitionType)
+        switch (transitionType)
         {
             case "Fade_In":
-                StartCoroutine(FadeCanvasClear(myCanvas, fadeDuration));
+                StartCoroutine(FadeIn(myCanvas, transitionTime));
                 break;
             case "Fade_Out":
                 myCanvas.gameObject.SetActive(true);
-                StartCoroutine(FadeCanvasBlack(myCanvas, fadeDuration));
+                StartCoroutine(FadeOut(myCanvas, transitionTime));
                 break;
             case "Slide":
+                newBackground = parameters[1];
+                transition.SetFloat("Duration", transitionTime);
+                StartCoroutine(Slide(newBackground, onComplete));
                 break;
         }
-        
+
     }
 
-    public static IEnumerator FadeCanvasBlack(CanvasGroup canvas, float duration)
+    IEnumerator FadeOut(CanvasGroup canvas, float duration)
     {
-        // keep track of when the fading started, when it should finish, and how long it has been running&lt;/p&gt; &lt;p&gt;&a
         var startTime = Time.time;
         var endTime = Time.time + duration;
         var elapsedTime = 0f;
@@ -64,7 +75,7 @@ public class Fader : MonoBehaviour
         yield return null;
     }
 
-    public static IEnumerator FadeCanvasClear(CanvasGroup canvas, float duration)
+    IEnumerator FadeIn(CanvasGroup canvas, float duration)
     {
         // keep track of when the fading started, when it should finish, and how long it has been running&lt;/p&gt; &lt;p&gt;&a
         var startTime = Time.time;
@@ -82,11 +93,36 @@ public class Fader : MonoBehaviour
             var percentage = 1 / (duration / elapsedTime); // calculate how far along the timeline we are
             var a = startAlpha - percentage;
             canvas.alpha = (a > endAlpha) ? a : endAlpha; // calculate the new alpha
-            
+
             yield return new WaitForEndOfFrame(); // wait for the next frame before continuing the loop
         }
         canvas.alpha = endAlpha; // force the alpha to the end alpha before finishing – this is here to mitigate any rounding errors, e.g. leaving the alpha at 0.01 instead of 0
         canvas.gameObject.SetActive(false);
         yield return null;
     }
+
+    IEnumerator Slide(string backgrnd, System.Action onComplete)
+    {
+        isFading = true;
+        transition.SetTrigger("Fade_Black");
+        while (isFading)
+        {
+            yield return null;
+        }
+        StartCoroutine(backgroundHandler.DoChange(backgrnd));
+        isFading = true;
+        transition.SetTrigger("Fade_Clear");
+        while (isFading)
+        {
+            yield return null;
+        }
+        onComplete();
+    }
+
+    void AnimationComplete()
+    {
+        isFading = false;
+    }
+
+
 }
