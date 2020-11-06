@@ -5,7 +5,6 @@ position: -1243,-930
 ---
 << transition Fade_In >>
 << backdrop Cabin_Night >> 
-<< boxcolor Red >> 
 << nametag Mira >> 
 It was dark by the time I arrived to the cabin.
 I had almost expected the lights to be on, extending its shine toward me with a comforting warmth.
@@ -44,10 +43,7 @@ position: -1916,-1152
 
 //Nametag:
 //Used for determining the name shown above the dialogue box.
-//Ideally it should change the appearance depending on who is speaking, by color for example.
-
-//Box Color:
-//Used for determining what color to pick for the dialogue box, depending on who is speaking.
+//Ideally it should change the appearance depending on who is speaking, by color.
 ===
 title: Awake
 tags: 
