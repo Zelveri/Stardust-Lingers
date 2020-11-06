@@ -5,7 +5,7 @@ position: -1243,-930
 ---
 << transition Fade_In >>
 << time Night >>
-<< backdrop Cabin >> 
+<< backdrop Cabin_Night >> 
 It was dark by the time I arrived to the cabin.
 I had almost expected the lights to be on, extending its shine toward me with a comforting warmth.
 This time, only shadow shrouded the windows. In a way, that too was comforting.
