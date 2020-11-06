@@ -927,7 +927,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1167082798}
   dialogueRunner: {fileID: 671862661}
-  variableStorage: {fileID: 760603364}
 --- !u!1 &1209611887 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6800228288436834403, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
@@ -1012,84 +1011,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1499500208 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6800228287573100251, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-    type: 3}
-  m_PrefabInstance: {fileID: 6800228287496726028}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &1499500213
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499500208}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1683790339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6800228288096812047, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
     type: 3}
   m_PrefabInstance: {fileID: 6800228287496726028}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1683790340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683790339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1683790341}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 671862662}
-        m_MethodName: MarkLineComplete
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1683790341 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6800228288096812041, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
@@ -1109,79 +1036,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 94004586, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 671862662}
-    - target: {fileID: 94004586, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 94004586, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
-      propertyPath: m_Colors.m_NormalColor.a
-      value: 0.7294118
-      objectReference: {fileID: 0}
-    - target: {fileID: 94004586, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
-      propertyPath: m_Colors.m_NormalColor.r
-      value: 0.73639596
-      objectReference: {fileID: 0}
-    - target: {fileID: 94004586, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
-      propertyPath: m_Colors.m_NormalColor.g
-      value: 0.6517889
-      objectReference: {fileID: 0}
-    - target: {fileID: 94004586, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
-      propertyPath: m_Colors.m_NormalColor.b
-      value: 0.9150943
-      objectReference: {fileID: 0}
     - target: {fileID: 235812978, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 671862662}
-    - target: {fileID: 646234006281247237, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 125.7
+    - target: {fileID: 779530496, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
       objectReference: {fileID: 0}
-    - target: {fileID: 646234006281247237, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
+    - target: {fileID: 779530496, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a381e7ce55d93664bb6d65d87eba2311,
         type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 218.1
+    - target: {fileID: 779530496, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 821323893412534494, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 821323893412534494, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 821323893412534494, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 821323893412534494, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 821323893412534494, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1683790340, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 671862662}
     - target: {fileID: 3760224956972227435, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 671862662}
-    - target: {fileID: 6800228287573100244, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6800228287573100247, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1291,21 +1171,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialogue Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6800228288096812040, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9130470374074769796, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9130470374074769796, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
