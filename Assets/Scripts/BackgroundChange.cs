@@ -11,49 +11,58 @@ using Yarn.Unity;
 public class BackgroundChange : MonoBehaviour
 {
 
-    public SpriteRenderer spriteRenderer;
+    SpriteRenderer spriteRenderer;
+    SpriteRenderer blendHelper;
+    Animator animator;
     public DialogueRunner dialogueRunner;
     public VariableStorageBehaviour variableStorage;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    bool animationActive = false;
 
     private void Awake()
     {
         dialogueRunner.AddCommandHandler("backdrop", ChangeBackdrop);
-        //dialogueRunner.AddCommandHandler("transition", ScreenTransition);
-        // dialogueRunner.AddCommandHandler("time", SetTime);
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        animator = gameObject.GetComponent<Animator>();
+        blendHelper = gameObject.transform.Find("SmoothTransitionHelper").gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public void ChangeBackdrop(string[] parameters)
+    public void ChangeBackdrop(string[] parameters, System.Action onComplete)
     {
-        StartCoroutine(DoChange(parameters[0]));
+        StartCoroutine(DoChange(parameters[0], onComplete));
     }
     
-    public IEnumerator DoChange(string backdrop)
+    public IEnumerator DoChange(string backdrop, System.Action onComplete)
+    {
+        // string timeName = variableStorage.GetValue("time").AsString;
+        string spritePath = "Artwork/Backgrounds/" + backdrop;// + "_" + timeName;
+        Sprite sprite = Resources.Load<Sprite>(spritePath);
+        // load new background under current one
+        blendHelper.sprite = sprite;
+        // start animation that makes current background transparent, revealing new one
+        animator.SetTrigger("Start");
+        animationActive = true;
+        while (animationActive)
+        {
+            yield return null;
+        }
+        // set new background to def renderer
+        spriteRenderer.sprite = sprite;
+        // make def Renderer visible again
+        spriteRenderer.color = new Color(1, 1, 1, 1);
+        onComplete();
+    }
+
+    public IEnumerator DoChangeFast(string backdrop)
     {
         // string timeName = variableStorage.GetValue("time").AsString;
         string spritePath = "Artwork/Backgrounds/" + backdrop;// + "_" + timeName;
         spriteRenderer.sprite = Resources.Load<Sprite>(spritePath);
+        spriteRenderer.color = Color.white;
         yield return null;
+    }
 
-        //switch (backdropName)
-        //{
-        //    case "Cabin_Dawn":
-        //        spriteRenderer.sprite = backgrounds[0];
-        //        break;
-        //    case "Cabin_Day":
-        //        spriteRenderer.sprite = backgrounds[1];
-        //        break;
-        //    case "Cabin_Night":
-        //        spriteRenderer.sprite = backgrounds[2];
-        //        break;
-        //    default:
-        //        spriteRenderer.sprite = null;
-        //        break;
-        //}
+    public void AnimationEnd()
+    {
+        animationActive = false;
     }
 }

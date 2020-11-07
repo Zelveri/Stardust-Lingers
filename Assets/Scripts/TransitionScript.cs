@@ -7,12 +7,10 @@ using Yarn.Unity;
 public class TransitionScript : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
-    public CanvasGroup myCanvas;
-    public Animator transition;
-    public float transitionTime = 1f;
+    CanvasGroup myCanvas;
+    Animator transition;
+    public float transitionSpeed = 1f;
     private string newBackground = "";
-
-    bool isFading = false;
     BackgroundChange backgroundHandler;
     // Start is called before the first frame update
     void Awake()
@@ -36,15 +34,24 @@ public class TransitionScript : MonoBehaviour
         switch (transitionType)
         {
             case "Fade_In":
-                StartCoroutine(FadeIn(myCanvas, transitionTime));
+                StartCoroutine(FadeIn(myCanvas, transitionSpeed));
                 break;
             case "Fade_Out":
                 myCanvas.gameObject.SetActive(true);
-                StartCoroutine(FadeOut(myCanvas, transitionTime));
+                StartCoroutine(FadeOut(myCanvas, transitionSpeed));
                 break;
             case "Slide":
+                myCanvas = gameObject.transform.Find("ScreenWipeRect").gameObject.GetComponent<CanvasGroup>();
+                transition = gameObject.transform.Find("ScreenWipeRect").gameObject.GetComponent<Animator>();
                 newBackground = parameters[1];
-                transition.SetFloat("Duration", transitionTime);
+                transition.SetFloat("Duration", transitionSpeed);
+                StartCoroutine(Slide(newBackground, onComplete));
+                break;
+            case "SlideCirc":
+                myCanvas = gameObject.transform.Find("ScreenWipe").gameObject.GetComponent<CanvasGroup>();
+                transition = gameObject.transform.Find("ScreenWipe").gameObject.GetComponent<Animator>();
+                newBackground = parameters[1];
+                transition.SetFloat("Duration", transitionSpeed);
                 StartCoroutine(Slide(newBackground, onComplete));
                 break;
         }
@@ -103,26 +110,21 @@ public class TransitionScript : MonoBehaviour
 
     IEnumerator Slide(string backgrnd, System.Action onComplete)
     {
-        isFading = true;
+        var animstate = transition.gameObject.GetComponent<AnimationState>();
         transition.SetTrigger("Fade_Black");
-        while (isFading)
+        animstate.isRunning = true;
+        while (animstate.isRunning)
         {
             yield return null;
         }
-        StartCoroutine(backgroundHandler.DoChange(backgrnd));
-        isFading = true;
+        StartCoroutine(backgroundHandler.DoChangeFast(backgrnd));
         transition.SetTrigger("Fade_Clear");
-        while (isFading)
+        animstate.isRunning = true;
+        while (animstate.isRunning)
         {
             yield return null;
         }
         onComplete();
     }
-
-    void AnimationComplete()
-    {
-        isFading = false;
-    }
-
 
 }
