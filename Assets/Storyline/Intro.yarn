@@ -3,7 +3,7 @@ tags:
 colorID: 0
 position: -1374,-1198
 ---
-//<< transition Fade_In >>
+<< transition Fade_In >>
 << backdrop Cabin_Night >> 
 << nametag Mira >> 
 It was dark by the time I arrived to the cabin.
