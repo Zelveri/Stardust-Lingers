@@ -26,9 +26,12 @@ public class BackgroundChange : MonoBehaviour
         blendHelper = gameObject.transform.Find("SmoothTransitionHelper").gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public void ChangeBackdrop(string[] parameters, System.Action onComplete)
+    //public void ChangeBackdrop(string[] parameters, System.Action onComplete)
+    public void ChangeBackdrop(string[] parameters)
     {
-        StartCoroutine(DoChange(parameters[0], onComplete));
+
+        StartCoroutine(DoChangeFast(parameters[0]));
+        //StartCoroutine(DoChange(parameters[0], onComplete));
     }
     
     public IEnumerator DoChange(string backdrop, System.Action onComplete)
@@ -40,6 +43,7 @@ public class BackgroundChange : MonoBehaviour
         blendHelper.sprite = sprite;
         // start animation that makes current background transparent, revealing new one
         animator.SetTrigger("Start");
+        //animator.Play("Base Layer.BackgroundFade", -1, 0f);
         animationActive = true;
         while (animationActive)
         {

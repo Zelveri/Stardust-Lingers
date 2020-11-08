@@ -34,25 +34,34 @@ public class TransitionScript : MonoBehaviour
         switch (transitionType)
         {
             case "Fade_In":
-                StartCoroutine(FadeIn(myCanvas, transitionSpeed));
+                //StartCoroutine(FadeIn(myCanvas, transitionSpeed));
+                onComplete();
                 break;
             case "Fade_Out":
-                myCanvas.gameObject.SetActive(true);
-                StartCoroutine(FadeOut(myCanvas, transitionSpeed));
+                //myCanvas.gameObject.SetActive(true);
+                //StartCoroutine(FadeOut(myCanvas, transitionSpeed));
+                onComplete();
                 break;
             case "Slide":
-                myCanvas = gameObject.transform.Find("ScreenWipeRect").gameObject.GetComponent<CanvasGroup>();
-                transition = gameObject.transform.Find("ScreenWipeRect").gameObject.GetComponent<Animator>();
-                newBackground = parameters[1];
-                transition.SetFloat("Duration", transitionSpeed);
-                StartCoroutine(Slide(newBackground, onComplete));
+                if (parameters.Length > 1)
+                {
+                    myCanvas = gameObject.transform.Find("ScreenWipeRect").gameObject.GetComponent<CanvasGroup>();
+                    transition = gameObject.transform.Find("ScreenWipeRect").gameObject.GetComponent<Animator>();
+                    newBackground = parameters[1];
+                    transition.SetFloat("Duration", transitionSpeed);
+                    StartCoroutine(Slide(newBackground, onComplete));
+                }
+                else onComplete();
                 break;
             case "SlideCirc":
-                myCanvas = gameObject.transform.Find("ScreenWipe").gameObject.GetComponent<CanvasGroup>();
-                transition = gameObject.transform.Find("ScreenWipe").gameObject.GetComponent<Animator>();
-                newBackground = parameters[1];
-                transition.SetFloat("Duration", transitionSpeed);
-                StartCoroutine(Slide(newBackground, onComplete));
+                if (parameters.Length > 1)
+                {
+                    myCanvas = gameObject.transform.Find("ScreenWipe").gameObject.GetComponent<CanvasGroup>();
+                    transition = gameObject.transform.Find("ScreenWipe").gameObject.GetComponent<Animator>();
+                    newBackground = parameters[1];
+                    transition.SetFloat("Duration", transitionSpeed);
+                    StartCoroutine(Slide(newBackground, onComplete));
+                } else onComplete();
                 break;
         }
 
