@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn;
 using Yarn.Unity;
 
 public class DialogueTracker : MonoBehaviour
@@ -18,18 +19,18 @@ public class DialogueTracker : MonoBehaviour
         lines = new List<string>();
     }
 
-    public void AddLineToTracker(string line)
+    public void AddLineToTracker(TMPro.TextMeshProUGUI dialogueTextContainer)
     {
-        lines.Add(line);
+        lines.Add(dialogueTextContainer.text);
     }
 
-    public void UpdateCurrentNode(string node)
+    public void UpdateCurrentNode()
     {
-        currentNode = node;
+        currentNode = dialogueRunner.CurrentNodeName;
     }
 
-    public void UpdateFinishedNode(string node)
+    public void UpdateFinishedNode()
     {
-        prevNode = node;
+        prevNode = dialogueRunner.CurrentNodeName;
     }
 }
