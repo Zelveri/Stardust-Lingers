@@ -33,4 +33,9 @@ public class DialogueTracker : MonoBehaviour
     {
         prevNode = dialogueRunner.CurrentNodeName;
     }
+
+    public List<string> GetLines()
+    {
+        return lines;
+    }
 }
