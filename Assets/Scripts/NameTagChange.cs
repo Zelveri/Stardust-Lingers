@@ -10,6 +10,7 @@ public class NameTagChange : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
     public Canvas canvas;
+    DialogueTracker dialogueTracker;
     TMPro.TextMeshProUGUI nameTag;
     SpriteRenderer spriteRenderer;
     Animator animator;
@@ -29,6 +30,7 @@ public class NameTagChange : MonoBehaviour
         nameTag = canvas.gameObject.transform.Find("NameTag").gameObject.GetComponent<TextMeshProUGUI>();
         spriteRenderer = canvas.gameObject.transform.Find("Box").gameObject.transform.Find("Image").gameObject.GetComponent<SpriteRenderer>();
         variableStorage = GameObject.Find("Variable Storage").GetComponent<InMemoryVariableStorage>();
+        dialogueTracker = dialogueRunner.gameObject.transform.Find("DialogueTracker").GetComponent<DialogueTracker>();
         animator.SetFloat("Speed", speed);
         nameToTextureDict = new Dictionary<string, string>();
         nameToTextureDict.Add("Mira", "Box_Red");
@@ -39,6 +41,8 @@ public class NameTagChange : MonoBehaviour
     {
         string boxName = variableStorage.GetValue("$theme_color").AsString + "_" + nameToTextureDict[parameters[0]];
         var doEffect = !animationEvent.isHidden;
+        // add name to log
+        dialogueTracker.UpdateNametag(parameters[0]);
         StartCoroutine(DoChange(parameters[0], boxName, doEffect, onComplete));
     }
 

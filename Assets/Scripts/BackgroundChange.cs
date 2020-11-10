@@ -18,6 +18,7 @@ public class BackgroundChange : MonoBehaviour
     public float animationDuration = 1f;
     public DialogueRunner dialogueRunner;
     public VariableStorageBehaviour variableStorage;
+    public DialogueTracker dialogueTracker;
 
     private void Awake()
     {
@@ -31,12 +32,10 @@ public class BackgroundChange : MonoBehaviour
     public void ChangeBackdrop(string[] parameters, System.Action onComplete)
     //public void ChangeBackdrop(string[] parameters)
     {
-
+        dialogueTracker.UpdateBackdrop(parameters[0]);
         //StartCoroutine(DoChangeFast(parameters[0]));
         StartCoroutine(DoChange(parameters[0], onComplete));
     }
-
-
     
     public IEnumerator DoChange(string backdrop, System.Action onComplete)
     {
