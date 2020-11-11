@@ -16,7 +16,6 @@ public class NameTagChange : MonoBehaviour
     Animator animator;
     CanvasGroup canvasGroup;
     public float speed = 10f;
-    bool firstChange = true;
     Dictionary<string, string> nameToTextureDict;
     AnimationEvent animationEvent;
     InMemoryVariableStorage variableStorage;
