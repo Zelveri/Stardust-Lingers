@@ -21,8 +21,6 @@ public class DialogueTracker : MonoBehaviour
     {
         dialogueTracker = this;
         DontDestroyOnLoad(dialogueTracker);
-        DontDestroyOnLoad(dialogueRunner);
-        DontDestroyOnLoad(backgroundChange);
         lines = new List<string>();
     }
 
