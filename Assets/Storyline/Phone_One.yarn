@@ -1,7 +1,7 @@
 title: Start
 tags: 
 colorID: 0
-position: -1296,-1541
+position: -1295,-1559
 ---
 << transition Fade_In >>
 << effect Static >>
@@ -14,7 +14,7 @@ Hello?
 title: Hey
 tags: 
 colorID: 0
-position: -1693,-1412
+position: -1700,-1411
 ---
 Where are you right now?
 << nametag Mira >>
@@ -36,31 +36,66 @@ Look who I met at work today
 title: Who
 tags: 
 colorID: 0
-position: -903,-1372
+position: -1004,-1527
 ---
 Very funny. I know it's you lol
-How was work today?
+<< nametag Mira >>
+Yea, you got me.
+<< nametag Trevis >>
+Where are you right now?
+<< nametag Mira >>
+Just heading home from work.
+<< nametag Trevis>> 
+How was it?
 [[ Same as usual. |Same]]
 [[ Could be better... |Better]]
 ===
 title: Same
 tags: 
 colorID: 0
-position: -1060,-1106
+position: -1220,-1304
 ---
-Empty Text
+<< nametag Mira>> 
+Just a bit boring, really.
+I'd much rather be writing for my book than for the topics they tend to focus on.
+<< nametag Trevis >>
+Maybe you can write an article about me lol
+<< nametag Mira >>
+Haha no way
+What would I even say about you?
+<< nametag Trevis >>
+You could tell them about the friend I made today
+<< photo Cat_Scruff >>
+[[ Awww |Aww]]
+[[ You shouldn't hold it like that... |Hold]]
 ===
 title: Better
 tags: 
 colorID: 0
-position: -758,-1105
+position: -915,-1145
 ---
-Empty Text
+My supervisor was on my case today about my choice of words in the piece about "Grimoire Oblique"
+Apparently she wanted me to help sell the film, not expose it as the failure it is.
+<< nametag Trevis >>
+Well it wasn't THAT bad...
+...
+Okay maybe it was that bad
+But its the "so bad its good" kind of bad
+<< nametag Mira >>
+That's about the only thing it has going for it.
+I haven't read the book myself, but from what I hear the fans sure aren't happy with it either.
+I should move on before I write myself a third article in here-
+What have you been up to?
+<< nametag Trevis >>
+<< photo Cat_Scruff >> 
+I met a friend
+[[ Awww |Aww]]
+[[ You shouldn't hold it like that... |Hold]]
 ===
 title: Aww
 tags: 
 colorID: 0
-position: -1872,-1161
+position: -1871,-1132
 ---
 << nametag Mira >>
 Such a cutie
@@ -83,7 +118,7 @@ So hows the new place
 title: Hold
 tags: 
 colorID: 0
-position: -1529,-1157
+position: -1556,-1136
 ---
 It was just for the photo
 I thought that was how cat moms held their babies?
@@ -94,7 +129,7 @@ Even if it looks cute it's known to cause fear and stress
 So you should avoid doing that.
 << nametag Trevis >>
 Sheesh its not that big a deal lol
-I guess I'll keep that in mind though
+Guess I'll keep that in mind though
 ...
 So how's the new place
 [[ It's beautiful |Beautiful]]
@@ -103,14 +138,14 @@ So how's the new place
 title: Beautiful
 tags: 
 colorID: 0
-position: -1934,-877
+position: -1955,-882
 ---
 Empty Text
 ===
 title: Lonely
 tags: 
 colorID: 0
-position: -1473,-878
+position: -1457,-884
 ---
 Empty Text
 ===
