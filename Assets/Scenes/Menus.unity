@@ -3173,8 +3173,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.035034, y: 0}
-  m_SizeDelta: {x: 1920.1, y: 1080}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932264670
 MonoBehaviour:
@@ -4131,7 +4131,6 @@ GameObject:
   - component: {fileID: 1223900025}
   - component: {fileID: 1223900024}
   - component: {fileID: 1223900023}
-  - component: {fileID: 1223900022}
   m_Layer: 0
   m_Name: GearBtn
   m_TagString: Untagged
@@ -4159,18 +4158,6 @@ RectTransform:
   m_AnchoredPosition: {x: -2.7, y: -147.98999}
   m_SizeDelta: {x: 216.4, y: 189.1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1223900022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1223900020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d7fd67a4a51984a9708f5924acb826, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1223900023
 MonoBehaviour:
   m_ObjectHideFlags: 0
