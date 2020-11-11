@@ -1,0 +1,116 @@
+title: Start
+tags: 
+colorID: 0
+position: -1296,-1541
+---
+<< transition Fade_In >>
+<< effect Static >>
+<< backdrop Phone >>
+<< nametag Trevis >> 
+Hello?
+[[ Hey! |Hey]]
+[[ Who is this? |Who]]
+===
+title: Hey
+tags: 
+colorID: 0
+position: -1693,-1412
+---
+Where are you right now?
+<< nametag Mira >>
+Just heading back from work. It's nice and chilly out.
+<< nametag Trevis >>
+Ick. Chilly is seriously not cool for me 
+<< nametag Mira>>
+But it is cool.
+<< nametag Trevis>> 
+...
+Well, yes
+But I don't know how you deal with it
+Anyways.
+Look who I met at work today
+<< photo Cat_Scruff >>
+[[ Awww |Aww]]
+[[ You shouldn't hold it like that... |Hold]]
+===
+title: Who
+tags: 
+colorID: 0
+position: -903,-1372
+---
+Very funny. I know it's you lol
+How was work today?
+[[ Same as usual. |Same]]
+[[ Could be better... |Better]]
+===
+title: Same
+tags: 
+colorID: 0
+position: -1060,-1106
+---
+Empty Text
+===
+title: Better
+tags: 
+colorID: 0
+position: -758,-1105
+---
+Empty Text
+===
+title: Aww
+tags: 
+colorID: 0
+position: -1872,-1161
+---
+<< nametag Mira >>
+Such a cutie
+I love calico cats, they look so pretty
+She looks pretty spooked though
+<< nametag Trevis >>
+Had to catch it for the photo
+It was running around behind the counter, I think it smelled the food and came in 
+<< nametag Mira >>
+Well, the way you're 
+Um
+Nevermind, it's probably fine.
+<< nametag Trevis >>
+? Ok 
+...
+So hows the new place
+[[ It's beautiful |Beautiful]]
+[[ It's a little lonely |Lonely]]
+===
+title: Hold
+tags: 
+colorID: 0
+position: -1529,-1157
+---
+It was just for the photo
+I thought that was how cat moms held their babies?
+<< nametag Mira>>
+Only as kittens.
+It's not comfortable for adult cats, especially since they're a lot heavier!
+Even if it looks cute it's known to cause fear and stress
+So you should avoid doing that.
+<< nametag Trevis >>
+Sheesh its not that big a deal lol
+I guess I'll keep that in mind though
+...
+So how's the new place
+[[ It's beautiful |Beautiful]]
+[[ It's a little lonely |Lonely]]
+===
+title: Beautiful
+tags: 
+colorID: 0
+position: -1934,-877
+---
+Empty Text
+===
+title: Lonely
+tags: 
+colorID: 0
+position: -1473,-878
+---
+Empty Text
+===

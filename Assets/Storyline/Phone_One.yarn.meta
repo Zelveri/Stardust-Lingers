@@ -1,0 +1,65 @@
+fileFormatVersion: 2
+guid: f828366070b8762429b0373e7ac438aa
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - NewFile-Start-0
+  - NewFile-Start-1
+  - NewFile-Start-2
+  - NewFile-Hey-3
+  - NewFile-Hey-4
+  - NewFile-Hey-5
+  - NewFile-Hey-6
+  - NewFile-Hey-7
+  - NewFile-Hey-8
+  - NewFile-Hey-9
+  - NewFile-Hey-10
+  - NewFile-Hey-11
+  - NewFile-Hey-12
+  - NewFile-Hey-13
+  - NewFile-Who-14
+  - NewFile-Who-15
+  - NewFile-Who-16
+  - NewFile-Who-17
+  - NewFile-Same-18
+  - NewFile-Better-19
+  - NewFile-Aww-20
+  - NewFile-Aww-21
+  - NewFile-Aww-22
+  - NewFile-Aww-23
+  - NewFile-Aww-24
+  - NewFile-Aww-25
+  - NewFile-Aww-26
+  - NewFile-Aww-27
+  - NewFile-Aww-28
+  - NewFile-Aww-29
+  - NewFile-Aww-30
+  - NewFile-Aww-31
+  - NewFile-Aww-32
+  - NewFile-Hold-33
+  - NewFile-Hold-34
+  - NewFile-Hold-35
+  - NewFile-Hold-36
+  - NewFile-Hold-37
+  - NewFile-Hold-38
+  - NewFile-Hold-39
+  - NewFile-Hold-40
+  - NewFile-Hold-41
+  - NewFile-Hold-42
+  - NewFile-Hold-43
+  - NewFile-Hold-44
+  - NewFile-Beautiful-45
+  - NewFile-Lonely-46
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: f828366070b8762429b0373e7ac438aa,
+    type: 3}
+  localizations: []
