@@ -1,0 +1,12 @@
+TODO log of dialogue, with button
+    -> options too??
+
+TODO save gamestate
+    -> playerprefs for filenames and general settings
+    ->!!!!! store variablestorage nonethelss when saving for script vars(update with dialogue tracker?)
+
+FIXME transisiton Fade_in and Fade_out
+
+BUG game freezing on new node load, why?
+
+BUG game load causes overlapping text
