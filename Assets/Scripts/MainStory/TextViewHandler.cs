@@ -5,8 +5,6 @@ using Yarn.Unity;
 
 public class TextViewHandler : MonoBehaviour
 {
-
-    public InMemoryVariableStorage variableStorage;
     public TMPro.TextMeshProUGUI textBox;
 
     private void Start()
