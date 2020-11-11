@@ -22,7 +22,7 @@ public class TextViewHandler : MonoBehaviour
 
     void UpdateColor()
     {
-        if (variableStorage.GetValue("$theme_color").AsString == "Light")
+        if (PlayerPrefs.GetString("theme_color") == "Light")
         {
             textBox.faceColor = new Color(0, 0, 0);
         }

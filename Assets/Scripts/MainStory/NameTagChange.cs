@@ -29,7 +29,7 @@ public class NameTagChange : MonoBehaviour
         nameTag = canvas.gameObject.transform.Find("NameTag").gameObject.GetComponent<TextMeshProUGUI>();
         spriteRenderer = canvas.gameObject.transform.Find("Box").gameObject.transform.Find("Image").gameObject.GetComponent<SpriteRenderer>();
         variableStorage = GameObject.Find("Variable Storage").GetComponent<InMemoryVariableStorage>();
-        dialogueTracker = dialogueRunner.gameObject.transform.Find("DialogueTracker").GetComponent<DialogueTracker>();
+        dialogueTracker = GameObject.Find("DialogueTracker").GetComponent<DialogueTracker>();
         animator.SetFloat("Speed", speed);
         nameToTextureDict = new Dictionary<string, string>();
         nameToTextureDict.Add("Mira", "Box_Red");
@@ -38,7 +38,7 @@ public class NameTagChange : MonoBehaviour
 
     public void ChangeNameTag(string[] parameters, System.Action onComplete)
     {
-        string boxName = variableStorage.GetValue("$theme_color").AsString + "_" + nameToTextureDict[parameters[0]];
+        string boxName = PlayerPrefs.GetString("theme_color") + "_" + nameToTextureDict[parameters[0]];
         var doEffect = !animationEvent.isHidden;
         // add name to log
         dialogueTracker.UpdateNametag(parameters[0]);
