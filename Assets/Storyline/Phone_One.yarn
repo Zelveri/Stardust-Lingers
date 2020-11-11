@@ -138,14 +138,41 @@ So how's the new place
 title: Beautiful
 tags: 
 colorID: 0
-position: -1955,-882
+position: -1944,-880
 ---
 Empty Text
 ===
 title: Lonely
 tags: 
 colorID: 0
-position: -1457,-884
+position: -1489,-887
+---
+<< nametag Trevis >>
+Lonely, huh
+I could change that
+<< nametag Mira >>
+I suppose you could...
+However, it is a refreshing kind of loneliness. Feels nice to have a bit of privacy for once.
+Just me out here with all the little critters that roam around free.
+<< nametag Trevis >>
+You don't need privacy from me
+This city may be full of people but I also feel pretty lonely with you gone.
+Have you thought about it yet?
+Us living together.
+[[ I have. It sounds nice. |Agree]]
+[[ I don't think we should yet. |Delay]]
+===
+title: Agree
+tags: 
+colorID: 0
+position: -1619,-602
+---
+Empty Text
+===
+title: Delay
+tags: 
+colorID: 0
+position: -1327,-605
 ---
 Empty Text
 ===
