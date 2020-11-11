@@ -23,19 +23,9 @@ public class ButtonHandler : MonoBehaviour
         {
             if(!textLog.activeInHierarchy)
             {
-                textMesh.text = string.Join("\n\n", dialogueTracker.GetLines());
+                textMesh.text = string.Join("\n\n", DialogueTracker.GetLines());
             }
             textLog.SetActive(!textLog.activeInHierarchy);
-        }
-        if (function == "Save")
-        {
-            SaveHandler.SaveGameState(dialogueTracker, variableStorage);
-        }
-        if (function == "Load")
-        {
-            SaveState data = SaveHandler.LoadGameState();
-            variableStorage.SetValue("$theme_color", data.themeColor);
-            dialogueTracker.LoadState(data.lines, data.currentNode, data.prevNode, data.curNameTag, data.backdrop);
         }
     }
 }

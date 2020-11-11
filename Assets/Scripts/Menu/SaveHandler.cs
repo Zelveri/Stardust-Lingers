@@ -5,21 +5,21 @@ using Yarn.Unity;
 
 public static class SaveHandler
 {
-    public static void SaveGameState (DialogueTracker dlgTracker, InMemoryVariableStorage varStore)
+    public static void SaveGameState (string filename="savestate")
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/savestate.stardust";
+        string path = Application.persistentDataPath + "/" + filename + ".stardust";
         FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
 
-        SaveState data = new SaveState(dlgTracker,varStore);
+        SaveState data = new SaveState();
 
         formatter.Serialize(stream, data);
         stream.Close();
     }
 
-    public static SaveState LoadGameState()
+    public static SaveState LoadGameState(string filename="savestate")
     {
-        string path = Application.persistentDataPath + "/savestate.stardust";
+        string path = Application.persistentDataPath + "/" + filename + ".stardust";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

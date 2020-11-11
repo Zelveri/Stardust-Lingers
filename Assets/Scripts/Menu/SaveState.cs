@@ -9,7 +9,6 @@ public class SaveState
     public string currentNode;
     public string prevNode;
     public string curNameTag;
-    public string themeColor;
     public string[] lines;
     public string backdrop;
 // string[] choices;
@@ -24,14 +23,13 @@ public class SaveState
     //    this.themeColor = themeColor;
     //}
 
-    public SaveState(DialogueTracker dlgTckr, InMemoryVariableStorage varStorage)
+    public SaveState()
     {
-        this.currentNode = dlgTckr.GetCurrentNode();
-        this.prevNode = dlgTckr.GetPrevNode();
-        this.lines = dlgTckr.GetLines().ToArray();
+        this.currentNode = DialogueTracker.GetCurrentNode();
+        this.prevNode = DialogueTracker.GetPrevNode();
+        this.lines = DialogueTracker.GetLines().ToArray();
         //this.choices = choices;
-        this.curNameTag = dlgTckr.GetNametag();
-        this.themeColor = varStorage.GetValue("$theme_color").AsString;
-        this.backdrop = dlgTckr.GetBackdrop();
+        this.curNameTag = DialogueTracker.GetNametag();
+        this.backdrop = DialogueTracker.GetBackdrop();
     }
 }

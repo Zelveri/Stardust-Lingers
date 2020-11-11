@@ -7,18 +7,22 @@ using Yarn.Unity;
 
 public class DialogueTracker : MonoBehaviour
 {
-
+    public static DialogueTracker dialogueTracker;
     public DialogueRunner dialogueRunner;
-    public BackgroundChange BackgroundChange;
-    List<string> lines;
-    string currentNode;
-    string prevNode;
-    string curNametag;
-    string backdrop;
+    public BackgroundChange backgroundChange;
+    static List<string> lines;
+    static string currentNode;
+    static string prevNode;
+    static string curNametag;
+    static string backdrop;
 
     // Start is called before the first frame update
     void Awake()
     {
+        dialogueTracker = this;
+        DontDestroyOnLoad(dialogueTracker);
+        DontDestroyOnLoad(dialogueRunner);
+        DontDestroyOnLoad(backgroundChange);
         lines = new List<string>();
     }
 
@@ -32,16 +36,16 @@ public class DialogueTracker : MonoBehaviour
         lines.Add(text);
     }
 
-    public void LoadState(string[] arr, string cnd, string pnd, string cnt, string bckdrp)
+    public void LoadState(SaveState save)
     {
-        lines = new List<string>(arr);
-        curNametag = cnt;
-        currentNode = cnd;
-        prevNode = pnd;
+        lines = new List<string>(save.lines);
+        curNametag = save.curNameTag;
+        currentNode = save.currentNode;
+        prevNode = save.prevNode;
         dialogueRunner.Stop();
         dialogueRunner.StopAllCoroutines();
-        StartCoroutine(BackgroundChange.DoChangeFast(bckdrp));
-        dialogueRunner.startNode = cnd;
+        StartCoroutine(backgroundChange.DoChangeFast(save.backdrop));
+        dialogueRunner.startNode = save.currentNode;
         dialogueRunner.ResetDialogue();
     }
 
@@ -67,26 +71,26 @@ public class DialogueTracker : MonoBehaviour
         backdrop = b;
     }
 
-    public List<string> GetLines()
+    public static List<string> GetLines()
     {
         return lines;
     }
 
-    public string GetCurrentNode()
+    public static string GetCurrentNode()
     {
         return currentNode;
     }
 
-    public string GetPrevNode()
+    public static string GetPrevNode()
     {
         return prevNode;
     }
 
-    public string GetNametag()
+    public static string GetNametag()
     {
         return curNametag;
     }
-    public string GetBackdrop()
+    public static string GetBackdrop()
     {
         return backdrop;
     }
