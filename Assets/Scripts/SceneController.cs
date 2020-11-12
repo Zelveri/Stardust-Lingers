@@ -1,11 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Yarn;
+using Yarn.Unity;
 
 public class SceneController : MonoBehaviour
 {
-    enum Scenes
+    //public Dialogue dialogue;
+    public enum Scenes
     {
         main=0,
         Menus,
@@ -13,6 +17,11 @@ public class SceneController : MonoBehaviour
     }
 
     static Scenes CurActiveScene = Scenes.main;
+
+    private void Awake()
+    {
+        //dialogue = GameObject.Find("Dialogue Runner").GetComponent<DialogueRunner>().Dialogue;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +35,7 @@ public class SceneController : MonoBehaviour
         {
             if(CurActiveScene == Scenes.main)
             {
-                DoScenePreps();
-                Time.timeScale = 0; // pause game
-                SceneManager.LoadScene((int)Scenes.Menus, LoadSceneMode.Additive);
-                CurActiveScene = Scenes.Menus;
+                SwitchToScene(Scenes.Menus);
             }
             else
             {
@@ -40,31 +46,19 @@ public class SceneController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L) && (CurActiveScene == Scenes.main))
         {
-            SceneManager.LoadScene((int)Scenes.Log, LoadSceneMode.Additive);
-            CurActiveScene = Scenes.Log;
+            SwitchToScene(Scenes.Log);
         }
     }
 
     // returns to previous scene
     public void ReturnToMain()
-    {
-        //switch (CurActiveScene)
-        //{
-        //    case Scene.Menus:
-        //        SceneManager.UnloadSceneAsync("Menus");
-        //        break;
-        //    case Scene.Log:
-        //        SceneManager.UnloadSceneAsync("Log");
-        //        break;
-        //    default:
-        //        break;
-        //}
-        
+    {        
         if(CurActiveScene != Scenes.main)
         {
             SceneManager.UnloadSceneAsync((int)CurActiveScene);
             GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = true;
             Time.timeScale = 1;
+            //dialogue.Continue();
             CurActiveScene = Scenes.main;
         }
     }
@@ -73,5 +67,42 @@ public class SceneController : MonoBehaviour
     {
         // disable main scene audio listener
         GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = false;
+    }
+
+    public void SwitchToScene(string name)
+    {
+        Scenes scene = (Scenes)Enum.Parse(typeof(Scenes), name);
+        SwitchToScene(scene);
+    }
+
+    public void SwitchToScene(Scenes scene)
+    {
+        if (scene == Scenes.main) { ReturnToMain(); }
+        else
+        {
+            DoScenePreps();
+            Time.timeScale = 0; // pause game
+            //dialogue.Stop();
+            SceneManager.LoadScene((int)scene, LoadSceneMode.Additive);
+            CurActiveScene = scene;
+        }
+    }
+
+    public void SwitchToScene(int scene)
+    {
+        SwitchToScene((Scenes)scene);
+    }
+
+    public void ToggleScene(string name)
+    {
+        var scene = (Scenes)Enum.Parse(typeof(Scenes), name);
+        if (CurActiveScene != scene)
+        {
+            SwitchToScene(scene);
+        }
+        else
+        {
+            ReturnToMain();
+        }
     }
 }

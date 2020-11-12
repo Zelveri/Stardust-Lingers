@@ -14,7 +14,6 @@ public class LogUpdate : MonoBehaviour
     {
         textMesh.text = string.Join("\n\n", DataController.GetLines());
         gameObject.SetActive(true);
-
     }
 
     // Update is called once per frame
