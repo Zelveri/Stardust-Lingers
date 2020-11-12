@@ -5,8 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    enum Scene
+    {
+        main=0,
+        Log,
+        Menus
+    }
 
-    static bool isMenuActive = false;
+    static Scene CurActiveScene = Scene.main;
     static bool keyDown = false;
     // Start is called before the first frame update
     void Start()
@@ -17,31 +23,46 @@ public class SceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !keyDown)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(!isMenuActive)
+            if(CurActiveScene == Scene.main)
             {
                 Time.timeScale = 0; // pause game
                 SceneManager.LoadScene("Menus", LoadSceneMode.Additive);
-                isMenuActive = true;
+                CurActiveScene = Scene.Menus;
             }
             else
             {
                 ReturnToMain();
             }
-            keyDown = true;
         }
-        if (Input.GetKeyUp(KeyCode.Escape)) keyDown = false;
+       // if (Input.GetKeyUp(KeyCode.Escape)) keyDown = false;
+
+        if (Input.GetKeyDown(KeyCode.L) && (CurActiveScene == Scene.main))
+        {
+            SceneManager.LoadScene("Log", LoadSceneMode.Additive);
+            CurActiveScene = Scene.Log;
+        }
     }
 
     // returns to previous scene
     public void ReturnToMain()
     {
-        if (isMenuActive)
+        switch (CurActiveScene)
         {
-            SceneManager.UnloadSceneAsync("Menus");
+            case Scene.Menus:
+                SceneManager.UnloadSceneAsync("Menus");
+                break;
+            case Scene.Log:
+                SceneManager.UnloadSceneAsync("Log");
+                break;
+            default:
+                break;
+        }
+        if(CurActiveScene != Scene.main)
+        {
             Time.timeScale = 1;
-            isMenuActive = false;
+            CurActiveScene = Scene.main;
         }
     }
 }
