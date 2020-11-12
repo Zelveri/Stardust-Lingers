@@ -287,7 +287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &209276239
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209276238}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -1787,7 +1787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -87.1001, y: 13.599976}
+  m_AnchoredPosition: {x: -87.1001, y: 13.600098}
   m_SizeDelta: {x: -1194.1, y: -355.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1026926487

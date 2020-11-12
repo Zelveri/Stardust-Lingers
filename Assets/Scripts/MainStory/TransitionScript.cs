@@ -35,12 +35,16 @@ public class TransitionScript : MonoBehaviour
         {
             case "Fade_In":
                 //StartCoroutine(FadeIn(myCanvas, transitionSpeed));
-                onComplete();
+                myCanvas = gameObject.transform.Find("Crossfade").gameObject.GetComponent<CanvasGroup>();
+                transition = gameObject.transform.Find("Crossfade").gameObject.GetComponent<Animator>();
+                transition.SetFloat("Duration", transitionSpeed);
+                StartCoroutine(FadeIn(onComplete));
                 break;
             case "Fade_Out":
-                //myCanvas.gameObject.SetActive(true);
-                //StartCoroutine(FadeOut(myCanvas, transitionSpeed));
-                onComplete();
+                myCanvas = gameObject.transform.Find("Crossfade").gameObject.GetComponent<CanvasGroup>();
+                transition = gameObject.transform.Find("Crossfade").gameObject.GetComponent<Animator>();
+                transition.SetFloat("Duration", transitionSpeed);
+                StartCoroutine(FadeOut(onComplete));
                 break;
             case "Slide":
                 if (parameters.Length > 1)
@@ -64,57 +68,30 @@ public class TransitionScript : MonoBehaviour
                 } else onComplete();
                 break;
         }
-
     }
 
-    IEnumerator FadeOut(CanvasGroup canvas, float duration)
+    IEnumerator FadeOut(System.Action onComplete)
     {
-        var startTime = Time.time;
-        var endTime = Time.time + duration;
-        var elapsedTime = 0f;
-
-        // set the canvas to the start alpha – this ensures that the canvas is ‘reset’ if you fade it multiple times
-        // myCanvas.alpha = startAlpha;
-        var startAlpha = canvas.alpha;
-        var endAlpha = 1f;
-        // loop repeatedly until the previously calculated end time
-        while (Time.time <= endTime)
+        var animstate = transition.gameObject.GetComponent<AnimationState>();
+        transition.SetTrigger("Fade_Black");
+        animstate.isRunning = true;
+        while (animstate.isRunning)
         {
-            elapsedTime = Time.time - startTime; // update the elapsed time
-            var percentage = 1 / (duration / elapsedTime); // calculate how far along the timeline we are
-            var a = startAlpha + percentage;
-            canvas.alpha = (a < endAlpha) ? a : endAlpha; // calculate the new alpha
-
-            yield return new WaitForEndOfFrame(); // wait for the next frame before continuing the loop
+            yield return null;
         }
-        canvas.alpha = endAlpha; // force the alpha to the end alpha before finishing – this is here to mitigate any rounding errors, e.g. leaving the alpha at 0.01 instead of 0
-        yield return null;
+        onComplete();
     }
 
-    IEnumerator FadeIn(CanvasGroup canvas, float duration)
+    IEnumerator FadeIn(System.Action onComplete)
     {
-        // keep track of when the fading started, when it should finish, and how long it has been running&lt;/p&gt; &lt;p&gt;&a
-        var startTime = Time.time;
-        var endTime = Time.time + duration;
-        var elapsedTime = 0f;
-
-        // set the canvas to the start alpha – this ensures that the canvas is ‘reset’ if you fade it multiple times
-        // myCanvas.alpha = startAlpha;
-        var startAlpha = canvas.alpha;
-        var endAlpha = 0f;
-        // loop repeatedly until the previously calculated end time
-        while (Time.time <= endTime)
+        var animstate = transition.gameObject.GetComponent<AnimationState>();
+        transition.SetTrigger("Fade_Clear");
+        animstate.isRunning = true;
+        while (animstate.isRunning)
         {
-            elapsedTime = Time.time - startTime; // update the elapsed time
-            var percentage = 1 / (duration / elapsedTime); // calculate how far along the timeline we are
-            var a = startAlpha - percentage;
-            canvas.alpha = (a > endAlpha) ? a : endAlpha; // calculate the new alpha
-
-            yield return new WaitForEndOfFrame(); // wait for the next frame before continuing the loop
+            yield return null;
         }
-        canvas.alpha = endAlpha; // force the alpha to the end alpha before finishing – this is here to mitigate any rounding errors, e.g. leaving the alpha at 0.01 instead of 0
-        canvas.gameObject.SetActive(false);
-        yield return null;
+        onComplete();
     }
 
     IEnumerator Slide(string backgrnd, System.Action onComplete)
