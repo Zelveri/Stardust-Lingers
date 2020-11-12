@@ -18,7 +18,7 @@ public class BackgroundChange : MonoBehaviour
     public float animationDuration = 1f;
     public DialogueRunner dialogueRunner;
     public VariableStorageBehaviour variableStorage;
-    public DialogueTracker dialogueTracker;
+    public DataController dialogueTracker;
 
     private void Awake()
     {

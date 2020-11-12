@@ -11,6 +11,8 @@ public class SaveState
     public string curNameTag;
     public string[] lines;
     public string backdrop;
+    [SerializeField]
+    public Dictionary<string, Yarn.Value> variables;
 // string[] choices;
 
     //public SaveState(string curNode = "Start", string prevNode = "", string[] lines = null, string[] choices = null, string nameTag="", string themeColor="Light")
@@ -25,11 +27,12 @@ public class SaveState
 
     public SaveState()
     {
-        this.currentNode = DialogueTracker.GetCurrentNode();
-        this.prevNode = DialogueTracker.GetPrevNode();
-        this.lines = DialogueTracker.GetLines().ToArray();
+        this.currentNode = DataController.GetCurrentNode();
+        this.prevNode = DataController.GetPrevNode();
+        this.lines = DataController.GetLines().ToArray();
         //this.choices = choices;
-        this.curNameTag = DialogueTracker.GetNametag();
-        this.backdrop = DialogueTracker.GetBackdrop();
+        this.curNameTag = DataController.GetNametag();
+        this.backdrop = DataController.GetBackdrop();
+        this.variables = DataController.GetVariablesAsDict();
     }
 }

@@ -7,7 +7,7 @@ using Yarn.Unity;
 public class ButtonHandler : MonoBehaviour
 {
     public GameObject textLog;
-    public DialogueTracker dialogueTracker;
+    public DataController dialogueTracker;
     public InMemoryVariableStorage variableStorage;
     public BackgroundChange backgroundChange;
     TMPro.TextMeshProUGUI textMesh;
@@ -23,7 +23,7 @@ public class ButtonHandler : MonoBehaviour
         {
             if(!textLog.activeInHierarchy)
             {
-                textMesh.text = string.Join("\n\n", DialogueTracker.GetLines());
+                textMesh.text = string.Join("\n\n", DataController.GetLines());
             }
             textLog.SetActive(!textLog.activeInHierarchy);
         }

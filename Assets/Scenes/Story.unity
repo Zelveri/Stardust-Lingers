@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 363195510}
   - component: {fileID: 363195512}
   m_Layer: 0
-  m_Name: DialogueTracker
+  m_Name: DataController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1111,6 +1111,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 363195510}
+        m_MethodName: LineStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onLineFinishDisplaying:
     m_PersistentCalls:
       m_Calls:
@@ -1120,6 +1131,17 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1683790341}
           m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 363195510}
+        m_MethodName: LineEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1765,7 +1787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -87.099976, y: 13.599976}
+  m_AnchoredPosition: {x: -87.1001, y: 13.599976}
   m_SizeDelta: {x: -1194.1, y: -355.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1026926487
@@ -2587,53 +2609,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "It was dark by the time I arrived to the cabin.\r\nI had almost expected
-    the lights to be on, extending its shine toward me with a comforting warmth.\r\nThis
-    time, only shadow shrouded the windows. In a way, that too was comforting.\r\nIt
-    meant that this place had been left perfectly undisturbed.\r\nReaching into my
-    bag, I pulled out a brass key. Thankfully, I'd kept the copy safe through all
-    these years. Could never bring myself to get rid of it.\r\nThe reminder of regret
-    was now only fueling a sense of strange satisfaction as I opened up the door
-    after a few hurried jiggles.\r\n\n\"Geez.., what a mess.\"\r\nHe had always been
-    a hoarder, so this was to be expected. The main question was whether he'd burned
-    what I was looking for or not.\r\nI moved some of the items piled on the couch
-    onto the already precarious stack on the table and sat down with a huff.\r\n\"It's
-    going to take forever to sort through all this, isn't it?\"\r\n\r\n[[ Way too
-    tired for this... bed first. |Sleep]]\r\n[[ I can start. Who needs sleep? |Awake]]\r\n===\r\ntitle:
-    Sleep\r\ntags: \r\ncolorID: 0\r\nposition: -1478,-819\r\n---\r\nAfter the effort
-    it took to get here, it would be best to rest.\r\nI'd rather not have my back
-    screaming at me if I happened to pass out on the floor.\r\nComforted by the fact
-    that I had plenty of time to search, I stepped carefully over the clutter and
-    made my way to bed.\r\n<< transition Slide >>\r\n<< backdrop Bedroom_Night_A
-    >>\r\n\"Huh...\"\r\n\"It's actually quite decent.\"\r\nThe living room was the
-    main victim when it came to being treated as a landfill, it seems.\r\nTwisting
-    a lock of hair as I glanced around, I couldn't help but feel watched.\r\nIt was
-    as though a little serpent had twisted itself tightly around my intestines, hissing
-    a tune of unease.\r\nThis room, this... home.\r\nFamiliar in the best and worst
-    ways.\r\nHazy, I tentatively lift up the covers and peek underneath.\r\nNothing.\r\n\"...\"\r\nA
-    deep breath.\r\n\"Good night to me.\"\r\n\r\n\r\n\r\n<< transition Fade_Out >>\r\n<<
-    transition Fade_In >> \r\n<< backdrop Phone >> \r\n<< effect Static >>\r\n===\r\ntitle:
-    Notes\r\ntags: \r\ncolorID: 0\r\nposition: -1916,-1152\r\n---\r\n//Transition:\r\n//Used
-    for determining the transition used in a scene.\r\n\r\n//Backdrop:\r\n//Used
-    for determining the background used.\r\n\r\n//Nametag:\r\n//Used for determining
-    the name shown above the dialogue box.\r\n//Ideally it should change the appearance
-    depending on who is speaking, by color.\r\n===\r\ntitle: Awake\r\ntags: \r\ncolorID:
-    0\r\nposition: -907,-1147\r\n---\r\nThe prickling sensation of nervous anticipation
-    was making it far too easy to ignore my exhaustion.\r\nUsually, bursts of inspiration
-    at this time led to words flowing on paper.\r\nNow it was my blood flowing as
-    I cleared more space, hefting boxes into a mountainous collective on one side
-    of the room, a few cans clattering to the floor in the process.\r\nI froze at
-    the noise before shaking my head.\r\nMy gaze is drawn to a phone that had been
-    left charging on the floor.\r\n\"How long has this been here?\"\r\nI glance about,
-    twirling a lock of hair, a prickly sensation scurrying along my skin.\r\nHesitating
-    a bit, I pick it up and give the screen a couple of quick taps.\r\nPassword protection.
-    Perhaps it was a blessing in disguise.\r\nI make sure to turn it off before placing
-    it back.\r\nAfter reorganizing as much as I could manage, I had planned to open
-    up some of the boxes and look through them.\r\nHowever, my eyelids had grown
-    too heavy over straining vision to fight against for much longer.\r\nBefore I
-    knew it, I found myself drifting away with the box I held on the sofa still resting
-    on my lap.\r\n<< transition Fade_Out >>\r\n<< transition Fade_In >>\r\n<< backdrop
-    Phone >> \r\n<< effect Static >>\r\n===\r\n"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -18,12 +18,19 @@ public class SaveFileHandler : MonoBehaviour
 
     public void Save(int slot)
     {
-        SaveHandler.SaveGameState("slot" + slot.ToString());
+        var saveData = new SaveState();
+        // save array with all data
+        DataSaver.saveData(saveData, "slot" + slot.ToString());
     }
 
     public void Load(int slot)
     {
-        SaveState save = SaveHandler.LoadGameState("slot" + slot.ToString());
-        DialogueTracker.dialogueTracker.LoadState(save);
+        //SaveState save = DataSaver.LoadGameState("slot" + slot.ToString());
+        //DataController.dialogueTracker.LoadState(save);
+        // load sava  data
+        SaveState saveData =  DataSaver.loadData<SaveState>("slot" + slot.ToString());
+
+        // this will finalize the loading, apply the loaded settingss and will restart the dialogue
+        DataController.dialogueTracker.LoadState(saveData);
     }
 }
