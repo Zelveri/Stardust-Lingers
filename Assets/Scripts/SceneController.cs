@@ -5,15 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    enum Scene
+    enum Scenes
     {
         main=0,
-        Log,
-        Menus
+        Menus,
+        Log
     }
 
-    static Scene CurActiveScene = Scene.main;
-    static bool keyDown = false;
+    static Scenes CurActiveScene = Scenes.main;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +24,12 @@ public class SceneController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(CurActiveScene == Scene.main)
+            if(CurActiveScene == Scenes.main)
             {
+                DoScenePreps();
                 Time.timeScale = 0; // pause game
-                SceneManager.LoadScene("Menus", LoadSceneMode.Additive);
-                CurActiveScene = Scene.Menus;
+                SceneManager.LoadScene((int)Scenes.Menus, LoadSceneMode.Additive);
+                CurActiveScene = Scenes.Menus;
             }
             else
             {
@@ -38,31 +38,40 @@ public class SceneController : MonoBehaviour
         }
        // if (Input.GetKeyUp(KeyCode.Escape)) keyDown = false;
 
-        if (Input.GetKeyDown(KeyCode.L) && (CurActiveScene == Scene.main))
+        if (Input.GetKeyDown(KeyCode.L) && (CurActiveScene == Scenes.main))
         {
-            SceneManager.LoadScene("Log", LoadSceneMode.Additive);
-            CurActiveScene = Scene.Log;
+            SceneManager.LoadScene((int)Scenes.Log, LoadSceneMode.Additive);
+            CurActiveScene = Scenes.Log;
         }
     }
 
     // returns to previous scene
     public void ReturnToMain()
     {
-        switch (CurActiveScene)
+        //switch (CurActiveScene)
+        //{
+        //    case Scene.Menus:
+        //        SceneManager.UnloadSceneAsync("Menus");
+        //        break;
+        //    case Scene.Log:
+        //        SceneManager.UnloadSceneAsync("Log");
+        //        break;
+        //    default:
+        //        break;
+        //}
+        
+        if(CurActiveScene != Scenes.main)
         {
-            case Scene.Menus:
-                SceneManager.UnloadSceneAsync("Menus");
-                break;
-            case Scene.Log:
-                SceneManager.UnloadSceneAsync("Log");
-                break;
-            default:
-                break;
-        }
-        if(CurActiveScene != Scene.main)
-        {
+            SceneManager.UnloadSceneAsync((int)CurActiveScene);
+            GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = true;
             Time.timeScale = 1;
-            CurActiveScene = Scene.main;
+            CurActiveScene = Scenes.main;
         }
+    }
+
+    void DoScenePreps()
+    {
+        // disable main scene audio listener
+        GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = false;
     }
 }
