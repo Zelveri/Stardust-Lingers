@@ -1006,6 +1006,7 @@ GameObject:
   - component: {fileID: 2067385354}
   - component: {fileID: 2067385353}
   - component: {fileID: 2067385352}
+  - component: {fileID: 2067385355}
   m_Layer: 5
   m_Name: TextLog
   m_TagString: Untagged
@@ -1030,7 +1031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 20}
+  m_AnchoredPosition: {x: 0, y: 20}
   m_SizeDelta: {x: -960.9, y: -445.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067385352
@@ -1082,3 +1083,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067385350}
   m_CullTransparentMesh: 0
+--- !u!114 &2067385355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067385350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23a9255b7408c748922acdd318db54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

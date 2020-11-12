@@ -29,6 +29,10 @@ public class DataController : MonoBehaviour
         lines = new List<string>();
     }
 
+    private void Update()
+    {
+    }
+
     public void LineStart()
     {
         lineIncomplete = true;

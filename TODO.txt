@@ -5,6 +5,9 @@ TODO save gamestate
     -> playerprefs for filenames and general settings
     -> access to variable storage / dialogueRunner simply with GameObject.Find("Variable Storage") in save handler? (bc scene not unloaded)
 
-BUG game load causes overlapping text
-    -> make fade out wait till line finishes ( or do the mouseclick in code )
-    -> startdialogue() from new node
+TODO load savegame:
+    -> on load click: fade out, load game and fade back in on new gamestate
+
+TODO maybe!! make 'transition Slide' as a setting for 'backdrop' scene switching animation instead of switching itself
+
+FIXME clear text before transitioning!
