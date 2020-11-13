@@ -95,7 +95,7 @@ I met a friend
 title: Aww
 tags: 
 colorID: 0
-position: -1871,-1132
+position: -1868,-1132
 ---
 << nametag Mira >>
 Such a cutie
@@ -182,9 +182,37 @@ Us living together.
 title: Agree
 tags: 
 colorID: 0
-position: -1873,-625
+position: -1876,-625
 ---
-Empty Text
+<< nametag Mira >>
+It's exciting that its an actual possibility now.
+But I still feel nervous about it.
+Isn't it a little soon?
+<< nametag Trevis >>
+Not really
+We've known each other for long enough.
+I don't see a problem with it.
+Do you?
+<< nametag Mira >>
+No, of course not!
+But I'm still not used to this...
+Ah. Sorry, I shouldn't worry so much about it.
+I've only been here for a few days but there's already so much I want to show you.
+I could send pictures, but I think it might spoil the surprise!
+<< nametag Trevis >> 
+Pictures or not, I'd do anything to see you again
+Been stuck here for way too long
+I won't be able to leave for a while but I promise I'll do it as soon as I can
+<< nametag Mira >>
+Maybe in the meantime, you could just visit?
+That way, we won't have to wait until then to see each other.
+<< nametag Trevis >>
+Sure 
+I have to go. I'll talk to you soon
+<< nametag Mira >>
+Oh, okay then.
+Bye!
+<< transition Fade_Out >>
 ===
 title: Delay
 tags: 
