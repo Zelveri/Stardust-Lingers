@@ -28,6 +28,7 @@ public class YarnCommands : MonoBehaviour
         Circleslide
     }
     TransitionType transitionType = TransitionType.Fade;
+    bool canContinue = false;
     private void Awake()
     {
         animationEvent = dialogueCanvas.GetComponent<AnimationEvent>();
@@ -55,7 +56,7 @@ public class YarnCommands : MonoBehaviour
                 StartCoroutine(backgroundHandler.DoChange(pars[0], onComplete));
                 break;
             case TransitionType.Slide:
-                StartCoroutine(transitionHandler.Slide(slideAnimator, pars[0], onComplete));
+                StartCoroutine(SlideTransition(pars[0], onComplete));
                 break;
             default:
                 break;
@@ -88,22 +89,38 @@ public class YarnCommands : MonoBehaviour
         }
     }
 
+    public void Continue()
+    {
+        canContinue = true;
+    }
+
+    void WaitContinue()
+    {
+        while (!canContinue) {  };
+        canContinue = false;
+    }
+
     void NameTag(string[] pars, System.Action onComplete)
     {
         nameTagHandler.ChangeNameTag(pars, onComplete);
     }
 
+    IEnumerator  SlideTransition(string param, Action onComplete)
+    {
+        yield return StartCoroutine(animationEvent.FadeClear(null));
+        yield return StartCoroutine(transitionHandler.Slide(slideAnimator, param, null));
+        yield return StartCoroutine(animationEvent.FadeOpaque(onComplete));
+    }
+
     public void HideDialogue(string[] parameters, System.Action onComplete)
     {
         //dialogueCanvas.gameObject.SetActive(false);
-        animationEvent.FadeClear();
-        onComplete();
+        StartCoroutine(animationEvent.FadeClear(onComplete));
     }
 
     public void ShowDialogue(string[] parameters, System.Action onComplete)
     {
         //dialogueCanvas.gameObject.SetActive(true);
-        animationEvent.FadeOpaque();
-        onComplete();
+        StartCoroutine(animationEvent.FadeClear(onComplete));
     }
 }

@@ -11,7 +11,7 @@ public class NameTagChangeHandler : MonoBehaviour
     public DialogueRunner dialogueRunner;
     public DataController dialogueTracker;
     public TMPro.TextMeshProUGUI nameTag;
-    public SpriteRenderer textBackground;
+    public Image textBackground;
     public Animator transitionAnimator;
     public float speed = 10f;
     Dictionary<string, string> nameToTextureDict;
@@ -49,21 +49,21 @@ public class NameTagChangeHandler : MonoBehaviour
     {
         if (doEffect)
         {
-            animationEvent.FadeClear();
-            while (animationEvent.isRunning)
-            {
-                yield return null;
-            }
+            yield return StartCoroutine(animationEvent.FadeClear(null));
+            //while (animationEvent.isRunning)
+            //{
+            //    yield return null;
+            //}
         }
         nameTag.text = newName;
         textBackground.sprite = Resources.Load<Sprite>("Artwork/UI/Text Box/" + boxName);
         if (doEffect)
         {
-            animationEvent.FadeOpaque();
-            while (animationEvent.isRunning)
-            {
-                yield return null;
-            }
+            yield return StartCoroutine(animationEvent.FadeOpaque(null));
+            //while (animationEvent.isRunning)
+            //{
+            //    yield return null;
+            //}
         }
         onComplete();
     }

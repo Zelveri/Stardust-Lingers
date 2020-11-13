@@ -24,7 +24,7 @@ public class AnimationEvent : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
     }
 
-    public void FadeClear()
+    public IEnumerator FadeClear(System.Action onComplete)
     {
         var currentState = animator.GetCurrentAnimatorStateInfo(0);
         if (!currentState.IsName("Dialogue_Fade_Clear"))
@@ -32,19 +32,27 @@ public class AnimationEvent : MonoBehaviour
             _isfading = true;
             _ishidden = true;
             animator.SetTrigger("Fade_Clear");
-//       while (isFading) { };
+            while (_isfading) 
+            {
+                yield return null;
+            }
+            onComplete?.Invoke();
         }
     }
 
-    public void FadeOpaque()
+    public IEnumerator FadeOpaque(System.Action onComplete)
     {
         var currentState = animator.GetCurrentAnimatorStateInfo(0);
         if (!currentState.IsName("Dialogue_Fade_Opaque"))
         {
             _isfading = true;
             _ishidden = false;
-            animator.SetTrigger("Fade_Opaque"); 
-           // while (isFading) { };
+            animator.SetTrigger("Fade_Opaque");
+            while (_isfading)
+            {
+                yield return null;
+            }
+            onComplete?.Invoke();
         }
     }
 

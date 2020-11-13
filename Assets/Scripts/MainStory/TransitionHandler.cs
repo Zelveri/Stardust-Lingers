@@ -25,7 +25,7 @@ public class TransitionHandler : MonoBehaviour
         {
             yield return null;
         }
-        onComplete();
+        onComplete?.Invoke();
     }
 
     public IEnumerator FadeIn(Animator animator, System.Action onComplete)
@@ -37,7 +37,7 @@ public class TransitionHandler : MonoBehaviour
         {
             yield return null;
         }
-        onComplete();
+        onComplete?.Invoke();
     }
 
     public IEnumerator Slide(Animator animator, string backgrnd, System.Action onComplete)
@@ -56,7 +56,7 @@ public class TransitionHandler : MonoBehaviour
         {
             yield return null;
         }
-        onComplete();
+        onComplete?.Invoke();
     }
 
 }

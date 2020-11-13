@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &56159675 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5023058974150297456, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6800228287496726028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &204338975
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,7 +702,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 671862661}
   dialogueTracker: {fileID: 363195510}
   nameTag: {fileID: 6800228287496726035}
-  textBackground: {fileID: 6800228287496726030}
+  textBackground: {fileID: 56159675}
   transitionAnimator: {fileID: 6800228287496726034}
   speed: 10
 --- !u!1 &671862659
@@ -2016,7 +2028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1499500213, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
       propertyPath: m_Alpha
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1626950255, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
       propertyPath: m_isRightToLeft
@@ -2065,6 +2077,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 671862662}
+    - target: {fileID: 5023058974150297456, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.65882355
+      objectReference: {fileID: 0}
     - target: {fileID: 6800228287573100246, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
         type: 3}
       propertyPath: m_SortingOrder
@@ -2240,12 +2257,6 @@ PrefabInstance:
 --- !u!1 &6800228287496726029 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3013362938510951803, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-    type: 3}
-  m_PrefabInstance: {fileID: 6800228287496726028}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &6800228287496726030 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 779530496, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
     type: 3}
   m_PrefabInstance: {fileID: 6800228287496726028}
   m_PrefabAsset: {fileID: 0}
