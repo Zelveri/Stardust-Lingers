@@ -8,8 +8,6 @@ TODO save gamestate
 TODO load savegame:
     -> on load click: fade out, load game and fade back in on new gamestate
 
-TODO maybe!! make 'transition Slide' as a setting for 'backdrop' scene switching animation instead of switching itself
-
 FIXME clear text before transitioning!
 
 FIXME log scene zoomed in??

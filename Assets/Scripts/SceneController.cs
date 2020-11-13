@@ -71,6 +71,7 @@ public class SceneController : MonoBehaviour
 
     public void SwitchToScene(string name)
     {
+        // parse string to enum
         Scenes scene = (Scenes)Enum.Parse(typeof(Scenes), name);
         SwitchToScene(scene);
     }

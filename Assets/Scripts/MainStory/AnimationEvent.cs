@@ -6,7 +6,6 @@ public class AnimationEvent : MonoBehaviour
 {
     // Start is called before the first frame update
     bool _isfading = false;
-    CanvasGroup canvasGroup;
     Animator animator;
     bool _ishidden = false;
     public bool isHidden
@@ -22,7 +21,6 @@ public class AnimationEvent : MonoBehaviour
 
     private void Awake()
     {
-        canvasGroup = gameObject.GetComponent<CanvasGroup>();
         animator = gameObject.GetComponent<Animator>();
     }
 

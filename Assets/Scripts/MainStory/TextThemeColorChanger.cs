@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
-public class TextViewHandler : MonoBehaviour
+public class TextThemeColorChanger : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI textBox;
 

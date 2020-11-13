@@ -10,7 +10,7 @@ public class DataController : MonoBehaviour
     public static DataController dialogueTracker;
     public static InMemoryVariableStorage variableStorage;
     public DialogueRunner dialogueRunner;
-    public BackgroundChange backgroundChange;
+    public BackgroundChangeHandler backgroundChange;
     DialogueUI dlgUI;
     static List<string> lines;
     static string currentNode;
@@ -65,7 +65,7 @@ public class DataController : MonoBehaviour
         }
 
         if (lineIncomplete) dlgUI.MarkLineComplete();
-        StartCoroutine(backgroundChange.DoChangeFast(save.backdrop));
+        StartCoroutine(backgroundChange.DoChangeFast(save.backdrop, null));
         dialogueRunner.StartDialogue(save.currentNode);
     }
 

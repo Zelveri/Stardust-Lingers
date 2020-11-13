@@ -8,13 +8,11 @@ using Yarn.Unity;
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(DialogueRunner))]
 //[RequireComponent(typeof(VariableStorage))]
-public class BackgroundChange : MonoBehaviour
+public class BackgroundChangeHandler : MonoBehaviour
 {
 
     SpriteRenderer spriteRenderer;
     SpriteRenderer blendHelper;
-    Animator animator;
-    CanvasGroup canvas;
     public float animationDuration = 1f;
     public DialogueRunner dialogueRunner;
     public VariableStorageBehaviour variableStorage;
@@ -22,21 +20,24 @@ public class BackgroundChange : MonoBehaviour
 
     private void Awake()
     {
-        dialogueRunner.AddCommandHandler("backdrop", ChangeBackdrop);
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        animator = gameObject.GetComponent<Animator>();
-        canvas = gameObject.GetComponent<CanvasGroup>();
         blendHelper = gameObject.transform.Find("SmoothTransitionHelper").gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public void ChangeBackdrop(string[] parameters, System.Action onComplete)
+    public void ChangeBackdrop(string backdrop, System.Action onComplete)
     //public void ChangeBackdrop(string[] parameters)
     {
-        dialogueTracker.UpdateBackdrop(parameters[0]);
-        //StartCoroutine(DoChangeFast(parameters[0]));
-        StartCoroutine(DoChange(parameters[0], onComplete));
+        dialogueTracker.UpdateBackdrop(backdrop);
+        StartCoroutine(DoChange(backdrop, onComplete));
     }
-    
+
+    public void ChangeBackdropFast(string backdrop, System.Action onComplete)
+    //public void ChangeBackdrop(string[] parameters)
+    {
+        dialogueTracker.UpdateBackdrop(backdrop);
+        StartCoroutine(DoChangeFast(backdrop, onComplete));
+    }
+
     public IEnumerator DoChange(string backdrop, System.Action onComplete)
     {
         // string timeName = variableStorage.GetValue("time").AsString;
@@ -74,12 +75,14 @@ public class BackgroundChange : MonoBehaviour
         onComplete();
     }
 
-    public IEnumerator DoChangeFast(string backdrop)
+    public IEnumerator DoChangeFast(string backdrop, System.Action onComplete)
     {
         // string timeName = variableStorage.GetValue("time").AsString;
         string spritePath = "Artwork/Backgrounds/" + backdrop;// + "_" + timeName;
         spriteRenderer.sprite = Resources.Load<Sprite>(spritePath);
         spriteRenderer.color = Color.white;
+        // null propagation operator ? prevents Invoke() call when onComplete is null
+        onComplete?.Invoke();
         yield return null;
     }
 }
