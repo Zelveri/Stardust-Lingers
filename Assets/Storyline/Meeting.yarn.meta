@@ -1,0 +1,37 @@
+fileFormatVersion: 2
+guid: ffb3d5d74c790914cac72c3498f6d3ea
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - NewFile-Start-0
+  - NewFile-Start-1
+  - NewFile-Start-2
+  - NewFile-Start-3
+  - NewFile-Sound-4
+  - NewFile-Sound-5
+  - NewFile-Sound-6
+  - NewFile-Sound-7
+  - NewFile-Sound-8
+  - NewFile-Sound-9
+  - NewFile-Sound-10
+  - NewFile-Sound-11
+  - NewFile-Sound-12
+  - NewFile-Sound-13
+  - NewFile-Sound-14
+  - NewFile-Sound-15
+  - NewFile-Sound-16
+  - NewFile-Visitor-17
+  - NewFile-Visitor-18
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: ffb3d5d74c790914cac72c3498f6d3ea,
+    type: 3}
+  localizations: []

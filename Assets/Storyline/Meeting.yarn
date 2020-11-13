@@ -1,0 +1,50 @@
+title: Start
+tags: 
+colorID: 0
+position: 543,106
+---
+<< transition Fade_In >>
+<< backdrop Bedroom_Day >>
+<< nametag Mira >> 
+My thoughts rose to awareness, the disorienting fog shrouding them slowly clearing with the warm light that cast itself over me.
+I kept my eyes closed as I stretched, realizing with a soft smile that I had ended up sleeping sideways.
+Letting out a yawn with a roll of the shoulders, I felt for the door as I stumbled my way to the bathroom.
+I nearly tripped over some unknown object on the way there, but part of me would rather suffer a fall than open my eyes without washing my face first.
+[[Sound]]
+===
+title: Sound
+tags: 
+colorID: 0
+position: 537,352
+---
+<< transition Slide >>
+<< backdrop Livingroom_Day_A >>
+"Let's see what we have here..."
+I was about to head to the kitchen to see if anything edible was left when there was an odd sound.
+It was barely audible, but I had just managed to make it out.
+<< nametag Lune hidden >>
+"Scritch..."
+"Scriii... scritch..."
+<< nametag Mira >>
+"Umm."
+I try to decipher the source of the sound, and find that it is coming from my door. I peek out the window, but...
+No one seems to be there?
+<< nametag Lune hidden >>
+"Scriii... Riii... Scritch."
+<< nametag Mira >> 
+Feeling a bit unsettled, I nibble at my lip and open the door by just a crack.
+The scratching stops.
+My gaze is met with nothing but the rustling flora and the gentle flutters of a nearby butterfly.
+Until I look down and see it peeking back at me.
+[[Visitor]]
+===
+title: Visitor
+tags: 
+colorID: 0
+position: 787,353
+---
+<< transition Slide >> 
+<< backdrop Door_Bunny >>
+"Oh my!"
+"Who are you, little one?"
+===
