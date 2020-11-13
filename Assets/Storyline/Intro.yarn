@@ -1,7 +1,7 @@
 title: Start
 tags: 
 colorID: 0
-position: -1374,-1199
+position: -1631,-1519
 ---
 << transition Fade_In >>
 << nametag Mira >> 
@@ -11,34 +11,7 @@ This time, only shadow shrouded the windows. In a way, that too was comforting.
 It meant that this place had been left perfectly undisturbed.
 Reaching into my bag, I pulled out a brass key. Thankfully, I'd kept the copy safe through all these years. Could never bring myself to get rid of it.
 The reminder of regret was now only fueling a sense of strange satisfaction as I opened up the door after a few hurried jiggles.
-<< transition Slide >> 
-<< backdrop Livingroom_Night_A >>
-"Geez... what a mess."
-He had always been a hoarder, so this was to be expected. The main question was whether he'd burned what I was looking for or not.
-I moved some of the items strewn on the couch onto a precarious pile on the table and sat down with a huff.
-"It's going to take forever to sort through all this, isn't it?"
-I briefly considered starting right away, but...
-After the effort it took to get here, it would be best to rest.
-I'd rather not have my back screaming at me if I happened to pass out on the floor.
-Comforted by the fact that I had plenty of time to search, I stepped carefully over the clutter and made my way to bed.
-<< transition Slide >>
-<< backdrop Bedroom_Night_A >>
-"Huh..."
-"It's actually quite decent."
-The living room was the main victim when it came to being treated as a landfill, it seems.
-Twisting a lock of hair as I glanced around, I couldn't help but feel watched.
-It was as though a little serpent had twisted itself tightly around my intestines, hissing a tune of unease.
-This room, this... home.
-Familiar in the best and worst ways.
-Hazy, I tentatively lift up the covers and peek underneath.
-Nothing.
-"..."
-A deep breath.
-"Good night to me."
-
-
-
-<< transition Fade_Out >>
+[[Livingroom]]
 ===
 title: Next
 tags: 
@@ -61,4 +34,45 @@ position: -1916,-1152
 //Nametag:
 //Used for determining the name shown above the dialogue box.
 //Ideally it should change the appearance depending on who is speaking, by color.
+===
+title: Livingroom
+tags: 
+colorID: 0
+position: -1626,-1267
+---
+<< transition Slide >>
+<< backdrop Livingroom_Night_A >>
+"Geez... what a mess."
+He had always been a hoarder, so this was to be expected. The main question was whether he'd burned what I was looking for or not.
+I moved some of the items strewn on the couch onto a precarious pile on the table and sat down with a huff.
+"It's going to take forever to sort through all this, isn't it?"
+I briefly considered starting right away, but...
+After the effort it took to get here, it would be best to rest.
+I'd rather not have my back screaming at me if I happened to pass out on the floor.
+Comforted by the fact that I had plenty of time to search, I stepped carefully over the clutter and made my way to bed.
+[[Bedroom]]
+===
+title: Bedroom
+tags: 
+colorID: 0
+position: -1327,-1263
+---
+<< transition Slide >>
+<< backdrop Bedroom_Night_A >>
+"Huh..."
+"It's actually quite decent."
+The living room was the main victim when it came to being treated as a landfill, it seems.
+Twisting a lock of hair as I glanced around, I couldn't help but feel watched.
+It was as though a little serpent had twisted itself tightly around my intestines, hissing a tune of unease.
+This room, this... home.
+Familiar in the best and worst ways.
+Hazy, I tentatively lift up the covers and peek underneath.
+Nothing.
+"..."
+A deep breath.
+"Good night to me."
+
+
+
+<< transition Fade_Out >>
 ===
