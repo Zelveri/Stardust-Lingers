@@ -191,5 +191,33 @@ tags:
 colorID: 0
 position: -1598,-625
 ---
-Empty Text
+<< nametag Trevis >>
+You don't think?
+Why don't you think, Mira?
+I've given you plenty of time to do so
+It's about time you gave me a clear answer
+Thats what I think.
+<< nametag Mira >>
+Look, it's not that I don't want us to
+But I'm not sure about it being so soon.
+I only got here a few days ago, I still need time to settle down.
+This whole thing is still new to me, too...
+<< nametag Trevis >>
+I thought you were serious about this 
+<< nametag Mira >>
+I am!
+Sorry...
+I shouldn't worry so much. It'll probably be fine.
+<< nametag Trevis >>
+Not probably, it will be 
+I'm not trying to sound pushy or anything you know that right
+I just care about you a lot
+So I want this to work out and it won't if you keep trying to avoid this
+<< nametag Mira >>
+I'm not avoiding anything.
+Maybe you can visit first?
+Before deciding. We can see how it goes from there.
+<< nametag Trevis >>
+Okay.
+<< transition Fade_Out >>
 ===
