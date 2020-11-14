@@ -79,6 +79,10 @@ public class DialogueAnimator : MonoBehaviour
         onComplete();
     }
 
+    public void ClearText()
+    {
+        storyText.text = "";
+    }
 
     public IEnumerator FadeClear(System.Action onComplete)
     {

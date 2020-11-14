@@ -106,6 +106,7 @@ public class YarnCommands : MonoBehaviour
     IEnumerator  SlideTransition(string param, Action onComplete)
     {
         yield return StartCoroutine(dialogueAnimator.FadeClear(null));
+        dialogueAnimator.ClearText();
         yield return StartCoroutine(transitionHandler.Slide(slideAnimator, param, null));
         yield return StartCoroutine(dialogueAnimator.FadeOpaque(onComplete));
     }
