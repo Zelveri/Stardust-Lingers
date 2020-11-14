@@ -31,6 +31,7 @@ public class DataController : MonoBehaviour
 
     private void Update()
     {
+
     }
 
     public void LineStart()

@@ -8,7 +8,7 @@ public class YarnCommands : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
     public BackgroundChangeHandler backgroundHandler;
-    public NameTagChangeHandler nameTagHandler;
+    public DialogueAnimator dialogueAnimator;
     public TransitionHandler transitionHandler;
     public DataController dataController;
 
@@ -17,7 +17,6 @@ public class YarnCommands : MonoBehaviour
 
     public Canvas dialogueCanvas;
 
-    AnimationEvent animationEvent;
 
     enum TransitionType
     {
@@ -31,7 +30,6 @@ public class YarnCommands : MonoBehaviour
     bool canContinue = false;
     private void Awake()
     {
-        animationEvent = dialogueCanvas.GetComponent<AnimationEvent>();
         // All the commands
         // command transition <Type>, takes 1 parameter
         dialogueRunner.AddCommandHandler("transition", Transition);
@@ -102,25 +100,25 @@ public class YarnCommands : MonoBehaviour
 
     void NameTag(string[] pars, System.Action onComplete)
     {
-        nameTagHandler.ChangeNameTag(pars, onComplete);
+        dialogueAnimator.ChangeNameTag(pars, onComplete);
     }
 
     IEnumerator  SlideTransition(string param, Action onComplete)
     {
-        yield return StartCoroutine(animationEvent.FadeClear(null));
+        yield return StartCoroutine(dialogueAnimator.FadeClear(null));
         yield return StartCoroutine(transitionHandler.Slide(slideAnimator, param, null));
-        yield return StartCoroutine(animationEvent.FadeOpaque(onComplete));
+        yield return StartCoroutine(dialogueAnimator.FadeOpaque(onComplete));
     }
 
     public void HideDialogue(string[] parameters, System.Action onComplete)
     {
         //dialogueCanvas.gameObject.SetActive(false);
-        StartCoroutine(animationEvent.FadeClear(onComplete));
+        StartCoroutine(dialogueAnimator.FadeClear(onComplete));
     }
 
     public void ShowDialogue(string[] parameters, System.Action onComplete)
     {
         //dialogueCanvas.gameObject.SetActive(true);
-        StartCoroutine(animationEvent.FadeClear(onComplete));
+        StartCoroutine(dialogueAnimator.FadeClear(onComplete));
     }
 }

@@ -681,30 +681,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &527499628 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2556984049520816816, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
-    type: 3}
-  m_PrefabInstance: {fileID: 6800228287496726028}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &527499629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527499628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4afc2293207104140952f885af633aef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueRunner: {fileID: 671862661}
-  dialogueTracker: {fileID: 363195510}
-  nameTag: {fileID: 6800228287496726035}
-  textBackground: {fileID: 56159675}
-  transitionAnimator: {fileID: 6800228287496726034}
-  speed: 10
 --- !u!1 &671862659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,7 +1828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 671862661}
   backgroundHandler: {fileID: 1167082799}
-  nameTagHandler: {fileID: 527499629}
+  dialogueAnimator: {fileID: 6800228287496726033}
   transitionHandler: {fileID: 1748358423}
   dataController: {fileID: 363195510}
   slideAnimator: {fileID: 204338978}
@@ -2027,7 +2003,7 @@ PrefabInstance:
       value: 0.6712611
       objectReference: {fileID: 0}
     - target: {fileID: 1499500213, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
-      propertyPath: m_Alpha
+      propertyPath: m_IgnoreParentGroups
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1626950255, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
@@ -2287,9 +2263,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6800228287496726032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28bb402be0b504e42b0a165862cce631, type: 3}
+  m_Script: {fileID: 11500000, guid: 4afc2293207104140952f885af633aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 671862661}
+  dialogueController: {fileID: 363195510}
+  dialogueCanvas: {fileID: 6800228287496726040}
+  fadeAnimator: {fileID: 6800228287496726034}
+  nameTag: {fileID: 6800228287496726035}
+  storyText: {fileID: 1683790341}
+  textBackground: {fileID: 56159675}
+  speed: 10
 --- !u!95 &6800228287496726034
 Animator:
   serializedVersion: 3
@@ -2315,9 +2299,15 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6800228287496726028}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527499628}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &6800228287496726040 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 1499500213, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6800228287496726028}
+  m_PrefabAsset: {fileID: 0}
