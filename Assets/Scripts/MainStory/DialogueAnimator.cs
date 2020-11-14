@@ -52,7 +52,7 @@ public class DialogueAnimator : MonoBehaviour
             name = "???";
         }
         // add name to log
-        dialogueController.UpdateNametag(name);
+        DataController.UpdateNametag(name);
         StartCoroutine(DoChange(name, boxName, doEffect, onComplete));
     }
 

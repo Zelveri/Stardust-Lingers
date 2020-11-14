@@ -7,7 +7,7 @@ using Yarn.Unity;
 
 public class DataController : MonoBehaviour
 {
-    public static DataController dialogueTracker;
+    public static DataController dataController;
     public static InMemoryVariableStorage variableStorage;
     public DialogueRunner dialogueRunner;
     public BackgroundChangeHandler backgroundChange;
@@ -22,10 +22,10 @@ public class DataController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        dialogueTracker = this;
+        dataController = this;
         dlgUI = dialogueRunner.GetComponent<DialogueUI>();
         variableStorage = GameObject.Find("Variable Storage").GetComponent<InMemoryVariableStorage>();
-        DontDestroyOnLoad(dialogueTracker);
+        DontDestroyOnLoad(dataController);
         lines = new List<string>();
     }
 
@@ -44,12 +44,12 @@ public class DataController : MonoBehaviour
         lineIncomplete = false;
     }
 
-    public void AddLineToTracker(TMPro.TextMeshProUGUI dialogueTextContainer)
+    public static void AddLineToTracker(TMPro.TextMeshProUGUI dialogueTextContainer)
     {
         lines.Add(dialogueTextContainer.text);
     }
 
-    public void AddLineToTracker(string text)
+    public static void AddLineToTracker(string text)
     {
         lines.Add(text);
     }
@@ -70,7 +70,7 @@ public class DataController : MonoBehaviour
         dialogueRunner.StartDialogue(save.currentNode);
     }
 
-    public void UpdateNametag(string text)
+    public static void UpdateNametag(string text)
     {
         AddLineToTracker("\n" + text + ":");
     }

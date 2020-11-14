@@ -31,6 +31,6 @@ public class SaveFileHandler : MonoBehaviour
         SaveState saveData =  DataSaver.loadData<SaveState>("slot" + slot.ToString());
 
         // this will finalize the loading, apply the loaded settingss and will restart the dialogue
-        DataController.dialogueTracker.LoadState(saveData);
+        DataController.dataController.LoadState(saveData);
     }
 }
