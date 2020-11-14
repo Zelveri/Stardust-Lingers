@@ -50,6 +50,13 @@ public class BubbleBehaviour : MonoBehaviour
         return top.rectTransform.rect.height + middle.rectTransform.rect.height + bottom.rectTransform.rect.height;
     }
 
+    public float GetLastHeightDelta()
+    {
+        float delta = top.rectTransform.rect.height + middle.rectTransform.rect.height + bottom.rectTransform.rect.height - oldHeight;
+        oldHeight =  top.rectTransform.rect.height + middle.rectTransform.rect.height + bottom.rectTransform.rect.height;
+        return delta;
+    }
+
     void AdjustBubbleSize()
     {
         var movVect = new Vector3(0, textField.rectTransform.rect.height - middle.rectTransform.rect.height, 0);
@@ -61,8 +68,9 @@ public class BubbleBehaviour : MonoBehaviour
     public void MoveUp(float height)
     {
         var movVect = new Vector3(0, height,0);
-        top.rectTransform.Translate(movVect);
-        middle.rectTransform.Translate(movVect);
-        bottom.rectTransform.Translate(movVect);
+        gameObject.transform.Translate(movVect);
+        //top.rectTransform.Translate(movVect);
+        //middle.rectTransform.Translate(movVect);
+        //bottom.rectTransform.Translate(movVect);
     }
 }

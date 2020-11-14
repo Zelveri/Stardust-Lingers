@@ -8,6 +8,15 @@ TODO save gamestate
 TODO load savegame:
     -> on load click: fade out, load game and fade back in on new gamestate
 
-FIXME clear text before transitioning!
-
 FIXME log scene zoomed in??
+
+TODO do save laoding script for every gameplay scene! remove BackgroundHandler from DataController
+
+TODO for phone:
+    -> on scene switch: synchronize the variable storages or use only the main one
+    x -> implement bubble shifting after text finishes
+    -> add mask so that bubbles dont leave phonescreen ( unloading necessary? )
+    x -> implement side switching for nametag command (should be no problem to use identical commands, is different dialogue runner)
+    -> copy transition fadeIn/fadeOut code to new scene for command
+    -> implement image messaging ( just show "fullscreen" on phone unitl click? with some border )
+    -> advancing button needs design
