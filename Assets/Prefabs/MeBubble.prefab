@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -850, y: -385.65}
-  m_SizeDelta: {x: 400, y: 100}
+  m_SizeDelta: {x: 400, y: 40.22}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4422816201799119994
 CanvasRenderer:
@@ -125,10 +125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958240776b000ba45b07c8d64d2fa8b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textField: {fileID: 4422816203595638126}
+  container: {fileID: 4422816203595638120}
   top: {fileID: 4422816202679571927}
   middle: {fileID: 4422816201799119989}
   bottom: {fileID: 4422816203693381804}
+  isMeBubble: 1
 --- !u!1 &4422816202679571921
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -850.0003, y: -287.75}
+  m_AnchoredPosition: {x: -850.0003, y: -346.1}
   m_SizeDelta: {x: 440.89, y: 30.6}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4422816202679571924
@@ -214,8 +215,9 @@ GameObject:
   - component: {fileID: 4422816203595638127}
   - component: {fileID: 4422816203595638126}
   - component: {fileID: 4422816203595638124}
+  - component: {fileID: 2796990122803063595}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,6 +374,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &2796990122803063595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4422816203595638120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: 40.22
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &4422816203693381806
 GameObject:
   m_ObjectHideFlags: 0

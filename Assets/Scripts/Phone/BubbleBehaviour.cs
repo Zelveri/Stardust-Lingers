@@ -6,43 +6,41 @@ using UnityEngine.UI;
 
 public class BubbleBehaviour : MonoBehaviour
 {
-    public TMPro.TextMeshProUGUI textField;
+    public GameObject container;
     public Image top;
     public Image middle;
     public Image bottom;
+    public bool isMeBubble;
+
+    Graphic content;
 
     string text = "";
     float oldHeight = 0;
 
+    private void Awake()
+    {
+        content = container.GetComponent<Graphic>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        UpdateText("");
+        UpdateText(" ");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            StartCoroutine(TestText());
-        }
-    }
-
-    IEnumerator TestText()
-    {
-        while (true)
-        {
-            text += "a\n";
-            UpdateText(text);
-            yield return new WaitForSeconds(0.5f);
-        }
+        AdjustBubbleSize();
     }
 
     public void UpdateText(string text)
     {
-        textField.text = text;
-        AdjustBubbleSize();
+        if (content.GetType().Equals(typeof(TextMeshProUGUI)))
+        {
+            ((TextMeshProUGUI)content).text = text;
+        }
+        //AdjustBubbleSize();
     }
 
     public float GetHeight()
@@ -57,10 +55,10 @@ public class BubbleBehaviour : MonoBehaviour
         return delta;
     }
 
-    void AdjustBubbleSize()
+    public void AdjustBubbleSize()
     {
-        var movVect = new Vector3(0, textField.rectTransform.rect.height - middle.rectTransform.rect.height, 0);
-        middle.rectTransform.sizeDelta = new Vector2(middle.rectTransform.rect.width, textField.rectTransform.rect.height);
+        var movVect = new Vector3(0, content.rectTransform.rect.height - middle.rectTransform.rect.height, 0);
+        middle.rectTransform.sizeDelta = new Vector2(middle.rectTransform.rect.width, content.rectTransform.rect.height);
     
         top.rectTransform.Translate(movVect);
     }
@@ -72,5 +70,60 @@ public class BubbleBehaviour : MonoBehaviour
         //top.rectTransform.Translate(movVect);
         //middle.rectTransform.Translate(movVect);
         //bottom.rectTransform.Translate(movVect);
+    }
+
+    public void ShowImage(string filename)
+    {
+        DestroyImmediate(content.GetComponent<ContentSizeFitter>());
+        DestroyImmediate(content.GetComponent<LayoutElement>());
+        DestroyImmediate(content);
+        content.material = content.defaultMaterial;
+        content = container.AddComponent<Image>();
+        var arf = container.AddComponent<AspectRatioFitter>();
+       
+        ((Image)content).preserveAspect = true;
+        ((Image)content).sprite = Resources.Load<Sprite>("catimage");
+        arf.aspectMode = AspectRatioFitter.AspectMode.WidthControlsHeight;
+        arf.aspectRatio = ((Image)content).sprite.rect.width / ((Image)content).sprite.rect.height;
+        ((Image)content).rectTransform.sizeDelta = new Vector2(400f, 100f);
+    }
+
+    public string GetContent()
+    {
+        if (content.GetType().Equals(typeof(TextMeshProUGUI)))
+        {
+            return ((TextMeshProUGUI)content).text;
+        }
+        else
+        {
+            return ((Image)content).sprite.name;
+        }
+    }
+
+    public bool ContentIsImagePath()
+    {
+        if (content.GetType().Equals(typeof(TextMeshProUGUI)))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public float GetYPos()
+    {
+        return gameObject.transform.position[1];
+    }
+
+    public void SetYPos(float pos)
+    {
+        
+    }
+
+    public bool IsMeBubble()
+    {
+        return isMeBubble;
     }
 }

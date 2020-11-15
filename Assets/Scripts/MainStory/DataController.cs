@@ -44,12 +44,12 @@ public class DataController : MonoBehaviour
         lineIncomplete = false;
     }
 
-    public static void AddLineToTracker(TMPro.TextMeshProUGUI dialogueTextContainer)
+    public void AddLineToTracker(TMPro.TextMeshProUGUI dialogueTextContainer)
     {
         lines.Add(dialogueTextContainer.text);
     }
 
-    public static void AddLineToTracker(string text)
+    public void AddLineToTracker(string text)
     {
         lines.Add(text);
     }
@@ -70,20 +70,20 @@ public class DataController : MonoBehaviour
         dialogueRunner.StartDialogue(save.currentNode);
     }
 
-    public static void UpdateNametag(string text)
+    public void UpdateNametag(string text)
     {
         AddLineToTracker("\n" + text + ":");
     }
 
-    public void UpdateCurrentNode()
+    public void UpdateCurrentNode(string node)
     {
-        currentNode = dialogueRunner.CurrentNodeName;
+        currentNode = node;
         AddLineToTracker("-------------------\nScene " + currentNode +":");
     }
 
-    public void UpdateFinishedNode()
+    public void UpdateFinishedNode(string node)
     {
-        prevNode = dialogueRunner.CurrentNodeName;
+        prevNode = node;
         AddLineToTracker("-------------------");
     }
 

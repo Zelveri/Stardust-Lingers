@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using System.Linq;
+using UnityEngine.UI;
+using System;
 
 public class LineUpdateHandler : MonoBehaviour
 {
-    List<BubbleBehaviour> meBubbles;
-    List<BubbleBehaviour> themBubbles;
+    List<BubbleBehaviour> bubbles;
     BubbleBehaviour curBubble;
+    DataController dataController;
 
     public DialogueRunner dialogueRunner;
     public GameObject meBubblesTemplate;
@@ -17,10 +19,6 @@ public class LineUpdateHandler : MonoBehaviour
 
     string activeSide = "me";
 
-    public string text
-    {
-        set { UpdateLine(value); }
-    }
     //public string nametag
     //{
     //    set { 
@@ -30,9 +28,10 @@ public class LineUpdateHandler : MonoBehaviour
 
     private void Awake()
     {
+        dataController = DataController.dataController;
         dialogueRunner.AddCommandHandler("nametag", SwitchSides);
-        meBubbles = new List<BubbleBehaviour>();
-        themBubbles = new List<BubbleBehaviour>();
+        dialogueRunner.AddCommandHandler("photo", ShowImage);
+        bubbles = new List<BubbleBehaviour>();
     }
 
     // Start is called before the first frame update
@@ -44,20 +43,22 @@ public class LineUpdateHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateBubblesPosition();
     }
 
     public void UpdateLine(string text)
     {
         curBubble.UpdateText(text);
-        UpdateBubblesPosition();
+        //UpdateBubblesPosition();
     }
 
     void UpdateBubblesPosition()
     {
         float height = curBubble.GetLastHeightDelta();
-        meBubbles?.ForEach(bubble => bubble.MoveUp(height));
-        themBubbles?.ForEach(bubble => bubble.MoveUp(height));
+        //if (height > 0)
+        //{
+            bubbles?.ForEach(bubble => bubble.MoveUp(height));
+        //}
     }
 
     public void DialogueStart()
@@ -67,9 +68,10 @@ public class LineUpdateHandler : MonoBehaviour
 
     public void LineStart()
     {
+        if (curBubble != null) bubbles.Add(curBubble);
         // create new bubble
         curBubble = CreateNewBubble();
-        UpdateBubblesPosition();
+        //UpdateBubblesPosition();
     }
 
     BubbleBehaviour CreateNewBubble()
@@ -90,15 +92,7 @@ public class LineUpdateHandler : MonoBehaviour
 
     public void LineEnd()
     {
-        curBubble.AdjustBubbleSize();
-        if (activeSide == "me")
-        {
-            meBubbles.Add(curBubble);
-        }
-        else
-        {
-            themBubbles.Add(curBubble);
-        }
+        //bubbles.Add(curBubble);
     }
 
     public void SwitchSides(string[] pars)
@@ -112,5 +106,53 @@ public class LineUpdateHandler : MonoBehaviour
             activeSide = "them";
         }
        // return activeSide;
+    }
+
+    public void ShowImage(string[] pars)
+    {
+
+        // create new bubble
+        LineStart();
+        curBubble.ShowImage(pars[0]);
+    }
+
+    public List<BubbleData> GetSerializableBubbles()
+    {
+        List<BubbleData> saveBubbles = new List<BubbleData>();
+        foreach(var bubble in bubbles)
+        {
+            saveBubbles.Add(new BubbleData(bubble));
+        }
+        saveBubbles.Add(new BubbleData(curBubble));
+
+        return saveBubbles;
+    }
+
+    public void LoadBubbles(List<BubbleData> data)
+    {
+        // clears all existing bubbles and loads the one from file
+        bubbles.ForEach(b => Destroy(b.gameObject));
+        foreach(var b in data)
+        {
+            BubbleBehaviour bb;
+            if (b.isMeBubble)
+            {
+                bb = Instantiate(meBubblesTemplate).GetComponent<BubbleBehaviour>();
+            }
+            else
+            {
+                bb = Instantiate(themBubblesTemplate).GetComponent<BubbleBehaviour>();
+            }
+            bb.SetYPos(b.posy);
+            if (b.contentIsImagePath)
+            {
+                bb.ShowImage(b.content);
+            }
+            else
+            {
+                bb.UpdateText(b.content);
+            }
+            bubbles.Add(bb);
+        }
     }
 }

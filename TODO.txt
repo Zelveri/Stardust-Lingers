@@ -3,20 +3,27 @@ TODO log of dialogue, with button
 
 TODO save gamestate
     -> playerprefs for filenames and general settings
+    -> little loading animation?
     -> access to variable storage / dialogueRunner simply with GameObject.Find("Variable Storage") in save handler? (bc scene not unloaded)
 
 TODO load savegame:
     -> on load click: fade out, load game and fade back in on new gamestate
+    -> decouple datacontroller and dialogue runner interface, interface then with runner as prefab
 
-FIXME log scene zoomed in??
+FIXME log scene:
+    -> make dialogue invisible
+    -> weird zoom??
 
 TODO do save laoding script for every gameplay scene! remove BackgroundHandler from DataController
 
 TODO for phone:
     -> on scene switch: synchronize the variable storages or use only the main one
     x -> implement bubble shifting after text finishes
-    -> add mask so that bubbles dont leave phonescreen ( unloading necessary? )
+    x -> add mask so that bubbles dont leave phonescreen ( unloading necessary? )
     x -> implement side switching for nametag command (should be no problem to use identical commands, is different dialogue runner)
     -> copy transition fadeIn/fadeOut code to new scene for command
-    -> implement image messaging ( just show "fullscreen" on phone unitl click? with some border )
+    x -> implement image messaging ( just show "fullscreen" on phone unitl click? with some border )
     -> advancing button needs design
+    x -> DataController insert into LineUpdateHandler Script with DataController.dataController
+    -> need to save bubbles, too
+    -> adjust Log spacing
