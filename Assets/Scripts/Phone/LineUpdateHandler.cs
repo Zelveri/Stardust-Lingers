@@ -13,6 +13,7 @@ public class LineUpdateHandler : MonoBehaviour
     public DialogueRunner dialogueRunner;
     public GameObject meBubblesTemplate;
     public GameObject themBubblesTemplate;
+    public GameObject phoneScreenPanel;
 
     string activeSide = "me";
 
@@ -77,18 +78,19 @@ public class LineUpdateHandler : MonoBehaviour
         if (activeSide == "me")
         {
             bb = Instantiate(meBubblesTemplate).GetComponent<BubbleBehaviour>();
-            bb.transform.SetParent(gameObject.transform);
+
         }
         else
         {
             bb = Instantiate(themBubblesTemplate).GetComponent<BubbleBehaviour>();
         }
-        bb.transform.SetParent(gameObject.transform);
+        bb.transform.SetParent(phoneScreenPanel.transform);
         return bb;
     }
 
     public void LineEnd()
     {
+        curBubble.AdjustBubbleSize();
         if (activeSide == "me")
         {
             meBubbles.Add(curBubble);
