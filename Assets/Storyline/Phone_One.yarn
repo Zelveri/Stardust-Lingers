@@ -1,7 +1,7 @@
 title: Start
 tags: 
 colorID: 0
-position: -1295,-1559
+position: -1295,-1558
 ---
 << transition Fade_In >>
 << effect Static >>
@@ -16,6 +16,9 @@ tags:
 colorID: 0
 position: -1700,-1411
 ---
+<< nametag Mira >>
+Hey!
+<< nametag Trevis >>
 Where are you right now?
 << nametag Mira >>
 Just heading back from work. It's nice and chilly out.
@@ -36,8 +39,11 @@ Look who I met at work today
 title: Who
 tags: 
 colorID: 0
-position: -944,-1493
+position: -945,-1493
 ---
+<< nametag Mira >>
+Who is this?
+<< nametag Trevis >>
 Very funny. I know it's you lol
 << nametag Mira >>
 Yea, you got me.
@@ -56,6 +62,7 @@ colorID: 0
 position: -1220,-1304
 ---
 << nametag Mira>> 
+Same as usual.
 Just a bit boring, really.
 I'd much rather be writing for my book than for the topics they tend to focus on.
 << nametag Trevis >>
@@ -74,6 +81,8 @@ tags:
 colorID: 0
 position: -915,-1145
 ---
+<< nametag Mira >> 
+Could be better...
 My supervisor was on my case today about my choice of words in the piece about "Grimoire Oblique"
 Apparently she wanted me to help sell the film, not expose it as the failure it is.
 << nametag Trevis >>
@@ -98,6 +107,7 @@ colorID: 0
 position: -1868,-1132
 ---
 << nametag Mira >>
+Aww
 Such a cutie
 I love calico cats, they look so pretty
 She looks pretty spooked though
@@ -118,8 +128,11 @@ So hows the new place
 title: Hold
 tags: 
 colorID: 0
-position: -1555,-1137
+position: -1556,-1137
 ---
+<< nametag Mira >>
+You shouldn't hold it like that...
+<< nametag Trevis >>
 It was just for the photo
 I thought that was how cat moms held their babies?
 << nametag Mira>>
@@ -132,8 +145,8 @@ Sheesh its not that big a deal lol
 Guess I'll keep that in mind though
 ...
 So how's the new place
-[[ It's beautiful |Beautiful]]
-[[ It's a little lonely |Lonely]]
+[[ It's beautiful. |Beautiful]]
+[[ It's a little lonely. |Lonely]]
 ===
 title: Beautiful
 tags: 
@@ -141,6 +154,7 @@ colorID: 0
 position: -1944,-880
 ---
 << nametag Mira >>
+Its beautiful.
 Every day I wake up its as though I'm still in a dream.
 The air feels so pure, and there's just so much more green than I'm used to.
 Along with all the other lovely hues I come across on my walks.
@@ -164,6 +178,8 @@ tags:
 colorID: 0
 position: -1485,-880
 ---
+<< nametag Mira >>
+Its a little lonely.
 << nametag Trevis >>
 Lonely, huh
 I could change that
@@ -185,7 +201,8 @@ colorID: 0
 position: -1876,-625
 ---
 << nametag Mira >>
-It's exciting that its an actual possibility now.
+I have. It sounds nice.
+It's also exciting that its an actual possibility now.
 But I still feel nervous about it.
 Isn't it a little soon?
 << nametag Trevis >>
@@ -219,6 +236,8 @@ tags:
 colorID: 0
 position: -1598,-625
 ---
+<< nametag Mira >>
+I don't think we should yet.
 << nametag Trevis >>
 You don't think?
 Why don't you think, Mira?
