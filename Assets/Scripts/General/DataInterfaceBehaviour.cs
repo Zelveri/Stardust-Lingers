@@ -11,7 +11,7 @@ public class DataInterfaceBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        dataController = GameManager.dataController;
+        dataController = DataController.dataController;
     }
 
     public void OnLineStart()

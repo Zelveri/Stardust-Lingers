@@ -7,6 +7,7 @@ using Yarn.Unity;
 
 public class DataController : MonoBehaviour
 {
+    public static DataController dataController;
     public static InMemoryVariableStorage variableStorage;
     public DialogueRunner dialogueRunner;
     public BackgroundChangeHandler backgroundChange;
@@ -19,10 +20,12 @@ public class DataController : MonoBehaviour
     static bool lineIncomplete = true;
 
     // Start is called before the first frame update
-    public void Awake()
+    void Awake()
     {
-        dlgUI = SingletonDialogueUI.Instance;
-        variableStorage = SingletonVariableStorage.Instance;
+        dataController = this;
+        dlgUI = dialogueRunner.GetComponent<DialogueUI>();
+        variableStorage = GameObject.Find("Variable Storage").GetComponent<InMemoryVariableStorage>();
+        DontDestroyOnLoad(dataController);
         lines = new List<string>();
     }
 

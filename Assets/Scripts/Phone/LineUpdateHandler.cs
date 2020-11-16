@@ -21,7 +21,7 @@ public class LineUpdateHandler : MonoBehaviour
 
     private void Awake()
     {
-        dataController = GameManager.dataController;
+        dataController = DataController.dataController;
         dialogueRunner.AddCommandHandler("nametag", SwitchSides);
         dialogueRunner.AddCommandHandler("photo", ShowImage);
         bubbles = new List<BubbleBehaviour>();
