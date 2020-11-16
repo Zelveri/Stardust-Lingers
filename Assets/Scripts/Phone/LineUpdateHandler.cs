@@ -19,25 +19,12 @@ public class LineUpdateHandler : MonoBehaviour
 
     string activeSide = "me";
 
-    //public string nametag
-    //{
-    //    set { 
-    //        if(value.Contains("nametag")) SwitchSides(); 
-    //    }
-    //}
-
     private void Awake()
     {
         dataController = DataController.dataController;
         dialogueRunner.AddCommandHandler("nametag", SwitchSides);
         dialogueRunner.AddCommandHandler("photo", ShowImage);
         bubbles = new List<BubbleBehaviour>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -49,16 +36,14 @@ public class LineUpdateHandler : MonoBehaviour
     public void UpdateLine(string text)
     {
         curBubble.UpdateText(text);
-        //UpdateBubblesPosition();
     }
 
     void UpdateBubblesPosition()
     {
+        // get height change of active bubble since last update
         float height = curBubble.GetLastHeightDelta();
-        //if (height > 0)
-        //{
-            bubbles?.ForEach(bubble => bubble.MoveUp(height));
-        //}
+        // move all other bubbles up by that amount
+        bubbles?.ForEach(bubble => bubble.MoveUp(height));
     }
 
     public void DialogueStart()
@@ -68,15 +53,17 @@ public class LineUpdateHandler : MonoBehaviour
 
     public void LineStart()
     {
+        // store previous bubble
         if (curBubble != null) bubbles.Add(curBubble);
         // create new bubble
         curBubble = CreateNewBubble();
-        //UpdateBubblesPosition();
     }
 
     BubbleBehaviour CreateNewBubble()
     {
+        // create new text bubble
         BubbleBehaviour bb;
+        // select if bubble is for phone user (me, Mira) or chat partner (them, Trevis)
         if (activeSide == "me")
         {
             bb = Instantiate(meBubblesTemplate).GetComponent<BubbleBehaviour>();
@@ -86,6 +73,7 @@ public class LineUpdateHandler : MonoBehaviour
         {
             bb = Instantiate(themBubblesTemplate).GetComponent<BubbleBehaviour>();
         }
+        // seta phone screen as partent for masking
         bb.transform.SetParent(phoneScreenPanel.transform);
         return bb;
     }
@@ -97,6 +85,7 @@ public class LineUpdateHandler : MonoBehaviour
 
     public void SwitchSides(string[] pars)
     {
+        // change the typing side
         if (pars[0] == "Mira")
         {
             activeSide = "me";
@@ -105,13 +94,11 @@ public class LineUpdateHandler : MonoBehaviour
         {
             activeSide = "them";
         }
-       // return activeSide;
     }
 
     public void ShowImage(string[] pars)
     {
-
-        // create new bubble
+        // show image instead of text
         LineStart();
         curBubble.ShowImage(pars[0]);
     }

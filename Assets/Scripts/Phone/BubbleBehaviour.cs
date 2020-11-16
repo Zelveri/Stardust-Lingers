@@ -74,15 +74,21 @@ public class BubbleBehaviour : MonoBehaviour
 
     public void ShowImage(string filename)
     {
+        // destroy text field and content size fitter
+        // dont need it for image
         DestroyImmediate(content.GetComponent<ContentSizeFitter>());
         DestroyImmediate(content.GetComponent<LayoutElement>());
         DestroyImmediate(content);
         content.material = content.defaultMaterial;
+
+        // add image to the gamobobject
         content = container.AddComponent<Image>();
+        // add aspect ratio fitter for ptoper image sizing
         var arf = container.AddComponent<AspectRatioFitter>();
        
+        // load image and set apripriate width / height and aspect
         ((Image)content).preserveAspect = true;
-        ((Image)content).sprite = Resources.Load<Sprite>("catimage");
+        ((Image)content).sprite = Resources.Load<Sprite>("Artwork/Photos/"+filename);
         arf.aspectMode = AspectRatioFitter.AspectMode.WidthControlsHeight;
         arf.aspectRatio = ((Image)content).sprite.rect.width / ((Image)content).sprite.rect.height;
         ((Image)content).rectTransform.sizeDelta = new Vector2(400f, 100f);

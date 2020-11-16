@@ -6,6 +6,7 @@ using UnityEngine;
 [Serializable]
 public class BubbleData
 {
+    // structure to store text bubbles
     public float posy;
     public string content;
     public bool contentIsImagePath = false;
