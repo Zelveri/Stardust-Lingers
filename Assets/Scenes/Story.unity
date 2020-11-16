@@ -1080,6 +1080,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Transition
       objectReference: {fileID: 0}
+    - target: {fileID: 2166000653590635338, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000653853157649, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000653858165602, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42cf428b8912c5b408551d6ca63efd1b, type: 3}
 --- !u!1001 &6125552019430881683
