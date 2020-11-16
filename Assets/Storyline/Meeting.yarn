@@ -4,7 +4,7 @@ colorID: 0
 position: 543,106
 ---
 << transition Fade_In >>
-<< backdrop Bedroom_Day >>
+<< backdrop Bedroom_Day_A >>
 << nametag Mira >> 
 My thoughts rose to awareness, the disorienting fog shrouding them slowly clearing with the warm light that cast itself over me.
 I kept my eyes closed as I stretched, realizing with a soft smile that I had ended up sleeping sideways.
@@ -43,8 +43,18 @@ tags:
 colorID: 0
 position: 787,353
 ---
-<< transition Slide >> 
-<< backdrop Door_Bunny >>
+<< transition Slide >>
+<< backdrop Cabin_Day >>
+<< sprite Bunny Open_Neutral >>
+//<< backdrop Door_Bunny >>
 "Oh my!"
 "Who are you, little one?"
+The bunny sitting before me had raised its paw, tilting its head in curiousity.
+I crouched down, making sure not to make any sudden movements as I reached out and held my hand in front of its face.
+There was a gentle ticklish feeling as it sniffed my hand, stepping closer to do so.
+"Aww, you're so precious. Wanna come in?"
+"Its a bit of a mess, but I'd appreciate your company."
+There was a series of small motions. If I didn't know any better, I would have thought it had nodded at me in response.
+Regardless, I took the bunny's relaxed attitude as confirmation and opened the door fully to let it in.
+It hurried in immediately, ears flapping along with its hops.
 ===
