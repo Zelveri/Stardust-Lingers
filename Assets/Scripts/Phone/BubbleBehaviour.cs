@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class BubbleBehaviour : MonoBehaviour
 {
     public GameObject container;
-    public Image top;
-    public Image middle;
-    public Image bottom;
+    public MaskableGraphic top;
+    public MaskableGraphic middle;
+    public MaskableGraphic bottom;
     public bool isMeBubble;
 
     Graphic content;
