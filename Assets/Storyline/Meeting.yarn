@@ -1,7 +1,7 @@
 title: Start
 tags: 
 colorID: 0
-position: 543,106
+position: 279,14
 ---
 << transition Fade_In >>
 << backdrop Bedroom_Day_A >>
@@ -15,7 +15,7 @@ I nearly tripped over some unknown object on the way there, but part of me would
 title: Sound
 tags: 
 colorID: 0
-position: 537,352
+position: 530,7
 ---
 << transition Slide >>
 << backdrop Livingroom_Day_A >>
@@ -41,7 +41,7 @@ Until I look down and see it peeking back at me.
 title: Visitor
 tags: 
 colorID: 0
-position: 787,353
+position: 789,8
 ---
 << transition Slide >>
 << backdrop Cabin_Day >>
@@ -65,10 +65,39 @@ Closing the door, I followed with a soft laugh.
 title: Bonding
 tags: 
 colorID: 0
-position: 1029,355
+position: 275,256
 ---
 << transition Slide >>
 << transition Livingroom_Day_A >>
 << sprite Bunny Open_Open >> 
 "Welcome home, bunny. Make sure to watch your step."
+It wiggled its nose and stood up on its hind legs, surveying the landscape of scattered belongings.
+I left it to its exploration and made my way toward the fridge.
+[[Kitchen]]
+===
+title: Kitchen
+tags: 
+colorID: 0
+position: 545,263
+---
+<< transition Cross_Fade >>
+<< backdrop Kitchen_Day_Open >>
+"Ugh!"
+I scrunched up my face in disgust. There's no way that milk wasn't expired.
+The rotting lettuce heads by it weren't doing too well either. I considered giving them to the bunny, but it would be cruel to welcome a guest with possible food poisoning.
+Dumping it all right into the trash with a thump, I return my attention to the other items inside.
+There were a few apples which looked salvagable, but not much else.
+Checking through the cupboards, I was met with a can of saltine crackers and a range of cereals. Besides that, a decent amount of jars and canned foods.
+<< transition crossfade >>
+<< backdrop Kitchen_Day_Shut >> 
+I prepared a plate of the crackers, slashing layers of jam across them. Each mark signaled one's fate as a sacrifice to my hunger.
+Slicing up a duo of apples to go alongside them, I sighed in relief at the fact that no horrid worm creatures were revealed in the process.
+[[Sharing]]
+===
+title: Sharing
+tags: 
+colorID: 0
+position: 776,256
+---
+Empty Text
 ===
