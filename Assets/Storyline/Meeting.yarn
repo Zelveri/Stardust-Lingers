@@ -41,7 +41,7 @@ Until I look down and see it peeking back at me.
 title: Visitor
 tags: 
 colorID: 0
-position: 789,8
+position: 789,7
 ---
 << transition Slide >>
 << backdrop Cabin_Day >>
@@ -60,9 +60,9 @@ Regardless, I took the bunny's relaxed attitude as confirmation and opened the d
 It hurried in immediately, ears flapping along with its hops.
 << sprite Bunny Shut_Smile Fade_Out >>
 Closing the door, I followed with a soft laugh.
-[[Bonding]]
+[[Welcome]]
 ===
-title: Bonding
+title: Welcome
 tags: 
 colorID: 0
 position: 275,256
@@ -78,10 +78,11 @@ I left it to its exploration and made my way toward the fridge.
 title: Kitchen
 tags: 
 colorID: 0
-position: 545,263
+position: 529,256
 ---
 << transition Cross_Fade >>
 << backdrop Kitchen_Day_Open >>
+<< sprite Bunny None >>
 "Ugh!"
 I scrunched up my face in disgust. There's no way that milk wasn't expired.
 The rotting lettuce heads by it weren't doing too well either. I considered giving them to the bunny, but it would be cruel to welcome a guest with possible food poisoning.
@@ -97,19 +98,26 @@ Slicing up a duo of apples to go alongside them, I sighed in relief at the fact 
 title: Sharing
 tags: 
 colorID: 0
-position: 776,256
+position: 776,252
 ---
 << transition Cross_Fade >>
 << backdrop Livingroom_Day_A >>
 "Bunbun? Where'd you go?"
+<< sprite Bunny Open_Neutral >>
 A brush against my leg.
 "There you are! C'mon, let's go sit."
+<< sprite Bunny Open_Smile >>
 I put the plate on the couch and held out my arms toward the bunny, who seemed to understand and hopped closer to be picked up.
-Lifting the soft bundle of cuteness, I sat down and began to pick away at my plate as I pet it with my spare hand.
+Lifting the soft bundle of cuteness, I sat us down and began to pick away at my plate as I pet it with my spare hand.
+<< sprite Bunny Open_Open >>
 It's head ducked underneath my arm and leaned toward the plate.
 "Aww, are you hungry too?"
 "Here, try this."
-I presented to it a slice of apple. Eagerly, it nibbled away at it, brushing its mouth against me. Eventually, it transitioned into licking my palm.
+<< sprite Bunny None >>
+<< transition Fade_Out >>
+<< transition Fade_In>> 
+<< backdrop Feeding >>
+I presented to it a slice of apple. Eagerly, it munched away at it, brushing its mouth against me. Eventually, it transitioned into licking my palm.
 I let out a soft gasp.
 Feeling my heart swell with affection, I wondered why it was so trusting. Actually, bunnies like this don't usually live in the wild, do they?
 Perhaps it had been abandoned?
@@ -117,4 +125,18 @@ The thought of dropping such a sweetie out alone in the woods was baffling. Who 
 But here it was, having appeared before my doorstep. If it was looking for a new home, it certainly succeeded.
 I vowed to make this place suitable for the both of us.
 Before that, there was still an unfinished matter to deal with. A matter that I knew would gnaw at my mind relentlessly, removing any feeling of comfort that would allow this place to feel like the dream I'd long been chasing.
+I watched in a trance, smiling as it made its way through a second slice.
+<< transition Fade_Out >>
+<< transition Fade_In>> 
+<< backdrop Livingroom_Day_A >> 
+<< sprite Bunny Open_Blep >> 
+Once it had its fill of licks and tried to nose its way to what remained on the plate, I lifted the food out of range with a giggle.
+"I think that's enough."
+"As sweet as you are, you should be careful about having too much sugar.""
+<< sprite Bunny Lid_Neutral >> 
+It huffed, seemingly quite annoyed at the rejection, and promptly jumped off my lap.
+Immediately feeling guilty, I was tempted to offer more after all, but sternly reminded myself that it was only for its own good.
+Hah. If only I held the same amount of care toward my own diet.
+<<sprite Bunny Lid_Neutral Fade_Out >>
+I watched it wander off and sighed. It was time to begin the search.
 ===
