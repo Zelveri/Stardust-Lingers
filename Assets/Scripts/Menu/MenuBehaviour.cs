@@ -27,7 +27,7 @@ public class MenuBehaviour : MonoBehaviour
     public void OnReturnClick()
     {
         SceneController controller = GameObject.Find("SceneController").GetComponent<SceneController>();
-        controller.ReturnToMain();
+        controller.ReturnToStory();
     }
 
     public void OnGearClick()

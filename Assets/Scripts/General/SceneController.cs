@@ -13,14 +13,20 @@ public class SceneController : MonoBehaviour
     {
         main=0,
         Menus,
-        Log
+        Log,
+        Story,
+        Phone,
+        Meeting
     }
 
     static Scenes CurActiveScene = Scenes.main;
+    Scenes OldScene = 0;
 
     private void Awake()
     {
         //dialogue = GameObject.Find("Dialogue Runner").GetComponent<DialogueRunner>().Dialogue;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
     }
     // Start is called before the first frame update
     void Start()
@@ -31,79 +37,146 @@ public class SceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(CurActiveScene == Scenes.main)
-            {
-                SwitchToScene(Scenes.Menus);
-            }
-            else
-            {
-                ReturnToMain();
-            }
-        }
-       // if (Input.GetKeyUp(KeyCode.Escape)) keyDown = false;
+        
+    }
 
-        if (Input.GetKeyDown(KeyCode.L) && (CurActiveScene == Scenes.main))
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.buildIndex >= (int)Scenes.Story)
         {
-            SwitchToScene(Scenes.Log);
+            GameManager.dialogueRunner.StartDialogue();
         }
     }
 
+    public void StartStory()
+    {
+        ReturnToStory();
+        GameManager.dialogueRunner.startNode = "Start";
+        SceneLoad(Scenes.Story);
+    }
+
+    public void ScenePhone()
+    {
+        ReturnToStory();
+        GameManager.dialogueRunner.startNode = "Phone_Start";
+        SceneLoad(Scenes.Phone);
+    }
+
+
     // returns to previous scene
-    public void ReturnToMain()
-    {        
-        if(CurActiveScene != Scenes.main)
+    public void ReturnToStory()
+    {
+        if (CurActiveScene < Scenes.Story && CurActiveScene > 0)
         {
             SceneManager.UnloadSceneAsync((int)CurActiveScene);
             GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = true;
             Time.timeScale = 1;
             //dialogue.Continue();
-            CurActiveScene = Scenes.main;
+            CurActiveScene = OldScene;
         }
     }
 
+    /// <summary>
+    /// Toggles the Menus Scene
+    /// </summary>
+    public void ToggleMenu()
+    {
+        if (CurActiveScene >= Scenes.Story)
+        {
+            OverlaySceneLoad(Scenes.Menus);
+        }
+        else
+        {
+            ReturnToStory();
+        }
+    }
+
+    /// <summary>
+    /// Will open the log if current scene is not a menu scene
+    /// </summary>
+    public void TryOpenLog()
+    {
+        if (CurActiveScene >= Scenes.Story)
+        {
+            OverlaySceneLoad(Scenes.Log);
+        }
+    }
+
+
+    /// <summary>
+    /// Prepare current scene for additional scene load, by disabling Audio Listener
+    /// </summary>
     void DoScenePreps()
     {
         // disable main scene audio listener
         GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = false;
     }
 
-    public void SwitchToScene(string name)
+    /// <summary>
+    /// Load the given scene
+    /// </summary>
+    /// <param name="scene">scene to load</param>
+    public void SceneLoad(Scenes scene)
+    {
+        if (scene == Scenes.main) { ReturnToStory(); }
+        else
+        {
+            DoScenePreps();
+            //dialogue.Stop
+            SceneManager.LoadScene((int)scene);
+            //SceneManager.UnloadSceneAsync((int)CurActiveScene);
+            CurActiveScene = scene;
+        }
+    }
+
+    /// <summary>
+    /// Load scene additive
+    /// </summary>
+    /// <param name="name">scene to load</param>
+    public void OverlaySceneLoad(string name)
     {
         // parse string to enum
         Scenes scene = (Scenes)Enum.Parse(typeof(Scenes), name);
-        SwitchToScene(scene);
+        OverlaySceneLoad(scene);
     }
 
-    public void SwitchToScene(Scenes scene)
+    /// <summary>
+    /// load scene additive, pause game
+    /// </summary>
+    /// <param name="scene"></param>
+    public void OverlaySceneLoad(Scenes scene)
     {
-        if (scene == Scenes.main) { ReturnToMain(); }
+        if (scene == Scenes.main) { ReturnToStory(); }
         else
         {
             DoScenePreps();
             Time.timeScale = 0; // pause game
             //dialogue.Stop();
+            OldScene = CurActiveScene;
             SceneManager.LoadScene((int)scene, LoadSceneMode.Additive);
             CurActiveScene = scene;
         }
     }
 
-    public void SwitchToScene(int scene)
+    public void OverlaySceneLoad(int scene)
     {
-        SwitchToScene((Scenes)scene);
+        OverlaySceneLoad((Scenes)scene);
     }
 
-    public void ToggleScene(string name)
+    /// <summary>
+    /// toggle additive scene
+    /// </summary>
+    /// <param name="name"></param>
+    public void ToggleOverlayScene(string name)
     {
         var scene = (Scenes)Enum.Parse(typeof(Scenes), name);
         if (CurActiveScene != scene)
         {
-            SwitchToScene(scene);
+            OverlaySceneLoad(scene);
         }
         else
         {
-            ReturnToMain();
+            ReturnToStory();
         }
     }
 }

@@ -12,7 +12,7 @@ public class LineUpdateHandler : MonoBehaviour
     BubbleBehaviour curBubble;
     DataController dataController;
 
-    public DialogueRunner dialogueRunner;
+    DialogueRunner dialogueRunner;
     public GameObject meBubblesTemplate;
     public GameObject themBubblesTemplate;
     public GameObject phoneScreenPanel;
@@ -22,6 +22,8 @@ public class LineUpdateHandler : MonoBehaviour
     private void Awake()
     {
         dataController = GameManager.dataController;
+        dialogueRunner = GameManager.dialogueRunner;
+        dialogueRunner.RemoveCommandHandler("nametag");
         dialogueRunner.AddCommandHandler("nametag", SwitchSides);
         dialogueRunner.AddCommandHandler("photo", ShowImage);
         bubbles = new List<BubbleBehaviour>();
