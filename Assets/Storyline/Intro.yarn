@@ -1,4 +1,4 @@
-title: Start
+title: Start_Intro
 tags: 
 colorID: 0
 position: -1631,-1519
@@ -11,16 +11,16 @@ This time, only shadow shrouded the windows. In a way, that too was comforting.
 It meant that this place had been left perfectly undisturbed.
 Reaching into my bag, I pulled out a brass key. Thankfully, I'd kept the copy safe through all these years. Could never bring myself to get rid of it.
 The reminder of regret was now only fueling a sense of strange satisfaction as I opened up the door after a few hurried jiggles.
-[[Livingroom]]
+[[Intro_Livingroom]]
 ===
-title: Next
+title: Next_Ignore
 tags: 
 colorID: 0
 position: -1375,-953
 ---
 //Phone scene, first night, follows directly after.
 ===
-title: Notes
+title: Notes_Ignore
 tags: 
 colorID: 0
 position: -1916,-1152
@@ -35,7 +35,7 @@ position: -1916,-1152
 //Used for determining the name shown above the dialogue box.
 //Ideally it should change the appearance depending on who is speaking, by color.
 ===
-title: Livingroom
+title: Intro_Livingroom
 tags: 
 colorID: 0
 position: -1626,-1267
@@ -50,12 +50,12 @@ I briefly considered starting right away, but...
 After the effort it took to get here, it would be best to rest.
 I'd rather not have my back screaming at me if I happened to pass out on the floor.
 Comforted by the fact that I had plenty of time to search, I stepped carefully over the clutter and made my way to bed.
-[[Bedroom]]
+[[Intro_Bedroom]]
 ===
-title: Bedroom
+title: Intro_Bedroom
 tags: 
 colorID: 0
-position: -1327,-1263
+position: -1327,-1264
 ---
 << transition Slide >>
 << backdrop Bedroom_Night_A >>
