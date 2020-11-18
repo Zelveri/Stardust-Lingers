@@ -16,7 +16,8 @@ public class SceneController : MonoBehaviour
         Log,
         Story,
         Phone_One,
-        Meeting
+        Meeting,
+        Unknown=999999
     }
 
     static Scenes CurActiveScene = Scenes.main;
@@ -51,21 +52,18 @@ public class SceneController : MonoBehaviour
     public void StartStory()
     {
         ReturnToStory();
-        GameManager.dialogueRunner.startNode = "Start_Intro";
         SceneLoad(Scenes.Story);
     }
 
     public void ScenePhone()
     {
         ReturnToStory();
-        GameManager.dialogueRunner.startNode = "Start_Phone_One";
         SceneLoad(Scenes.Phone_One);
     }
 
     public void SceneMeeting()
     {
         ReturnToStory();
-        GameManager.dialogueRunner.startNode = "Start_Meeting";
         SceneLoad(Scenes.Meeting);
     }
 
@@ -73,10 +71,18 @@ public class SceneController : MonoBehaviour
     {
         try
         {
-            var scene = (Scenes)Enum.Parse(typeof(Scenes), sceneName, true);
-            ReturnToStory();
-            GameManager.dialogueRunner.startNode = "Phone_Start";
-            SceneLoad(scene);
+            Scenes scene;
+            if (Enum.TryParse<Scenes>(sceneName, out scene))
+            {
+                ReturnToStory();
+                SceneLoad(scene);
+            }
+            else
+            {
+                ReturnToStory();
+                Debug.LogWarning("Scene \"" + sceneName +  "\" not registered with the SceneController!");
+                SceneLoad(sceneName);
+            }
         }
         catch(ArgumentException  ex)
         {
@@ -132,6 +138,19 @@ public class SceneController : MonoBehaviour
     {
         // disable main scene audio listener
         GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = false;
+    }
+
+    /// <summary>
+    /// Load the given scene
+    /// </summary>
+    /// <param name="scene">scene to load</param>
+    public void SceneLoad(string scene)
+    {
+        DoScenePreps();
+        //dialogue.Stop
+        SceneManager.LoadScene(scene);
+        //SceneManager.UnloadSceneAsync((int)CurActiveScene);
+        CurActiveScene = Scenes.Unknown;
     }
 
     /// <summary>
