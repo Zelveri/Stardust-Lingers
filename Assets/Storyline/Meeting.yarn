@@ -81,7 +81,7 @@ colorID: 0
 position: 529,256
 ---
 << transition Cross_Fade >>
-<< backdrop Kitchen_Day_Open >>
+<< backdrop Kitchen_Day >>
 << sprite Bunny None >>
 "Ugh!"
 I scrunched up my face in disgust. There's no way that milk wasn't expired.
@@ -89,8 +89,6 @@ The rotting lettuce heads by it weren't doing too well either. I considered givi
 Dumping it all right into the trash with a thump, I return my attention to the other items inside.
 There were a few apples which looked salvagable, but not much else.
 Checking through the cupboards, I was met with a can of saltine crackers and a range of cereals. Besides that, a decent amount of jars and canned foods.
-<< transition crossfade >>
-<< backdrop Kitchen_Day_Shut >> 
 I prepared a plate of the crackers, slashing layers of jam across them. Each mark signaled one's fate as a sacrifice to my hunger.
 Slicing up a duo of apples to go alongside them, I sighed in relief at the fact that no horrid worm creatures were revealed in the process.
 [[Sharing_Meeting]]
