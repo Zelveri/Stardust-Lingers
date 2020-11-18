@@ -736,6 +736,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4587675736292515355, guid: aabaa0cb5e484f84a8ca7c5f33b5fc31,
         type: 3}
+      propertyPath: yarnScripts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587675736292515355, guid: aabaa0cb5e484f84a8ca7c5f33b5fc31,
+        type: 3}
       propertyPath: dialogueContainer
       value: 
       objectReference: {fileID: 8709752699239370715}
@@ -908,6 +913,22 @@ PrefabInstance:
         type: 3}
       propertyPath: onOptionsStart.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587675736292515355, guid: aabaa0cb5e484f84a8ca7c5f33b5fc31,
+        type: 3}
+      propertyPath: startAutomatically
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587675736292515355, guid: aabaa0cb5e484f84a8ca7c5f33b5fc31,
+        type: 3}
+      propertyPath: yarnScripts.Array.data[0]
+      value: 
+      objectReference: {fileID: 2480198943629176163, guid: f828366070b8762429b0373e7ac438aa,
+        type: 3}
+    - target: {fileID: 4587675736292515355, guid: aabaa0cb5e484f84a8ca7c5f33b5fc31,
+        type: 3}
+      propertyPath: startNode
+      value: Start_Phone_One
       objectReference: {fileID: 0}
     - target: {fileID: 6257560733469307964, guid: aabaa0cb5e484f84a8ca7c5f33b5fc31,
         type: 3}
