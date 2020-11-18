@@ -10,7 +10,7 @@ public class YarnCommands : MonoBehaviour
     public BackgroundChangeHandler backgroundHandler;
     public DialogueAnimator dialogueAnimator;
     public TransitionHandler transitionHandler;
-    public DataController dataController;
+    DataController dataController;
 
     public Animator slideAnimator;
     public Animator crossfadeAnimator;
@@ -31,17 +31,26 @@ public class YarnCommands : MonoBehaviour
     private void Awake()
     {
         dialogueRunner = GameManager.dialogueRunner;
+        dataController = GameManager.dataController;
         // All the commands
         // command transition <Type>, takes 1 parameter
         dialogueRunner.AddCommandHandler("transition", Transition);
         // command nametag <Name> <status={"","hidden"}>, takes 1 parameter and 1 optional parameter
-        dialogueRunner.RemoveCommandHandler("nametag");
         dialogueRunner.AddCommandHandler("nametag", NameTag);
         // command backdrop <Filename>, takes 1 parameter
         dialogueRunner.AddCommandHandler("backdrop", Backdrop);
         // command hide/show_dialogue, no parameters
         dialogueRunner.AddCommandHandler("hide_dialogue", HideDialogue);
         dialogueRunner.AddCommandHandler("show_dialogue", ShowDialogue);
+    }
+
+    private void OnDestroy()
+    {
+        dialogueRunner.RemoveCommandHandler("transition");
+        dialogueRunner.RemoveCommandHandler("nametag");
+        dialogueRunner.RemoveCommandHandler("backdrop");
+        dialogueRunner.RemoveCommandHandler("hide_dialogue");
+        dialogueRunner.RemoveCommandHandler("show_dialogue");
     }
 
     void Backdrop(string[] pars, System.Action onComplete)

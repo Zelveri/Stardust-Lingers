@@ -29,6 +29,12 @@ public class LineUpdateHandler : MonoBehaviour
         bubbles = new List<BubbleBehaviour>();
     }
 
+    private void OnDestroy()
+    {
+        dialogueRunner.RemoveCommandHandler("nametag");
+        dialogueRunner.RemoveCommandHandler("photo");
+    }
+
     // Update is called once per frame
     void Update()
     {

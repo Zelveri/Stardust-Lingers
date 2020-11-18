@@ -14,9 +14,6 @@ public class BackgroundChangeHandler : MonoBehaviour
     SpriteRenderer spriteRenderer;
     SpriteRenderer blendHelper;
     public float animationDuration = 1f;
-    public DialogueRunner dialogueRunner;
-    public VariableStorageBehaviour variableStorage;
-    public DataController dialogueTracker;
 
     private void Awake()
     {
@@ -27,14 +24,14 @@ public class BackgroundChangeHandler : MonoBehaviour
     public void ChangeBackdrop(string backdrop, System.Action onComplete)
     //public void ChangeBackdrop(string[] parameters)
     {
-        dialogueTracker.UpdateBackdrop(backdrop);
+        GameManager.dataController.UpdateBackdrop(backdrop);
         StartCoroutine(DoChange(backdrop, onComplete));
     }
 
     public void ChangeBackdropFast(string backdrop, System.Action onComplete)
     //public void ChangeBackdrop(string[] parameters)
     {
-        dialogueTracker.UpdateBackdrop(backdrop);
+        GameManager.dataController.UpdateBackdrop(backdrop);
         StartCoroutine(DoChangeFast(backdrop, onComplete));
     }
 
@@ -67,7 +64,7 @@ public class BackgroundChangeHandler : MonoBehaviour
 
             yield return new WaitForEndOfFrame(); // wait for the next frame before continuing the loop
         }
-        blendHelper.color =new Color(1f,1f,1f, endAlpha); // force the alpha to the end a
+        blendHelper.color = new Color(1f,1f,1f, endAlpha); // force the alpha to the end a
         // set new background to def renderer
         spriteRenderer.sprite = sprite;
         // make def Renderer visible again
