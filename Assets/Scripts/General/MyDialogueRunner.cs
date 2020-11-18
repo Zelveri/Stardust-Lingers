@@ -20,16 +20,18 @@ public class MyDialogueRunner : DialogueRunner
     public void OnNodeComplete(string node)
     {
         GameManager.dataController.UpdateFinishedNode(node);
+        GameManager.dialogueUI.OnNodeComplete.Invoke(node);
     }
 
     public void OnNodeStart(string node)
     {
         GameManager.dataController.UpdateCurrentNode(node);
+        GameManager.dialogueUI.OnNodeStart.Invoke(node);
     }
 
 
     void OnDialogueComplete()
     {
-
+        GameManager.dialogueUI.OnDialogueComplete.Invoke();
     }
 }

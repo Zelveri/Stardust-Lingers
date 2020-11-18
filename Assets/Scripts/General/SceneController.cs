@@ -15,7 +15,7 @@ public class SceneController : MonoBehaviour
         Menus,
         Log,
         Story,
-        Phone,
+        Phone_One,
         Meeting
     }
 
@@ -44,22 +44,44 @@ public class SceneController : MonoBehaviour
     {
         if (scene.buildIndex >= (int)Scenes.Story)
         {
-            GameManager.dialogueRunner.StartDialogue();
+            if(GameManager.dialogueUI.startAutomatically) GameManager.dialogueRunner.StartDialogue();
         }
     }
 
     public void StartStory()
     {
         ReturnToStory();
-        GameManager.dialogueRunner.startNode = "Start";
+        GameManager.dialogueRunner.startNode = "Start_Intro";
         SceneLoad(Scenes.Story);
     }
 
     public void ScenePhone()
     {
         ReturnToStory();
-        GameManager.dialogueRunner.startNode = "Phone_Start";
-        SceneLoad(Scenes.Phone);
+        GameManager.dialogueRunner.startNode = "Start_Phone_One";
+        SceneLoad(Scenes.Phone_One);
+    }
+
+    public void SceneMeeting()
+    {
+        ReturnToStory();
+        GameManager.dialogueRunner.startNode = "Start_Meeting";
+        SceneLoad(Scenes.Meeting);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        try
+        {
+            var scene = (Scenes)Enum.Parse(typeof(Scenes), sceneName, true);
+            ReturnToStory();
+            GameManager.dialogueRunner.startNode = "Phone_Start";
+            SceneLoad(scene);
+        }
+        catch(ArgumentException  ex)
+        {
+            Debug.LogError("LoadScene: No scene named \"" + sceneName + "\" exists!\n" + ex.Message);
+        }
     }
 
 

@@ -9,8 +9,8 @@ public class GameManager : SingletonTemplate<GameManager>
     public static InMemoryVariableStorage variableStorage;
 
     // should register themselves
-    public static DialogueRunner dialogueRunner;
-    public static DialogueUI dialogueUI;
+    public static MyDialogueRunner dialogueRunner;
+    public static MyDialogueUI dialogueUI;
 
     public static SceneController sceneController;
     public static InputHandlerBehaviour input;
