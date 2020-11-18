@@ -2058,7 +2058,7 @@ MonoBehaviour:
   textLanguage: 
   variableStorage: {fileID: 144735031}
   dialogueUI: {fileID: 4003975446465434317}
-  startNode: Start
+  startNode: Start_Phone_One
   startAutomatically: 1
   onNodeStart:
     m_PersistentCalls:

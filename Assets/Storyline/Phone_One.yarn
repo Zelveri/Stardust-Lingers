@@ -1,4 +1,4 @@
-title: Start
+title: Start_Phone_One
 tags: 
 colorID: 0
 position: -1295,-1558
@@ -8,10 +8,10 @@ position: -1295,-1558
 << backdrop Phone >>
 << nametag Trevis >> 
 Hello?
-[[ Hey! |Hey]]
-[[ Who is this? |Who]]
+[[ Hey! |Hey_Phone_One]]
+[[ Who is this? |Who_Phone_One]]
 ===
-title: Hey
+title: Hey_Phone_One
 tags: 
 colorID: 0
 position: -1700,-1411
@@ -33,10 +33,10 @@ But I don't know how you deal with it
 Anyways.
 Look who I met at work today
 << photo Cat_Scruff >>
-[[ Awww |Aww]]
-[[ You shouldn't hold it like that... |Hold]]
+[[ Awww |Aww_Phone_One]]
+[[ You shouldn't hold it like that... |Hold_Phone_One]]
 ===
-title: Who
+title: Who_Phone_One
 tags: 
 colorID: 0
 position: -945,-1493
@@ -53,10 +53,10 @@ Where are you right now?
 Just heading home from work.
 << nametag Trevis>> 
 How was it?
-[[ Same as usual. |Same]]
-[[ Could be better... |Better]]
+[[ Same as usual. |Same_Phone_One]]
+[[ Could be better... |Better_Phone_One]]
 ===
-title: Same
+title: Same_Phone_One
 tags: 
 colorID: 0
 position: -1220,-1304
@@ -73,10 +73,10 @@ What would I even say about you?
 << nametag Trevis >>
 You could tell them about the friend I made today
 << photo Cat_Scruff >>
-[[ Awww |Aww]]
-[[ You shouldn't hold it like that... |Hold]]
+[[ Awww |Aww_Phone_One]]
+[[ You shouldn't hold it like that... |Hold_Phone_One]]
 ===
-title: Better
+title: Better_Phone_One
 tags: 
 colorID: 0
 position: -915,-1145
@@ -98,13 +98,13 @@ What have you been up to?
 << nametag Trevis >>
 << photo Cat_Scruff >> 
 I met a friend
-[[ Awww |Aww]]
-[[ You shouldn't hold it like that... |Hold]]
+[[ Awww |Aww_Phone_One]]
+[[ You shouldn't hold it like that... |Hold_Phone_One]]
 ===
-title: Aww
+title: Aww_Phone_One
 tags: 
 colorID: 0
-position: -1868,-1132
+position: -1873,-1132
 ---
 << nametag Mira >>
 Aww
@@ -122,10 +122,10 @@ Nevermind, it's probably fine.
 ? Ok 
 ...
 So hows the new place
-[[ It's beautiful |Beautiful]]
-[[ It's a little lonely |Lonely]]
+[[ It's beautiful |Beautiful_Phone_One]]
+[[ It's a little lonely |Lonely_Phone_One]]
 ===
-title: Hold
+title: Hold_Phone_One
 tags: 
 colorID: 0
 position: -1556,-1137
@@ -145,10 +145,10 @@ Sheesh its not that big a deal lol
 Guess I'll keep that in mind though
 ...
 So how's the new place
-[[ It's beautiful. |Beautiful]]
-[[ It's a little lonely. |Lonely]]
+[[ It's beautiful. |Beautiful_Phone_One]]
+[[ It's a little lonely. |Lonely_Phone_One]]
 ===
-title: Beautiful
+title: Beautiful_Phone_One
 tags: 
 colorID: 0
 position: -1944,-880
@@ -170,10 +170,10 @@ I'd like to understand
 Actually, that reminds me.
 Have you thought about it?
 Us living together.
-[[ I have. It sounds nice. |Agree]]
-[[ I don't think we should yet. |Delay]]
+[[ I have. It sounds nice. |Agree_Phone_One]]
+[[ I don't think we should yet. |Delay_Phone_One]]
 ===
-title: Lonely
+title: Lonely_Phone_One
 tags: 
 colorID: 0
 position: -1485,-880
@@ -192,10 +192,10 @@ You don't need privacy from me
 This city may be full of people but I also feel pretty lonely with you gone.
 Have you thought about it yet?
 Us living together.
-[[ I have. It sounds nice. |Agree]]
-[[ I don't think we should yet. |Delay]]
+[[ I have. It sounds nice. |Agree_Phone_One]]
+[[ I don't think we should yet. |Delay_Phone_One]]
 ===
-title: Agree
+title: Agree_Phone_One
 tags: 
 colorID: 0
 position: -1876,-625
@@ -231,7 +231,7 @@ Oh, okay then.
 Bye!
 << transition Fade_Out >>
 ===
-title: Delay
+title: Delay_Phone_One
 tags: 
 colorID: 0
 position: -1598,-625
