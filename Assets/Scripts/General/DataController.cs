@@ -10,7 +10,6 @@ public class DataController : MonoBehaviour
     public static InMemoryVariableStorage variableStorage;
     public DialogueRunner dialogueRunner;
     public BackgroundChangeHandler backgroundChange;
-    DialogueUI dlgUI;
     static List<string> lines;
     static string currentNode;
     static string prevNode;
@@ -21,8 +20,8 @@ public class DataController : MonoBehaviour
     // Start is called before the first frame update
     public void Awake()
     {
-        dlgUI = SingletonDialogueUI.Instance;
-        variableStorage = SingletonVariableStorage.Instance;
+        variableStorage = GameManager.variableStorage;
+        dialogueRunner = GameManager.dialogueRunner;
         lines = new List<string>();
     }
 
@@ -62,7 +61,7 @@ public class DataController : MonoBehaviour
             variableStorage.SetValue(entry.Key, entry.Value);
         }
 
-        if (lineIncomplete) dlgUI.MarkLineComplete();
+        if (lineIncomplete) GameManager.dialogueUI.MarkLineComplete();
         StartCoroutine(backgroundChange.DoChangeFast(save.backdrop, null));
         dialogueRunner.StartDialogue(save.currentNode);
     }

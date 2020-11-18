@@ -6,7 +6,7 @@ using Yarn.Unity;
 
 public class YarnCommands : MonoBehaviour
 {
-    public DialogueRunner dialogueRunner;
+    DialogueRunner dialogueRunner;
     public BackgroundChangeHandler backgroundHandler;
     public DialogueAnimator dialogueAnimator;
     public TransitionHandler transitionHandler;
@@ -30,10 +30,12 @@ public class YarnCommands : MonoBehaviour
     bool canContinue = false;
     private void Awake()
     {
+        dialogueRunner = GameManager.dialogueRunner;
         // All the commands
         // command transition <Type>, takes 1 parameter
         dialogueRunner.AddCommandHandler("transition", Transition);
         // command nametag <Name> <status={"","hidden"}>, takes 1 parameter and 1 optional parameter
+        dialogueRunner.RemoveCommandHandler("nametag");
         dialogueRunner.AddCommandHandler("nametag", NameTag);
         // command backdrop <Filename>, takes 1 parameter
         dialogueRunner.AddCommandHandler("backdrop", Backdrop);
@@ -73,6 +75,7 @@ public class YarnCommands : MonoBehaviour
             case "Fade_Out":
                 StartCoroutine(transitionHandler.FadeOut(crossfadeAnimator, onComplete));
                 break;
+            case "Slide":
             default:
                 try
                 {
