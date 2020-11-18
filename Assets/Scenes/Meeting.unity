@@ -355,7 +355,7 @@ MonoBehaviour:
   textLanguage: 
   variableStorage: {fileID: 760603364}
   dialogueUI: {fileID: 671862662}
-  startNode: Start
+  startNode: Start_Meeting
   startAutomatically: 1
   onNodeStart:
     m_PersistentCalls:

@@ -1,4 +1,4 @@
-title: Start
+title: Start_Meeting
 tags: 
 colorID: 0
 position: 279,14
@@ -10,9 +10,9 @@ My thoughts rose to awareness, the disorienting fog shrouding them slowly cleari
 I kept my eyes closed as I stretched, realizing with a soft smile that I had ended up sleeping sideways.
 Letting out a yawn with a roll of the shoulders, I felt for the door as I stumbled my way to the bathroom.
 I nearly tripped over some unknown object on the way there, but part of me would rather suffer a fall than open my eyes without washing my face first.
-[[Sound]]
+[[Sound_Meeting]]
 ===
-title: Sound
+title: Sound_Meeting
 tags: 
 colorID: 0
 position: 530,7
@@ -36,9 +36,9 @@ Feeling a bit unsettled, I nibble at my lip and open the door by just a crack.
 The scratching stops.
 My gaze is met with nothing but the rustling flora and the gentle flutters of a nearby butterfly.
 Until I look down and see it peeking back at me.
-[[Visitor]]
+[[Visitor_Meeting]]
 ===
-title: Visitor
+title: Visitor_Meeting
 tags: 
 colorID: 0
 position: 789,7
@@ -62,7 +62,7 @@ It hurried in immediately, ears flapping along with its hops.
 Closing the door, I followed with a soft laugh.
 [[Welcome]]
 ===
-title: Welcome
+title: Welcome_Meeting
 tags: 
 colorID: 0
 position: 275,256
@@ -73,9 +73,9 @@ position: 275,256
 "Welcome home, bunny. Make sure to watch your step."
 It wiggled its nose and stood up on its hind legs, surveying the landscape of scattered belongings.
 I left it to its exploration and made my way toward the fridge.
-[[Kitchen]]
+[[Kitchen_Meeting]]
 ===
-title: Kitchen
+title: Kitchen_Meeting
 tags: 
 colorID: 0
 position: 529,256
@@ -93,9 +93,9 @@ Checking through the cupboards, I was met with a can of saltine crackers and a r
 << backdrop Kitchen_Day_Shut >> 
 I prepared a plate of the crackers, slashing layers of jam across them. Each mark signaled one's fate as a sacrifice to my hunger.
 Slicing up a duo of apples to go alongside them, I sighed in relief at the fact that no horrid worm creatures were revealed in the process.
-[[Sharing]]
+[[Sharing_Meeting]]
 ===
-title: Sharing
+title: Sharing_Meeting
 tags: 
 colorID: 0
 position: 776,252
