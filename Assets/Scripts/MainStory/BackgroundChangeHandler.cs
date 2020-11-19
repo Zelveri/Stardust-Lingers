@@ -21,14 +21,14 @@ public class BackgroundChangeHandler : MonoBehaviour
         blendHelper = gameObject.transform.Find("SmoothTransitionHelper").gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public void ChangeBackdrop(string backdrop, System.Action onComplete)
+    public void ChangeBackdrop(string backdrop, System.Action onComplete=null)
     //public void ChangeBackdrop(string[] parameters)
     {
         GameManager.dataController.UpdateBackdrop(backdrop);
         StartCoroutine(DoChange(backdrop, onComplete));
     }
 
-    public void ChangeBackdropFast(string backdrop, System.Action onComplete)
+    public void ChangeBackdropFast(string backdrop, System.Action onComplete=null)
     //public void ChangeBackdrop(string[] parameters)
     {
         GameManager.dataController.UpdateBackdrop(backdrop);
@@ -69,7 +69,7 @@ public class BackgroundChangeHandler : MonoBehaviour
         spriteRenderer.sprite = sprite;
         // make def Renderer visible again
         blendHelper.color = new Color(1f, 1f, 1f, startAlpha);
-        onComplete();
+        onComplete?.Invoke();
     }
 
     public IEnumerator DoChangeFast(string backdrop, System.Action onComplete)
