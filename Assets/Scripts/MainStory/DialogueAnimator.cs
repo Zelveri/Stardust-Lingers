@@ -38,7 +38,8 @@ public class DialogueAnimator : MonoBehaviour
     {
         nameToTextureDict = new Dictionary<string, string>();
         nameToTextureDict.Add("Mira", "Box_Red");
-        nameToTextureDict.Add("Lune", "Box_Blue");
+        nameToTextureDict.Add("Lune", "Box_Purple");
+        nameToTextureDict.Add("Trevis", "Box_Blue");
     }
 
     public void ChangeNameTag(string[] pars, System.Action onComplete)
