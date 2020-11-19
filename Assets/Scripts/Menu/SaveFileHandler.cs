@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class to use DataSaver with SaveState
+/// </summary>
 public class SaveFileHandler : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -16,21 +19,26 @@ public class SaveFileHandler : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Save data to slot
+    /// </summary>
+    /// <param name="slot">slot number</param>
     public void Save(int slot)
     {
+        // called from save button in Menu with fixed slot
+        // create new game state representation
         var saveData = new SaveState();
-        // save array with all data
+        // save it to file
         DataSaver.saveData(saveData, "slot" + slot.ToString());
     }
 
+    /// <summary>
+    /// Load save data from slot
+    /// </summary>
+    /// <param name="slot">slot number</param>
     public void Load(int slot)
     {
-        //SaveState save = DataSaver.LoadGameState("slot" + slot.ToString());
-        //DataController.dialogueTracker.LoadState(save);
         // load sava  data
-        SaveState saveData =  DataSaver.loadData<SaveState>("slot" + slot.ToString());
-
-        // this will finalize the loading, apply the loaded settingss and will restart the dialogue
-        GameManager.dataController.LoadState(saveData);
+       DataSaver.loadData<SaveState>("slot" + slot.ToString()).LoadSave();
     }
 }

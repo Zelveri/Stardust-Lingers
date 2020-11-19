@@ -14,7 +14,6 @@ public class BubbleBehaviour : MonoBehaviour
 
     Graphic content;
 
-    string text = "";
     float oldHeight = 0;
 
     private void Awake()
@@ -67,9 +66,6 @@ public class BubbleBehaviour : MonoBehaviour
     {
         var movVect = new Vector3(0, height,0);
         gameObject.transform.Translate(movVect);
-        //top.rectTransform.Translate(movVect);
-        //middle.rectTransform.Translate(movVect);
-        //bottom.rectTransform.Translate(movVect);
     }
 
     public void ShowImage(string filename)

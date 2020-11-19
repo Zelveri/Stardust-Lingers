@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
+// marks class to be convertible to be written to file
 [System.Serializable]
 public class SaveState
 {
+    // all important game variables
     public string currentNode;
     public string prevNode;
     public string curNameTag;
@@ -13,7 +15,7 @@ public class SaveState
     public string backdrop;
     [SerializeField]
     public Dictionary<string, Yarn.Value> variables;
-// string[] choices;
+    // string[] choices;
 
     //public SaveState(string curNode = "Start", string prevNode = "", string[] lines = null, string[] choices = null, string nameTag="", string themeColor="Light")
     //{
@@ -25,8 +27,10 @@ public class SaveState
     //    this.themeColor = themeColor;
     //}
 
+
     public SaveState()
     {
+        // get all the variables from the DataController
         this.currentNode = DataController.GetCurrentNode();
         this.prevNode = DataController.GetPrevNode();
         this.lines = DataController.GetLines().ToArray();
@@ -34,5 +38,14 @@ public class SaveState
         this.curNameTag = DataController.GetNametag();
         this.backdrop = DataController.GetBackdrop();
         this.variables = DataController.GetVariablesAsDict();
+    }
+
+    /// <summary>
+    /// Apply given gamestate to game
+    /// </summary>
+    public void LoadSave()
+    {
+        // this will finalize the loading, apply the loaded settings and will restart the dialogue
+        GameManager.dataController.LoadState(this);
     }
 }

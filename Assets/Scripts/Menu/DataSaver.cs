@@ -6,8 +6,12 @@ using System;
 using System.Text;
 using Newtonsoft.Json;
 
+/// <summary>
+/// Handles serialization of gamestate
+/// </summary>
 public static class DataSaver
 {
+    // obsolete
     public static void SaveGameState (string filename="savestate")
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -20,6 +24,7 @@ public static class DataSaver
         stream.Close();
     }
 
+    // obsolete
     public static SaveState LoadGameState(string filename="savestate")
     {
         string path = Application.persistentDataPath + "/" + filename + ".stardust";
@@ -38,13 +43,19 @@ public static class DataSaver
             return null;
         }
     }
+
+    /// <summary>
+    /// Create json representation of serializable T type object
+    /// </summary>
+    /// <typeparam name="T">Type to json-ize</typeparam>
+    /// <param name="dataToSave">object containtng the saveable data</param>
+    /// <param name="dataFileName">name of save file</param>
     public static void saveData<T>(T dataToSave, string dataFileName)
     {
         string tempPath = Path.Combine(Application.persistentDataPath, "data");
         tempPath = Path.Combine(tempPath, dataFileName + ".txt");
 
         //Convert To Json then to bytes
-        //string jsonData = JsonUtility.ToJson(dataToSave, true);
         string jsonData = JsonConvert.SerializeObject(dataToSave,Formatting.Indented);
         byte[] jsonByte = Encoding.ASCII.GetBytes(jsonData);
 
@@ -53,7 +64,6 @@ public static class DataSaver
         {
             Directory.CreateDirectory(Path.GetDirectoryName(tempPath));
         }
-        //Debug.Log(path);
 
         try
         {
@@ -67,7 +77,11 @@ public static class DataSaver
         }
     }
 
-    //Load Data
+    /// <summary>
+    /// Create T type object from json representation
+    /// </summary>
+    /// <typeparam name="T">Type to un-json-ize</typeparam>
+    /// <param name="dataFileName">file name to load</param>
     public static T loadData<T>(string dataFileName)
     {
         string tempPath = Path.Combine(Application.persistentDataPath, "data");

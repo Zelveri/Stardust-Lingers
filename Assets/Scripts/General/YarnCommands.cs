@@ -21,7 +21,8 @@ public class YarnCommands : MonoBehaviour
         dialogueRunner = GameManager.dialogueRunner;
         dataController = GameManager.dataController;
 
-        // All the commands
+        // Generic commands
+        // other scripts can expand this list, but must implement the handlers on their own
         // command transition <Type>, takes 1 parameter
         dialogueRunner.AddCommandHandler("transition", Transition);
         // command nametag <Name> <status={"","hidden"}>, takes 1 parameter and 1 optional parameter
@@ -35,6 +36,7 @@ public class YarnCommands : MonoBehaviour
 
     private void OnDestroy()
     {
+        // remove all command handlers, so that it doesn't clash with other scenes
         dialogueRunner.RemoveCommandHandler("transition");
         dialogueRunner.RemoveCommandHandler("nametag");
         dialogueRunner.RemoveCommandHandler("backdrop");

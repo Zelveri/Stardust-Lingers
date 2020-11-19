@@ -12,10 +12,12 @@ public class MyDialogueRunner : DialogueRunner
     {
         GameManager.RegisterDialogueRunner(this);
         // gamemanager adds variableStorage and dialogueUI
+        // mydialogueUI expands these events
         onDialogueComplete.AddListener(OnDialogueComplete);
         onNodeStart.AddListener(OnNodeStart);
         onNodeComplete.AddListener(OnNodeComplete);
     }
+
 
     public void OnNodeComplete(string node)
     {
