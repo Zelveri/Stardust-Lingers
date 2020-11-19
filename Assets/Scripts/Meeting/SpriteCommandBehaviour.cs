@@ -38,7 +38,7 @@ public class SpriteCommandBehaviour : MonoBehaviour
         // set visibility of gameobject
         if(parameters[1] == "None")
         {
-            YarnCommands.OnDark.AddListener(new UnityAction(() => curChar.SetActive(false)));
+            TransitionHandler.OnDark.AddListener(new UnityAction(() => curChar.SetActive(false)));
             onComplete?.Invoke();
             return;
         } else curChar.SetActive(true);

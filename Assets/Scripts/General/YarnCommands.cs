@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Yarn.Unity;
 
 public class YarnCommands : MonoBehaviour
@@ -12,26 +13,14 @@ public class YarnCommands : MonoBehaviour
     public TransitionHandler transitionHandler;
     DataController dataController;
 
-    public Animator slideAnimator;
-    public Animator crossfadeAnimator;
-
     public Canvas dialogueCanvas;
 
-
-    enum TransitionType
-    {
-        None=0,
-        Fade,
-        Slide,
-        Cross_Fade,
-        Circleslide
-    }
-    TransitionType transitionType = TransitionType.Fade;
     bool canContinue = false;
     private void Awake()
     {
         dialogueRunner = GameManager.dialogueRunner;
         dataController = GameManager.dataController;
+
         // All the commands
         // command transition <Type>, takes 1 parameter
         dialogueRunner.AddCommandHandler("transition", Transition);
@@ -53,50 +42,15 @@ public class YarnCommands : MonoBehaviour
         dialogueRunner.RemoveCommandHandler("show_dialogue");
     }
 
-    void Backdrop(string[] pars, System.Action onComplete)
+    void Backdrop(string[] pars)
     {
         //StartCoroutine(DoChangeFast(parameters[0]));
-        switch (transitionType)
-        {
-            case TransitionType.None:
-                StartCoroutine(backgroundHandler.DoChangeFast(pars[0], onComplete));
-                break;
-            case TransitionType.Fade:
-                StartCoroutine(backgroundHandler.DoChange(pars[0], onComplete));
-                break;
-            case TransitionType.Slide:
-                StartCoroutine(SlideTransition(pars[0], onComplete));
-                break;
-            default:
-                break;
-        }
-        transitionType = TransitionType.Fade;
+        transitionHandler.SetNextBackdrop(pars[0]);
     }
 
     void Transition(string[] pars, System.Action onComplete)
     {
-        // Fade_in and Fade_out are independent of background, therefore treated differently
-        switch (pars[0])
-        {
-            case "Fade_In":
-                StartCoroutine(transitionHandler.FadeIn(crossfadeAnimator, onComplete));
-                break;
-            case "Fade_Out":
-                StartCoroutine(transitionHandler.FadeOut(crossfadeAnimator, onComplete));
-                break;
-            case "Slide":
-            default:
-                try
-                {
-                    transitionType = (TransitionType)Enum.Parse(typeof(TransitionType), pars[0]);
-                    onComplete();
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError("Transition type not found: " + pars[0] + "!\n" + ex.ToString());
-                }
-                break;
-        }
+        transitionHandler.Transition(pars, onComplete);
     }
 
     public void Continue()
@@ -113,14 +67,6 @@ public class YarnCommands : MonoBehaviour
     void NameTag(string[] pars, System.Action onComplete)
     {
         dialogueAnimator.ChangeNameTag(pars, onComplete);
-    }
-
-    IEnumerator  SlideTransition(string param, Action onComplete)
-    {
-        yield return StartCoroutine(dialogueAnimator.FadeClear(null));
-        dialogueAnimator.ClearText();
-        yield return StartCoroutine(transitionHandler.Slide(slideAnimator, param, null));
-        yield return StartCoroutine(dialogueAnimator.FadeOpaque(onComplete));
     }
 
     public void HideDialogue(string[] parameters, System.Action onComplete)

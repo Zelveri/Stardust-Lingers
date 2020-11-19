@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3881e8a14e7911a469c4f8e6bed2427c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueRunner: {fileID: 0}
+  slideAnimator: {fileID: 2166000653858165600}
+  crossfadeAnimator: {fileID: 2166000653853157655}
+  dialogueAnimator: {fileID: 0}
   transitionSpeed: 1
   backgroundHandler: {fileID: 0}
 --- !u!1 &2166000653275583784
