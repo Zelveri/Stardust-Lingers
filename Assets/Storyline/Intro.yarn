@@ -1,10 +1,11 @@
 title: Start_Intro
-tags: 
+tags:
 colorID: 0
 position: -1631,-1519
 ---
+<< backdrop Cabin_Night >>
 << transition Fade_In >>
-<< nametag Mira >> 
+<< nametag Mira >>
 It was dark by the time I arrived to the cabin.
 I had almost expected the lights to be on, extending its shine toward me with a comforting warmth.
 This time, only shadow shrouded the windows. In a way, that too was comforting.
@@ -14,14 +15,14 @@ The reminder of regret was now only fueling a sense of strange satisfaction as I
 [[Intro_Livingroom]]
 ===
 title: Next_Ignore
-tags: 
+tags:
 colorID: 0
 position: -1375,-953
 ---
 //Phone scene, first night, follows directly after.
 ===
 title: Notes_Ignore
-tags: 
+tags:
 colorID: 0
 position: -1916,-1152
 ---
@@ -36,12 +37,12 @@ position: -1916,-1152
 //Ideally it should change the appearance depending on who is speaking, by color.
 ===
 title: Intro_Livingroom
-tags: 
+tags:
 colorID: 0
 position: -1626,-1267
 ---
-<< transition Slide >>
 << backdrop Livingroom_Night_A >>
+<< transition Slide >>
 "Geez... what a mess."
 He had always been a hoarder, so this was to be expected. The main question was whether he'd burned what I was looking for or not.
 I moved some of the items strewn on the couch onto a precarious pile on the table and sat down with a huff.
@@ -53,7 +54,7 @@ Comforted by the fact that I had plenty of time to search, I stepped carefully o
 [[Intro_Bedroom]]
 ===
 title: Intro_Bedroom
-tags: 
+tags:
 colorID: 0
 position: -1327,-1264
 ---

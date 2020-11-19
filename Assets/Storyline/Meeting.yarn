@@ -1,11 +1,11 @@
 title: Start_Meeting
-tags: 
+tags:
 colorID: 0
 position: 279,14
 ---
-<< transition Fade_In >>
 << backdrop Bedroom_Day_A >>
-<< nametag Mira >> 
+<< transition Fade_In >>
+<< nametag Mira >>
 My thoughts rose to awareness, the disorienting fog shrouding them slowly clearing with the warm light that cast itself over me.
 I kept my eyes closed as I stretched, realizing with a soft smile that I had ended up sleeping sideways.
 Letting out a yawn with a roll of the shoulders, I felt for the door as I stumbled my way to the bathroom.
@@ -13,12 +13,13 @@ I nearly tripped over some unknown object on the way there, but part of me would
 [[Sound_Meeting]]
 ===
 title: Sound_Meeting
-tags: 
+tags:
 colorID: 0
 position: 530,7
 ---
-<< transition Slide >>
 << backdrop Livingroom_Day_A >>
+<< transition Slide >>
+<< nametag Mira >>
 "Let's see what we have here..."
 I was about to head to the kitchen to see if anything edible was left when there was an odd sound.
 It was barely audible, but I had just managed to make it out.
@@ -31,7 +32,7 @@ I try to decipher the source of the sound, and find that it is coming from my do
 No one seems to be there?
 << nametag Lune hidden >>
 "Scriii... Riii... Scritch."
-<< nametag Mira >> 
+<< nametag Mira >>
 Feeling a bit unsettled, I nibble at my lip and open the door by just a crack.
 The scratching stops.
 My gaze is met with nothing but the rustling flora and the gentle flutters of a nearby butterfly.
@@ -39,13 +40,14 @@ Until I look down and see it peeking back at me.
 [[Visitor_Meeting]]
 ===
 title: Visitor_Meeting
-tags: 
+tags:
 colorID: 0
 position: 789,7
 ---
-<< transition Slide >>
 << backdrop Cabin_Day >>
+<< transition Slide >>
 << sprite Bunny Open_Neutral >>
+<< nametag Mira >>
 "Oh my!"
 "Who are you, little one?"
 The bunny sitting before me had raised its paw, tilting its head in curiousity.
@@ -63,27 +65,28 @@ Closing the door, I followed with a soft laugh.
 [[Welcome_Meeting]]
 ===
 title: Welcome_Meeting
-tags: 
+tags:
 colorID: 0
 position: 275,256
 ---
-<< transition Slide >>
-<< transition Livingroom_Day_A >>
-<< sprite Bunny Open_Open >> 
 << backdrop Livingroom_Day_A >>
+<< transition Slide >>
+<< sprite Bunny Open_Open >>
+<< nametag Mira >>
 "Welcome home, bunny. Make sure to watch your step."
 It wiggled its nose and stood up on its hind legs, surveying the landscape of scattered belongings.
 I left it to its exploration and made my way toward the fridge.
 [[Kitchen_Meeting]]
 ===
 title: Kitchen_Meeting
-tags: 
+tags:
 colorID: 0
 position: 527,254
 ---
-<< transition Cross_Fade >>
 << backdrop Kitchen_Day >>
 << sprite Bunny None >>
+<< transition Cross_Fade >>
+<< nametag Mira >>
 "Ugh!"
 I scrunched up my face in disgust. There's no way that milk wasn't expired.
 The rotting lettuce heads by it weren't doing too well either. I considered giving them to the bunny, but it would be cruel to welcome a guest with possible food poisoning.
@@ -95,12 +98,13 @@ Slicing up a duo of apples to go alongside them, I sighed in relief at the fact 
 [[Sharing_Meeting]]
 ===
 title: Sharing_Meeting
-tags: 
+tags:
 colorID: 0
 position: 776,252
 ---
-<< transition Cross_Fade >>
 << backdrop Livingroom_Day_A >>
+<< transition Cross_Fade >>
+<< nametag Mira >>
 "Bunbun? Where'd you go?"
 << sprite Bunny Open_Neutral >>
 A brush against my leg.
@@ -113,9 +117,8 @@ It's head ducked underneath my arm and leaned toward the plate.
 "Aww, are you hungry too?"
 "Here, try this."
 << sprite Bunny None >>
-<< transition Fade_Out >>
-<< transition Fade_In>> 
 << backdrop Feeding >>
+<< transition Cross_Fade >>
 I presented to it a slice of apple. Eagerly, it munched away at it, brushing its mouth against me. Eventually, it transitioned into licking my palm.
 I let out a soft gasp.
 Feeling my heart swell with affection, I wondered why it was so trusting. Actually, bunnies like this don't usually live in the wild, do they?
@@ -128,21 +131,21 @@ I watched in a trance, smiling as it made its way through a second slice.
 [[Search_Meeting]]
 ===
 title: Search_Meeting
-tags: 
+tags:
 colorID: 0
 position: 1040,131
 ---
-<< transition Fade_Out >>
-<< transition Fade_In>> 
-<< backdrop Livingroom_Day_A >> 
-<< sprite Bunny Open_Blep >> 
+<< backdrop Livingroom_Day_A >>
+<< sprite Bunny Open_Blep >>
+<< transition Cross_Fade >>
+<< nametag Mira >>
 Once it had its fill of licks and tried to nose its way to what remained on the plate, I lifted the food out of range with a giggle.
 "I think that's enough."
 "As sweet as you are, you should be careful about having too much sugar.""
-<< sprite Bunny Lid_Neutral >> 
+<< sprite Bunny Lid_Neutral >>
 It huffed, seemingly quite annoyed at the rejection, and promptly jumped off my lap.
 Immediately feeling guilty, I was tempted to offer more after all, but sternly reminded myself that it was only for its own good.
 Hah. If only I held the same amount of care toward my own diet.
-<<sprite Bunny Lid_Neutral Fade_Out >>
+<< sprite Bunny Lid_Neutral Fade_Out >>
 I watched it wander off and sighed. It was time to begin the search.
 ===
