@@ -35,6 +35,13 @@ public class TransitionHandler : MonoBehaviour
     public void SetNextBackdrop(string backdrop)
     {
         nextBackdrop = backdrop;
+        OnDark.AddListener(new UnityAction(() => backgroundHandler.ChangeBackdropFast(nextBackdrop)));
+    }
+
+    void DoOnDark()
+    {
+        OnDark.Invoke();
+        OnDark.RemoveAllListeners();
     }
 
     public void Transition(string[] pars, System.Action onComplete)
@@ -62,18 +69,15 @@ public class TransitionHandler : MonoBehaviour
                             StartCoroutine(backgroundHandler.DoChange(nextBackdrop, onComplete));
                             break;
                         case TransitionType.Slide:
-                            OnDark.AddListener(new UnityAction(() => backgroundHandler.ChangeBackdropFast(nextBackdrop)));
                             StartCoroutine(Transition(slideAnimator, nextBackdrop, onComplete));
                             break;
                         case TransitionType.Cross_Fade:
-                            OnDark.AddListener(new UnityAction(() => backgroundHandler.ChangeBackdropFast(nextBackdrop)));
                             StartCoroutine(Transition(crossfadeAnimator, nextBackdrop, onComplete));
                             break;
                         default:
                             break;
                     }
                     transitionType = TransitionType.Fade;
-                    onComplete();
                 }
                 catch (Exception ex)
                 {
@@ -89,10 +93,10 @@ public class TransitionHandler : MonoBehaviour
         dialogueAnimator.ClearText();
         // yield return StartCoroutine(transitionHandler.DoAnimation(animator, param, null)); 
         yield return StartCoroutine(FadeOut(animator, null));
-        OnDark.Invoke();
+        DoOnDark();
         yield return StartCoroutine(FadeIn(animator, null));
         yield return StartCoroutine(dialogueAnimator.FadeOpaque(onComplete));
-        OnDark.RemoveAllListeners();
+        
     }
 
     public IEnumerator FadeOut(Animator animator, System.Action onComplete)
@@ -112,6 +116,7 @@ public class TransitionHandler : MonoBehaviour
     {
         var animstate = animator.gameObject.GetComponent<AnimationState>();
         animator.SetTrigger("Fade_Clear");
+        DoOnDark();
         animstate.isRunning = true;
         while (animstate.isRunning)
         {

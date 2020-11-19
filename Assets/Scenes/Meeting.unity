@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 4587675736292515355, guid: aabaa0cb5e484f84a8ca7c5f33b5fc31,
         type: 3}
       propertyPath: startNode
-      value: Welcome_Meeting
+      value: Start_Meeting
       objectReference: {fileID: 0}
     - target: {fileID: 4587675736292515355, guid: aabaa0cb5e484f84a8ca7c5f33b5fc31,
         type: 3}
@@ -1557,6 +1557,11 @@ PrefabInstance:
     - target: {fileID: 6800228288096812041, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
         type: 3}
       propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800228288096812047, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6800228288436834403, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
