@@ -3,10 +3,10 @@ tags:
 colorID: 0
 position: -1295,-1558
 ---
-<< transition Fade_In >>
 << effect Static >>
 << backdrop Phone >>
 << nametag Trevis >> 
+<< transition Fade_In >>
 Hello?
 [[ Hey! |Hey_Phone_One]]
 [[ Who is this? |Who_Phone_One]]

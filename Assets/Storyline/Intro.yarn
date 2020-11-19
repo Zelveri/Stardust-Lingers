@@ -3,8 +3,8 @@ tags:
 colorID: 0
 position: -1631,-1519
 ---
+<< nametag Mira >>
 << transition Fade_In >>
-<< nametag Mira >> 
 It was dark by the time I arrived to the cabin.
 I had almost expected the lights to be on, extending its shine toward me with a comforting warmth.
 This time, only shadow shrouded the windows. In a way, that too was comforting.
@@ -40,8 +40,8 @@ tags:
 colorID: 0
 position: -1626,-1267
 ---
-<< transition Slide >>
 << backdrop Livingroom_Night_A >>
+<< transition Slide >>
 "Geez... what a mess."
 He had always been a hoarder, so this was to be expected. The main question was whether he'd burned what I was looking for or not.
 I moved some of the items strewn on the couch onto a precarious pile on the table and sat down with a huff.
@@ -57,8 +57,8 @@ tags:
 colorID: 0
 position: -1327,-1264
 ---
-<< transition Slide >>
 << backdrop Bedroom_Night_A >>
+<< transition Slide >>
 "Huh..."
 "It's actually quite decent."
 The living room was the victim when it came to being treated as a landfill, it seems.
