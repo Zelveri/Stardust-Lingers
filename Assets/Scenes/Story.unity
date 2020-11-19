@@ -133,18 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &204338978 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2166000653858165600, guid: 42cf428b8912c5b408551d6ca63efd1b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2166000653922935874}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &209276245 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2166000653853157655, guid: 42cf428b8912c5b408551d6ca63efd1b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2166000653922935874}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &235812976 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 235812976, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
@@ -1335,9 +1323,6 @@ MonoBehaviour:
   backgroundHandler: {fileID: 1167082799}
   dialogueAnimator: {fileID: 6800228287496726033}
   transitionHandler: {fileID: 1748358423}
-  dataController: {fileID: 363195510}
-  slideAnimator: {fileID: 204338978}
-  crossfadeAnimator: {fileID: 209276245}
   dialogueCanvas: {fileID: 2119774803}
 --- !u!4 &2058665987
 Transform:
@@ -1431,6 +1416,11 @@ PrefabInstance:
       propertyPath: backgroundHandler
       value: 
       objectReference: {fileID: 1167082799}
+    - target: {fileID: 2166000652178878805, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: dialogueAnimator
+      value: 
+      objectReference: {fileID: 6800228287496726033}
     - target: {fileID: 2166000652178878807, guid: 42cf428b8912c5b408551d6ca63efd1b,
         type: 3}
       propertyPath: m_Name
