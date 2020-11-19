@@ -70,6 +70,7 @@ position: 275,256
 << transition Slide >>
 << transition Livingroom_Day_A >>
 << sprite Bunny Open_Open >> 
+<< backdrop Livingroom_Day_A >>
 "Welcome home, bunny. Make sure to watch your step."
 It wiggled its nose and stood up on its hind legs, surveying the landscape of scattered belongings.
 I left it to its exploration and made my way toward the fridge.

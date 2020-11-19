@@ -23,7 +23,7 @@ public class YarnCommands : MonoBehaviour
         None=0,
         Fade,
         Slide,
-        Crossfade,
+        Cross_Fade,
         Circleslide
     }
     TransitionType transitionType = TransitionType.Fade;
