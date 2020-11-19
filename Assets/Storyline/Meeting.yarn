@@ -78,7 +78,7 @@ I left it to its exploration and made my way toward the fridge.
 title: Kitchen_Meeting
 tags: 
 colorID: 0
-position: 529,256
+position: 527,254
 ---
 << transition Cross_Fade >>
 << backdrop Kitchen_Day >>
@@ -124,6 +124,13 @@ But here it was, having appeared before my doorstep. If it was looking for a new
 I vowed to make this place suitable for the both of us.
 Before that, there was still an unfinished matter to deal with. A matter that I knew would gnaw at my mind relentlessly, removing any feeling of comfort that would allow this place to feel like the dream I'd long been chasing.
 I watched in a trance, smiling as it made its way through a second slice.
+[[Search_Meeting]]
+===
+title: Search_Meeting
+tags: 
+colorID: 0
+position: 1040,131
+---
 << transition Fade_Out >>
 << transition Fade_In>> 
 << backdrop Livingroom_Day_A >> 
