@@ -20,16 +20,20 @@ public class MyDialogueUI : DialogueUI
     string curLine = "";
     private void Awake()
     {
+        // register this instance with gamemanager
         GameManager.RegisterDialogueUI(this);
         if(GameManager.dialogueRunner != null)
         {
+            // load yarn scripts given in inspector
             foreach (var elm in yarnScripts)
             {
                 GameManager.dialogueRunner.Add(elm);
             }
+            // set start node as given
             GameManager.dialogueRunner.startNode = startNode;
         }
 
+        // register default event handlers ( add to any handlers given in inspector )
         onCommand.AddListener(OnCommand);
         onDialogueStart.AddListener(OnDialogueStart);
         onDialogueEnd.AddListener(OnDialogueEnd);

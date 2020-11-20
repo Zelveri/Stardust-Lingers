@@ -28,6 +28,7 @@ public class SingletonTemplate<T> : MonoBehaviour where T: Component
         if (instance == null)
         {
             instance = this as T;
+            // prevent destruction of gameObeject
             DontDestroyOnLoad(this.gameObject);
         }
         else
