@@ -15,6 +15,8 @@ public class YarnCommands : MonoBehaviour
 
     public Canvas dialogueCanvas;
 
+    string curNametag = "";
+
     bool canContinue = false;
     private void Awake()
     {
@@ -68,7 +70,12 @@ public class YarnCommands : MonoBehaviour
 
     void NameTag(string[] pars, System.Action onComplete)
     {
-        dialogueAnimator.ChangeNameTag(pars, onComplete);
+        if (pars[0] != curNametag)
+        {
+            curNametag = pars[0];
+            dialogueAnimator.ChangeNameTag(pars, onComplete);
+        }
+        else onComplete?.Invoke();
     }
 
     public void HideDialogue(string[] parameters, System.Action onComplete)
