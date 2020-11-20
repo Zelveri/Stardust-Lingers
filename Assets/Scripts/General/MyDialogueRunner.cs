@@ -6,11 +6,14 @@ using Yarn.Unity;
 
 public class MyDialogueRunner : DialogueRunner
 {
+
+    List<int> loadedPrograms;
     // dialoguerunner overload, to embed GameManager and dataController
     // registers events with the DataController
     private void Awake()
     {
         GameManager.RegisterDialogueRunner(this);
+        loadedPrograms = new List<int>();
         // gamemanager adds variableStorage and dialogueUI
         // mydialogueUI expands these events
         onDialogueComplete.AddListener(OnDialogueComplete);
@@ -18,6 +21,14 @@ public class MyDialogueRunner : DialogueRunner
         onNodeComplete.AddListener(OnNodeComplete);
     }
 
+    public new void Add(YarnProgram program)
+    {
+        if (!loadedPrograms.Contains((int)SceneController.CurMainScene))
+        {
+            loadedPrograms.Add((int)SceneController.CurMainScene);
+            base.Add(program);
+        }
+    }
 
     public void OnNodeComplete(string node)
     {
