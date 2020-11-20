@@ -28,6 +28,7 @@ public class SaveFileHandler : MonoBehaviour
         // called from save button in Menu with fixed slot
         // create new game state representation
         var saveData = new SaveState();
+        saveData.GatherData();
         // save it to file
         DataSaver.saveData(saveData, "slot" + slot.ToString());
     }
@@ -39,6 +40,7 @@ public class SaveFileHandler : MonoBehaviour
     public void Load(int slot)
     {
         // load sava  data
-       DataSaver.loadData<SaveState>("slot" + slot.ToString()).LoadSave();
+        SaveState save = DataSaver.loadData<SaveState>("slot" + slot.ToString());
+        GameManager.dataController.LoadState(save);
     }
 }

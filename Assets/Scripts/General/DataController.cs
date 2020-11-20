@@ -7,9 +7,6 @@ using Yarn.Unity;
 
 public class DataController : MonoBehaviour
 {
-    public static InMemoryVariableStorage variableStorage;
-    public DialogueRunner dialogueRunner;
-    public BackgroundChangeHandler backgroundChange;
     static List<string> lines;
     static string currentNode;
     static string prevNode;
@@ -20,8 +17,6 @@ public class DataController : MonoBehaviour
     // Start is called before the first frame update
     public void Awake()
     {
-        variableStorage = GameManager.variableStorage;
-        dialogueRunner = GameManager.dialogueRunner;
         lines = new List<string>();
     }
 
@@ -52,18 +47,24 @@ public class DataController : MonoBehaviour
 
     public void LoadState(SaveState save)
     {
+        StartCoroutine(DoStateLoad(save));
+    }
+
+    IEnumerator DoStateLoad(SaveState save)
+    {
+        yield return StartCoroutine(GameManager.sceneController.LoadScene(save.curScene));
         lines = new List<string>(save.lines);
         curNametag = save.curNameTag;
         currentNode = save.currentNode;
         prevNode = save.prevNode;
         foreach (var entry in save.variables)
         {
-            variableStorage.SetValue(entry.Key, entry.Value);
+            GameManager.variableStorage.SetValue(entry.Key, entry.Value);
         }
 
         if (lineIncomplete) GameManager.dialogueUI.MarkLineComplete();
-        StartCoroutine(backgroundChange.DoChangeFast(save.backdrop, null));
-        dialogueRunner.StartDialogue(save.currentNode);
+        //StartCoroutine(backgroundChange.DoChangeFast(save.backdrop, null));
+        GameManager.dialogueRunner.StartDialogue(save.currentNode);
     }
 
     public void UpdateNametag(string text)
@@ -116,7 +117,7 @@ public class DataController : MonoBehaviour
     public static Dictionary<string,Yarn.Value> GetVariablesAsDict()
     {
         var dict = new Dictionary<string, Yarn.Value>();
-        foreach (var entry in variableStorage)
+        foreach (var entry in GameManager.variableStorage)
         {
             dict.Add(entry.Key, entry.Value);
         }

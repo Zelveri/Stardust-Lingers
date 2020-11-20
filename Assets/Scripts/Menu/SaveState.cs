@@ -13,6 +13,7 @@ public class SaveState
     public string curNameTag;
     public string[] lines;
     public string backdrop;
+    public int curScene;
     [SerializeField]
     public Dictionary<string, Yarn.Value> variables;
     // string[] choices;
@@ -27,8 +28,25 @@ public class SaveState
     //    this.themeColor = themeColor;
     //}
 
-
+    /// <summary>
+    /// default ctor
+    /// </summary>
     public SaveState()
+    {
+        this.currentNode = "";
+        this.prevNode = "";
+        this.lines = null;
+        //this.choices = choices;
+        this.curNameTag = "";
+        this.backdrop = "";
+        this.variables = null;
+        this.curScene = -1;
+    }
+
+    /// <summary>
+    /// fetch data from the control structures that hold it
+    /// </summary>
+    public void GatherData()
     {
         // get all the variables from the DataController
         this.currentNode = DataController.GetCurrentNode();
@@ -38,14 +56,7 @@ public class SaveState
         this.curNameTag = DataController.GetNametag();
         this.backdrop = DataController.GetBackdrop();
         this.variables = DataController.GetVariablesAsDict();
+        this.curScene = (int)SceneController.CurMainScene;
     }
 
-    /// <summary>
-    /// Apply given gamestate to game
-    /// </summary>
-    public void LoadSave()
-    {
-        // this will finalize the loading, apply the loaded settings and will restart the dialogue
-        GameManager.dataController.LoadState(this);
-    }
 }

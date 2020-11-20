@@ -21,12 +21,17 @@ public class SceneController : MonoBehaviour
     }
 
     static Scenes CurActiveScene = Scenes.main;
+    public static Scenes CurMainScene = Scenes.Unknown;
     Scenes OldScene = 0;
+
+    public static bool SceneIsLoading { get; set; }
+
 
     private void Awake()
     {
         //dialogue = GameObject.Find("Dialogue Runner").GetComponent<DialogueRunner>().Dialogue;
         SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneIsLoading = false;
 
     }
     // Start is called before the first frame update
@@ -46,6 +51,7 @@ public class SceneController : MonoBehaviour
         if (scene.buildIndex >= (int)Scenes.Story)
         {
             if(GameManager.dialogueUI.startAutomatically) GameManager.dialogueRunner.StartDialogue();
+            SceneIsLoading = false;
         }
     }
 
@@ -87,6 +93,24 @@ public class SceneController : MonoBehaviour
         catch(ArgumentException  ex)
         {
             Debug.LogError("LoadScene: No scene named \"" + sceneName + "\" exists!\n" + ex.Message);
+        }
+    }
+
+    public IEnumerator LoadScene(int scene)
+    {
+
+        if (Enum.IsDefined(typeof(Scenes), scene))
+        {
+            ReturnToStory();
+            SceneLoad((Scenes)scene);
+            while (SceneIsLoading)
+            {
+                yield return null;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Load Scene: No scene with value {" + scene.ToString() + "} ");
         }
     }
 
@@ -146,7 +170,9 @@ public class SceneController : MonoBehaviour
     /// <param name="scene">scene to load</param>
     public void SceneLoad(string scene)
     {
+        SceneIsLoading = true;
         DoScenePreps();
+        
         //dialogue.Stop
         SceneManager.LoadScene(scene);
         //SceneManager.UnloadSceneAsync((int)CurActiveScene);
@@ -162,11 +188,13 @@ public class SceneController : MonoBehaviour
         if (scene == Scenes.main) { ReturnToStory(); }
         else
         {
+            SceneIsLoading = true;
             DoScenePreps();
             //dialogue.Stop
             SceneManager.LoadScene((int)scene);
             //SceneManager.UnloadSceneAsync((int)CurActiveScene);
             CurActiveScene = scene;
+            CurMainScene = scene;
         }
     }
 
