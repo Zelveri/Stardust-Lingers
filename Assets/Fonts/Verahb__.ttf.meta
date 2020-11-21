@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 965124ed5913c084a9d51215dd8ce3b7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Vera Humana 95
+  fontNames:
+  - Vera Humana 95
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 86b235350781ada4da9415dbc2bb3a59, type: 3}
+  - {fileID: 12800000, guid: dbb8aa275ba04db47a89ebd13d38337d, type: 3}
+  - {fileID: 12800000, guid: 704c99cd6e325414e8a472319f4e1d3e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
