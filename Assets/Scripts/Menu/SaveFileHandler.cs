@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Class to use DataSaver with SaveState
@@ -23,7 +26,7 @@ public class SaveFileHandler : MonoBehaviour
     /// Save data to slot
     /// </summary>
     /// <param name="slot">slot number</param>
-    public void Save(int slot)
+    public static void Save(int slot)
     {
         // called from save button in Menu with fixed slot
         // create new game state representation
@@ -37,7 +40,7 @@ public class SaveFileHandler : MonoBehaviour
     /// Load save data from slot
     /// </summary>
     /// <param name="slot">slot number</param>
-    public void Load(int slot)
+    public static void Load(int slot)
     {
         // load sava  data
         SaveState save = DataSaver.loadData<SaveState>("slot" + slot.ToString());
