@@ -121,10 +121,12 @@ public class SceneController : MonoBehaviour
         if (CurActiveScene < Scenes.Story && CurActiveScene > 0)
         {
             SceneManager.UnloadSceneAsync((int)CurActiveScene);
-            GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = true;
+            // GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = true;
+            UndoScenePreps();
             Time.timeScale = 1;
             //dialogue.Continue();
             CurActiveScene = OldScene;
+            GameManager.dialogueUI.dialogueContainer.SetActive(true);
         }
     }
 
@@ -156,13 +158,24 @@ public class SceneController : MonoBehaviour
 
 
     /// <summary>
-    /// Prepare current scene for additional scene load, by disabling Audio Listener
+    /// Prepare current scene for additional scene load
     /// </summary>
     void DoScenePreps()
     {
         // disable main scene audio listener
         GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = false;
+        GameManager.dialogueUI.dialogueContainer.SetActive(false);
     }
+    /// <summary>
+    /// Reset scene after returning from overlay
+    /// </summary>
+    void UndoScenePreps()
+    {
+        // disable main scene audio listener
+        GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = true;
+        GameManager.dialogueUI.dialogueContainer.SetActive(true);
+    }
+
 
     /// <summary>
     /// Load the given scene

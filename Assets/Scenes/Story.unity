@@ -1100,7 +1100,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueContainer
       value: 
-      objectReference: {fileID: 1209611887}
+      objectReference: {fileID: 6800228287496726030}
     - target: {fileID: 4587675736292515355, guid: aabaa0cb5e484f84a8ca7c5f33b5fc31,
         type: 3}
       propertyPath: yarnScripts.Array.data[0]
@@ -1643,6 +1643,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6800228287496726028}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6800228287496726030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6800228287573100251, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6800228287496726028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6800228287496726031 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3760224956972227435, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
@@ -1661,7 +1667,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6800228287496726028}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6800228287496726030}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4afc2293207104140952f885af633aef, type: 3}
