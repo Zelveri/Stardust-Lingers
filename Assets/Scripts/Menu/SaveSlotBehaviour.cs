@@ -41,16 +41,6 @@ public class SaveSlotBehaviour : MonoBehaviour
         loadBtn.onClick.AddListener(OnLoad);
 
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     // on save button press
     public void OnSave()
