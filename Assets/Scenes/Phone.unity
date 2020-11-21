@@ -614,6 +614,17 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4422816203595638126, guid: 0d09cefab1f6473428d69906db483068,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e9e489dce564484e9b30784182c17a2,
+        type: 2}
+    - target: {fileID: 4422816203595638126, guid: 0d09cefab1f6473428d69906db483068,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d09cefab1f6473428d69906db483068, type: 3}
 --- !u!1 &1153010750
@@ -1526,7 +1537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.75, y: -27}
+  m_AnchoredPosition: {x: 3.75, y: -24}
   m_SizeDelta: {x: 460.96, y: 93.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2774220076407709051
@@ -1843,7 +1854,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.75, y: -25.949982}
+  m_AnchoredPosition: {x: 3.75, y: -22.95002}
   m_SizeDelta: {x: 460.96, y: 93.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2774220077749977967
@@ -2138,6 +2149,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 40.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463106703446423390, guid: d9944775b23fae94d9d1835d7929b6fc,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e9e489dce564484e9b30784182c17a2,
+        type: 2}
+    - target: {fileID: 3463106703446423390, guid: d9944775b23fae94d9d1835d7929b6fc,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9944775b23fae94d9d1835d7929b6fc, type: 3}
