@@ -10,6 +10,12 @@ public class ThemePrefHandler : MonoBehaviour
         {
             SetLightTheme();
         }
+        // set theme selector to current theme
+        string setting = PlayerPrefs.GetString("theme_color");
+        TMPro.TMP_Dropdown dropdown = gameObject.transform.Find("Dropdown").GetComponent<TMPro.TMP_Dropdown>();
+        int option = (setting == "Light") ? 0 : 1;
+        dropdown.SetValueWithoutNotify(option);
+        dropdown.RefreshShownValue();
     }
 
     public static void SetLightTheme()

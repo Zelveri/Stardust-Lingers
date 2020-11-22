@@ -40,12 +40,14 @@ public class DialogueAnimator : MonoBehaviour
         nameToTextureDict.Add("Mira", "Box_Red");
         nameToTextureDict.Add("Lune", "Box_Purple");
         nameToTextureDict.Add("Trevis", "Box_Blue");
+        GameManager.OnPrefsChanged.AddListener(ReloadSettings);
     }
 
     public void ChangeNameTag(string[] pars, System.Action onComplete)
     {
         var name = pars[0];
-        string boxName = PlayerPrefs.GetString("theme_color") + "_" + nameToTextureDict[name];
+        string theme_color = PlayerPrefs.GetString("theme_color");
+        string boxName = theme_color + "_" + nameToTextureDict[name];
         var doEffect = !isHidden;
         // if additional hidden argument is given conceal name
         if ((pars.Length > 1) && (pars[1] == "hidden"))
@@ -54,11 +56,12 @@ public class DialogueAnimator : MonoBehaviour
         }
         // add name to log
         GameManager.dataController.UpdateNametag(name);
-        StartCoroutine(DoChange(name, boxName, doEffect, onComplete));
+        StartCoroutine(DoChange(name, boxName, theme_color, doEffect, onComplete));
     }
 
-    IEnumerator DoChange(string newName, string boxName, bool doEffect, System.Action onComplete)
+    IEnumerator DoChange(string newName, string boxName, string theme_color, bool doEffect, System.Action onComplete)
     {
+        Color col;
         if (doEffect)
         {
             yield return StartCoroutine(FadeClear(null));
@@ -69,6 +72,16 @@ public class DialogueAnimator : MonoBehaviour
         }
         nameTag.text = newName;
         textBackground.sprite = Resources.Load<Sprite>("Artwork/UI/Text Box/" + boxName);
+        // change text color
+        if(theme_color == "Light")
+        {
+            col = new Color(0, 0, 0);
+        }
+        else
+        {
+            col = new Color(1, 1, 1);
+        }
+        storyText.color = col;
         if (doEffect)
         {
             yield return StartCoroutine(FadeOpaque(null));
@@ -78,6 +91,13 @@ public class DialogueAnimator : MonoBehaviour
             //}
         }
         onComplete?.Invoke();
+    }
+
+    public void ReloadSettings()
+    {
+        string theme_color = PlayerPrefs.GetString("theme_color");
+        string boxName = theme_color + "_" + nameToTextureDict[GameManager.dataController.CurNametag];
+        StartCoroutine(DoChange(GameManager.dataController.CurNametag, boxName, theme_color, false, null));
     }
 
     public void ClearText()

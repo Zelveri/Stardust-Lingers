@@ -129,7 +129,8 @@ public class SceneController : MonoBehaviour
             // GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = true;
             UndoScenePreps();
             Time.timeScale = 1;
-            //dialogue.Continue();
+            // on menu exit, cause settings reload
+            if (CurActiveScene == Scenes.Menus) GameManager.OnPrefsChanged.Invoke();
             CurActiveScene = OldScene;
             GameManager.dialogueUI.dialogueContainer.SetActive(true);
         }

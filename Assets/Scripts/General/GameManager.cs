@@ -1,7 +1,11 @@
-﻿using System.Collections;
+﻿#define DEBUG
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Yarn.Unity;
+
 
 // singleton object that persists troughout the game
 // non static member access with .Instance
@@ -16,6 +20,12 @@ public class GameManager : SingletonTemplate<GameManager>
 
     // new instance per scene, should register itself
     public static MyDialogueUI dialogueUI;
+
+    /// <summary>
+    /// called when menu changes prefs 
+    /// called from SceneController.ReturnToStory()
+    /// </summary>
+    public static UnityEvent OnPrefsChanged = new UnityEvent();
 
     public override void Awake()
     {
