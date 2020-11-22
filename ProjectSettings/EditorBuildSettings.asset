@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Meeting.unity
     guid: 50217aad38d5f7048913dd1dd4498e67
+  - enabled: 1
+    path: Assets/Scenes/Walk.unity
+    guid: 898d29a7e2a626a4a87f1b73f701a7ec
   m_configObjects: {}
