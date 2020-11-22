@@ -1,0 +1,8 @@
+title: Start_Walk
+tags: 
+colorID: 0
+position: 810,-69
+---
+<< transition Fade_In >>
+<< nametag Mira >>
+===
