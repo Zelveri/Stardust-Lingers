@@ -16,6 +16,7 @@ public class LineUpdateHandler : MonoBehaviour
     public GameObject meBubblesTemplate;
     public GameObject themBubblesTemplate;
     public GameObject phoneScreenPanel;
+    public TransitionHandler transitionHandler;
 
     string activeSide = "me";
 
@@ -26,6 +27,7 @@ public class LineUpdateHandler : MonoBehaviour
         dialogueRunner.RemoveCommandHandler("nametag");
         dialogueRunner.AddCommandHandler("nametag", SwitchSides);
         dialogueRunner.AddCommandHandler("photo", ShowImage);
+        dialogueRunner.AddCommandHandler("transition", Transition);
         bubbles = new List<BubbleBehaviour>();
     }
 
@@ -33,6 +35,7 @@ public class LineUpdateHandler : MonoBehaviour
     {
         dialogueRunner.RemoveCommandHandler("nametag");
         dialogueRunner.RemoveCommandHandler("photo");
+        dialogueRunner.RemoveCommandHandler("transition");
     }
 
     // Update is called once per frame
@@ -48,10 +51,13 @@ public class LineUpdateHandler : MonoBehaviour
 
     void UpdateBubblesPosition()
     {
-        // get height change of active bubble since last update
-        float height = curBubble.GetLastHeightDelta();
-        // move all other bubbles up by that amount
-        bubbles?.ForEach(bubble => bubble.MoveUp(height));
+        if (curBubble != null)
+        {
+            // get height change of active bubble since last update
+            float height = curBubble.GetLastHeightDelta();
+            // move all other bubbles up by that amount
+            bubbles?.ForEach(bubble => bubble?.MoveUp(height));
+        }
     }
 
     public void DialogueStart()
@@ -109,6 +115,11 @@ public class LineUpdateHandler : MonoBehaviour
         // show image instead of text
         LineStart();
         curBubble.ShowImage(pars[0]);
+    }
+
+    void Transition(string[] pars, System.Action onComplete)
+    {
+        transitionHandler.Transition(pars, onComplete);
     }
 
     public List<BubbleData> GetSerializableBubbles()

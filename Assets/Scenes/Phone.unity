@@ -1196,6 +1196,117 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1746492078
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2166000652178878804, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 388.41742
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878804, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 274.5622
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878804, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -87.16324
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878804, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878804, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878804, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878804, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878804, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878804, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878804, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878804, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878805, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878805, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: backgroundHandler
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878805, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: dialogueAnimator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000652178878807, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_Name
+      value: Transition
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000653590635338, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000653853157649, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166000653858165602, guid: 42cf428b8912c5b408551d6ca63efd1b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 42cf428b8912c5b408551d6ca63efd1b, type: 3}
+--- !u!114 &1746492079 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2166000652178878805, guid: 42cf428b8912c5b408551d6ca63efd1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1746492078}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3881e8a14e7911a469c4f8e6bed2427c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1752082260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,6 +2338,7 @@ MonoBehaviour:
   themBubblesTemplate: {fileID: 3463106702864229498, guid: d9944775b23fae94d9d1835d7929b6fc,
     type: 3}
   phoneScreenPanel: {fileID: 1673682924}
+  transitionHandler: {fileID: 1746492079}
 --- !u!1 &8709752700522535267
 GameObject:
   m_ObjectHideFlags: 0
