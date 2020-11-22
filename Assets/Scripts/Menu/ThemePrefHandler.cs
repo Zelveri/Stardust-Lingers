@@ -23,4 +23,16 @@ public class ThemePrefHandler : MonoBehaviour
         PlayerPrefs.SetString("theme_color", "Dark");
         PlayerPrefs.Save();
     }
+
+    public void OnSettingChanged(int pos)
+    {
+        if(pos == 0)
+        {
+            SetLightTheme();
+        }
+        else
+        {
+            SetDarkTheme();
+        }
+    }
 }
