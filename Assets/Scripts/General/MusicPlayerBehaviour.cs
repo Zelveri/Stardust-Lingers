@@ -12,10 +12,11 @@ public class MusicPlayerBehaviour : MonoBehaviour
     {
         dialogueRunner = GameManager.dialogueRunner;
         // command music
+        // usage:
         // music stop
         // music play <filename>
-        // music fade_out [optional fade duration in sec, def 3s]
-        // music fade_in <filename> [optional fade duration in sec, def 3s]
+        // music fade_out [fade_duration=3]
+        // music fade_in <filename> [fade_duration=3]
         dialogueRunner.AddCommandHandler("music", PlayMusic);
         player = GetComponent<AudioSource>();
     }
@@ -79,6 +80,7 @@ public class MusicPlayerBehaviour : MonoBehaviour
         }
     }
 
+    // from https://forum.unity.com/threads/fade-out-audio-source.335031/
     public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
     {
         float startVolume = audioSource.volume;
@@ -96,17 +98,17 @@ public class MusicPlayerBehaviour : MonoBehaviour
 
     public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime, AudioClip clip)
     {
-        float defaultVolume = audioSource.volume;
+        float targetVolume = audioSource.volume;
         audioSource.volume = 0;
         audioSource.clip = clip;
         audioSource.Play();
         while (audioSource.volume > 0)
         {
-            audioSource.volume += defaultVolume * Time.deltaTime / FadeTime;
+            audioSource.volume += targetVolume * Time.deltaTime / FadeTime;
 
             yield return null;
         }
-        audioSource.volume = defaultVolume;
+        audioSource.volume = targetVolume;
     }
 }
 
