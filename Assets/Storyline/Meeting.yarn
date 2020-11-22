@@ -160,4 +160,32 @@ I put the book aside.
 An abrupt sneeze caused me to turn toward the table, where the bunny was laying underneath, faced away from me.
 Beside it was a stack of documents, and above...
 I shifted onto my knees and crouched down, lowering my head to see the corner of a paper curling down from the underside of the table.
+[[Note_Meeting]]
+===
+title: Note_Meeting
+tags: 
+colorID: 0
+position: 1298,131
+---
+"Could it be..?"
+I braced myself on one hand as I used the other to clutch at the corner, peeling it off carefully.
+<< item First_Note show >>
+I made sure not to bump my head as I retreated and grasped at the note with trembling hands.
+The first of three, if the message was to be trusted.
+But what could it mean...
+<< item First_Note hide >> 
+Perplexed, I gravitated toward my notebook and tried scribbling out a few ideas.
+Surely the second note was not directly on myself, so there had to be some location or object these words were connected to.
+At the same time, it felt as though they could apply to anything. I groaned. Why did he have to be so vague?
+The telltale snap of lead only served to heighten my irritation.
+"Great..."
+"Maybe I should go for a walk."
+Getting up with a stretch, I headed toward the door.
+Grabbing onto the handle, I look back at the bunny, who had rolled over to stare at me.
+"Do you want to come along?"
+<< sprite Bunny Shut_Smile >> 
+Rising, it bounded over to me.
+A shaky smile.
+"Alright, let's go."
+<< transition Fade_Out >>
 ===
