@@ -27,6 +27,9 @@ public class SceneController : MonoBehaviour
 
     public static bool SceneIsLoading { get; set; }
 
+    // start the dialogue runner if the scene has loaded, set in DataController.DoStateLoad
+    public bool startDialogueOnLoad = true;
+
 
     private void Awake()
     {
@@ -51,8 +54,9 @@ public class SceneController : MonoBehaviour
     {
         if (scene.buildIndex >= (int)Scenes.Story)
         {
-            if(GameManager.dialogueUI.startAutomatically) GameManager.dialogueRunner.StartDialogue();
+            if(GameManager.dialogueUI.startAutomatically && startDialogueOnLoad) GameManager.dialogueRunner.StartDialogue();
             SceneIsLoading = false;
+            startDialogueOnLoad = true;
         }
     }
 

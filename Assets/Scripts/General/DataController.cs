@@ -52,6 +52,8 @@ public class DataController : MonoBehaviour
 
     IEnumerator DoStateLoad(SaveState save)
     {
+        // prevent dialogue from starting until save load complete
+        GameManager.sceneController.startDialogueOnLoad = false;
         yield return StartCoroutine(GameManager.sceneController.LoadScene(save.curScene));
         lines = new List<string>(save.lines);
         curNametag = save.curNameTag;
