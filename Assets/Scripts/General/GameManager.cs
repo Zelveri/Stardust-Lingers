@@ -46,4 +46,9 @@ public class GameManager : SingletonTemplate<GameManager>
         // if dialogueUI was initialized before dialogueRunner we assign it here
         if (dialogueUI != null) dialogueRunner.dialogueUI = dialogueUI;
     }
+
+    public static void Quit()
+    {
+        Application.Quit();
+    }
 }

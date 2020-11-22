@@ -40,6 +40,6 @@ public class MenuBehaviour : MonoBehaviour
 
     public void OnExitClick()
     {
-        Application.Quit();
+        GameManager.Quit();
     }
 }
