@@ -14,6 +14,11 @@ public class DataController : MonoBehaviour
     static string backdrop;
     static bool lineIncomplete = true;
 
+    public string CurNametag
+    {
+        get { return curNametag; }
+    }
+
     // Start is called before the first frame update
     public void Awake()
     {
@@ -71,6 +76,7 @@ public class DataController : MonoBehaviour
 
     public void UpdateNametag(string text)
     {
+        curNametag = text;
         AddLineToTracker("\n" + text + ":");
     }
 
