@@ -169,7 +169,7 @@ public class SceneController : MonoBehaviour
     void DoScenePreps()
     {
         // disable main scene audio listener
-        GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = false;
+        //GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = false;
         GameManager.dialogueUI.dialogueContainer.SetActive(false);
     }
     /// <summary>
