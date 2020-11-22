@@ -1,41 +1,55 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public GameObject settingsUI;
+    public GameObject saveUI;
+    private void Awake()
+    { 
+        if(!PlayerPrefs.HasKey("menu_last_open")) PlayerPrefs.SetInt("menu_last_open", 0);
+        // load previous seen screen
+        var prevMenu = PlayerPrefs.GetInt("menu_last_open");
+        if(prevMenu == 0)
+        {
+            ShowSave();
+        }
+        else
+        {
+            ShowSettings();
+        }
     }
 
     public void OnFileClick()
     {
-        GameObject fileUI = gameObject.transform.Find("SaveUIPanel").gameObject;
-        GameObject settingsUI = gameObject.transform.Find("SettingsUIPanel").gameObject;
-        settingsUI.SetActive(false);
-        fileUI.SetActive(true);
+        ShowSave();
     }
 
     public void OnReturnClick()
     {
-        SceneController controller = GameObject.Find("SceneController").GetComponent<SceneController>();
-        controller.ReturnToStory();
+        GameManager.sceneController.ReturnToStory();
     }
 
     public void OnGearClick()
     {
-        GameObject fileUI = gameObject.transform.Find("SaveUIPanel").gameObject;
-        GameObject settingsUI = gameObject.transform.Find("SettingsUIPanel").gameObject;
-        fileUI.SetActive(false);
+        ShowSettings();
+    }
+
+    void ShowSettings()
+    {
+        saveUI.SetActive(false);
         settingsUI.SetActive(true);
+        PlayerPrefs.SetInt("menu_last_open",1);
+    }
+
+    void ShowSave()
+    {
+        settingsUI.SetActive(false);
+        saveUI.SetActive(true);
+        PlayerPrefs.SetInt("menu_last_open", 0);
     }
 
     public void OnExitClick()
