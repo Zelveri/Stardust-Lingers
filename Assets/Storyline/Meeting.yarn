@@ -1,5 +1,5 @@
 title: Start_Meeting
-tags:
+tags: 
 colorID: 0
 position: 279,14
 ---
@@ -13,7 +13,7 @@ I nearly tripped over some unknown object on the way there, but part of me would
 [[Sound_Meeting]]
 ===
 title: Sound_Meeting
-tags:
+tags: 
 colorID: 0
 position: 530,7
 ---
@@ -40,7 +40,7 @@ Until I look down and see it peeking back at me.
 [[Visitor_Meeting]]
 ===
 title: Visitor_Meeting
-tags:
+tags: 
 colorID: 0
 position: 789,7
 ---
@@ -65,7 +65,7 @@ Closing the door, I followed with a soft laugh.
 [[Welcome_Meeting]]
 ===
 title: Welcome_Meeting
-tags:
+tags: 
 colorID: 0
 position: 275,256
 ---
@@ -79,7 +79,7 @@ I left it to its exploration and made my way toward the fridge.
 [[Kitchen_Meeting]]
 ===
 title: Kitchen_Meeting
-tags:
+tags: 
 colorID: 0
 position: 527,254
 ---
@@ -98,7 +98,7 @@ Slicing up a duo of apples to go alongside them, I sighed in relief at the fact 
 [[Sharing_Meeting]]
 ===
 title: Sharing_Meeting
-tags:
+tags: 
 colorID: 0
 position: 776,252
 ---
@@ -131,7 +131,7 @@ I watched in a trance, smiling as it made its way through a second slice.
 [[Search_Meeting]]
 ===
 title: Search_Meeting
-tags:
+tags: 
 colorID: 0
 position: 1040,131
 ---
@@ -148,4 +148,44 @@ Immediately feeling guilty, I was tempted to offer more after all, but sternly r
 Hah. If only I held the same amount of care toward my own diet.
 << sprite Bunny Lid_Neutral Fade_Out >>
 I watched it wander off and sighed. It was time to begin the search.
+<< backdrop Livingroom_Day_B >>
+<< transition Cross_Fade >>
+First, I did a bit of cleanup, gathering up all of the obvious trash and depositing it in bins outside. Having done so, I sat on the floor and sifted through a few boxes.
+Old receipts of placating gifts and planned invitations.
+Books containing abandoned worlds once frequently visited.
+I traced a finger over inky gems clutched in pale lace gloves, lips barely grazing their surface, the leaning man captured so elegantly on the dusted cover.
+An entry in the very series that connected paths which tangled up and tensed at the slightest drift, at a mere suggestion of separation.
+Frayed as they were, threads of that connection still lingered.
+I put the book aside.
+An abrupt sneeze caused me to turn toward the table, where the bunny was laying underneath, faced away from me.
+Beside it was a stack of documents, and above...
+I shifted onto my knees and crouched down, lowering my head to see the corner of a paper curling down from the underside of the table.
+[[Note_Meeting]]
+===
+title: Note_Meeting
+tags: 
+colorID: 0
+position: 1298,131
+---
+"Could it be..?"
+I braced myself on one hand as I used the other to clutch at the corner, peeling it off carefully.
+<< item First_Note show >>
+I made sure not to bump my head as I retreated and grasped at the note with trembling hands.
+The first of three, if the message was to be trusted.
+But what could it mean...
+<< item First_Note hide >> 
+Perplexed, I gravitated toward my notebook and tried scribbling out a few ideas.
+Surely the second note was not directly on myself, so there had to be some location or object these words were connected to.
+At the same time, it felt as though they could apply to anything. I groaned. Why did he have to be so vague?
+The telltale snap of lead only served to heighten my irritation.
+"Great..."
+"Maybe I should go for a walk."
+Getting up with a stretch, I headed toward the door.
+Grabbing onto the handle, I look back at the bunny, who had rolled over to stare.
+"Do you want to come along?"
+<< sprite Bunny Shut_Smile >> 
+Rising, it bounded over to me.
+A shaky smile.
+"Alright, let's go."
+<< transition Fade_Out >>
 ===

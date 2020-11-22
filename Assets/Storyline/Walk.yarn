@@ -1,0 +1,76 @@
+title: Start_Walk
+tags: 
+colorID: 0
+position: 289,-139
+---
+<< transition Fade_In >>
+<< nametag Mira >>
+Gentle rustling greeted the cool breeze that swirled by us as we wandered.
+I made sure to walk slowly so as not to accidentally step on the bun as it circled around me.
+"Aww, look at you go."
+"I wonder how well you know your way around here."
+"There's a lot that is familiar, but to be honest... so much is just a blur at this point."
+"I feel like I should remember more than I do..."
+Though the cabin itself had permanently branded itself into my memory, the surrounding woods and fields had, despite how much I'd admired them, faded into an uncertain murmuring fog.
+[[Deeper]]
+===
+title: Deeper
+tags: 
+colorID: 0
+position: 579,-136
+---
+<< backdrop DeepWoods_Day >>
+<< transition Fade_Out>>
+<< transition Fade_In>>
+Eventually we found ourselves delving deeper into the woods.
+So much comforting shade, even in the brightness of day.
+From what I did remember, I had always ended up finding my way to the denser areas, curious about what secrets they might contain.
+The trees were rows of pretty bars so easily slipped through, only to be drawn back toward its alluring enclosure.
+One so liberating in its vast captivity.
+One which fascinated me each time as though never experienced before.
+In those moments, leaning against such towering forms, there was safety.
+I brushed a hand against one of the trunks, wishing I could communicate my gratitude.
+A sharp prickling across my neck. I snap mt hand back, clutching it against my chest and glancing around.
+Was someone... watching?
+I shift my eyes downward, seeing the bunny sitting farther than expected. 
+<< nametag Lune Bunny >>
+<< sprite Bunny Scared_Neutral >> 
+Thoom... thump!
+Thump!
+<< nametag Mira >>
+It's feet hit the ground, a clear sign of some form of distress.
+I go to pick it up in an attempt to comfort it.
+Wrong move.
+<< sprite Bunny Angry_Bite >> 
+Before I could wrap my hands around it, it twisted around with a grunt, a rough sting flaring furiously across my fingers.
+"AGH!"
+I sucked in a breath, bringing them to my mouth.
+The strong saltiness of blood washed over my tongue.
+Hissing, I glare down at it, staggering backwards.
+"You..!"
+"What was that for?!"
+<< nametag Lune Bunny >>
+<< sprite Bunny Scared_TeethGrind >>
+"..."
+Thump.
+<< nametag Mira >>
+I braced myself as it lunged once again, shutting my eyes in panic as I awaited another bite.
+Instead of skin, its teeth grazed against the cloth of my jeans, tugging frantically.
+I bite my lip as I carefully shake my leg, hoping to free it.
+<< sprite Bunny Scared_Open >>
+<< sprite Bunny Scared_Open Fade_Out >>
+By some miracle, it gets the message and lets go, dashing away and stopping to look back at me with desperation.
+Though part of me felt the urge to ignore it and continue traveling deeper, sensing an almost instinctual need to, the return of the prickling sensation skittering across my skin and the throbbing of my fingers led me to my senses.
+"Alright, alright! Have it your way!"
+"Let's just get out of here..."
+[[River]]
+===
+title: River
+tags: 
+colorID: 0
+position: 827,-136
+---
+<< backdrop River_Dawn >>
+<< transition Fade_Out>>
+<< transition Fade_In>>
+===
