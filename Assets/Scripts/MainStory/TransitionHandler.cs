@@ -23,6 +23,10 @@ public class TransitionHandler : MonoBehaviour
     // to help other commands determine if they have to register an event with this or not
     public static bool newNode = false;
 
+    // flag to signal, that the game was just loaded, so the next animation should always be a fade in
+    // is set in DataController.DoStateLoad
+    public static bool overrideTransitionFade = false;
+
     string nextBackdrop = "";
 
     void Awake()
@@ -61,6 +65,13 @@ public class TransitionHandler : MonoBehaviour
         if(pars == null || pars.Length == 0)
         {
             Debug.LogError("transition: no parameters given!");
+        }
+        // if override given, always do Fade_In transition
+        if (overrideTransitionFade)
+        {
+            pars[0] = "Fade_In";
+            // disable override
+            overrideTransitionFade = false;
         }
         switch (pars[0])
         {

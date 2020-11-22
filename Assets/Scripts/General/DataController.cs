@@ -61,7 +61,7 @@ public class DataController : MonoBehaviour
         {
             GameManager.variableStorage.SetValue(entry.Key, entry.Value);
         }
-
+        TransitionHandler.overrideTransitionFade = true;
         if (lineIncomplete) GameManager.dialogueUI.MarkLineComplete();
         //StartCoroutine(backgroundChange.DoChangeFast(save.backdrop, null));
         GameManager.dialogueRunner.StartDialogue(save.currentNode);
