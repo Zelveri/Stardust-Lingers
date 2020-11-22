@@ -1,8 +1,49 @@
 title: Start_Walk
 tags: 
 colorID: 0
-position: 810,-69
+position: 289,-139
 ---
 << transition Fade_In >>
 << nametag Mira >>
+Gentle rustling greeted the cool breeze that swirled by us as we wandered.
+I made sure to walk slowly so as not to accidentally step on the bun as it circled around me.
+"Aww, look at you go."
+"I wonder how well you know your way around here."
+"There's a lot that is familiar, but to be honest... so much is just a blur at this point."
+"I feel like I should remember more than I do..."
+Though the cabin itself had permanently branded itself into my memory, the surrounding woods and fields had, despite how much I'd admired them, faded into an uncertain murmuring fog.
+[[Deeper]]
+===
+title: Deeper
+tags: 
+colorID: 0
+position: 579,-136
+---
+<< backdrop DeepWoods_Day >>
+<< transition Fade_Out>>
+<< transition Fade_In>>
+Eventually we found ourselves delving deeper into the woods.
+So much comforting shade, even in the brightness of day.
+From what I did remember, I had always ended up finding my way to the denser areas, curious about what secrets they might contain.
+The trees were rows of pretty bars so easily slipped through, only to be drawn back toward its alluring enclosure.
+One so liberating in its vast captivity.
+One which fascinated me each time as though never experienced before.
+In those moments, leaning against such towering forms, there was safety.
+I brushed a hand against one of the trunks, wishing I could communicate my gratitude.
+A sharp prickling across my neck. I snap mt hand back, clutching it against my chest and glancing around.
+Was someone... watching?
+I look down, seeing the bunny sitting farther than expected. 
+<< nametag Lune Bunny >>
+<< sprite Bunny Scared_Neutral >> 
+Thoom... thump!
+Thump!
+<< nametag Mira >>
+It's feet hit the ground, a clear sign of some form of distress.
+I go to pick it up in an attempt to comfort it.
+Wrong move.
+<< sprite Bunny Angry_Bite >> 
+Before I could wrap my hands around it, it twisted around with a grunt, a rough sting flaring across my fingers.
+"AGH!"
+I sucked in a breath, bringing them to my mouth.
+The strong saltiness of blood washed over my tongue.
 ===
