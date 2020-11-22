@@ -40,6 +40,7 @@ public class MyDialogueRunner : DialogueRunner
     {
         GameManager.dataController.UpdateCurrentNode(node);
         GameManager.dialogueUI.OnNodeStart.Invoke(node);
+        TransitionHandler.newNode = true;
     }
 
 

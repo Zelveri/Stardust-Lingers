@@ -4,8 +4,8 @@ colorID: 0
 position: 279,14
 ---
 << backdrop Bedroom_Day_A >>
-<< transition Fade_In >>
 << nametag Mira >>
+<< transition Fade_In >>
 My thoughts rose to awareness, the disorienting fog shrouding them slowly clearing with the warm light that cast itself over me.
 I kept my eyes closed as I stretched, realizing with a soft smile that I had ended up sleeping sideways.
 Letting out a yawn with a roll of the shoulders, I felt for the door as I stumbled my way to the bathroom.
@@ -18,8 +18,8 @@ colorID: 0
 position: 530,7
 ---
 << backdrop Livingroom_Day_A >>
-<< transition Slide >>
 << nametag Mira >>
+<< transition Slide >>
 "Let's see what we have here..."
 I was about to head to the kitchen to see if anything edible was left when there was an odd sound.
 It was barely audible, but I had just managed to make it out.
@@ -45,9 +45,9 @@ colorID: 0
 position: 789,7
 ---
 << backdrop Cabin_Day >>
+<< nametag Mira >>
 << transition Slide >>
 << sprite Bunny Open_Neutral >>
-<< nametag Mira >>
 "Oh my!"
 "Who are you, little one?"
 The bunny sitting before me had raised its paw, tilting its head in curiousity.
@@ -70,9 +70,9 @@ colorID: 0
 position: 275,256
 ---
 << backdrop Livingroom_Day_A >>
+<< nametag Mira >>
 << transition Slide >>
 << sprite Bunny Open_Open >>
-<< nametag Mira >>
 "Welcome home, bunny. Make sure to watch your step."
 It wiggled its nose and stood up on its hind legs, surveying the landscape of scattered belongings.
 I left it to its exploration and made my way toward the fridge.
@@ -85,8 +85,8 @@ position: 527,254
 ---
 << backdrop Kitchen_Day >>
 << sprite Bunny None >>
-<< transition Cross_Fade >>
 << nametag Mira >>
+<< transition Cross_Fade >>
 "Ugh!"
 I scrunched up my face in disgust. There's no way that milk wasn't expired.
 The rotting lettuce heads by it weren't doing too well either. I considered giving them to the bunny, but it would be cruel to welcome a guest with possible food poisoning.
@@ -103,8 +103,8 @@ colorID: 0
 position: 776,252
 ---
 << backdrop Livingroom_Day_A >>
-<< transition Cross_Fade >>
 << nametag Mira >>
+<< transition Cross_Fade >>
 "Bunbun? Where'd you go?"
 << sprite Bunny Open_Neutral >>
 A brush against my leg.
@@ -137,8 +137,8 @@ position: 1040,131
 ---
 << backdrop Livingroom_Day_A >>
 << sprite Bunny Open_Blep >>
-<< transition Cross_Fade >>
 << nametag Mira >>
+<< transition Cross_Fade >>
 Once it had its fill of licks and tried to nose its way to what remained on the plate, I lifted the food out of range with a giggle.
 "I think that's enough."
 "As sweet as you are, you should be careful about having too much sugar.""

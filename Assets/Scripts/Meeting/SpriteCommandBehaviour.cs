@@ -41,25 +41,42 @@ public class SpriteCommandBehaviour : MonoBehaviour
             TransitionHandler.OnDark.AddListener(new UnityAction(() => curChar.SetActive(false)));
             onComplete?.Invoke();
             return;
-        } else curChar.SetActive(true);
+        }
         // get components
         characterImage = curChar.GetComponent<Image>();
         state = curChar.GetComponent<AnimationState>();
         // load image and set sprite
         var path = "Artwork/Character/" + parameters[0] + "/" + parameters[1];
         Sprite character = Resources.Load<Sprite>(path);
-        characterImage.sprite = character;
-        // do animation
-        string trigger;
-        if (parameters.Length >= 3)
+        // do we need to schedule the change?
+        if (TransitionHandler.newNode)
         {
-            trigger = parameters[2];
+            // only do live change if transition is not scheduled
+            TransitionHandler.OnDark.AddListener(new UnityAction(
+                delegate() {
+                    characterImage.sprite = character;
+                    curChar.SetActive(true);
+                }
+                )) ;
+            onComplete?.Invoke();
         }
-        else
+        else 
         {
-            trigger = "Bounce";
+            // do animation
+            string trigger;
+            // if command does not give animation type, do bounce
+            if (parameters.Length >= 3)
+            {
+                trigger = parameters[2];
+            }
+            else
+            {
+                trigger = "Bounce";
+            }
+            characterImage.sprite = character;
+            curChar.SetActive(true);
+            StartCoroutine(DoAnimation(trigger, onComplete)); 
         }
-        StartCoroutine(DoAnimation(trigger, onComplete));
     }
 
     IEnumerator DoAnimation(string trigger, System.Action onComplete)

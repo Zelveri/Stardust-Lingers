@@ -3,8 +3,8 @@ tags:
 colorID: 0
 position: 289,-139
 ---
-<< transition Fade_In >>
 << nametag Mira >>
+<< transition Fade_In >>
 Gentle rustling greeted the cool breeze that swirled by us as we wandered.
 I made sure to walk slowly so as not to accidentally step on the bun as it circled around me.
 "Aww, look at you go."

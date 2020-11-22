@@ -77,7 +77,7 @@ public class DialogueAnimator : MonoBehaviour
             //    yield return null;
             //}
         }
-        onComplete();
+        onComplete?.Invoke();
     }
 
     public void ClearText()

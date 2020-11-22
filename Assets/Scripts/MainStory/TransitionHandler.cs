@@ -19,6 +19,9 @@ public class TransitionHandler : MonoBehaviour
     // useful for doing multiple things then, background change, remove sprites etc.
     // can be subscribed to with TransitionHandler.OnDark.AddListener(method to call)
     public static UnityEvent OnDark;
+    // flag that gets set on start of a node, is unset after doing transition
+    // to help other commands determine if they have to register an event with this or not
+    public static bool newNode = false;
 
     string nextBackdrop = "";
 
@@ -43,6 +46,7 @@ public class TransitionHandler : MonoBehaviour
     /// </summary>
     void DoOnDark()
     {
+        newNode = false;
         OnDark.Invoke();
         OnDark.RemoveAllListeners();
     }
