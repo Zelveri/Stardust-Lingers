@@ -42,6 +42,7 @@ colorID: 0
 position: -1626,-1267
 ---
 << backdrop Livingroom_Night_A >>
+<< nametag Mira >>
 << transition Slide >>
 "Geez... what a mess."
 He had always been a hoarder, so this was to be expected. The main question was whether he'd burned what I was looking for or not.
@@ -59,6 +60,7 @@ colorID: 0
 position: -1327,-1264
 ---
 << backdrop Bedroom_Night_A >>
+<< nametag Mira >>
 << transition Slide >>
 "Huh..."
 "It's actually quite decent."
