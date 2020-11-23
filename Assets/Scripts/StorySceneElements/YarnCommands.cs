@@ -15,8 +15,6 @@ public class YarnCommands : MonoBehaviour
 
     public Canvas dialogueCanvas;
 
-    string curNametag = "";
-
     bool canContinue = false;
     private void Awake()
     {
