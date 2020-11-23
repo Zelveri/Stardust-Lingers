@@ -28,5 +28,11 @@ public class InputHandlerBehaviour : MonoBehaviour
         {
             GameManager.sceneController.ScenePhone();
         }
+#if (DEBUG)
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+
+        }
+#endif
     }
 }
