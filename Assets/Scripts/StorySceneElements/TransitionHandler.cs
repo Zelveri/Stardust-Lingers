@@ -155,10 +155,11 @@ public class TransitionHandler : MonoBehaviour
         DoOnDark();
         if(direction == "in")
         {// fade in and then fade dialogue in
-            dialogueAnimator.HideDialogue();
-            dialogueAnimator.ClearText();
+            // only do dialogueAnimator fcns if it exists, phone scene does not have a dialogueAnimator!!!
+            dialogueAnimator?.HideDialogue();
+            dialogueAnimator?.ClearText();
             yield return StartCoroutine(FadeIn(animator));
-            yield return StartCoroutine(dialogueAnimator.FadeOpaque(null));
+            if (dialogueAnimator != null) yield return StartCoroutine(dialogueAnimator.FadeOpaque(null));
         }
         onComplete?.Invoke();
     }
