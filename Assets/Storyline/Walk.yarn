@@ -107,13 +107,30 @@ I took a deep, shuddering breath.
 "He'd expose me for who I used to be. There's no way I could let that happen."
 "I still can't let that happen."
 "To make sure of that, I was prepared to stay silent."
-"As for why he didn't say anything when I left-"
-"I think he knew that if he revealed everything, there'd be no reason for me to come crawling back."
+"As for why he didn't say anything anyway-"
+"I think he knew that if he revealed everything right away, there'd be no reason for me to come crawling back."
 "As long as I kept his secrets, he would keep mine."
 "We shared quite a few."
-"And now, I'm here trying to figure out the last one he's given me."
-At first, I hadn't believed him when he said he would be gone.
-The truth soon became clear.
+"And now, here I am, trying to figure out the last one he's left me."
+At first, I hadn't believed him when he said he would be gone, but he truth soon became clear.
 He'd vanished with a bizarre farewell that gave no clear hints as to where he had gone.
 My only guide was words left upon screen and page.
+"Hah... that was a lot, huh?"
+I scritched at the bunny's forehead as it gave me a pondering look.
+"Thanks for listening to my nonsense, bunny."
+[[Name]]
+===
+title: Name
+tags: 
+colorID: 0
+position: 1072,-137
+---
+"Come to think of it, I've just been calling you bunny this whole time. I should name you."
+<< nametag Lune >>
+<< sprite Bunny Open_Open >> 
+"I do have a name! Its Lune."
+<< nametag Mira >>
+"Ah, okay! Sorry for assuming you didn't."
+"..."
+"Wait."
 ===
