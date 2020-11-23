@@ -95,7 +95,7 @@ I gave it a strained smile.
 "Away from all of my worries."
 "Until the biggest one of all decided to follow me."
 << sprite Bunny Shut_Neutral >> 
-I began to pet the fluffy fur where it now lay comfortably upon my lap.
+With my uninjured hand, I began to pet the fluffy fur where it now lay comfortably upon my lap.
 << sprite Bunny Shut_Neutral Fade_Out >> 
 "I should've been the one who'd had enough."
 "Instead, it was me who found myself shut outside."
@@ -133,4 +133,43 @@ position: 1072,-137
 "Ah, okay! Sorry for assuming you didn't."
 "..."
 "Wait."
+My hand came to an abrupt stop as I stared down at the creature. It turned its head to cheerfully nuzzle at my arm.
+"You, um... I'm just hearing things, right?"
+<< nametag Lune >>
+<< sprite Bunny Mad_Pout >>
+"If by things you mean me, then yes. But that's a bit rude, isn't it?"
+<< nametag Mira >>
+"I ah, I m-mean- sorry!"
+Embarrassed by the cracked squeak I blurted that out in, I fumbled for words as though trying to catch bugs flying through a hurricane.
+<< nametag Lune>>
+<< sprite Bunny Shut_OpenSmile >>
+"Ehehe. I didn't mean to make you nervous."
+"You shared so much with me, yet I hadn't even properly introduced myself!"
+"I felt sooo awkward not saying anything."
+<< nametag Mira >>
+"Well I feel awkward knowing you actually understood all that!"
+"How can you even talk!?"
+Almost instinctively, I began to stroke the wonderfully soft fur again in an attempt to calm my frazzled heart, despite the little one being the direct cause of it.
+<< nametag Lune >>
+<< sprite Bunny Intense_Flat >>
+"Because you're dreaming."
+"..."
+<< sprite Bunny Sparkle_Shut_Smile >>
+"Juuust kidding! This is totally real."
+<< nametag Mira >>
+"You're a troublemaker, aren't you..."
+<< nametag Lune >>
+<< sprite Bunny Open_Smile >> 
+"Maybe I am!"
+"I can't help it, though! Being a ghost is way too fun."
+"..."
+<< nametag Mira>>
+"Just kidding?"
+<< nametag Lune>> 
+<< sprite Bunny Open_Open >>
+"No, I'm serious this time."
+<< nametag Mira>> 
+I don't think my mind is prepared for this many beatings at once.
+I pick myself up with Lune in my arms, making my way back home before I got stuck in dark woods with whatever the heck they were.
+<< transition Fade_Out >>
 ===
