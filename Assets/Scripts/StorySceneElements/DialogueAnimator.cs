@@ -72,6 +72,7 @@ public class DialogueAnimator : MonoBehaviour
             //}
         }
         nameTag.text = newName;
+        storyText.text = "";
         textBackground.sprite = Resources.Load<Sprite>("Artwork/UI/Text Box/" + boxName);
         // change text color
         if(theme_color == "Light")
