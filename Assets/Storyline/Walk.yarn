@@ -20,8 +20,7 @@ colorID: 0
 position: 579,-136
 ---
 << backdrop DeepWoods_Day >>
-<< transition Fade_Out>>
-<< transition Fade_In>>
+<< transition Cross_Fade >>
 Eventually we found ourselves delving deeper into the woods.
 So much comforting shade, even in the brightness of day.
 From what I did remember, I had always ended up finding my way to the denser areas, curious about what secrets they might contain.
