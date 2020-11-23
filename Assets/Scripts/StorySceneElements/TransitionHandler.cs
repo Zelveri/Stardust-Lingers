@@ -94,17 +94,18 @@ public class TransitionHandler : MonoBehaviour
                 break;
             // fade with black screen
             case "Fade_In":
-                StartCoroutine(FadeIn(crossfadeAnimator, onComplete));
+                StartCoroutine(Fade("in", crossfadeAnimator, onComplete));
                 break;
             case "Fade_Out":
-                StartCoroutine(FadeOut(crossfadeAnimator, onComplete));
-                break;
-            case "Slide":
-                StartCoroutine(Transition(slideAnimator, onComplete));
+                StartCoroutine(Fade("out", crossfadeAnimator, onComplete));
                 break;
             case "Cross_Fade":
                 StartCoroutine(Transition(crossfadeAnimator, onComplete));
                 break;
+            case "Slide":
+                StartCoroutine(Transition(slideAnimator, onComplete));
+                break;
+
 
             default:
                     Debug.LogError("Transition type not found: " + pars[0]);
@@ -126,23 +127,48 @@ public class TransitionHandler : MonoBehaviour
         // clear text so it wont show when dlg is faded back in
         dialogueAnimator.ClearText();
         // start screen transition to black with given animator
-        yield return StartCoroutine(FadeOut(animator, null));
+        yield return StartCoroutine(FadeOut(animator));
         // do the hidden changes
         DoOnDark();
         // fade back in
-        yield return StartCoroutine(FadeIn(animator, null));
+        yield return StartCoroutine(FadeIn(animator));
         // show dialogue again
-        yield return StartCoroutine(dialogueAnimator.FadeOpaque(onComplete));
-        
+        yield return StartCoroutine(dialogueAnimator.FadeOpaque(null));
+        onComplete?.Invoke();
+    }
+
+    /// <summary>
+    /// Do the fade
+    /// </summary>
+    /// <param name="direction">in or out</param>
+    /// <param name="animator">Animator or override controller. Needs to support "Fade_Clear" and "Fade_Black" trigger</param>
+    /// <param name="onComplete">blocking Action</param>
+    /// <returns></returns>
+    IEnumerator Fade(string direction, Animator animator, System.Action onComplete)
+    {
+        if (direction == "out")
+        {// hide dialogue and then fade to black
+            yield return StartCoroutine(dialogueAnimator.FadeClear(null));
+            yield return StartCoroutine(FadeOut(animator));
+        }
+        // always do the queued statements
+        DoOnDark();
+        if(direction == "in")
+        {// fade in and then fade dialogue in
+            dialogueAnimator.HideDialogue();
+            dialogueAnimator.ClearText();
+            yield return StartCoroutine(FadeIn(animator));
+            yield return StartCoroutine(dialogueAnimator.FadeOpaque(null));
+        }
+        onComplete?.Invoke();
     }
 
     /// <summary>
     /// Start fade out animation on given animator
     /// </summary>
     /// <param name="animator">Animator or override controller. Needs to support "Fade_Clear" and "Fade_Black" trigger</param>
-    /// <param name="onComplete">blocking action</param>
     /// <returns></returns>
-    public IEnumerator FadeOut(Animator animator, System.Action onComplete)
+    IEnumerator FadeOut(Animator animator)
     {
         // animationstate component receives signal when animation is finished
         var animstate = animator.gameObject.GetComponent<AnimationState>();
@@ -155,47 +181,22 @@ public class TransitionHandler : MonoBehaviour
         {
             yield return null;
         }
-        // if action is not null, invoke it
-        onComplete?.Invoke();
     }
 
     /// <summary>
     /// Start fade in animation on given animator
     /// </summary>
     /// <param name="animator">Animator or override controller. Needs to support "Fade_Clear" and "Fade_Black" trigger</param>
-    /// <param name="onComplete">blocking action</param>
     /// <returns></returns>
-    public IEnumerator FadeIn(Animator animator, System.Action onComplete)
+    IEnumerator FadeIn(Animator animator)
     {
         var animstate = animator.gameObject.GetComponent<AnimationState>();
-        animator.SetTrigger("Fade_Clear");
-        DoOnDark();
-        animstate.isRunning = true;
-        while (animstate.isRunning)
-        {
-            yield return null;
-        }
-        onComplete?.Invoke();
-    }
-
-    // obsolete, simply the other two function bound together with background change
-    public IEnumerator DoAnimation(Animator animator, string backgrnd, System.Action onComplete)
-    {
-        var animstate = animator.gameObject.GetComponent<AnimationState>();
-        animator.SetTrigger("Fade_Black");
-        animstate.isRunning = true;
-        while (animstate.isRunning)
-        {
-            yield return null;
-        }
-        backgroundHandler.ChangeBackdropFast(backgrnd, null);
+        animator.SetFloat("Duration", transitionSpeed);
         animator.SetTrigger("Fade_Clear");
         animstate.isRunning = true;
         while (animstate.isRunning)
         {
             yield return null;
         }
-        onComplete?.Invoke();
     }
-
 }
