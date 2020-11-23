@@ -70,21 +70,7 @@ public class YarnCommands : MonoBehaviour
 
     void NameTag(string[] pars, System.Action onComplete)
     {
-        if (pars[0] != curNametag)
-        {
-            curNametag = pars[0];
-            // nametag change should happen invisible during transition?
-            if (TransitionHandler.newNode)
-            {
-                TransitionHandler.OnDark.AddListener(new UnityAction(() => dialogueAnimator.ChangeNameTag(pars, null)));
-                onComplete?.Invoke();
-            }
-            else
-            {
-                dialogueAnimator.ChangeNameTag(pars, onComplete);
-            }
-        }
-        else onComplete?.Invoke();
+        dialogueAnimator.ChangeNameTag(pars, onComplete);
     }
 
     public void HideDialogue(string[] parameters, System.Action onComplete)

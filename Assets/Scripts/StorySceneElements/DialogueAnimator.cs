@@ -21,7 +21,7 @@ public class DialogueAnimator : MonoBehaviour
 
 
     bool _isfading = false;
-    bool _ishidden = false;
+    bool _ishidden = true;
 
     public bool isHidden
     {
@@ -45,56 +45,78 @@ public class DialogueAnimator : MonoBehaviour
 
     public void ChangeNameTag(string[] pars, System.Action onComplete)
     {
-        var name = pars[0];
-        string theme_color = PlayerPrefs.GetString("theme_color");
-        string boxName = theme_color + "_" + nameToTextureDict[name];
-        var doEffect = !isHidden;
-        // if additional hidden argument is given conceal name
-        if ((pars.Length > 1))
+        // only execute if nametag actually needs changing
+        if (pars[0] != DataController.GetNametag())
         {
-            if (pars[1] == "hidden") name = "???";
-            else name = pars[1];
+            var name = pars[0];
+            string theme_color = PlayerPrefs.GetString("theme_color");
+            string boxName = theme_color + "_" + nameToTextureDict[name];
+            var doEffect = !isHidden;
+            // if additional hidden argument is given conceal name
+            if ((pars.Length > 1))
+            {
+                if (pars[1] == "hidden") name = "???";
+                else name = pars[1];
+            }
+            // add name to log
+            // nametag change should happen invisible during transition
+            if (TransitionHandler.newNode)
+            {
+                // queue nametag change without effect
+                TransitionHandler.OnDark.AddListener(
+                delegate()
+                {
+                    GameManager.dataController.UpdateNametag(pars[0], name);
+                    StartCoroutine(DoChange(name, boxName, theme_color, false, null));
+                });
+                onComplete?.Invoke();
+            }
+            else
+            {
+                // do nametag change now 
+                GameManager.dataController.UpdateNametag(pars[0], name);
+                StartCoroutine(DoChange(name, boxName, theme_color, doEffect, onComplete));
+            }
         }
-        // add name to log
-        GameManager.dataController.UpdateNametag(pars[0], name);
-        StartCoroutine(DoChange(name, boxName, theme_color, doEffect, onComplete));
+        else onComplete?.Invoke();
     }
 
+    /// <summary>
+    /// do the nametag change with box color
+    /// </summary>
+    /// <param name="newName">new nametag</param>
+    /// <param name="boxName">new box sprite name</param>
+    /// <param name="theme_color">theme color light or dark</param>
+    /// <param name="doEffect">do fade animation?</param>
+    /// <param name="onComplete">blocking action</param>
+    /// <returns></returns>
     IEnumerator DoChange(string newName, string boxName, string theme_color, bool doEffect, System.Action onComplete)
     {
         Color col;
+        // if fade effect should be done execute and wait for effect
         if (doEffect)
         {
             yield return StartCoroutine(FadeClear(null));
-            //while (animationEvent.isRunning)
-            //{
-            //    yield return null;
-            //}
         }
+        // assign new nametag to text field
         nameTag.text = newName;
-        storyText.text = "";
+        // load new sprite
         textBackground.sprite = Resources.Load<Sprite>("Artwork/UI/Text Box/" + boxName);
-        // change text color
-        if(theme_color == "Light")
-        {
-            col = new Color(0, 0, 0);
-        }
-        else
-        {
-            col = new Color(1, 1, 1);
-        }
+        // change text theme color
+        if(theme_color == "Light") col = new Color(0, 0, 0);
+        else col = new Color(1, 1, 1);
         storyText.color = col;
+
         if (doEffect)
         {
             yield return StartCoroutine(FadeOpaque(null));
-            //while (animationEvent.isRunning)
-            //{
-            //    yield return null;
-            //}
         }
+        // command done
         onComplete?.Invoke();
     }
 
+    // reload settings is called from GameManager OnPrefsChanged event
+    // reloads theme color if changed in menu
     public void ReloadSettings()
     {
         string theme_color = PlayerPrefs.GetString("theme_color");
@@ -102,15 +124,26 @@ public class DialogueAnimator : MonoBehaviour
         StartCoroutine(DoChange(GameManager.dataController.CurNametag, boxName, theme_color, false, null));
     }
 
+    /// <summary>
+    /// clears the story text
+    /// </summary>
     public void ClearText()
     {
         storyText.text = "";
     }
 
-    public IEnumerator FadeClear(System.Action onComplete)
+    /// <summary>
+    /// hides the dialogue
+    /// </summary>
+    public void HideDialogue()
+    {
+        StartCoroutine(FadeClear(null,true));
+    }
+
+    public IEnumerator FadeClear(System.Action onComplete, bool instant=false)
     {
         var currentState = fadeAnimator.GetCurrentAnimatorStateInfo(0);
-        fadeAnimator.SetFloat("Speed", speed);
+        fadeAnimator.SetFloat("Speed", instant ? 10000f : speed);
         if (!currentState.IsName("Dialogue_Fade_Clear"))
         {
             _isfading = true;
@@ -124,10 +157,10 @@ public class DialogueAnimator : MonoBehaviour
         }
     }
 
-    public IEnumerator FadeOpaque(System.Action onComplete)
+    public IEnumerator FadeOpaque(System.Action onComplete, bool instant=false)
     {
         var currentState = fadeAnimator.GetCurrentAnimatorStateInfo(0);
-        fadeAnimator.SetFloat("Speed", speed);
+        fadeAnimator.SetFloat("Speed", instant ? 10000f : speed);
         if (!currentState.IsName("Dialogue_Fade_Opaque"))
         {
             _isfading = true;
