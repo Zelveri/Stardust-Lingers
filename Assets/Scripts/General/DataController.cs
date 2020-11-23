@@ -74,10 +74,11 @@ public class DataController : MonoBehaviour
         GameManager.dialogueRunner.StartDialogue(save.currentNode);
     }
 
-    public void UpdateNametag(string text)
+    public void UpdateNametag(string text, string visible_as="")
     {
+        if (visible_as == "") visible_as = text;
         curNametag = text;
-        AddLineToTracker("\n" + text + ":");
+        AddLineToTracker("\n" + visible_as + ":");
     }
 
     public void UpdateCurrentNode(string node)

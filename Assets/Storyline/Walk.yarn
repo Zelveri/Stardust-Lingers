@@ -71,8 +71,8 @@ colorID: 0
 position: 827,-136
 ---
 << backdrop River_Dawn >>
-<< transition Fade_Out>>
-<< transition Fade_In>>
+<< nametag Mira >>
+<< transition Cross_Fade>>
 In our retreat, a river came into view.
 As the bunny lapped at its edge, I dropped down beside and focused on the soothing rush of water.
 There was a certain kindness in its refusal of reflections, too busy hurrying along to dwell on judgement. But although I could not see my outer self, my thoughts did not join in its hiding.
@@ -125,6 +125,7 @@ tags:
 colorID: 0
 position: 1072,-137
 ---
+<< transition None >>
 "Come to think of it, I've just been calling you bunny this whole time. I should name you."
 << nametag Lune >>
 << sprite Bunny Open_Open >> 

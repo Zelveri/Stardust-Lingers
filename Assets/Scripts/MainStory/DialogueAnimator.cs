@@ -50,12 +50,13 @@ public class DialogueAnimator : MonoBehaviour
         string boxName = theme_color + "_" + nameToTextureDict[name];
         var doEffect = !isHidden;
         // if additional hidden argument is given conceal name
-        if ((pars.Length > 1) && (pars[1] == "hidden"))
+        if ((pars.Length > 1))
         {
-            name = "???";
+            if (pars[1] == "hidden") name = "???";
+            else name = pars[1];
         }
         // add name to log
-        GameManager.dataController.UpdateNametag(name);
+        GameManager.dataController.UpdateNametag(pars[0], name);
         StartCoroutine(DoChange(name, boxName, theme_color, doEffect, onComplete));
     }
 

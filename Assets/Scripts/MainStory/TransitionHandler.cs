@@ -56,6 +56,15 @@ public class TransitionHandler : MonoBehaviour
     }
 
     /// <summary>
+    ///  If no transition is scheduled, cancel the actions
+    /// </summary>
+    void CancelOnDark()
+    {
+        newNode = false;
+        OnDark.RemoveAllListeners();
+    }
+
+    /// <summary>
     /// Evaluate the parameters of the called transition command
     /// </summary>
     /// <param name="pars">command parameters</param>
@@ -77,6 +86,7 @@ public class TransitionHandler : MonoBehaviour
         {
             // direct background fade without black screen
             case "None":
+                CancelOnDark();
                 StartCoroutine(backgroundHandler.DoChangeFast(nextBackdrop, onComplete));
                 break;
             case "Fade":
