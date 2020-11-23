@@ -73,4 +73,21 @@ position: 827,-136
 << backdrop River_Dawn >>
 << transition Fade_Out>>
 << transition Fade_In>>
+In our retreat, a river came into view.
+As the bunny lapped at its edge, I dropped down beside and focused on the soothing rush of water.
+There was a certain kindness in its refusal of reflections, too busy hurrying along to dwell on judgement. But although I could not see my outer self, my thoughts did not join in its hiding.
+I began to pour them out, hoping that they too could be washed away in the stream.
+"I just don't know if this is really worth it..."
+<< sprite Bunny Open_Neutral >> 
+The bunny paused in its drinking and made its way closer.
+It seemed a little hesitant in its approach, but tentatively rested a paw on my arm.
+"Feeling like playing nice again, huh?"
+I gave it a strained smile.
+"It's okay, I'm not mad. Something must have really spooked you back there..."
+<< sprite Bunny Slant_Neutral>>
+<< nametag Lune Bunny >>
+"..."
+<< nametag Mira >>
+"I expected to be alone here. I"m glad that you're the one I found."
+"I came here for a reason, you see."
 ===
