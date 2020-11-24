@@ -83,7 +83,7 @@ It seemed a little hesitant in its approach, but tentatively rested a paw on my 
 "Feeling like playing nice again, huh?"
 I gave it a strained smile.
 "It's okay, I'm not mad. Something must have really spooked you back there..."
-<< sprite Bunny Slant_Neutral>>
+<< sprite Bunny Sad_Neutral>>
 << nametag Lune Bunny >>
 "..."
 << nametag Mira >>
@@ -151,7 +151,7 @@ Embarrassed by the cracked squeak I blurted that out in, I fumbled for words as 
 "How can you even talk!?"
 Almost instinctively, I began to stroke the wonderfully soft fur again in an attempt to calm my frazzled heart, despite the little one being the direct cause of it.
 << nametag Lune >>
-<< sprite Bunny Intense_Flat >>
+<< sprite Bunny Open_Flat >>
 "Because you're dreaming."
 "..."
 << sprite Bunny Sparkle_Shut_Smile >>
