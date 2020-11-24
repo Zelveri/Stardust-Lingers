@@ -49,7 +49,7 @@ Hissing, I glare down at it, staggering backwards.
 "You..!"
 "What was that for?!"
 << nametag Lune Bunny >>
-<< sprite Bunny Shade_Scared_Grind >>
+<< sprite Bunny Scared_TeethGrind >>
 "..."
 Thump.
 << nametag Mira >>
@@ -83,7 +83,7 @@ It seemed a little hesitant in its approach, but tentatively rested a paw on my 
 "Feeling like playing nice again, huh?"
 I gave it a strained smile.
 "It's okay, I'm not mad. Something must have really spooked you back there..."
-<< sprite Bunny Sad_Neutral>>
+<< sprite Bunny Slant_Neutral>>
 << nametag Lune Bunny >>
 "..."
 << nametag Mira >>
