@@ -49,7 +49,7 @@ Hissing, I glare down at it, staggering backwards.
 "You..!"
 "What was that for?!"
 << nametag Lune Bunny >>
-<< sprite Bunny Scared_TeethGrind >>
+<< sprite Bunny Shade_Scared_Grind >>
 "..."
 Thump.
 << nametag Mira >>
