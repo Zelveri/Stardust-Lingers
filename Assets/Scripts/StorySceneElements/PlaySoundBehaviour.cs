@@ -11,16 +11,16 @@ public class PlaySoundBehaviour : MonoBehaviour
 
     public void PlaySound(int index)
     {
-        GameManager.soundEffects.PlaySound(sound[index].name, loop: false);
+        GameManager.soundEffects.PlaySound(sound[index], loop: false);
     }
 
     public void PlaySoundLooping(int index)
     {
-        GameManager.soundEffects.PlaySound(sound[index].name, loop: true);
+        GameManager.soundEffects.PlaySound(sound[index], loop: true);
     }
     public void PlaySoundFade(int index)
     {
-        GameManager.soundEffects.PlaySound(sound[index].name, fade: true);
+        GameManager.soundEffects.PlaySound(sound[index], fade: true);
     }
 
     public void StopSound(int index)

@@ -25,12 +25,12 @@ public class ButtonSounds : MonoBehaviour
 
     void OnHover(BaseEventData data)
     {
-        GameManager.soundEffects.PlaySound(soundOnHover.name, loop: false);
+        if (soundOnHover != null) GameManager.soundEffects.PlaySound(soundOnHover, loop: false);
     }
 
     void OnClick()
     {
-        GameManager.soundEffects.PlaySound(soundOnClick.name, loop: false);
+        if (soundOnClick != null) GameManager.soundEffects.PlaySound(soundOnClick, loop: false);
     }
 
 }

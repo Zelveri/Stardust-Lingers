@@ -45,7 +45,7 @@ public class SoundEffectsBehaviour : MonoBehaviour
         switch (pars[0])
         {
             case "play":
-                PlaySound(pars[1], loop, fade);
+                StartCoroutine(PlaySound(pars[1], loop, fade));
                 break;
 
             case "stop":
@@ -54,41 +54,44 @@ public class SoundEffectsBehaviour : MonoBehaviour
         }
     }
 
-    public void PlaySound(string name, bool loop = true, bool fade = false)
+    IEnumerator PlaySound(string name, bool loop = true, bool fade = false)
+    { 
+        // load audio file async
+        var res_req = Resources.LoadAsync<AudioClip>("Sounds/" + name);
+        yield return new WaitUntil(() => res_req.isDone);
+        // call playback fcn when resource is loaded
+        PlaySound((AudioClip)res_req.asset, loop, fade);
+        
+    }
+
+    public void PlaySound(AudioClip clip, bool loop = true, bool fade = false)
     {
         // create new gameobject as sound player
         AudioSource src = Instantiate(soundEffectPrefab).GetComponent<AudioSource>();
-        try
-        {
-            src.gameObject.SetActive(true);
-            src.clip = Resources.Load<AudioClip>("Sounds/" + name);
-            src.loop = loop;
-            // volume as set in menu
-            src.volume = PlayerPrefs.GetFloat("sfx_volume");
+        src.gameObject.SetActive(true);
+        src.loop = loop;
+        src.clip = clip;
+        // volume as set in menu
+        src.volume = PlayerPrefs.GetFloat("sfx_volume");
 
-            // do a quick fade in of 2 sec if wanted
-            if (fade)
-            {
-                StartCoroutine(FadeIn(src, 2f));
-            }
-            else
-            {
-                src.Play();
-            }
-            // add sound source to dict to remember who plays what sound
-            if (loop)
-            {
-                sfxPlayers.Add(name, src);
-            }
-            else
-            {
-                // destroy object when sound finishes playing
-                StartCoroutine(DestroyAfterPlay(src));
-            }
-        }
-        catch(Exception ex)
+        // do a quick fade in of 2 sec if wanted
+        if (fade)
         {
-            Debug.LogWarning("Sound player: " + ex.Message);
+            StartCoroutine(FadeIn(src, 2f));
+        }
+        else
+        {
+            src.Play();
+        }
+        // add sound source to dict to remember who plays what sound
+        if (loop)
+        {
+            sfxPlayers.Add(clip.name, src);
+        }
+        else
+        {
+            // destroy object when sound finishes playing
+            StartCoroutine(DestroyAfterPlay(src));
         }
     }
 
