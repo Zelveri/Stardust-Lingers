@@ -28,6 +28,8 @@ public class GameManager : SingletonTemplate<GameManager>
     /// </summary>
     public static UnityEvent OnPrefsChanged = new UnityEvent();
 
+    public static UnityEvent OnVolumeChanged = new UnityEvent();
+
     public override void Awake()
     {
         // GameManager script will load last ( set in Project settings )
@@ -41,6 +43,9 @@ public class GameManager : SingletonTemplate<GameManager>
 
         // dialogueRunner registers itself on module load ( happens before GameManager laods)
         dialogueRunner.variableStorage = variableStorage;
+
+        // save menu prefs to disk when manu is closed
+        OnPrefsChanged.AddListener(SavePrefs);
     }
 
     // gets called when MyDialogueUI is initialized
@@ -59,11 +64,17 @@ public class GameManager : SingletonTemplate<GameManager>
         if (dialogueUI != null) dialogueRunner.dialogueUI = dialogueUI;
     }
 
+    public void SavePrefs()
+    {
+        PlayerPrefs.Save();
+    }
+
     public static void Quit()
     {
         Application.Quit();
     }
 
+    // non static fcn just for the main screen quit button because iT DoEs NoT LiKe StaTiC FunCTioNs
     public void Exit()
     {
         GameManager.Quit();

@@ -21,10 +21,22 @@ public class SoundEffectsBehaviour : MonoBehaviour
             PlayerPrefs.SetFloat("sfx_volume", 1);
         }
         sfxPlayers = new Dictionary<string, AudioSource>();
+        GameManager.OnVolumeChanged.AddListener(VolumeChanged);
     }
 
     private void OnDestroy()
     {
+        GameManager.OnVolumeChanged.RemoveListener(VolumeChanged);
+    }
+
+    // update volume on every looping sound effect
+    public void VolumeChanged()
+    {
+        float newVolume = PlayerPrefs.GetFloat("sfx_volume");
+        foreach(var item in sfxPlayers)
+        {
+            item.Value.volume = newVolume;
+        }
     }
 
     public void Sound(string[] pars)
@@ -60,7 +72,6 @@ public class SoundEffectsBehaviour : MonoBehaviour
         yield return new WaitUntil(() => res_req.isDone);
         // call playback fcn when resource is loaded
         PlaySound((AudioClip)res_req.asset, loop, fade);
-        
     }
 
     public void PlaySound(AudioClip clip, bool loop = true, bool fade = false)

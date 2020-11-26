@@ -10,7 +10,15 @@ public class PersistentCommands : MonoBehaviour
     private void Awake()
     {
         dialogueRunner = GameManager.dialogueRunner;
+
+        // command music
+        // usage:
+        // music stop
+        // music play <filename>
+        // music fade_out [fade_duration=3]
+        // music fade_in <filename> [fade_duration=3]
         dialogueRunner.AddCommandHandler("music", music.PlayMusic);
+        // sound (play/stop) <name> [loop] [fade]
         dialogueRunner.AddCommandHandler("sound", sound.Sound);
         dialogueRunner.AddCommandHandler("scene", LoadScene);
     }
