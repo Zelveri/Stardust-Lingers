@@ -25,7 +25,6 @@ public class SoundEffectsBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        dialogueRunner?.RemoveCommandHandler("sound");
     }
 
     public void Sound(string[] pars)

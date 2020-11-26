@@ -27,7 +27,6 @@ public class MusicPlayerBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        dialogueRunner.RemoveCommandHandler("music");
     }
 
     public void PlayMusic(string[] parameters)
