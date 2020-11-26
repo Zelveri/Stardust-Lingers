@@ -32,6 +32,12 @@ public class TransitionHandler : MonoBehaviour
     void Awake()
     {
         OnDark = new UnityEvent();
+        GameManager.RegisterTransitionHandler(this);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.UnregisterTransitionHandler();
     }
 
     /// <summary>
@@ -148,7 +154,7 @@ public class TransitionHandler : MonoBehaviour
     {
         if (direction == "out")
         {// hide dialogue and then fade to black
-            yield return StartCoroutine(dialogueAnimator.FadeClear(null));
+            if(dialogueAnimator) yield return StartCoroutine(dialogueAnimator.FadeClear(null));
             yield return StartCoroutine(FadeOut(animator));
         }
         // always do the queued statements
@@ -159,7 +165,7 @@ public class TransitionHandler : MonoBehaviour
             dialogueAnimator?.HideDialogue();
             dialogueAnimator?.ClearText();
             yield return StartCoroutine(FadeIn(animator));
-            if (dialogueAnimator != null) yield return StartCoroutine(dialogueAnimator.FadeOpaque(null));
+            if (dialogueAnimator) yield return StartCoroutine(dialogueAnimator.FadeOpaque(null));
         }
         onComplete?.Invoke();
     }
@@ -195,6 +201,42 @@ public class TransitionHandler : MonoBehaviour
         animator.SetFloat("Duration", transitionSpeed);
         animator.SetTrigger("Fade_Clear");
         animstate.isRunning = true;
+        while (animstate.isRunning)
+        {
+            yield return null;
+        }
+    }
+
+    /// <summary>
+    /// to use when using transitions apart from the story
+    /// </summary>
+    public IEnumerator SceneFadeOut()
+    {
+        // animationstate component receives signal when animation is finished
+        var animstate = crossfadeAnimator.gameObject.GetComponent<AnimationState>();
+        // set animation speed multiplier, Duration is not accurate name
+        crossfadeAnimator.SetFloat("Duration", 2f);
+        crossfadeAnimator.SetTrigger("Fade_Black");
+        animstate.isRunning = true;
+        // wait for finished signal
+        while (animstate.isRunning)
+        {
+            yield return null;
+        }
+    }
+
+    /// <summary>
+    /// to use when using transitions apart from the story
+    /// </summary>
+    public IEnumerator SceneFadeIn()
+    {
+        // animationstate component receives signal when animation is finished
+        var animstate = crossfadeAnimator.gameObject.GetComponent<AnimationState>();
+        // set animation speed multiplier, Duration is not accurate name
+        crossfadeAnimator.SetFloat("Duration", 2f);
+        crossfadeAnimator.SetTrigger("Fade_Clear");
+        animstate.isRunning = true;
+        // wait for finished signal
         while (animstate.isRunning)
         {
             yield return null;

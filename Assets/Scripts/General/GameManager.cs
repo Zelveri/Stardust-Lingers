@@ -21,6 +21,13 @@ public class GameManager : SingletonTemplate<GameManager>
 
     // new instance per scene, should register itself
     public static MyDialogueUI dialogueUI;
+    // returns current active transition handler for scene loading
+    public static TransitionHandler transitionHandler
+    {
+        get { return transitionHandlers.Peek(); }
+    }
+    //data structure to keep track of the current active transition handler
+    static Stack<TransitionHandler> transitionHandlers = new Stack<TransitionHandler>();
 
     /// <summary>
     /// called when menu changes prefs 
@@ -63,6 +70,23 @@ public class GameManager : SingletonTemplate<GameManager>
         // if dialogueUI was initialized before dialogueRunner we assign it here
         if (dialogueUI != null) dialogueRunner.dialogueUI = dialogueUI;
     }
+
+    // gets called when transition object initializes
+    public static void RegisterTransitionHandler(TransitionHandler trans)
+    {
+        transitionHandlers.Push(trans);
+    }
+
+    public static void UnregisterTransitionHandler()
+    {
+        if(transitionHandlers.Count > 0) transitionHandlers.Pop();
+    }
+
+    public static void ClearTransitionHandlers()
+    {
+        if (transitionHandlers.Count > 0) transitionHandlers.Clear();
+    }
+
 
     public void SavePrefs()
     {
