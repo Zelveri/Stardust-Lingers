@@ -816,6 +816,7 @@ MonoBehaviour:
   backgroundHandler: {fileID: 1167082799}
   dialogueAnimator: {fileID: 6800228287496726033}
   transitionHandler: {fileID: 1748358423}
+  characterContainer: {fileID: 0}
   dialogueCanvas: {fileID: 2119774803}
 --- !u!4 &2058665987
 Transform:
@@ -1202,8 +1203,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8411031067027066288, guid: 9bbe86cccce23194a9c7aa31702018c1,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411031067027066288, guid: 9bbe86cccce23194a9c7aa31702018c1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8411031068225933496, guid: 9bbe86cccce23194a9c7aa31702018c1,
         type: 3}

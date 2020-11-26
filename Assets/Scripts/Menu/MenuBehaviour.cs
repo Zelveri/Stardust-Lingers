@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class MenuBehaviour : MonoBehaviour
@@ -8,8 +9,12 @@ public class MenuBehaviour : MonoBehaviour
 
     public GameObject settingsUI;
     public GameObject saveUI;
+
+    public UnityEvent OnLoad;
+
     private void Awake()
-    { 
+    {
+        //OnLoad = new UnityEvent();
         if(!PlayerPrefs.HasKey("menu_last_open")) PlayerPrefs.SetInt("menu_last_open", 0);
         // load previous seen screen
         var prevMenu = PlayerPrefs.GetInt("menu_last_open");
@@ -21,6 +26,11 @@ public class MenuBehaviour : MonoBehaviour
         {
             ShowSettings();
         }
+    }
+
+    private void Start()
+    {
+        OnLoad.Invoke();
     }
 
     public void OnFileClick()

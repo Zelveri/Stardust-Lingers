@@ -56,7 +56,7 @@ public class SoundEffectsBehaviour : MonoBehaviour
         switch (pars[0])
         {
             case "play":
-                StartCoroutine(PlaySound(pars[1], loop, fade));
+                PlaySound(pars[1], loop, fade);
                 break;
 
             case "stop":
@@ -65,8 +65,14 @@ public class SoundEffectsBehaviour : MonoBehaviour
         }
     }
 
-    IEnumerator PlaySound(string name, bool loop = true, bool fade = false)
-    { 
+    public void PlaySound(string name, bool loop = true, bool fade = false)
+    {
+        StartCoroutine(DoPlaySound(name, loop, fade));
+    }
+
+
+    IEnumerator DoPlaySound(string name, bool loop = true, bool fade = false)
+    {
         // load audio file async
         var res_req = Resources.LoadAsync<AudioClip>("Sounds/" + name);
         yield return new WaitUntil(() => res_req.isDone);

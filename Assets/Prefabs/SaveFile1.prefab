@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundOnHover: {fileID: 0}
-  soundOnClick: {fileID: 0}
+  soundOnClick: {fileID: 8300000, guid: 3de2870ec80ca724c9a4ea192149a41a, type: 3}
 --- !u!1 &3809072479937457853
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundOnHover: {fileID: 0}
-  soundOnClick: {fileID: 0}
+  soundOnClick: {fileID: 8300000, guid: 3de2870ec80ca724c9a4ea192149a41a, type: 3}
 --- !u!1 &3809072480117374952
 GameObject:
   m_ObjectHideFlags: 0

@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundOnHover: {fileID: 0}
-  soundOnClick: {fileID: 0}
+  soundOnClick: {fileID: 8300000, guid: 3c619c35211b0784c91fdf8a200c69de, type: 3}
 --- !u!114 &308387714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,6 +979,7 @@ GameObject:
   - component: {fileID: 372006670}
   - component: {fileID: 372006669}
   - component: {fileID: 372006673}
+  - component: {fileID: 372006674}
   m_Layer: 5
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -1083,6 +1084,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingsUI: {fileID: 636537825}
   saveUI: {fileID: 1008587639}
+  OnLoad:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 372006674}
+        m_MethodName: PlaySound
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &372006674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372006668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ae6796f560818428acede893912dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - {fileID: 8300000, guid: 3c619c35211b0784c91fdf8a200c69de, type: 3}
 --- !u!1 &416080862
 GameObject:
   m_ObjectHideFlags: 0
@@ -3775,7 +3804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundOnHover: {fileID: 0}
-  soundOnClick: {fileID: 0}
+  soundOnClick: {fileID: 8300000, guid: 90cd42d1ab7a3c44e9e9f62813b0bf3e, type: 3}
 --- !u!114 &1223900023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4009,7 +4038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundOnHover: {fileID: 0}
-  soundOnClick: {fileID: 0}
+  soundOnClick: {fileID: 8300000, guid: 90cd42d1ab7a3c44e9e9f62813b0bf3e, type: 3}
 --- !u!1 &1259123741
 GameObject:
   m_ObjectHideFlags: 0
@@ -5567,7 +5596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundOnHover: {fileID: 0}
-  soundOnClick: {fileID: 0}
+  soundOnClick: {fileID: 8300000, guid: 3c619c35211b0784c91fdf8a200c69de, type: 3}
 --- !u!1001 &2054334747
 PrefabInstance:
   m_ObjectHideFlags: 0
