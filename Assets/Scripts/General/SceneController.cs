@@ -132,7 +132,7 @@ public class SceneController : MonoBehaviour
             // on menu exit, cause settings reload
             if (CurActiveScene == Scenes.Menus) GameManager.OnPrefsChanged.Invoke();
             CurActiveScene = OldScene;
-            GameManager.dialogueUI.dialogueContainer.SetActive(true);
+            if(GameManager.dialogueUI && GameManager.dialogueUI.dialogueContainer) GameManager.dialogueUI.dialogueContainer.SetActive(true);
         }
     }
 
@@ -141,7 +141,7 @@ public class SceneController : MonoBehaviour
     /// </summary>
     public void ToggleMenu()
     {
-        if (CurActiveScene >= Scenes.Story)
+        if (CurActiveScene >= Scenes.Story || CurActiveScene == 0)
         {
             OverlaySceneLoad(Scenes.Menus);
         }
@@ -170,7 +170,7 @@ public class SceneController : MonoBehaviour
     {
         // disable main scene audio listener
         //GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = false;
-        GameManager.dialogueUI.dialogueContainer.SetActive(false);
+        if(GameManager.dialogueUI.dialogueContainer) GameManager.dialogueUI.dialogueContainer.SetActive(false);
     }
     /// <summary>
     /// Reset scene after returning from overlay
@@ -179,7 +179,7 @@ public class SceneController : MonoBehaviour
     {
         // disable main scene audio listener
         GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = true;
-        GameManager.dialogueUI.dialogueContainer.SetActive(true);
+        if(GameManager.dialogueUI.dialogueContainer) GameManager.dialogueUI.dialogueContainer.SetActive(true);
     }
 
 
