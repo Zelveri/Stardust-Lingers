@@ -14,7 +14,7 @@ public class SoundEffectsBehaviour : MonoBehaviour
     private void Awake()
     {
         //dialogueRunner = GameManager.dialogueRunner;
-        // sound (play/stop) <name> [loop] [fade]
+        
         //dialogueRunner.AddCommandHandler("sound", Sound);
         if (!PlayerPrefs.HasKey("sfx_volume"))
         {
@@ -60,7 +60,7 @@ public class SoundEffectsBehaviour : MonoBehaviour
                 break;
 
             case "stop":
-                StopSound(pars[1]);
+                StopSound(pars[1], fade);
                 break;
         }
     }

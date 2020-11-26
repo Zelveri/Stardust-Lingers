@@ -71,7 +71,7 @@ position: 827,-136
 ---
 << backdrop River_Dawn >>
 << nametag Mira >>
-<< sound play river_flow [loop] [fade] >>
+<< sound play river_flow loop fade >>
 << transition Cross_Fade>>
 In our retreat, a river came into view.
 As the bunny lapped at its edge, I dropped down beside and focused on the soothing rush of water.
@@ -172,6 +172,6 @@ Almost instinctively, I began to stroke the wonderfully soft fur again in an att
 << nametag Mira>> 
 I don't think my mind is prepared for this many beatings at once.
 I pick myself up with Lune in my arms, making a panicked sprint toward home before I got stuck out in the dark with whatever the heck they were.
-<< sound stop river_flow [fade] >>
+<< sound stop river_flow fade >>
 << transition Fade_Out >>
 ===
