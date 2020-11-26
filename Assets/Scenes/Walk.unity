@@ -675,6 +675,7 @@ MonoBehaviour:
   backgroundHandler: {fileID: 1167082799}
   dialogueAnimator: {fileID: 6800228287496726033}
   transitionHandler: {fileID: 1748358423}
+  characterContainer: {fileID: 8360080558281428880}
   dialogueCanvas: {fileID: 2119774803}
 --- !u!4 &2058665987
 Transform:
@@ -1311,6 +1312,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 598fdb548563896428cae9ab10dcc47a, type: 3}
+--- !u!114 &8360080558281428880 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8360080556720403490, guid: 598fdb548563896428cae9ab10dcc47a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8360080558281428879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839426a265206024b9f6a19990854eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8411031068601370588
 PrefabInstance:
   m_ObjectHideFlags: 0

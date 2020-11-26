@@ -12,7 +12,7 @@ public class SpriteCommandBehaviour : MonoBehaviour
     AnimationState state;
     private void Awake()
     {
-        GameManager.dialogueRunner.AddCommandHandler("sprite", SpriteCommand);
+
     }
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class SpriteCommandBehaviour : MonoBehaviour
         
     }
 
-    void SpriteCommand(string[] parameters, System.Action onComplete)
+    public void SpriteCommand(string[] parameters, System.Action onComplete)
     {
         if(parameters.Length < 2)
         {
