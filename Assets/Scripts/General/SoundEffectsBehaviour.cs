@@ -7,7 +7,6 @@ using UnityEngine;
 public class SoundEffectsBehaviour : MonoBehaviour
 {
     public GameObject soundEffectPrefab;
-    MyDialogueRunner dialogueRunner;
     // keeps track of all currently playing sounds
     Dictionary<string, AudioSource> sfxPlayers;
 
@@ -83,7 +82,9 @@ public class SoundEffectsBehaviour : MonoBehaviour
     public void PlaySound(AudioClip clip, bool loop = true, bool fade = false)
     {
         // create new gameobject as sound player
-        AudioSource src = Instantiate(soundEffectPrefab).GetComponent<AudioSource>();
+        GameObject go = Instantiate(soundEffectPrefab);
+        go.transform.parent = gameObject.transform;
+        AudioSource src = go.GetComponent<AudioSource>();
         src.gameObject.SetActive(true);
         src.loop = loop;
         src.clip = clip;
@@ -131,8 +132,8 @@ public class SoundEffectsBehaviour : MonoBehaviour
     {
         foreach(var key in sfxPlayers.Keys)
         {
-            sfxPlayers[name].Stop();
-            RemoveSource(name);
+            sfxPlayers[key].Stop();
+            RemoveSource(key);
         }
     }
 
