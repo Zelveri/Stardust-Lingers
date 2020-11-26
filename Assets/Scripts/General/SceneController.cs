@@ -154,11 +154,15 @@ public class SceneController : MonoBehaviour
     /// <summary>
     /// Will open the log if current scene is not a menu scene
     /// </summary>
-    public void TryOpenLog()
+    public void ToggleLog()
     {
         if (CurActiveScene >= Scenes.Story)
         {
             OverlaySceneLoad(Scenes.Log);
+        }
+        else
+        {
+            ReturnToStory();
         }
     }
 

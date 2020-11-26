@@ -21,7 +21,7 @@ public class InputHandlerBehaviour : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            GameManager.sceneController.TryOpenLog();
+            GameManager.sceneController.ToggleLog();
         }
 
         if (Input.GetKeyDown(KeyCode.P))
