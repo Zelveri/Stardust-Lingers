@@ -47,6 +47,7 @@ public class YarnCommands : MonoBehaviour
         dialogueRunner.RemoveCommandHandler("backdrop");
         dialogueRunner.RemoveCommandHandler("hide_dialogue");
         dialogueRunner.RemoveCommandHandler("show_dialogue");
+        dialogueRunner.RemoveCommandHandler("sprite");
     }
 
     void Backdrop(string[] pars)
