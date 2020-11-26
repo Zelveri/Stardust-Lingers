@@ -12,6 +12,8 @@ public class MenuBehaviour : MonoBehaviour
 
     public UnityEvent OnLoad;
 
+    public UnityEvent OnClose;
+
     private void Awake()
     {
         //OnLoad = new UnityEvent();
@@ -31,6 +33,11 @@ public class MenuBehaviour : MonoBehaviour
     private void Start()
     {
         OnLoad.Invoke();
+    }
+
+    private void OnDestroy()
+    {
+        OnClose.Invoke();
     }
 
     public void OnFileClick()
