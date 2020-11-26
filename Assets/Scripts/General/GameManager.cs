@@ -63,4 +63,9 @@ public class GameManager : SingletonTemplate<GameManager>
     {
         Application.Quit();
     }
+
+    public void Exit()
+    {
+        GameManager.Quit();
+    }
 }
