@@ -1,0 +1,25 @@
+title: Start
+tags: 
+colorID: 0
+position: 861,-153
+---
+<< backdrop Livingroom_Night_B >>
+<< nametag Mira >> 
+<< transition Fade_In >>
+"So.., you're a ghost who descended from the moon?"
+We were sitting on the bed together, Lune having comfortably claimed one of my pillows to flop over on. Revealing her true nature hadn't made her any less adorable.
+<< nametag Lune >> 
+<< sprite Bunny Open_Open >> 
+"Yup! I was feeling pretty lonely up there. I almost never get any visitors, and half of them have been weird little robots."
+<< sprite Bunny Shut_OpenSmile >> 
+"So I figured, why not be the visitor instead?"
+<< nametag Mira >>
+I supposed that made sense. I probably would get bored there myself after the initial excitement of seeing space wore off.
+"You were only pretending to be a bunny, then?"
+<< nametag Lune >>
+<< sprite Bunny OpenLid_Pout >>
+"Hold up, when did I ever say that?"
+"I may have possessed this particular bunny, but that doesn't mean I'm not one myself!"
+<< sprite Bunny Open_Smile>> 
+"In life, I looked much like this."
+===
