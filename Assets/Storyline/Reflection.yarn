@@ -1,7 +1,7 @@
 title: Start
 tags: 
 colorID: 0
-position: 861,-153
+position: 857,-153
 ---
 << backdrop Livingroom_Night_B >>
 << nametag Mira >> 
@@ -36,4 +36,58 @@ Buzzing with excitement, I shot her a grin.
 "Besides, us spirits have ways to keep hidden. So don't even think about sharing what you know, okaaay?"
 << nametag Mira >>
 I ceased my rambling. Her tone remained cheery, but there was a dangerous glint in her eye.
+"O-oh... okay."
+"In that case, I promise not to tell anyone."
+<< nametag Lune >>
+<< sprite Bunny Open_Smile >> 
+"Good."
+<< nametag Mira >>
+An unnerving thought surfaced.
+No. Surely not.
+But it was possible, wasn't it?
+I shuffled closer.
+"Are there any... other... spirits around here?"
+I asked in a hushed voice, now acutely aware that others could be listening in on us.
+Lune wrinkled up her nose, seeming a bit uncomfortable at the question.
+<< nametag Lune >>
+<< sprite OpenSad_Flat >> 
+"Other spirits? Mmm, that's a yes, but you mean spirits like me, yes?"
+"Most spirits are too faded out or distorted to really do much."
+<< sprite Shut_Flat >> 
+"Sometimes, you get one who is fully aware like myself, who is free to take on whatever form they wish."
+<< sprite Shut_Smile >> 
+"No need to worry about any others, though."
+<< nametag Mira>> 
+That did not answer what I had truly wanted to know, but I decided not to push it.
+"Alright then. Is there, um, anything you need? Before I go to sleep, I mean. Food, maybe?"
+<< nametag Lune >>
+<< sprite Open_OpenSmile >>
+"How sweet of you to offer!"
+"But as much as I enjoy being pampered, I can find something to munch on my own."
+<< sprite Open_OpenSmile Fade_Out >>
+<< nametag Mira >>
+With that, she hopped down from the bed and left the room.
+<< transition Fade_Out>> 
+[[Mirror]] 
+
+
+
+
+
+
+//...
+===
+title: Mirror
+tags: 
+colorID: 0
+position: 1088,-154
+---
+<< backdrop Black >>
+<< transition Fade_In >> 
+...
+Tired as I was, rest did not come as easily this time.
+After a while of rolling around and thinking about how to stop thinking long enough to fall asleep, I got up.
+<< backdrop Mirror >>
+<< transition Fade_In>>
+...
 ===
