@@ -22,12 +22,12 @@ public class GameManager : SingletonTemplate<GameManager>
     // new instance per scene, should register itself
     public static MyDialogueUI dialogueUI;
     // returns current active transition handler for scene loading
-    public static TransitionHandler transitionHandler
+    public static TransitionHandler TransitionHandler
     {
         get { return transitionHandlers.Peek(); }
     }
     //data structure to keep track of the current active transition handler
-    static Stack<TransitionHandler> transitionHandlers = new Stack<TransitionHandler>();
+    private static readonly Stack<TransitionHandler> transitionHandlers = new Stack<TransitionHandler>();
 
     /// <summary>
     /// called when menu changes prefs 
@@ -59,7 +59,7 @@ public class GameManager : SingletonTemplate<GameManager>
 
     public void Start()
     {
-        StartCoroutine(transitionHandler.SceneFadeIn());
+        StartCoroutine(TransitionHandler.SceneFadeIn());
     }
 
     // gets called when MyDialogueUI is initialized

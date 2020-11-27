@@ -43,7 +43,7 @@ public class ItemBehaviour : MonoBehaviour
     {
         state.AnimationStart();
         itemAnimator.SetTrigger("Fade_Clear");
-        while (state.isRunning)
+        while (state.IsRunning)
         {
             yield return null;
         }
@@ -59,7 +59,7 @@ public class ItemBehaviour : MonoBehaviour
         itemImage.gameObject.SetActive(true);
         state.AnimationStart();
         itemAnimator.SetTrigger("Fade_Opaque");
-        while (state.isRunning)
+        while (state.IsRunning)
         {
             yield return null;
         }

@@ -159,11 +159,14 @@ public class TransitionHandler : MonoBehaviour
         }
         // always do the queued statements
         DoOnDark();
-        if(direction == "in")
+        if (direction == "in")
         {// fade in and then fade dialogue in
             // only do dialogueAnimator fcns if it exists, phone scene does not have a dialogueAnimator!!!
-            dialogueAnimator?.HideDialogue();
-            dialogueAnimator?.ClearText();
+            if (dialogueAnimator)
+            {
+                dialogueAnimator.HideDialogue();
+                dialogueAnimator.ClearText();
+            }
             yield return StartCoroutine(FadeIn(animator));
             if (dialogueAnimator) yield return StartCoroutine(dialogueAnimator.FadeOpaque(null));
         }
@@ -182,9 +185,9 @@ public class TransitionHandler : MonoBehaviour
         // set animation speed multiplier, Duration is not accurate name
         animator.SetFloat("Duration", transitionSpeed);
         animator.SetTrigger("Fade_Black");
-        animstate.isRunning = true;
+        animstate.IsRunning = true;
         // wait for finished signal
-        while (animstate.isRunning)
+        while (animstate.IsRunning)
         {
             yield return null;
         }
@@ -200,8 +203,8 @@ public class TransitionHandler : MonoBehaviour
         var animstate = animator.gameObject.GetComponent<AnimationState>();
         animator.SetFloat("Duration", transitionSpeed);
         animator.SetTrigger("Fade_Clear");
-        animstate.isRunning = true;
-        while (animstate.isRunning)
+        animstate.IsRunning = true;
+        while (animstate.IsRunning)
         {
             yield return null;
         }
@@ -217,9 +220,9 @@ public class TransitionHandler : MonoBehaviour
         // set animation speed multiplier, Duration is not accurate name
         crossfadeAnimator.SetFloat("Duration", 2f);
         crossfadeAnimator.SetTrigger("Fade_Black");
-        animstate.isRunning = true;
+        animstate.IsRunning = true;
         // wait for finished signal
-        while (animstate.isRunning)
+        while (animstate.IsRunning)
         {
             yield return null;
         }
@@ -235,9 +238,9 @@ public class TransitionHandler : MonoBehaviour
         // set animation speed multiplier, Duration is not accurate name
         crossfadeAnimator.SetFloat("Duration", 2f);
         crossfadeAnimator.SetTrigger("Fade_Clear");
-        animstate.isRunning = true;
+        animstate.IsRunning = true;
         // wait for finished signal
-        while (animstate.isRunning)
+        while (animstate.IsRunning)
         {
             yield return null;
         }

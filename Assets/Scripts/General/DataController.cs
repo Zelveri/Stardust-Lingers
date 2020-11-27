@@ -12,7 +12,7 @@ public class DataController : MonoBehaviour
     static string prevNode;
     static string curNametag;
     static string backdrop;
-    static bool lineIncomplete = true;
+    // static bool lineIncomplete = true;
 
     public string CurNametag
     {
@@ -25,19 +25,14 @@ public class DataController : MonoBehaviour
         lines = new List<string>();
     }
 
-    private void Update()
-    {
-
-    }
-
     public void LineStart()
     {
-        lineIncomplete = true;
+        //lineIncomplete = true;
     }
 
     public void LineEnd()
     {
-        lineIncomplete = false;
+       // lineIncomplete = false;
     }
 
     public void AddLineToTracker(TMPro.TextMeshProUGUI dialogueTextContainer)

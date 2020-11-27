@@ -12,12 +12,6 @@ public class TextThemeColorChanger : MonoBehaviour
         UpdateColor();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void UpdateColor()
     {
         if (PlayerPrefs.GetString("theme_color") == "Light")

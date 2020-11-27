@@ -12,15 +12,12 @@ public class YarnCommands : MonoBehaviour
     public DialogueAnimator dialogueAnimator;
     public TransitionHandler transitionHandler;
     public SpriteCommandBehaviour characterContainer;
-    DataController dataController;
 
     public Canvas dialogueCanvas;
 
-    bool canContinue = false;
     private void Awake()
     {
         dialogueRunner = GameManager.dialogueRunner;
-        dataController = GameManager.dataController;
 
         // Generic commands
         // other scripts can expand this list, but must implement the handlers on their own
@@ -59,17 +56,6 @@ public class YarnCommands : MonoBehaviour
     void Transition(string[] pars, System.Action onComplete)
     {
         transitionHandler.Transition(pars, onComplete);
-    }
-
-    public void Continue()
-    {
-        canContinue = true;
-    }
-
-    void WaitContinue()
-    {
-        while (!canContinue) {  };
-        canContinue = false;
     }
 
     void NameTag(string[] pars, System.Action onComplete)

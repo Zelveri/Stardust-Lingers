@@ -50,7 +50,7 @@ public static class DataSaver
     /// <typeparam name="T">Type to json-ize</typeparam>
     /// <param name="dataToSave">object containtng the saveable data</param>
     /// <param name="dataFileName">name of save file</param>
-    public static void saveData<T>(T dataToSave, string dataFileName)
+    public static void SaveData<T>(T dataToSave, string dataFileName)
     {
         string tempPath = Path.Combine(Application.persistentDataPath, "data");
         tempPath = Path.Combine(tempPath, dataFileName + ".txt");
@@ -82,7 +82,7 @@ public static class DataSaver
     /// </summary>
     /// <typeparam name="T">Type to un-json-ize</typeparam>
     /// <param name="dataFileName">file name to load</param>
-    public static T loadData<T>(string dataFileName)
+    public static T LoadData<T>(string dataFileName)
     {
         string tempPath = Path.Combine(Application.persistentDataPath, "data");
         tempPath = Path.Combine(tempPath, dataFileName + ".txt");
@@ -91,13 +91,13 @@ public static class DataSaver
         if (!Directory.Exists(Path.GetDirectoryName(tempPath)))
         {
             Debug.LogWarning("Directory does not exist");
-            return default(T);
+            return default;
         }
 
         if (!File.Exists(tempPath))
         {
             Debug.Log("File does not exist");
-            return default(T);
+            return default;
         }
 
         //Load saved Json
@@ -122,7 +122,7 @@ public static class DataSaver
         return resultValue; //(T)Convert.ChangeType(resultValue, typeof(T));
     }
 
-    public static bool deleteData(string dataFileName)
+    public static bool DeleteData(string dataFileName)
     {
         bool success = false;
 

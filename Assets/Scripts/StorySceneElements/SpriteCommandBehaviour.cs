@@ -83,7 +83,7 @@ public class SpriteCommandBehaviour : MonoBehaviour
     {
         state.AnimationStart();
         curChar.GetComponent<Animator>().SetTrigger(trigger);
-        while (state.isRunning)
+        while (state.IsRunning)
         {
             yield return null;
         }

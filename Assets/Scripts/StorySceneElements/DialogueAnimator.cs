@@ -23,13 +23,13 @@ public class DialogueAnimator : MonoBehaviour
     bool _isfading = false;
     bool _ishidden = true;
 
-    public bool isHidden
+    public bool IsHidden
     {
         get { return _ishidden; }
         set { _ishidden = value; }
     }
 
-    public bool isRunning
+    public bool IsRunning
     {
         get { return _isfading; }
     }
@@ -37,10 +37,12 @@ public class DialogueAnimator : MonoBehaviour
     void Awake()
     {
         // assign box colors to names
-        nameToTextureDict = new Dictionary<string, string>();
-        nameToTextureDict.Add("Mira", "Box_Red");
-        nameToTextureDict.Add("Lune", "Box_Purple");
-        nameToTextureDict.Add("Trevis", "Box_Blue");
+        nameToTextureDict = new Dictionary<string, string>
+        {
+            { "Mira", "Box_Red" },
+            { "Lune", "Box_Purple" },
+            { "Trevis", "Box_Blue" }
+        };
         // subscribe to prefs changed event to react to theme change
         GameManager.OnPrefsChanged.AddListener(ReloadSettings);
     }
@@ -53,7 +55,7 @@ public class DialogueAnimator : MonoBehaviour
         string theme_color = PlayerPrefs.GetString("theme_color");
         string boxName = theme_color + "_" + nameToTextureDict[name];
         // do animation only if box is visible and nametag actually changes
-        var doEffect = !isHidden && (pars[0] != DataController.GetNametag());
+        var doEffect = !IsHidden && (pars[0] != DataController.GetNametag());
         // if additional hidden argument is given conceal name
         if ((pars.Length > 1))
         {

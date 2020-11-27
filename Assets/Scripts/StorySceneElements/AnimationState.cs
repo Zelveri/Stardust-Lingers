@@ -6,7 +6,7 @@ public class AnimationState : MonoBehaviour
 {
     bool _isrunning = false;
 
-    public bool isRunning
+    public bool IsRunning
     {
         get { return _isrunning; }
         set { _isrunning = value; }

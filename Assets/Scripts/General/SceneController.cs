@@ -71,8 +71,7 @@ public class SceneController : MonoBehaviour
     {
         try
         {
-            Scenes scene;
-            if (Enum.TryParse<Scenes>(sceneName, out scene))
+            if (Enum.TryParse<Scenes>(sceneName, out Scenes scene))
             {
                 //ReturnToStory();
                 SceneLoad(scene);
@@ -80,7 +79,7 @@ public class SceneController : MonoBehaviour
             else
             {
                 //ReturnToStory();
-                Debug.LogWarning("Scene \"" + sceneName +  "\" not registered with the SceneController!");
+                Debug.LogWarning("Scene \"" + sceneName + "\" not registered with the SceneController!");
                 SceneLoad(sceneName);
             }
         }
@@ -115,11 +114,11 @@ public class SceneController : MonoBehaviour
     {
         if (CurActiveScene < Scenes.Story && CurActiveScene > 0)
         {
-            yield return StartCoroutine(GameManager.transitionHandler.SceneFadeOut());
+            yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeOut());
             var op = SceneManager.UnloadSceneAsync((int)CurActiveScene);
             yield return new WaitUntil(() => op.isDone);
             UndoScenePreps();
-            yield return StartCoroutine(GameManager.transitionHandler.SceneFadeIn());
+            yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeIn());
             Time.timeScale = 1;
             // on menu exit, cause settings reload
             if (CurActiveScene == Scenes.Menus) GameManager.OnPrefsChanged.Invoke();
@@ -208,7 +207,7 @@ public class SceneController : MonoBehaviour
         DoScenePreps();
         if (CurActiveScene == Scenes.main || CurActiveScene == Scenes.Menus)
         {
-            yield return StartCoroutine(GameManager.transitionHandler.SceneFadeOut());
+            yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeOut());
             // menus pauses game, return to normal time if loading a savefile
             Time.timeScale = 1;
         }
@@ -221,7 +220,7 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene((int)scene);
         if (scene == Scenes.main)
         {
-            yield return StartCoroutine(GameManager.transitionHandler.SceneFadeIn());
+            yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeIn());
         }
         CurActiveScene = scene;
         CurMainScene = scene;
@@ -257,9 +256,9 @@ public class SceneController : MonoBehaviour
         //dialogue.Stop();
         OldScene = CurActiveScene;
             
-        yield return StartCoroutine(GameManager.transitionHandler.SceneFadeOut());
+        yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeOut());
         SceneManager.LoadScene((int)scene, LoadSceneMode.Additive);
-        yield return StartCoroutine(GameManager.transitionHandler.SceneFadeIn());
+        yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeIn());
         CurActiveScene = scene;
     }
 
