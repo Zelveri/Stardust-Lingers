@@ -36,49 +36,49 @@ public class DialogueAnimator : MonoBehaviour
 
     void Awake()
     {
+        // assign box colors to names
         nameToTextureDict = new Dictionary<string, string>();
         nameToTextureDict.Add("Mira", "Box_Red");
         nameToTextureDict.Add("Lune", "Box_Purple");
         nameToTextureDict.Add("Trevis", "Box_Blue");
+        // subscribe to prefs changed event to react to theme change
         GameManager.OnPrefsChanged.AddListener(ReloadSettings);
     }
 
+    // nametag command handler
     public void ChangeNameTag(string[] pars, System.Action onComplete)
     {
-        // only execute if nametag actually needs changing
-        if (pars[0] != DataController.GetNametag())
+
+        var name = pars[0];
+        string theme_color = PlayerPrefs.GetString("theme_color");
+        string boxName = theme_color + "_" + nameToTextureDict[name];
+        // do animation only if box is visible and nametag actually changes
+        var doEffect = !isHidden && (pars[0] != DataController.GetNametag());
+        // if additional hidden argument is given conceal name
+        if ((pars.Length > 1))
         {
-            var name = pars[0];
-            string theme_color = PlayerPrefs.GetString("theme_color");
-            string boxName = theme_color + "_" + nameToTextureDict[name];
-            var doEffect = !isHidden;
-            // if additional hidden argument is given conceal name
-            if ((pars.Length > 1))
-            {
-                if (pars[1] == "hidden") name = "???";
-                else name = pars[1];
-            }
-            // add name to log
-            // nametag change should happen invisible during transition
-            if (TransitionHandler.newNode)
-            {
-                // queue nametag change without effect
-                TransitionHandler.OnDark.AddListener(
-                delegate()
-                {
-                    GameManager.dataController.UpdateNametag(pars[0], name);
-                    StartCoroutine(DoChange(name, boxName, theme_color, false, null));
-                });
-                onComplete?.Invoke();
-            }
-            else
-            {
-                // do nametag change now 
-                GameManager.dataController.UpdateNametag(pars[0], name);
-                StartCoroutine(DoChange(name, boxName, theme_color, doEffect, onComplete));
-            }
+            if (pars[1] == "hidden") name = "???";
+            else name = pars[1];
         }
-        else onComplete?.Invoke();
+        // add name to log
+        // nametag change should happen invisible during transition
+        if (TransitionHandler.newNode)
+        {
+            // queue nametag change without effect
+            TransitionHandler.OnDark.AddListener(
+            delegate ()
+            {
+                GameManager.dataController.UpdateNametag(pars[0], name);
+                StartCoroutine(DoChange(name, boxName, theme_color, false, null));
+            });
+            onComplete?.Invoke();
+        }
+        else
+        {
+            // do nametag change now 
+            GameManager.dataController.UpdateNametag(pars[0], name);
+            StartCoroutine(DoChange(name, boxName, theme_color, doEffect, onComplete));
+        }
     }
 
     /// <summary>

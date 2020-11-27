@@ -7,25 +7,35 @@ using UnityEngine;
 public class SoundEffectsBehaviour : MonoBehaviour
 {
     public GameObject soundEffectPrefab;
-    MyDialogueRunner dialogueRunner;
     // keeps track of all currently playing sounds
     Dictionary<string, AudioSource> sfxPlayers;
 
     private void Awake()
     {
-        dialogueRunner = GameManager.dialogueRunner;
-        // sound (play/stop) <name> [loop] [fade]
-        dialogueRunner.AddCommandHandler("sound", Sound);
+        //dialogueRunner = GameManager.dialogueRunner;
+        
+        //dialogueRunner.AddCommandHandler("sound", Sound);
         if (!PlayerPrefs.HasKey("sfx_volume"))
         {
             PlayerPrefs.SetFloat("sfx_volume", 1);
         }
         sfxPlayers = new Dictionary<string, AudioSource>();
+        GameManager.OnVolumeChanged.AddListener(VolumeChanged);
     }
 
     private void OnDestroy()
     {
-        dialogueRunner?.RemoveCommandHandler("sound");
+        GameManager.OnVolumeChanged.RemoveListener(VolumeChanged);
+    }
+
+    // update volume on every looping sound effect
+    public void VolumeChanged()
+    {
+        float newVolume = PlayerPrefs.GetFloat("sfx_volume");
+        foreach(var item in sfxPlayers)
+        {
+            item.Value.volume = newVolume;
+        }
     }
 
     public void Sound(string[] pars)
@@ -45,29 +55,36 @@ public class SoundEffectsBehaviour : MonoBehaviour
         switch (pars[0])
         {
             case "play":
-                StartCoroutine(PlaySound(pars[1], loop, fade));
+                PlaySound(pars[1], loop, fade);
                 break;
 
             case "stop":
-                StopSound(pars[1]);
+                StopSound(pars[1], fade);
                 break;
         }
     }
 
-    IEnumerator PlaySound(string name, bool loop = true, bool fade = false)
-    { 
+    public void PlaySound(string name, bool loop = true, bool fade = false)
+    {
+        StartCoroutine(DoPlaySound(name, loop, fade));
+    }
+
+
+    IEnumerator DoPlaySound(string name, bool loop = true, bool fade = false)
+    {
         // load audio file async
         var res_req = Resources.LoadAsync<AudioClip>("Sounds/" + name);
         yield return new WaitUntil(() => res_req.isDone);
         // call playback fcn when resource is loaded
         PlaySound((AudioClip)res_req.asset, loop, fade);
-        
     }
 
     public void PlaySound(AudioClip clip, bool loop = true, bool fade = false)
     {
         // create new gameobject as sound player
-        AudioSource src = Instantiate(soundEffectPrefab).GetComponent<AudioSource>();
+        GameObject go = Instantiate(soundEffectPrefab);
+        go.transform.parent = gameObject.transform;
+        AudioSource src = go.GetComponent<AudioSource>();
         src.gameObject.SetActive(true);
         src.loop = loop;
         src.clip = clip;
@@ -115,8 +132,8 @@ public class SoundEffectsBehaviour : MonoBehaviour
     {
         foreach(var key in sfxPlayers.Keys)
         {
-            sfxPlayers[name].Stop();
-            RemoveSource(name);
+            sfxPlayers[key].Stop();
+            RemoveSource(key);
         }
     }
 

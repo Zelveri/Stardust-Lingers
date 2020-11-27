@@ -10,20 +10,30 @@ public class MusicPlayerBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        dialogueRunner = GameManager.dialogueRunner;
-        // command music
-        // usage:
-        // music stop
-        // music play <filename>
-        // music fade_out [fade_duration=3]
-        // music fade_in <filename> [fade_duration=3]
-        dialogueRunner.AddCommandHandler("music", PlayMusic);
+        
         player = GetComponent<AudioSource>();
+        // try to load the saved music volume
+        if (!PlayerPrefs.HasKey("music_volume"))
+        {
+            PlayerPrefs.SetFloat("music_volume", 1);
+        }
+        else
+        {
+            player.volume = PlayerPrefs.GetFloat("music_volume");
+        }
+
+        GameManager.OnVolumeChanged.AddListener(VolumeChanged);
     }
 
     private void OnDestroy()
     {
-        dialogueRunner.RemoveCommandHandler("music");
+        GameManager.OnVolumeChanged.RemoveListener(VolumeChanged);
+    }
+
+    public void VolumeChanged()
+    {
+        float newVolume = PlayerPrefs.GetFloat("music_volume");
+        player.volume = newVolume;
     }
 
     public void PlayMusic(string[] parameters)

@@ -11,6 +11,7 @@ public class YarnCommands : MonoBehaviour
     public BackgroundChangeHandler backgroundHandler;
     public DialogueAnimator dialogueAnimator;
     public TransitionHandler transitionHandler;
+    public SpriteCommandBehaviour characterContainer;
     DataController dataController;
 
     public Canvas dialogueCanvas;
@@ -32,6 +33,10 @@ public class YarnCommands : MonoBehaviour
         // command hide/show_dialogue, no parameters
         dialogueRunner.AddCommandHandler("hide_dialogue", HideDialogue);
         dialogueRunner.AddCommandHandler("show_dialogue", ShowDialogue);
+
+        // command to make sprite animations
+        if(characterContainer != null)
+        dialogueRunner.AddCommandHandler("sprite", characterContainer.SpriteCommand);
     }
 
     private void OnDestroy()
@@ -42,6 +47,7 @@ public class YarnCommands : MonoBehaviour
         dialogueRunner.RemoveCommandHandler("backdrop");
         dialogueRunner.RemoveCommandHandler("hide_dialogue");
         dialogueRunner.RemoveCommandHandler("show_dialogue");
+        dialogueRunner.RemoveCommandHandler("sprite");
     }
 
     void Backdrop(string[] pars)

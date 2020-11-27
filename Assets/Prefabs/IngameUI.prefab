@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8411031067027066290}
   - component: {fileID: 8411031067027066289}
   - component: {fileID: 8411031067027066288}
+  - component: {fileID: 4006247934431403017}
   m_Layer: 5
   m_Name: LogViewBtn
   m_TagString: Untagged
@@ -117,8 +118,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ToggleScene
+      - m_Target: {fileID: 4006247934431403017}
+        m_MethodName: OnClick
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -128,6 +129,18 @@ MonoBehaviour:
           m_StringArgument: Log
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4006247934431403017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8411031067027066294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e258c66fd15748046aa415b5e1d9d37a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8411031068225933500
 GameObject:
   m_ObjectHideFlags: 0

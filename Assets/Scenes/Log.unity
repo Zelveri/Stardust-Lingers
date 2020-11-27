@@ -334,13 +334,14 @@ GameObject:
   - component: {fileID: 891892107}
   - component: {fileID: 891892106}
   - component: {fileID: 891892105}
+  - component: {fileID: 891892108}
   m_Layer: 5
   m_Name: LogCloseBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &891892104
 RectTransform:
   m_ObjectHideFlags: 0
@@ -403,9 +404,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 891892108}
         m_MethodName: OnClick
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -450,6 +451,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891892103}
   m_CullTransparentMesh: 0
+--- !u!114 &891892108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891892103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e258c66fd15748046aa415b5e1d9d37a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &926192048
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +473,6 @@ GameObject:
   m_Component:
   - component: {fileID: 926192051}
   - component: {fileID: 926192050}
-  - component: {fileID: 926192049}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -468,14 +480,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &926192049
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926192048}
-  m_Enabled: 1
 --- !u!20 &926192050
 Camera:
   m_ObjectHideFlags: 0
@@ -878,7 +882,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -5.0577393, w: 0}
+  m_margin: {x: -212.24457, y: 0, z: -143.83313, w: 0}
   m_textInfo:
     textComponent: {fileID: 1591410809}
     characterCount: 1047
@@ -1283,6 +1287,7 @@ GameObject:
   - component: {fileID: 2067385353}
   - component: {fileID: 2067385352}
   - component: {fileID: 2067385355}
+  - component: {fileID: 2067385356}
   m_Layer: 5
   m_Name: TextLog
   m_TagString: Untagged
@@ -1307,8 +1312,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0, y: -1.7000122}
-  m_SizeDelta: {x: -226.6, y: -343.6}
+  m_AnchoredPosition: {x: 0, y: 0.39990234}
+  m_SizeDelta: {x: -226.6, y: -90.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067385352
 MonoBehaviour:
@@ -1371,3 +1376,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23a9255b7408c748922acdd318db54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnLoad:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2067385356}
+        m_MethodName: PlaySound
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClose:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2067385356}
+        m_MethodName: PlaySound
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2067385356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067385350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ae6796f560818428acede893912dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound:
+  - {fileID: 8300000, guid: 3c619c35211b0784c91fdf8a200c69de, type: 3}

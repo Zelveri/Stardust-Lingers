@@ -21,12 +21,21 @@ public class GameManager : SingletonTemplate<GameManager>
 
     // new instance per scene, should register itself
     public static MyDialogueUI dialogueUI;
+    // returns current active transition handler for scene loading
+    public static TransitionHandler transitionHandler
+    {
+        get { return transitionHandlers.Peek(); }
+    }
+    //data structure to keep track of the current active transition handler
+    static Stack<TransitionHandler> transitionHandlers = new Stack<TransitionHandler>();
 
     /// <summary>
     /// called when menu changes prefs 
     /// called from SceneController.ReturnToStory()
     /// </summary>
     public static UnityEvent OnPrefsChanged = new UnityEvent();
+
+    public static UnityEvent OnVolumeChanged = new UnityEvent();
 
     public override void Awake()
     {
@@ -41,6 +50,9 @@ public class GameManager : SingletonTemplate<GameManager>
 
         // dialogueRunner registers itself on module load ( happens before GameManager laods)
         dialogueRunner.variableStorage = variableStorage;
+
+        // save menu prefs to disk when manu is closed
+        OnPrefsChanged.AddListener(SavePrefs);
     }
 
     // gets called when MyDialogueUI is initialized
@@ -59,8 +71,36 @@ public class GameManager : SingletonTemplate<GameManager>
         if (dialogueUI != null) dialogueRunner.dialogueUI = dialogueUI;
     }
 
+    // gets called when transition object initializes
+    public static void RegisterTransitionHandler(TransitionHandler trans)
+    {
+        transitionHandlers.Push(trans);
+    }
+
+    public static void UnregisterTransitionHandler()
+    {
+        if(transitionHandlers.Count > 0) transitionHandlers.Pop();
+    }
+
+    public static void ClearTransitionHandlers()
+    {
+        if (transitionHandlers.Count > 0) transitionHandlers.Clear();
+    }
+
+
+    public void SavePrefs()
+    {
+        PlayerPrefs.Save();
+    }
+
     public static void Quit()
     {
         Application.Quit();
+    }
+
+    // non static fcn just for the main screen quit button because iT DoEs NoT LiKe StaTiC FunCTioNs
+    public void Exit()
+    {
+        GameManager.Quit();
     }
 }

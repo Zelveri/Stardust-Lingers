@@ -33,7 +33,7 @@ public class MyDialogueUI : DialogueUI
             GameManager.dialogueRunner.startNode = startNode;
         }
 
-        dialogueContainer.SetActive(false);
+        if(dialogueContainer) dialogueContainer.SetActive(false);
 
         // register default event handlers ( add to any handlers given in inspector )
         onCommand.AddListener(OnCommand);
