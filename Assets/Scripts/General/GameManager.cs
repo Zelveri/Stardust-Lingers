@@ -37,6 +37,8 @@ public class GameManager : SingletonTemplate<GameManager>
 
     public static UnityEvent OnVolumeChanged = new UnityEvent();
 
+    public static UnityEvent OnMenuClose = new UnityEvent();
+
     public override void Awake()
     {
         // GameManager script will load last ( set in Project settings )
@@ -55,12 +57,17 @@ public class GameManager : SingletonTemplate<GameManager>
         OnPrefsChanged.AddListener(SavePrefs);
     }
 
+    public void Start()
+    {
+        StartCoroutine(transitionHandler.SceneFadeIn());
+    }
+
     // gets called when MyDialogueUI is initialized
     public static void RegisterDialogueUI(MyDialogueUI ui)
     {
         dialogueUI = ui;
         // assigns itself to the current dialogueRunner if exists, does not on first load, only afterwards
-        if (dialogueRunner != null) dialogueRunner.dialogueUI = ui;
+        if (dialogueRunner) dialogueRunner.dialogueUI = ui;
     }
 
     // gets calles, when MyDialogueRunner is initialized
@@ -68,7 +75,7 @@ public class GameManager : SingletonTemplate<GameManager>
     {
         dialogueRunner = runner;
         // if dialogueUI was initialized before dialogueRunner we assign it here
-        if (dialogueUI != null) dialogueRunner.dialogueUI = dialogueUI;
+        if (dialogueUI) dialogueRunner.dialogueUI = dialogueUI;
     }
 
     // gets called when transition object initializes
@@ -79,7 +86,7 @@ public class GameManager : SingletonTemplate<GameManager>
 
     public static void UnregisterTransitionHandler()
     {
-        if(transitionHandlers.Count > 0) transitionHandlers.Pop();
+        if(transitionHandlers.Count > 0) _ = transitionHandlers.Pop();
     }
 
     public static void ClearTransitionHandlers()

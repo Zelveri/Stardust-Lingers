@@ -43,7 +43,7 @@ public class SceneController : MonoBehaviour
     {
         if (scene.buildIndex >= (int)Scenes.Story)
         {
-            if(GameManager.dialogueUI.startAutomatically && startDialogueOnLoad) GameManager.dialogueRunner.StartDialogue();
+            if (GameManager.dialogueUI.startAutomatically && startDialogueOnLoad) GameManager.dialogueRunner.StartDialogue();
             SceneIsLoading = false;
             startDialogueOnLoad = true;
         }
@@ -107,6 +107,7 @@ public class SceneController : MonoBehaviour
     // returns to previous scene
     public void ReturnToStory()
     {
+        GameManager.OnMenuClose.Invoke();
         StartCoroutine(DoReturn());
     }
 
@@ -202,17 +203,29 @@ public class SceneController : MonoBehaviour
 
     IEnumerator DoSceneLoad(Scenes scene)
     {
-        if (scene == Scenes.main) { ReturnToStory(); }
-        else
+
+        SceneIsLoading = true;
+        DoScenePreps();
+        if (CurActiveScene == Scenes.main || CurActiveScene == Scenes.Menus)
         {
-            SceneIsLoading = true;
-            DoScenePreps();
-            if (CurActiveScene == Scenes.main) yield return StartCoroutine(GameManager.transitionHandler.SceneFadeOut());
-            GameManager.ClearTransitionHandlers();
-            SceneManager.LoadScene((int)scene);
-            CurActiveScene = scene;
-            CurMainScene = scene;
+            yield return StartCoroutine(GameManager.transitionHandler.SceneFadeOut());
+            // menus pauses game, return to normal time if loading a savefile
+            Time.timeScale = 1;
         }
+        GameManager.ClearTransitionHandlers();
+        //if (CurActiveScene == Scenes.Menus)
+        //{
+        //    var async_op = SceneManager.UnloadSceneAsync((int)CurMainScene);
+        //    yield return new WaitUntil(() => async_op.isDone);
+        //}
+        SceneManager.LoadScene((int)scene);
+        if (scene == Scenes.main)
+        {
+            yield return StartCoroutine(GameManager.transitionHandler.SceneFadeIn());
+        }
+        CurActiveScene = scene;
+        CurMainScene = scene;
+
     }
 
     /// <summary>

@@ -10,18 +10,6 @@ using UnityEngine.UI;
 /// </summary>
 public class SaveFileHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     /// <summary>
     /// Save data to slot
     /// </summary>

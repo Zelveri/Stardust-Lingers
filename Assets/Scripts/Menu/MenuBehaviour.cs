@@ -28,6 +28,7 @@ public class MenuBehaviour : MonoBehaviour
         {
             ShowSettings();
         }
+        GameManager.OnMenuClose.AddListener(Close);
     }
 
     private void Start()
@@ -35,7 +36,7 @@ public class MenuBehaviour : MonoBehaviour
         OnLoad.Invoke();
     }
 
-    private void OnDestroy()
+    private void Close()
     {
         OnClose.Invoke();
     }

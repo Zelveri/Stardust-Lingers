@@ -69,8 +69,9 @@ public class DataController : MonoBehaviour
             GameManager.variableStorage.SetValue(entry.Key, entry.Value);
         }
         TransitionHandler.overrideTransitionFade = true;
-        if (lineIncomplete) GameManager.dialogueUI.MarkLineComplete();
+        // if (lineIncomplete) GameManager.dialogueUI.MarkLineComplete();
         //StartCoroutine(backgroundChange.DoChangeFast(save.backdrop, null));
+        yield return new WaitUntil(() => (bool)GameManager.dialogueUI);
         GameManager.dialogueRunner.StartDialogue(save.currentNode);
     }
 
