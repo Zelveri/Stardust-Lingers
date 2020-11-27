@@ -137,37 +137,81 @@ public class SoundEffectsBehaviour : MonoBehaviour
         }
     }
 
+    //pause all !registered! sounds with a short fadeout
+    // registered meaning they were invoked in a loop
+    public void PauseAll()
+    {
+        foreach (var player in sfxPlayers.Values)
+        {
+            StartCoroutine(FadeOut(player, 1f, true));
+        }
+    }
+
+    // unpause all !registered! sounds with fadein
+    public void UnPauseAll()
+    {
+        foreach (var player in sfxPlayers.Values)
+        {
+            StartCoroutine(FadeIn(player, 1f));
+        }
+    }
+
     // from https://forum.unity.com/threads/fade-out-audio-source.335031/
-    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+    /// <summary>
+    /// Fade the vloume to 0 for the given audio source
+    /// </summary>
+    /// <param name="audioSource">the sound effects player</param>
+    /// <param name="FadeTime">how long to fade</param>
+    /// <param name="onlyPause">fade to pause instad to stop?</param>
+    /// <returns></returns>
+    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime, bool onlyPause=false)
     {
         float startVolume = audioSource.volume;
 
         while (audioSource.volume > 0)
         {
-            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+            audioSource.volume -= startVolume * Time.unscaledDeltaTime / FadeTime;
 
             yield return null;
         }
 
-        audioSource.Stop();
-        audioSource.volume = startVolume;
-        Destroy(audioSource.gameObject);
+        if (onlyPause)
+        {
+            audioSource.Pause();
+            audioSource.volume = startVolume;
+        }
+        else
+        {
+            audioSource.Stop();
+            audioSource.volume = startVolume;
+            Destroy(audioSource.gameObject);
+        }
+
     }
 
+    /// <summary>
+    /// fade volume to preset of given source
+    /// </summary>
+    /// <param name="audioSource"></param>
+    /// <param name="FadeTime"></param>
+    /// <returns></returns>
     public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime)
     {
         float targetVolume = audioSource.volume;
         audioSource.volume = 0;
+
+        // this will also unpause paused sources
         audioSource.Play();
-        while (audioSource.volume > 0)
+        while (audioSource.volume < targetVolume)
         {
-            audioSource.volume += targetVolume * Time.deltaTime / FadeTime;
+            audioSource.volume += targetVolume * Time.unscaledDeltaTime / FadeTime;
 
             yield return null;
         }
         audioSource.volume = targetVolume;
     }
 
+    // destroys singleshot sounds after they finish playing
     IEnumerator DestroyAfterPlay(AudioSource src)
     {
         yield return new WaitUntil(() => !src.isPlaying);

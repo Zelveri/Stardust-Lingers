@@ -34,11 +34,13 @@ public class MenuBehaviour : MonoBehaviour
     private void Start()
     {
         OnLoad.Invoke();
+        GameManager.soundEffects.PauseAll();
     }
 
     private void Close()
     {
         OnClose.Invoke();
+        GameManager.soundEffects.UnPauseAll();
     }
 
     public void OnFileClick()
