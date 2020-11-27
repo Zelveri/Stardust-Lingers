@@ -49,8 +49,8 @@ public class BubbleBehaviour : MonoBehaviour
 
     public float GetLastHeightDelta()
     {
-        float delta = top.rectTransform.rect.height + middle.rectTransform.rect.height + bottom.rectTransform.rect.height - oldHeight;
-        oldHeight =  top.rectTransform.rect.height + middle.rectTransform.rect.height + bottom.rectTransform.rect.height;
+        float delta = GetHeight() - oldHeight + 10;
+        oldHeight =  GetHeight() + 10;
         return delta;
     }
 
