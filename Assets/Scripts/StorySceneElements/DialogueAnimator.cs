@@ -43,6 +43,11 @@ public class DialogueAnimator : MonoBehaviour
             { "Lune", "Box_Purple" },
             { "Trevis", "Box_Blue" }
         };
+
+        if (!PlayerPrefs.HasKey("theme_color"))
+        {
+            PlayerPrefs.SetString("theme_color", "dark");
+        }
         // subscribe to prefs changed event to react to theme change
         GameManager.OnPrefsChanged.AddListener(ReloadSettings);
     }
