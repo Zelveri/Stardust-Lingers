@@ -18,6 +18,7 @@ public class GameManager : SingletonTemplate<GameManager>
     public static InputHandlerBehaviour input;
     public static MyDialogueRunner dialogueRunner;
     public static SoundEffectsBehaviour soundEffects;
+    public static MusicPlayerBehaviour musicPlayer;
 
     // new instance per scene, should register itself
     public static MyDialogueUI dialogueUI;
@@ -49,6 +50,7 @@ public class GameManager : SingletonTemplate<GameManager>
         sceneController = gameObject.transform.Find("SceneController").gameObject.GetComponent<SceneController>();
         input = gameObject.transform.Find("InputHandler").gameObject.GetComponent<InputHandlerBehaviour>();
         soundEffects = gameObject.transform.Find("SoundEffects").gameObject.GetComponent<SoundEffectsBehaviour>();
+        musicPlayer = gameObject.transform.Find("MusicPlayer").gameObject.GetComponent<MusicPlayerBehaviour>();
 
         // dialogueRunner registers itself on module load ( happens before GameManager laods)
         dialogueRunner.variableStorage = variableStorage;

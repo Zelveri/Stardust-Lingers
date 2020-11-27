@@ -72,7 +72,8 @@ public class MusicPlayerBehaviour : MonoBehaviour
                 // load music file and trigger coroutine
                 musicPath = "Music/" + file;
                 clip = Resources.Load<AudioClip>(musicPath);
-                StartCoroutine(FadeIn(player, duration, clip));
+                player.clip = clip;
+                StartCoroutine(FadeIn(player, duration));
                 break;
 
             case "play":
@@ -90,31 +91,64 @@ public class MusicPlayerBehaviour : MonoBehaviour
         }
     }
 
+    public void Pause()
+    {
+        StartCoroutine(FadeOut(player, 1f, true));
+    }
+
+    public void UnPause()
+    {
+        StartCoroutine(FadeIn(player, 1f));
+    }
+
     // from https://forum.unity.com/threads/fade-out-audio-source.335031/
-    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+    /// <summary>
+    /// Fade the vloume to 0 for the given audio source
+    /// </summary>
+    /// <param name="audioSource">the sound effects player</param>
+    /// <param name="FadeTime">how long to fade</param>
+    /// <param name="onlyPause">fade to pause instad to stop?</param>
+    /// <returns></returns>
+    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime, bool onlyPause = false)
     {
         float startVolume = audioSource.volume;
 
         while (audioSource.volume > 0)
         {
-            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+            audioSource.volume -= startVolume * Time.unscaledDeltaTime / FadeTime;
 
             yield return null;
         }
 
-        audioSource.Stop();
-        audioSource.volume = startVolume;
+        if (onlyPause)
+        {
+            audioSource.Pause();
+            audioSource.volume = startVolume;
+        }
+        else
+        {
+            audioSource.Stop();
+            audioSource.volume = startVolume;
+        }
+
     }
 
-    public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime, AudioClip clip)
+    /// <summary>
+    /// fade volume to preset of given source
+    /// </summary>
+    /// <param name="audioSource"></param>
+    /// <param name="FadeTime"></param>
+    /// <returns></returns>
+    public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime)
     {
         float targetVolume = audioSource.volume;
         audioSource.volume = 0;
-        audioSource.clip = clip;
+
+        // this will also unpause paused sources
         audioSource.Play();
-        while (audioSource.volume > 0)
+        while (audioSource.volume < targetVolume)
         {
-            audioSource.volume += targetVolume * Time.deltaTime / FadeTime;
+            audioSource.volume += targetVolume * Time.unscaledDeltaTime / FadeTime;
 
             yield return null;
         }
