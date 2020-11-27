@@ -8,12 +8,18 @@ using System;
 public class SaveSlotBehaviour : MonoBehaviour
 {
     public int slotNumber;
+    bool hasSave = false;
 
-    const string slotName = "Slot";
+    const string slotName = "Save";
 
     TMPro.TextMeshProUGUI slotText;
+    Button saveBtn;
+    Button loadBtn;
+
     string dateFormat;
     string timeFormat;
+
+
     private void Awake()
     {
         // get text field object
@@ -23,18 +29,21 @@ public class SaveSlotBehaviour : MonoBehaviour
         timeFormat = CultureInfo.CurrentCulture.DateTimeFormat.LongTimePattern.ToString();
 
         // remove stored save date if file was not found
-        if (!SaveFileHandler.CheckSavefileExists(slotNumber))
+        if (!SaveFileHandler.CheckSaveFileExists(slotNumber))
         {
             PlayerPrefs.DeleteKey(BuildPrefsKey());
+            hasSave = false;
         }
 
         slotText.text = BuildDisplayString();
 
         // register button events with functions, dont have to do it in inspector for every prefab instance
-        var saveBtn = gameObject.transform.Find("SaveBtn").GetComponent<Button>();
-        var loadBtn = gameObject.transform.Find("LoadBtn").GetComponent<Button>();
+        saveBtn = gameObject.transform.Find("SaveBtn").GetComponent<Button>();
+        loadBtn = gameObject.transform.Find("LoadBtn").GetComponent<Button>();
         saveBtn.onClick.AddListener(OnSave);
         loadBtn.onClick.AddListener(OnLoad);
+
+        UpdateButtons();
 
     }
 
@@ -48,6 +57,8 @@ public class SaveSlotBehaviour : MonoBehaviour
         //slotText.text = slotName + " " + slotNumber.ToString() + now.ToString("\n" + dateFormat + "\n" + timeFormat);
         PlayerPrefs.SetString(BuildPrefsKey(), now.Ticks.ToString());
         slotText.text = BuildDisplayString();
+        // enable load button if it wasnt
+        UpdateButtons();
         PlayerPrefs.Save();
     }
 
@@ -61,21 +72,35 @@ public class SaveSlotBehaviour : MonoBehaviour
         // check if slot has savefile and display its date and time
         if (PlayerPrefs.HasKey(BuildPrefsKey()))
         {
+            hasSave = true;
             // get stored DateTime ticks and convert from string to long (cannot save longs to PlayerPrefs)
             long ticks = long.Parse(PlayerPrefs.GetString(BuildPrefsKey()));
             // create new DateTime from ticks and format to string
-            return slotName + " " + slotNumber.ToString() + new DateTime(ticks).ToString("\n" + dateFormat + "\n" + timeFormat);
+            return slotName + " " + (slotNumber+1).ToString() + new DateTime(ticks).ToString("\n" + dateFormat + "\n" + timeFormat);
         }
         else
         {
+            hasSave = false;
             // if slot is empty
-            return slotName + " " + slotNumber.ToString() + "\nEmpty";
+            return slotName + " " + (slotNumber+1).ToString() + "\nEmpty";
         }
     }
 
     // on load button press
     public void OnLoad()
     {
-        SaveFileHandler.Load(slotNumber);
+        if(hasSave && SaveFileHandler.CheckSaveFileExists(slotNumber)) SaveFileHandler.Load(slotNumber);
     }
+
+    void UpdateButtons()
+    {
+        // disable save button if menu is opened from title screen
+        if (SceneController.IsMainMenu)
+        {
+            saveBtn.interactable = false;
+        }
+        // disable load btn if no save file is present
+        loadBtn.interactable = hasSave;
+    }
+
 }

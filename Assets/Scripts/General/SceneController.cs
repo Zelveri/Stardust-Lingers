@@ -27,6 +27,11 @@ public class SceneController : MonoBehaviour
 
     public static bool SceneIsLoading { get; set; }
 
+    public static bool IsMainMenu
+    {
+        get { return CurMainScene == Scenes.main; }
+    }
+
     // start the dialogue runner if the scene has loaded, set in DataController.DoStateLoad
     public bool startDialogueOnLoad = true;
 

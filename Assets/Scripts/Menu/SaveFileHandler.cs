@@ -35,7 +35,7 @@ public class SaveFileHandler : MonoBehaviour
         GameManager.dataController.LoadState(save);
     }
 
-    public static bool CheckSavefileExists(int slot)
+    public static bool CheckSaveFileExists(int slot)
     {
         return System.IO.File.Exists(Application.persistentDataPath + "/data/save_slot_" + slot.ToString() + ".txt");
     }
