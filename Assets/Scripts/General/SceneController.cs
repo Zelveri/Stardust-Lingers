@@ -139,11 +139,15 @@ public class SceneController : MonoBehaviour
     {
         if (CurActiveScene >= Scenes.Story || CurActiveScene == 0)
         {
+            GameManager.soundEffects.PauseAll();
+            GameManager.musicPlayer.Pause();
             OverlaySceneLoad(Scenes.Menus);
         }
         else
         {
             ReturnToStory();
+            GameManager.soundEffects.UnPauseAll();
+            GameManager.musicPlayer.UnPause();
         }
     }
 
@@ -152,11 +156,11 @@ public class SceneController : MonoBehaviour
     /// </summary>
     public void ToggleLog()
     {
-        if (CurActiveScene >= Scenes.Story)
+        if (CurActiveScene != Scenes.Log && CurActiveScene >= Scenes.Story)
         {
             OverlaySceneLoad(Scenes.Log);
         }
-        else
+        else if(CurActiveScene != Scenes.Menus)
         {
             ReturnToStory();
         }
