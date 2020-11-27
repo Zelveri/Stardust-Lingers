@@ -1,5 +1,5 @@
 title: Start_Intro
-tags:
+tags: 
 colorID: 0
 position: -1631,-1519
 ---
@@ -16,14 +16,14 @@ The reminder of regret was now only fueling a sense of strange satisfaction as I
 [[Intro_Livingroom]]
 ===
 title: Next_Ignore
-tags:
+tags: 
 colorID: 0
 position: -1375,-953
 ---
 //Phone scene, first night, follows directly after.
 ===
 title: Notes_Ignore
-tags:
+tags: 
 colorID: 0
 position: -1916,-1152
 ---
@@ -38,7 +38,7 @@ position: -1916,-1152
 //Ideally it should change the appearance depending on who is speaking, by color.
 ===
 title: Intro_Livingroom
-tags:
+tags: 
 colorID: 0
 position: -1626,-1267
 ---
@@ -56,7 +56,7 @@ Comforted by the fact that I had plenty of time to search, I stepped carefully o
 [[Intro_Bedroom]]
 ===
 title: Intro_Bedroom
-tags:
+tags: 
 colorID: 0
 position: -1327,-1264
 ---
@@ -79,4 +79,5 @@ A deep breath.
 
 
 << transition Fade_Out >>
+<< scene Phone >>
 ===

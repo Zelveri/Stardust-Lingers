@@ -174,4 +174,5 @@ I don't think my mind is prepared for this many beatings at once.
 I pick myself up with Lune in my arms, making a panicked sprint toward home before I got stuck out in the dark with whatever the heck they were.
 << sound stop river_flow [fade] >>
 << transition Fade_Out >>
+<< scene Reflection >>
 ===

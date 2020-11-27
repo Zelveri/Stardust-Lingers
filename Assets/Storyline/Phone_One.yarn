@@ -198,7 +198,7 @@ Us living together.
 title: Agree_Phone_One
 tags: 
 colorID: 0
-position: -1876,-625
+position: -1877,-625
 ---
 << nametag Mira >>
 I have. It sounds nice.
@@ -230,6 +230,7 @@ I have to go. I'll talk to you soon
 Oh, okay then.
 Bye!
 << transition Fade_Out >>
+<< scene Meeting >>
 ===
 title: Delay_Phone_One
 tags: 
@@ -267,4 +268,5 @@ Before deciding. We can see how it goes from there.
 << nametag Trevis >>
 Okay.
 << transition Fade_Out >>
+<< scene Meeting >>
 ===

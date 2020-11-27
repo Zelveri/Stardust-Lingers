@@ -188,4 +188,5 @@ Rising, it bounded over to me.
 A shaky smile.
 "Alright, let's go."
 << transition Fade_Out >>
+<< scene Walk >>
 ===
