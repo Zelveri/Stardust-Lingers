@@ -1146,7 +1146,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1326381264781220068, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
 --- !u!1 &6800228287496726029 stripped
 GameObject:
