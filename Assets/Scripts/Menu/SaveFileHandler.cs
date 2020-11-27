@@ -21,7 +21,7 @@ public class SaveFileHandler : MonoBehaviour
         var saveData = new SaveState();
         saveData.GatherData();
         // save it to file
-        DataSaver.saveData(saveData, "slot" + slot.ToString());
+        DataSaver.SaveData(saveData, "save_slot_" + slot.ToString());
     }
 
     /// <summary>
@@ -31,7 +31,12 @@ public class SaveFileHandler : MonoBehaviour
     public static void Load(int slot)
     {
         // load sava  data
-        SaveState save = DataSaver.loadData<SaveState>("slot" + slot.ToString());
+        SaveState save = DataSaver.LoadData<SaveState>("save_slot_" + slot.ToString());
         GameManager.dataController.LoadState(save);
+    }
+
+    public static bool CheckSavefileExists(int slot)
+    {
+        return System.IO.File.Exists(Application.persistentDataPath + "/data/save_slot_" + slot.ToString() + ".txt");
     }
 }
