@@ -167,22 +167,24 @@ public class SoundEffectsBehaviour : MonoBehaviour
     public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime, bool onlyPause=false)
     {
         float startVolume = audioSource.volume;
-
-        while (audioSource.volume > 0)
+        // if source is already paused or stopped, do nothing
+        if (audioSource.isPlaying)
         {
-            audioSource.volume -= startVolume * Time.unscaledDeltaTime / FadeTime;
+            while (audioSource.volume > 0)
+            {
+                audioSource.volume -= startVolume * Time.unscaledDeltaTime / FadeTime;
 
-            yield return null;
-        }
+                yield return null;
+            }
 
-        if (onlyPause)
-        {
-            audioSource.Pause();
-            audioSource.volume = startVolume;
-        }
-        else
-        {
-            audioSource.Stop();
+            if (onlyPause)
+            {
+                audioSource.Pause();
+            }
+            else
+            {
+                audioSource.Stop();             
+            }
             audioSource.volume = startVolume;
         }
 
