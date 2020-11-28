@@ -3,7 +3,7 @@ tags:
 colorID: 0
 position: -1631,-1519
 ---
-<< music play Dynemo-Daylight-Copyright-Free-Music >>
+<< music play Evening_Stars >>
 << backdrop Cabin_Night >>
 << nametag Mira >>
 << transition Fade_In >>
@@ -13,6 +13,7 @@ This time, only shadow shrouded the windows. In a way, that too was comforting.
 It meant that this place had been left perfectly undisturbed.
 Reaching into my bag, I pulled out a brass key. Thankfully, I'd kept the copy safe through all these years. Could never bring myself to get rid of it.
 The reminder of regret was now only fueling a sense of strange satisfaction as I opened up the door after a few hurried jiggles.
+<< sound play door_close_1 >> 
 [[Intro_Livingroom]]
 ===
 title: Next_Ignore
@@ -53,6 +54,7 @@ I briefly considered starting right away, but...
 After the effort it took to get here, it would be best to rest.
 I'd rather not have my back screaming at me if I happened to pass out on the floor.
 Comforted by the fact that I had plenty of time to search, I stepped carefully over the clutter and made my way to bed.
+<< sound play door_close_2 >> 
 [[Intro_Bedroom]]
 ===
 title: Intro_Bedroom
@@ -78,6 +80,7 @@ A deep breath.
 
 
 
+<< music fade_out fade_duration=3 >>
 << transition Fade_Out >>
 << scene Phone >>
 ===
