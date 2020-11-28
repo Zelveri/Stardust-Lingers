@@ -105,6 +105,6 @@ I reached out to the mirror.
 << transition Crossfade >>
 << hide_dialogue >>
 Hide this text line.
-<< transition Slow_Fade_Out >>
+<< transition Fade_Out 0.5 >>
 << scene Credits >>
 ===
