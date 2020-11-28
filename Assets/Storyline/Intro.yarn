@@ -80,6 +80,7 @@ A deep breath.
 
 
 
+<< music fade_out fade_duration=3 >>
 << transition Fade_Out >>
 << scene Phone >>
 ===
