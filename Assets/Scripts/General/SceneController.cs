@@ -142,14 +142,14 @@ public class SceneController : MonoBehaviour
         if (CurActiveScene >= Scenes.Story || CurActiveScene == 0)
         {
             GameManager.soundEffects.PauseAll();
-            GameManager.musicPlayer.Pause();
+            //GameManager.musicPlayer.Pause();
             OverlaySceneLoad(Scenes.Menus);
         }
         else
         {
             ReturnToStory();
             GameManager.soundEffects.UnPauseAll();
-            GameManager.musicPlayer.UnPause();
+            //GameManager.musicPlayer.UnPause();
         }
     }
 
