@@ -80,15 +80,15 @@ public class LineUpdateHandler : MonoBehaviour
         // select if bubble is for phone user (me, Mira) or chat partner (them, Trevis)
         if (activeSide == "me")
         {
-            bb = Instantiate(meBubblesTemplate).GetComponent<BubbleBehaviour>();
+            bb = Instantiate(meBubblesTemplate, phoneScreenPanel.transform).GetComponent<BubbleBehaviour>();
 
         }
         else
         {
-            bb = Instantiate(themBubblesTemplate).GetComponent<BubbleBehaviour>();
+            bb = Instantiate(themBubblesTemplate, phoneScreenPanel.transform).GetComponent<BubbleBehaviour>();
         }
         // seta phone screen as partent for masking
-        bb.transform.SetParent(phoneScreenPanel.transform);
+        //bb.transform.SetParent(phoneScreenPanel.transform);
         return bb;
     }
 

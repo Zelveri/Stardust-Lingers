@@ -1026,6 +1026,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1400925693}
+    - target: {fileID: 1028613359381744467, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.38720703
+      objectReference: {fileID: 0}
+    - target: {fileID: 1028613359381744467, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 152.38525
+      objectReference: {fileID: 0}
     - target: {fileID: 3760224956972227435, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1145,6 +1155,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialogue Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800228288096812040, guid: 92a2e4ba5f160134f8b5ad2e4349937a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.2749023
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1326381264781220068, guid: 92a2e4ba5f160134f8b5ad2e4349937a, type: 3}
