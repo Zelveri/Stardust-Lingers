@@ -99,6 +99,8 @@ public class SceneController : MonoBehaviour
 
         if (Enum.IsDefined(typeof(Scenes), scene))
         {
+            GameManager.soundEffects.StopAll();
+            GameManager.musicPlayer.Stop();
             yield return StartCoroutine(DoSceneLoad((Scenes)scene));
         }
         else

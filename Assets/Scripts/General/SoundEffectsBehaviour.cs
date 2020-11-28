@@ -123,8 +123,8 @@ public class SoundEffectsBehaviour : MonoBehaviour
             else
             {
                 sfxPlayers[name].Stop();
-                RemoveSource(name);
             }
+            RemoveSource(name);
         }
     }
 
@@ -132,7 +132,7 @@ public class SoundEffectsBehaviour : MonoBehaviour
     {
         foreach(var key in sfxPlayers.Keys)
         {
-            sfxPlayers[key].Stop();
+            StartCoroutine(FadeOut(sfxPlayers[key], 1f, false));
             RemoveSource(key);
         }
     }
@@ -184,7 +184,6 @@ public class SoundEffectsBehaviour : MonoBehaviour
         {
             audioSource.Stop();
             audioSource.volume = startVolume;
-            Destroy(audioSource.gameObject);
         }
 
     }
@@ -220,6 +219,14 @@ public class SoundEffectsBehaviour : MonoBehaviour
 
     void RemoveSource(string name)
     {
+        StartCoroutine(DoRemove(name));
+    }
+
+    // wait until the source stops playing to remove it
+    // makes it possible to fade it out before destroying it
+    IEnumerator DoRemove(string name)
+    {
+        yield return new WaitUntil(() => !sfxPlayers[name].isPlaying);
         Destroy(sfxPlayers[name].gameObject);
         sfxPlayers.Remove(name);
     }

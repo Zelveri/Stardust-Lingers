@@ -21,7 +21,7 @@ public class MusicPlayerBehaviour : MonoBehaviour
         {
             player.volume = PlayerPrefs.GetFloat("music_volume");
         }
-
+        // register to the volume changed event, to make live volume preview possible
         GameManager.OnVolumeChanged.AddListener(VolumeChanged);
     }
 
@@ -99,6 +99,11 @@ public class MusicPlayerBehaviour : MonoBehaviour
     public void UnPause()
     {
         StartCoroutine(FadeIn(player, 1f));
+    }
+
+    public void Stop()
+    {
+        StartCoroutine(FadeOut(player, 1f, false));
     }
 
     // from https://forum.unity.com/threads/fade-out-audio-source.335031/
