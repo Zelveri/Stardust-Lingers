@@ -18,6 +18,7 @@ public class SceneController : MonoBehaviour
         Phone_One,
         Meeting,
         Walk,
+        Reflection,
         Unknown=999999
     }
 
