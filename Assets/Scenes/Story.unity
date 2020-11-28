@@ -1051,6 +1051,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8411031067027066295, guid: 9bbe86cccce23194a9c7aa31702018c1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 753.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8411031068225933496, guid: 9bbe86cccce23194a9c7aa31702018c1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1161,5 +1166,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IngameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 8991160450764998332, guid: 9bbe86cccce23194a9c7aa31702018c1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 42fe251d7adaea44e84d0d8f80cc33cf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bbe86cccce23194a9c7aa31702018c1, type: 3}
