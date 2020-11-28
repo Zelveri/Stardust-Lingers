@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8327252792669474302}
   - component: {fileID: 8991160450764998332}
   - component: {fileID: 234410087727708496}
-  - component: {fileID: 6801173854696420480}
+  - component: {fileID: 2413094791582383519}
   m_Layer: 5
   m_Name: OptionsBtn
   m_TagString: Untagged
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d91b3416193d0334e83e2d55dab9081e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 42fe251d7adaea44e84d0d8f80cc33cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6801173854696420480}
+      - m_Target: {fileID: 2413094791582383519}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -129,7 +129,7 @@ MonoBehaviour:
           m_StringArgument: Log
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6801173854696420480
+--- !u!114 &2413094791582383519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 531333102948553739}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e258c66fd15748046aa415b5e1d9d37a, type: 3}
+  m_Script: {fileID: 11500000, guid: 767b6c94652348d4ca7a040fc28258ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8411031067027066294
@@ -177,7 +177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 771.6001, y: 499.22}
+  m_AnchoredPosition: {x: 774, y: 499.22}
   m_SizeDelta: {x: 83.67, y: 81.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8411031067027066290
@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 186ca65bba7a2b84f8810c529823dc5b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
