@@ -12,7 +12,8 @@ public class TransitionHandler : MonoBehaviour
     public Animator slideAnimator;
     public Animator crossfadeAnimator;
     public DialogueAnimator dialogueAnimator;
-    public float transitionSpeed = 1f;
+    public float animationSpeed = 1f;
+    float transitionSpeed = 1f;
     // class that handles the background image changes
     public BackgroundChangeHandler backgroundHandler;
     // event, that gets triggered when the screen is dark during a Crossfade or Slide transition
@@ -87,6 +88,17 @@ public class TransitionHandler : MonoBehaviour
             pars[0] = "Fade_In";
             // disable override
             overrideTransitionFade = false;
+        }
+        if ( pars.Length > 1)
+        {
+            if (float.TryParse(pars[1], out transitionSpeed))
+            {
+                transitionSpeed = animationSpeed * transitionSpeed;
+            }
+            else
+            {
+                transitionSpeed = animationSpeed;
+            }
         }
         switch (pars[0])
         {
