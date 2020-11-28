@@ -96,7 +96,15 @@ Strange as she was, it had been nice to focus on something else for a while.
 But here, finding it difficult to even face myself, my mind soon drifted back to the contents of that note.
 "My doubts..."
 Was it all of them he was referring to? There were too many to count.
-Or perhaps a specific kind?
+Or perhaps he honed in on a specific kind?
 << backdrop Mirror_B >>
 << transition Crossfade >>
+"Wait, but if that's the case, then maybe..."
+I reached out to the mirror.
+<< backdrop Mirror_C >>
+<< transition Crossfade >>
+<< hide_dialogue >>
+Hide this text line.
+<< transition Slow_Fade_Out >>
+<< scene Credits >>
 ===
