@@ -72,6 +72,6 @@ public class YarnCommands : MonoBehaviour
     public void ShowDialogue(string[] parameters, System.Action onComplete)
     {
         //dialogueCanvas.gameObject.SetActive(true);
-        StartCoroutine(dialogueAnimator.FadeClear(onComplete));
+        StartCoroutine(dialogueAnimator.FadeOpaque(onComplete));
     }
 }
