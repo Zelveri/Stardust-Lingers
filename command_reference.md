@@ -25,15 +25,31 @@ Executes a transition
 
 * **speed**: float - Speed multiplier for the animation, default = 1 
 
+Examples:  
+
+    << transition None >>
+    << transition Slide 1.5 >>
+
 #### `<< backdrop <filename> >>`
 Select new background sprite, change happens when << transition >> is called the next time
-- **filename**: string - name of a sprite in "Artwork/Backgrounds/"
+- **filename**: string - name of a sprite in "Artwork/Backgrounds/"  
+
+Example:  
+    
+    << backdrop Livingroom_Night >>
+    << transition Cross_Fade>>
 
 #### `<< nametag <name> [hidden] >>`
 Change the nametag and the dialogue background for a new character  
 - **name**: string - the new name:  
     - one of the names registered in the DialogueAnimator.cs nameToTextureDict: Mira, Lune, Trevis
-- **hidden**: if nametag should display "???", add `hidden` at the end
+- **hidden**: if nametag should display "???", add `hidden` at the end  
+
+Examples:
+
+    << nametag Mira >>
+    << nametag Lune hidden >>
+
 
 #### `<< hide_dialogue >>`
 Hide the dialogue box and nametag.
@@ -51,11 +67,22 @@ Show a character sprite with a little animation.
 - **animation**: string
     triggername from the Character animationcontroller to play, default = `Bounce`
 
+Examples:
+
+    << sprite Bunny Open_Open >>
+    << sprite Bunny Open_Blep Fade_Out >>
+
 #### `<< schedule_transition >>`
 Is called on every node start, causes different behaviour for the following commands:  
     `nametag`, `sprite`, `hide_dialogue`  
     these commands will not do an immediate change, but instead wait until the next transition command causes the screen to go black
     so that changes can happen invisible
+
+Example:  
+
+    << schedule_transition >>
+    << nametag Mira >>
+    << transition Slide >>
 
 ---
 
@@ -66,6 +93,11 @@ Display a sprite on the item canvas, fades in and out
 - **itemname**: string - the name of the item to display
     - `None`: item disappears
     - else: display sprite `"Artwork/Items/<itemname>"`
+
+Examples:
+
+    << item Note >>
+    << item None >>
 
 ---
 
@@ -103,6 +135,15 @@ the filename of the sound file to load, not needed for `Stop` and `Fade_Out`
 - **duration**: float  
 duration of the fade in seconds, default is 3 seconds
 
+Example:
+
+    << music Play lune_theme >>
+    << music Fade_In lune_theme 4.2 >>
+    << music Fade_In lune_theme >>
+    << music Fade_Out 4.2 >>
+    << music Fade_Out >>
+    << music Stop >>
+
 #### `<< sound <action> <filename> [loop] [fade] >>`
 Plays a sound effect
 - **action**: string
@@ -112,6 +153,15 @@ Plays a sound effect
     name of the sound file to load, `"Sounds/<filename>"`
 - **loop**: add this to make the sound loop until stopped, or scene changed
 - **fade**: add this to make the sound fade in or out with 2 sec fade duration
+
+Example:
+
+    << sound play wind >>
+    << sound play wind loop >>
+    << sound play wind loop fade >>
+    << sound play wind fade >>
+    << sound stop wind >>
+    << sound stop wind fade >>
 
 #### `<< scene <scenename> >>`
 Change to new scene
