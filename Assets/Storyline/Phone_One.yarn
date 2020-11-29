@@ -230,7 +230,7 @@ I have to go. I'll talk to you soon
 << nametag Mira >>
 Oh, okay then.
 Bye!
-<< music fade_out fade_duration=3 >>
+<< music fade_out 3 >>
 << transition Fade_Out >>
 << scene Meeting >>
 ===
@@ -269,7 +269,7 @@ Maybe you can visit first?
 Before deciding. We can see how it goes from there.
 << nametag Trevis >>
 Okay.
-<< music fade_out fade_duration=3 >>
+<< music fade_out 3 >>
 << transition Fade_Out >>
 << scene Meeting >>
 ===
