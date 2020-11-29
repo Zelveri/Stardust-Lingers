@@ -47,7 +47,7 @@ public class MusicPlayerBehaviour : MonoBehaviour
         float duration = 3f;
         AudioClip clip;
         string musicPath = "";
-        switch (parameters[0])
+        switch (parameters[0].ToLower())
         {
             case "stop": // abrupt music stop
                 player.Stop();

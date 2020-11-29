@@ -53,15 +53,13 @@ public class SoundEffectsBehaviour : MonoBehaviour
             loop = pars.Any("loop".Contains);
             fade = pars.Any("fade".Contains);
         }
-        switch (pars[0])
+        switch (pars[0].ToLower())
         {
             case "play":
-            case "Play":
                 PlaySound(pars[1], loop, fade);
                 break;
 
             case "stop":
-            case "Stop":
                 StopSound(pars[1], fade);
                 break;
         }
