@@ -1,90 +1,12 @@
 title: Start_Reflection
 tags: 
 colorID: 0
-position: 857,-153
+position: 586,-293
 ---
-<< backdrop Bedroom_Night_B >>
-<< nametag Mira >> 
-<< transition Fade_In >>
-"So.., you're a ghost who descended from the moon?"
-We were sitting on the bed together, Lune having comfortably claimed one of my pillows to flop over on. Revealing her true nature hadn't made her any less adorable.
-<< nametag Lune >> 
-<< sprite Bunny Open_Open >> 
-"Yup! I was feeling pretty lonely up there. I almost never get any visitors, and half of them have been weird little robots."
-<< sprite Bunny Shut_OpenSmile >> 
-"So I figured, why not be the visitor instead?"
 << nametag Mira >>
-I supposed that made sense. I probably would get bored there myself after the initial excitement of seeing space wore off.
-"You were only pretending to be a bunny, then?"
-<< nametag Lune >>
-<< sprite Bunny OpenLid_Pout >>
-"Hold up, when did I ever say that?"
-"I may have possessed this particular bunny, but that doesn't mean I'm not one myself!"
-<< sprite Bunny Open_Smile>> 
-"In life, I looked much like this."
-<< nametag Mira >>
-"I see..."
-"So there really is an afterlife."
-The full weight of that realization hit me as I spoke. Certainly, I'd heard of plenty of strange phenomena occurring throughout history, but there was still plenty of debate around the subject of the supernatural... and here, before me now, a being who could answer so many curiosities!
-Buzzing with excitement, I shot her a grin.
-"S-so, what's it like? What sorts of powers do you have? Wait, can I write this down? I'd love to write it down. Oh gosh, I've never met someone like you before, there's so much I could learn from-"
-<< nametag Lune >>
-<< sprite Bunny Mad_Pout >>
-"Hey!"
-"Calm down, you silly mortal. I'm not your study partner."
-<< sprite Bunny Shade_Open_Smile >> 
-"Besides, us spirits have ways to keep hidden. So don't even think about sharing what you know, okaaay?"
-<< nametag Mira >>
-I ceased my rambling. Her tone remained cheery, but there was a dangerous glint in her eye.
-"O-oh... okay."
-"In that case, I promise not to tell anyone."
-<< nametag Lune >>
-<< sprite Bunny Open_Smile >> 
-"Good."
-<< nametag Mira >>
-An unnerving thought surfaced.
-No. Surely not.
-But it was possible, wasn't it?
-I shuffled closer.
-"Are there any... other... spirits around here?"
-I asked in a hushed voice, now acutely aware that others could be listening in on us.
-Lune wrinkled up her nose, seeming a bit uncomfortable at the question.
-<< nametag Lune >>
-<< sprite OpenSad_Flat >> 
-"Other spirits? Mmm, that's a yes, but you mean spirits like me, yes?"
-"Most spirits are too faded out or distorted to really do much."
-<< sprite Shut_Flat >> 
-"Sometimes, you get one who is fully aware like myself, who is free to take on whatever form they wish."
-<< sprite Shut_Smile >> 
-"No need to worry about any others, though."
-<< nametag Mira>> 
-That did not answer what I had truly wanted to know, but I decided not to push it.
-"Alright then. Is there, um, anything you need? Before I go to sleep, I mean. Food, maybe?"
-<< nametag Lune >>
-<< sprite Open_OpenSmile >>
-"How sweet of you to offer!"
-"But as much as I enjoy being pampered, I can find something to munch on my own."
-<< sprite Open_OpenSmile Nyoom_Left >>
-<< nametag Mira >>
-With that, she hopped down from the bed and left the room.
-<< music fade_out 3 >> 
-<< transition Fade_Out>> 
-[[Mirror]] 
-
-
-
-
-
-
-//...
-===
-title: Mirror
-tags: 
-colorID: 0
-position: 1088,-154
----
 << backdrop Black >>
 << transition Fade_In >> 
+<< music play Evening_Stars >> 
 ...
 Tired as I was, rest did not come as easily this time.
 After a while of rolling around and thinking about how to stop thinking long enough to fall asleep, I got up.
@@ -101,13 +23,14 @@ Or perhaps he honed in on a specific kind?
 << backdrop Mirror_B >>
 << transition Cross_Fade >>
 "Wait, but if that's the case, then maybe..."
-I reached out to the mirror.
+I reached out to my reflection.
 << schedule_transition >>
 << backdrop Mirror_C >>
 << hide_dialogue >>
 << transition Cross_Fade >>
 
 Hide this text line.
+<< music fade_out 5 >> 
 << transition Fade_Out 0.5 >>
 << scene Credits >>
 ===
