@@ -3,10 +3,10 @@ tags:
 colorID: 0
 position: -1631,-1519
 ---
-<< music play Evening_Stars >>
 << backdrop Cabin_Night >>
 << nametag Mira >>
 << transition Fade_In >>
+<< music play Evening_Stars >>
 It was dark by the time I arrived to the cabin.
 I had almost expected the lights to be on, extending its shine toward me with a comforting warmth.
 This time, only shadow shrouded the windows. In a way, that too was comforting.
