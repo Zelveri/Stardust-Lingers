@@ -102,9 +102,11 @@ Or perhaps he honed in on a specific kind?
 << transition Cross_Fade >>
 "Wait, but if that's the case, then maybe..."
 I reached out to the mirror.
+<< schedule_transition >>
 << backdrop Mirror_C >>
-<< transition Cross_Fade >>
 << hide_dialogue >>
+<< transition Cross_Fade >>
+
 Hide this text line.
 << transition Fade_Out 0.5 >>
 << scene Credits >>

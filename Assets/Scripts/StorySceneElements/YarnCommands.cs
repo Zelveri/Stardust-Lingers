@@ -30,6 +30,8 @@ public class YarnCommands : MonoBehaviour
         // command hide/show_dialogue, no parameters
         dialogueRunner.AddCommandHandler("hide_dialogue", HideDialogue);
         dialogueRunner.AddCommandHandler("show_dialogue", ShowDialogue);
+        // will cause commandas to register effects with the next transition
+        dialogueRunner.AddCommandHandler("schedule_transition", SchedTransition);
 
         // command to make sprite animations
         if(characterContainer != null)
@@ -45,6 +47,7 @@ public class YarnCommands : MonoBehaviour
         dialogueRunner.RemoveCommandHandler("hide_dialogue");
         dialogueRunner.RemoveCommandHandler("show_dialogue");
         dialogueRunner.RemoveCommandHandler("sprite");
+        dialogueRunner.RemoveCommandHandler("schedule_transition");
     }
 
     void Backdrop(string[] pars)
@@ -58,6 +61,11 @@ public class YarnCommands : MonoBehaviour
         transitionHandler.Transition(pars, onComplete);
     }
 
+    void SchedTransition(string [] pars)
+    {
+        TransitionHandler.newNode = true;
+    }
+
     void NameTag(string[] pars, System.Action onComplete)
     {
         dialogueAnimator.ChangeNameTag(pars, onComplete);
@@ -65,8 +73,13 @@ public class YarnCommands : MonoBehaviour
 
     public void HideDialogue(string[] parameters, System.Action onComplete)
     {
-        //dialogueCanvas.gameObject.SetActive(false);
-        StartCoroutine(dialogueAnimator.FadeClear(onComplete));
+        // if transition is scheduled, just tell transition handler to not show dialogue afterwards
+        if (TransitionHandler.newNode)
+        {
+            TransitionHandler.overrideDialogueFadeIn = true;
+            onComplete();
+        }
+        else StartCoroutine(dialogueAnimator.FadeClear(onComplete));
     }
 
     public void ShowDialogue(string[] parameters, System.Action onComplete)

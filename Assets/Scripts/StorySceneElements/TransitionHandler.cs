@@ -28,6 +28,9 @@ public class TransitionHandler : MonoBehaviour
     // is set in DataController.DoStateLoad
     public static bool overrideTransitionFade = false;
 
+    // if set to true, dialogue will not become visible on its own after next transition
+    public static bool overrideDialogueFadeIn = false;
+
     string nextBackdrop = "";
 
     void Awake()
@@ -152,7 +155,8 @@ public class TransitionHandler : MonoBehaviour
         // fade back in
         yield return StartCoroutine(FadeIn(animator));
         // show dialogue again
-        yield return StartCoroutine(dialogueAnimator.FadeOpaque(null));
+        if (overrideDialogueFadeIn) overrideDialogueFadeIn = false; 
+        else yield return StartCoroutine(dialogueAnimator.FadeOpaque(null));
         onComplete?.Invoke();
     }
 
@@ -181,7 +185,8 @@ public class TransitionHandler : MonoBehaviour
                 dialogueAnimator.ClearText();
             }
             yield return StartCoroutine(FadeIn(animator));
-            if (dialogueAnimator) yield return StartCoroutine(dialogueAnimator.FadeOpaque(null));
+            if (dialogueAnimator && !overrideDialogueFadeIn) yield return StartCoroutine(dialogueAnimator.FadeOpaque(null));
+            if(overrideDialogueFadeIn) overrideDialogueFadeIn = false;
         }
         onComplete?.Invoke();
     }

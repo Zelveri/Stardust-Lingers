@@ -101,8 +101,6 @@ public class SceneController : MonoBehaviour
 
         if (Enum.IsDefined(typeof(Scenes), scene))
         {
-            GameManager.soundEffects.StopAll();
-            GameManager.musicPlayer.Stop();
             yield return StartCoroutine(DoSceneLoad((Scenes)scene));
         }
         else
@@ -224,6 +222,8 @@ public class SceneController : MonoBehaviour
             // menus pauses game, return to normal time if loading a savefile
             Time.timeScale = 1;
         }
+        GameManager.soundEffects.StopAll();
+        GameManager.musicPlayer.Stop();
         GameManager.ClearTransitionHandlers();
         //if (CurActiveScene == Scenes.Menus)
         //{
@@ -231,8 +231,9 @@ public class SceneController : MonoBehaviour
         //    yield return new WaitUntil(() => async_op.isDone);
         //}
         SceneManager.LoadScene((int)scene);
-        if (scene == Scenes.main)
+        if (scene == Scenes.main || scene == Scenes.Credits)
         {
+            yield return new WaitUntil(() => !SceneIsLoading);
             yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeIn());
         }
         CurActiveScene = scene;
