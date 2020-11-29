@@ -12,6 +12,7 @@ public class SceneController : MonoBehaviour
     public enum Scenes
     {
         main=0,
+        Title,
         Menus,
         Log,
         Credits,
@@ -51,9 +52,9 @@ public class SceneController : MonoBehaviour
         if (scene.buildIndex >= (int)Scenes.Story)
         {
             if (GameManager.dialogueUI.startAutomatically && startDialogueOnLoad) GameManager.dialogueRunner.StartDialogue();
-            SceneIsLoading = false;
             startDialogueOnLoad = true;
         }
+        SceneIsLoading = false;
     }
 
     public void StartStory()
@@ -216,13 +217,14 @@ public class SceneController : MonoBehaviour
 
         SceneIsLoading = true;
         DoScenePreps();
-        if (CurActiveScene == Scenes.main || CurActiveScene == Scenes.Menus)
+        if (CurActiveScene == Scenes.main || CurActiveScene == Scenes.Menus || CurActiveScene == Scenes.Credits)
         {
             yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeOut());
             // menus pauses game, return to normal time if loading a savefile
             Time.timeScale = 1;
         }
         GameManager.soundEffects.StopAll();
+        if (CurActiveScene == Scenes.main) GameManager.musicPlayer.Stop();
         // wait for music to finish fading out
         yield return StartCoroutine(GameManager.musicPlayer.WaitFadeOut());
 
@@ -230,7 +232,8 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene((int)scene);
         if (scene == Scenes.main || scene == Scenes.Credits)
         {
-            yield return new WaitUntil(() => !SceneIsLoading);
+            yield return new WaitWhile(() => SceneIsLoading);
+            GameManager.musicPlayer.PlayMenuMusic();
             yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeIn());
         }
         CurActiveScene = scene;

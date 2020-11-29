@@ -127,6 +127,16 @@ public class MusicPlayerBehaviour : MonoBehaviour
         StartCoroutine(FadeIn(player, 3f));
     }
 
+    public void PlayMenuMusic() 
+    {
+        if (curPlayingFile == "Stardust_menu") return;
+        var clip = Resources.Load<AudioClip>("Music/Stardust_menu");
+        player.clip = clip;
+        curPlayingFile = "Stardust_menu";
+        GameManager.dataController.UpdateMusic("Stardust_menu");
+        StartCoroutine(FadeIn(player, 2f));
+    }
+
     public void Pause()
     {
         StartCoroutine(FadeOut(player, 1f, true));
