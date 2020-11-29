@@ -72,6 +72,7 @@ public class MenuBehaviour : MonoBehaviour
 
     public void OnExitClick()
     {
-        GameManager.Quit();
+        //GameManager.Quit();
+        GameManager.sceneController.ToMainMenu();
     }
 }
