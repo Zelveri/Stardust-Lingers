@@ -51,7 +51,7 @@ public class MyDialogueUI : DialogueUI
 
     public void OnCommand(string command)
     {
-
+        Debug.LogWarning("DialogueRunner: Command \"" + command + "\" not registered!");
     }
 
     public void OnDialogueEnd()
