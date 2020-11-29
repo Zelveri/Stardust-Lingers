@@ -113,6 +113,7 @@ public class DialogueAnimator : MonoBehaviour
         if(theme_color == "Light") col = new Color(0, 0, 0);
         else col = new Color(1, 1, 1);
         storyText.color = col;
+        ClearText();
 
         if (doEffect)
         {
