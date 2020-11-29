@@ -34,8 +34,7 @@ public class YarnCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler("schedule_transition", SchedTransition);
 
         // command to make sprite animations
-        if(characterContainer != null)
-        dialogueRunner.AddCommandHandler("sprite", characterContainer.SpriteCommand);
+        dialogueRunner.AddCommandHandler("sprite", SpriteCommand);
     }
 
     private void OnDestroy()
@@ -73,6 +72,11 @@ public class YarnCommands : MonoBehaviour
 
     public void HideDialogue(string[] parameters, System.Action onComplete)
     {
+        if (!dialogueAnimator)
+        {
+            Debug.LogError("Command hide_dialogue: no dialogue to hide!");
+            return;
+        }
         // if transition is scheduled, just tell transition handler to not show dialogue afterwards
         if (TransitionHandler.newNode)
         {
@@ -84,7 +88,20 @@ public class YarnCommands : MonoBehaviour
 
     public void ShowDialogue(string[] parameters, System.Action onComplete)
     {
+        if (!dialogueAnimator)
+        {
+            Debug.LogError("Command show_dialogue: no dialogue to show!");
+            return;
+        }
         //dialogueCanvas.gameObject.SetActive(true);
         StartCoroutine(dialogueAnimator.FadeOpaque(onComplete));
+    }
+
+    void SpriteCommand(string[] pars, System.Action onComplete)
+    {
+        if (characterContainer)
+            characterContainer.SpriteCommand(pars, onComplete);
+        else
+            Debug.LogError("Command sprite: no character container");
     }
 }

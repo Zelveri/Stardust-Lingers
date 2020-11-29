@@ -26,6 +26,10 @@ public class ItemBehaviour : MonoBehaviour
 
     public void Item(string[] parameters, System.Action onComplete)
     {
+        if(parameters.Length > 1)
+        {
+            Debug.LogWarning("Command << item >>: too many parameters!\n Usage << item <itemname>/None >>", gameObject);
+        }
         // if parameter is "None" fade item out
         // otherwise interpret param as filename and fade item in
         if ("none None hide Hide".Contains(parameters[0]))
@@ -35,6 +39,7 @@ public class ItemBehaviour : MonoBehaviour
         else
         {
             Sprite sprite = Resources.Load<Sprite>("Artwork/Items/" + parameters[0]);
+            if (!sprite) Debug.LogError("Command << item >>: File not found: \"" + "Artwork/Items/" + parameters[0] + "\"");
             StartCoroutine(FadeOpaque(sprite, onComplete));
         }
     }

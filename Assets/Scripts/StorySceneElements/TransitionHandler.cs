@@ -83,7 +83,7 @@ public class TransitionHandler : MonoBehaviour
     {
         if(pars == null || pars.Length == 0)
         {
-            Debug.LogError("transition: no parameters given!");
+            Debug.LogError("Command transition: no parameters given!");
         }
         // if override given, always do Fade_In transition
         if (overrideTransitionFade)

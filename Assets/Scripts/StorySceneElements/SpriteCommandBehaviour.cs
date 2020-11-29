@@ -30,7 +30,7 @@ public class SpriteCommandBehaviour : MonoBehaviour
     {
         if(parameters.Length < 2)
         {
-            Debug.LogError("YarnCommands: \"sprite\" command did not recieve enough arguments");
+            Debug.LogError("YarnCommands: \"sprite\" command did not receieve enough arguments");
             return;
         }
         // get gameobject of referred character and set active

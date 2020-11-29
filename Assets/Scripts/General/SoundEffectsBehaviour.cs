@@ -49,16 +49,19 @@ public class SoundEffectsBehaviour : MonoBehaviour
         }
         if (pars.Length > 2)
         {
+            // check if looping or fading wanted by applying lambda expression to all given params
             loop = pars.Any("loop".Contains);
             fade = pars.Any("fade".Contains);
         }
         switch (pars[0])
         {
             case "play":
+            case "Play":
                 PlaySound(pars[1], loop, fade);
                 break;
 
             case "stop":
+            case "Stop":
                 StopSound(pars[1], fade);
                 break;
         }
