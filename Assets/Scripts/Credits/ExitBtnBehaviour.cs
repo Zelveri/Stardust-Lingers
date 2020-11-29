@@ -8,6 +8,6 @@ public class ExitBtnBehaviour : MonoBehaviour
     public void BackToMainMenu()
     {
         //GameManager.Quit();
-        GameManager.sceneController.LoadScene(0); // main menu
+        GameManager.sceneController.ToMainMenu(); // main menu
     }
 }

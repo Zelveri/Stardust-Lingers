@@ -57,12 +57,14 @@ public class GameManager : SingletonTemplate<GameManager>
 
         // save menu prefs to disk when manu is closed
         OnPrefsChanged.AddListener(SavePrefs);
+
+        sceneController.InitialTitleLoad();
     }
 
-    public void Start()
-    {
-        StartCoroutine(TransitionHandler.SceneFadeIn());
-    }
+    //public void Start()
+    //{
+    //    StartCoroutine(TransitionHandler.SceneFadeIn());
+    //}
 
     // gets called when MyDialogueUI is initialized
     public static void RegisterDialogueUI(MyDialogueUI ui)

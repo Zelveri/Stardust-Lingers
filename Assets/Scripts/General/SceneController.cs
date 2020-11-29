@@ -32,7 +32,7 @@ public class SceneController : MonoBehaviour
 
     public static bool IsMainMenu
     {
-        get { return CurMainScene == Scenes.main; }
+        get { return CurMainScene == Scenes.Title; }
     }
 
     // start the dialogue runner if the scene has loaded, set in DataController.DoStateLoad
@@ -55,6 +55,21 @@ public class SceneController : MonoBehaviour
             startDialogueOnLoad = true;
         }
         SceneIsLoading = false;
+    }
+
+    public void ToMainMenu()
+    {
+        ReturnToStory();
+        SceneLoad(Scenes.Title);
+    }
+
+    public void InitialTitleLoad()
+    {
+        //SceneManager.LoadScene((int)Scenes.Title);
+        //CurActiveScene = Scenes.Title;
+        //CurMainScene = Scenes.Title;
+        //StartCoroutine(GameManager.TransitionHandler.SceneFadeIn());
+        SceneLoad(Scenes.Title);
     }
 
     public void StartStory()
@@ -120,7 +135,7 @@ public class SceneController : MonoBehaviour
 
     IEnumerator DoReturn()
     {
-        if (CurActiveScene < Scenes.Story && CurActiveScene > 0)
+        if (CurActiveScene < Scenes.Credits && CurActiveScene > Scenes.Title)
         {
             yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeOut());
             var op = SceneManager.UnloadSceneAsync((int)CurActiveScene);
@@ -217,20 +232,20 @@ public class SceneController : MonoBehaviour
 
         SceneIsLoading = true;
         DoScenePreps();
-        if (CurActiveScene == Scenes.main || CurActiveScene == Scenes.Menus || CurActiveScene == Scenes.Credits)
+        if (CurActiveScene == Scenes.Title || CurActiveScene == Scenes.Menus || CurActiveScene == Scenes.Credits)
         {
             yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeOut());
             // menus pauses game, return to normal time if loading a savefile
             Time.timeScale = 1;
         }
         GameManager.soundEffects.StopAll();
-        if (CurActiveScene == Scenes.main) GameManager.musicPlayer.Stop();
+        if (CurActiveScene == Scenes.Title) GameManager.musicPlayer.Stop();
         // wait for music to finish fading out
         yield return StartCoroutine(GameManager.musicPlayer.WaitFadeOut());
 
         GameManager.ClearTransitionHandlers();
         SceneManager.LoadScene((int)scene);
-        if (scene == Scenes.main || scene == Scenes.Credits)
+        if (scene == Scenes.Title || scene == Scenes.Credits)
         {
             yield return new WaitWhile(() => SceneIsLoading);
             GameManager.musicPlayer.PlayMenuMusic();
