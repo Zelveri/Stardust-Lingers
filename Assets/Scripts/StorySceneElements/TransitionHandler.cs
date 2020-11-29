@@ -254,7 +254,7 @@ public class TransitionHandler : MonoBehaviour
         // animationstate component receives signal when animation is finished
         var animstate = crossfadeAnimator.gameObject.GetComponent<AnimationState>();
         // set animation speed multiplier, Duration is not accurate name
-        crossfadeAnimator.SetFloat("Duration", 2f);
+        crossfadeAnimator.SetFloat("Duration", 1f);
         crossfadeAnimator.SetTrigger("Fade_Clear");
         animstate.IsRunning = true;
         // wait for finished signal
