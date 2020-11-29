@@ -19,7 +19,7 @@ tags:
 colorID: 0
 position: 579,-136
 ---
-<< sound play leaves_and_wind fade 3 >> 
+<< sound play leaves_and_wind loop fade 3 >> 
 << backdrop DeepWoods_Day >>
 << transition Cross_Fade >>
 Eventually we found ourselves delving deeper into the woods.
@@ -63,6 +63,7 @@ By some miracle, it gets the message and lets go, dashing away and stopping to l
 Though part of me felt the urge to ignore it and continue traveling deeper, sensing an almost instinctual need to, the return of the prickling sensation skittering across my skin and the throbbing of my fingers led me to my senses.
 "Alright, alright! Have it your way!"
 "Let's just get out of here..."
+<< sound stop leaves_and_wind fade 3 >> 
 [[River]]
 ===
 title: River
@@ -128,6 +129,7 @@ position: 1072,-137
 ---
 << transition None >>
 "Come to think of it, I've just been calling you bunny this whole time. I should name you."
+<< music play Full_Lune_1 >> 
 << nametag Lune >>
 << sprite Bunny Open_Open >> 
 "I do have a name! Its Lune."
@@ -173,7 +175,7 @@ Almost instinctively, I began to stroke the wonderfully soft fur again in an att
 << nametag Mira>> 
 I don't think my mind is prepared for this many beatings at once.
 I pick myself up with Lune in my arms, making a panicked sprint toward home before I got stuck out in the dark with whatever the heck they were.
-<< sound stop river_flow fade >>
+<< sound stop river_flow fade 3 >>
 << transition Fade_Out >>
 << scene Reflection >>
 ===

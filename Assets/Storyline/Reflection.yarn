@@ -67,6 +67,7 @@ That did not answer what I had truly wanted to know, but I decided not to push i
 << sprite Open_OpenSmile Fade_Out >>
 << nametag Mira >>
 With that, she hopped down from the bed and left the room.
+<< music fade_out 3 >> 
 << transition Fade_Out>> 
 [[Mirror]] 
 
@@ -98,11 +99,11 @@ But here, finding it difficult to even face myself, my mind soon drifted back to
 Was it all of them he was referring to? There were too many to count.
 Or perhaps he honed in on a specific kind?
 << backdrop Mirror_B >>
-<< transition Crossfade >>
+<< transition Cross_Fade >>
 "Wait, but if that's the case, then maybe..."
 I reached out to the mirror.
 << backdrop Mirror_C >>
-<< transition Crossfade >>
+<< transition Cross_Fade >>
 << hide_dialogue >>
 Hide this text line.
 << transition Fade_Out 0.5 >>
