@@ -117,6 +117,7 @@ public class TransitionHandler : MonoBehaviour
             case "Fade_Out":
                 StartCoroutine(Fade("out", crossfadeAnimator, onComplete));
                 break;
+            case "Crossfade":
             case "Cross_Fade":
                 StartCoroutine(Transition(crossfadeAnimator, onComplete));
                 break;
