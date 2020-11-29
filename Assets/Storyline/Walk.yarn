@@ -19,6 +19,7 @@ tags:
 colorID: 0
 position: 579,-136
 ---
+<< sound play leaves_and_wind fade 3 >> 
 << backdrop DeepWoods_Day >>
 << transition Cross_Fade >>
 Eventually we found ourselves delving deeper into the woods.
