@@ -3,11 +3,11 @@ tags:
 colorID: 0
 position: -1295,-1558
 ---
-<< music play Texting_Stars >> 
 << effect Static >>
 << backdrop Phone >>
 << nametag Trevis >> 
 << transition Fade_In >>
+<< music play Texting_Stars >>
 Hello?
 [[ Hey! |Hey_Phone_One]]
 [[ Who is this? |Who_Phone_One]]
