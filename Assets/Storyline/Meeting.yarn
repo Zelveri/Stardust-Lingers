@@ -61,7 +61,7 @@ There was a gentle ticklish feeling as it sniffed my hand, stepping closer to do
 There was a series of small motions. If I didn't know any better, I would have thought it had nodded at me in response.
 Regardless, I took the bunny's relaxed attitude as confirmation and opened the door fully to let it in.
 It hurried in immediately, ears flapping along with its hops.
-<< sprite Bunny Shut_Smile Fade_Out >>
+<< sprite Bunny Shut_Smile Nyoom_Left >>
 Closing the door, I followed with a soft laugh.
 << sound play door_close_1 >> 
 [[Welcome_Meeting]]

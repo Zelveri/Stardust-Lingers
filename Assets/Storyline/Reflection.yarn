@@ -64,7 +64,7 @@ That did not answer what I had truly wanted to know, but I decided not to push i
 << sprite Open_OpenSmile >>
 "How sweet of you to offer!"
 "But as much as I enjoy being pampered, I can find something to munch on my own."
-<< sprite Open_OpenSmile Fade_Out >>
+<< sprite Open_OpenSmile Nyoom_Left >>
 << nametag Mira >>
 With that, she hopped down from the bed and left the room.
 << music fade_out 3 >> 
