@@ -28,7 +28,7 @@ public class ItemBehaviour : MonoBehaviour
     {
         // if parameter is "None" fade item out
         // otherwise interpret param as filename and fade item in
-        if (parameters[0] == "None")
+        if ("none None hide Hide".Contains(parameters[0]))
         {
             StartCoroutine(FadeClear(onComplete));
         }
