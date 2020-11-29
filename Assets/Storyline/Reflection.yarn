@@ -3,7 +3,7 @@ tags:
 colorID: 0
 position: 857,-153
 ---
-<< backdrop Livingroom_Night_B >>
+<< backdrop Bedroom_Night_B >>
 << nametag Mira >> 
 << transition Fade_In >>
 "So.., you're a ghost who descended from the moon?"
