@@ -19,7 +19,7 @@ public class LogUpdate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        textMesh.text = string.Join("\n\n", DataController.GetLines());
+        textMesh.text = string.Join("\n\n", DataController.Lines);
         scrollbar.value = 0;
         OnLoad.Invoke();
         gameObject.SetActive(true);

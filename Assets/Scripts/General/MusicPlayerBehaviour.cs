@@ -8,6 +8,8 @@ public class MusicPlayerBehaviour : MonoBehaviour
     DialogueRunner dialogueRunner;
     AudioSource player;
 
+    string curPlayingFile = "";
+
     private void Awake()
     {
         
@@ -63,7 +65,17 @@ public class MusicPlayerBehaviour : MonoBehaviour
                 if (parameters.Length > 1)
                 {
                     file = parameters[1];
-                } else Debug.LogError("Music Player - Fade In: No file given");
+                    // dont play file if already playing
+                    if (curPlayingFile == file)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        curPlayingFile = file;
+                    }
+                } 
+                else Debug.LogError("Music Player - Fade In: No file given");
                 //check if duration given
                 if (parameters.Length > 2)
                 {
@@ -73,6 +85,7 @@ public class MusicPlayerBehaviour : MonoBehaviour
                 musicPath = "Music/" + file;
                 clip = Resources.Load<AudioClip>(musicPath);
                 player.clip = clip;
+                GameManager.dataController.UpdateMusic(file);
                 StartCoroutine(FadeIn(player, duration));
                 break;
 
@@ -81,14 +94,36 @@ public class MusicPlayerBehaviour : MonoBehaviour
                 if (parameters.Length > 1)
                 {
                     file = parameters[1];
-                } else Debug.LogError("Music Player - Play: No file given");
+                    // dont play file if already playing
+                    if (curPlayingFile == file)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        curPlayingFile = file;
+                    }
+                }
+                else Debug.LogError("Music Player - play: No file given");
                 // load file and play
                 musicPath = "Music/" + file;
                 clip = Resources.Load<AudioClip>(musicPath);
+                GameManager.dataController.UpdateMusic(file);
                 player.clip = clip;
                 player.Play();
                 break;
         }
+    }
+
+    public void Play(string file)
+    {
+        if (file == null || file == "") return;
+        var musicPath = "Music/" + file;
+        var clip = Resources.Load<AudioClip>(musicPath);
+        player.clip = clip;
+        curPlayingFile = file;
+        GameManager.dataController.UpdateMusic(file);
+        StartCoroutine(FadeIn(player, 3f));
     }
 
     public void Pause()
@@ -105,6 +140,12 @@ public class MusicPlayerBehaviour : MonoBehaviour
     {
         StartCoroutine(FadeOut(player, 1f, false));
     }
+
+    public IEnumerator StopWait()
+    {
+        yield return StartCoroutine(FadeOut(player, 1f, false));
+    }
+
 
     // from https://forum.unity.com/threads/fade-out-audio-source.335031/
     /// <summary>

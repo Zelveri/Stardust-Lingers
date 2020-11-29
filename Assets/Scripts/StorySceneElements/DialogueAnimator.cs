@@ -60,7 +60,7 @@ public class DialogueAnimator : MonoBehaviour
         string theme_color = PlayerPrefs.GetString("theme_color");
         string boxName = theme_color + "_" + nameToTextureDict[name];
         // do animation only if box is visible and nametag actually changes
-        var doEffect = !IsHidden && (pars[0] != DataController.GetNametag());
+        var doEffect = !IsHidden && (pars[0] != DataController.Nametag);
         // if additional hidden argument is given conceal name
         if ((pars.Length > 1))
         {

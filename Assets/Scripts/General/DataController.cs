@@ -7,22 +7,20 @@ using Yarn.Unity;
 
 public class DataController : MonoBehaviour
 {
-    static List<string> lines;
+    static List<string> lines = new List<string>();
     static string currentNode;
     static string prevNode;
     static string curNametag;
     static string backdrop;
+    static string curMusic;
+    static string [] curSounds;
     // static bool lineIncomplete = true;
 
-    public string CurNametag
-    {
-        get { return curNametag; }
-    }
+    public string CurNametag => curNametag;
 
     // Start is called before the first frame update
     public void Awake()
     {
-        lines = new List<string>();
     }
 
     public void LineStart()
@@ -67,6 +65,7 @@ public class DataController : MonoBehaviour
         // if (lineIncomplete) GameManager.dialogueUI.MarkLineComplete();
         //StartCoroutine(backgroundChange.DoChangeFast(save.backdrop, null));
         yield return new WaitUntil(() => (bool)GameManager.dialogueUI);
+        GameManager.musicPlayer.Play(save.curMusic);
         GameManager.dialogueRunner.StartDialogue(save.currentNode);
     }
 
@@ -95,37 +94,43 @@ public class DataController : MonoBehaviour
 
     }
 
-    public static List<string> GetLines()
+    public void UpdateMusic(string music)
     {
-        return lines;
+        curMusic = music;
     }
 
-    public static string GetCurrentNode()
+    public void UpdateSounds(string[] sounds)
     {
-        return currentNode;
+        curSounds = sounds;
     }
 
-    public static string GetPrevNode()
-    {
-        return prevNode;
-    }
+    public static string[] Lines => lines.ToArray();
 
-    public static string GetNametag()
-    {
-        return curNametag;
-    }
-    public static string GetBackdrop()
-    {
-        return backdrop;
-    }
 
-    public static Dictionary<string,Yarn.Value> GetVariablesAsDict()
+    public static string CurrentNode => currentNode;
+
+    public static string PrevousNode => prevNode;
+
+
+    public static string Nametag => curNametag;
+
+    public static string Backdrop => backdrop;
+
+
+    public static Dictionary<string, Yarn.Value> Variables
     {
-        var dict = new Dictionary<string, Yarn.Value>();
-        foreach (var entry in GameManager.variableStorage)
+        get
         {
-            dict.Add(entry.Key, entry.Value);
+            var dict = new Dictionary<string, Yarn.Value>();
+            foreach (var entry in GameManager.variableStorage)
+            {
+                dict.Add(entry.Key, entry.Value);
+            }
+            return dict;
         }
-        return dict;
     }
+
+    public static string Music => curMusic;
+
+    public static string[] Sounds => curSounds;
 }

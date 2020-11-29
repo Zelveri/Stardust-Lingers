@@ -14,6 +14,8 @@ public class SaveState
     public string[] lines;
     public string backdrop;
     public int curScene;
+    public string curMusic;
+    public string[] curSounds;
     [SerializeField]
     public Dictionary<string, Yarn.Value> variables;
     // string[] choices;
@@ -41,6 +43,8 @@ public class SaveState
         this.backdrop = "";
         this.variables = null;
         this.curScene = -1;
+        this.curSounds = null;
+        this.curMusic = "";
     }
 
     /// <summary>
@@ -49,14 +53,16 @@ public class SaveState
     public void GatherData()
     {
         // get all the variables from the DataController
-        this.currentNode = DataController.GetCurrentNode();
-        this.prevNode = DataController.GetPrevNode();
-        this.lines = DataController.GetLines().ToArray();
+        this.currentNode = DataController.CurrentNode;
+        this.prevNode = DataController.PrevousNode;
+        this.lines = DataController.Lines;
         //this.choices = choices;
-        this.curNameTag = DataController.GetNametag();
-        this.backdrop = DataController.GetBackdrop();
-        this.variables = DataController.GetVariablesAsDict();
+        this.curNameTag = DataController.Nametag;
+        this.backdrop = DataController.Backdrop;
+        this.variables = DataController.Variables;
         this.curScene = (int)SceneController.CurMainScene;
+        this.curMusic = DataController.Music;
+        this.curSounds = DataController.Sounds;
     }
 
 }

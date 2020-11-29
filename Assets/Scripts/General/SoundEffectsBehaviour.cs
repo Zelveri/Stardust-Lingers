@@ -107,6 +107,7 @@ public class SoundEffectsBehaviour : MonoBehaviour
         if (loop)
         {
             sfxPlayers.Add(clip.name, src);
+            GameManager.dataController.UpdateSounds(sfxPlayers.Keys.ToArray<string>());
         }
         else
         {
@@ -234,5 +235,6 @@ public class SoundEffectsBehaviour : MonoBehaviour
         yield return new WaitUntil(() => !sfxPlayers[name].isPlaying);
         Destroy(sfxPlayers[name].gameObject);
         sfxPlayers.Remove(name);
+        GameManager.dataController.UpdateSounds(sfxPlayers.Keys.ToArray<string>());
     }
 }
