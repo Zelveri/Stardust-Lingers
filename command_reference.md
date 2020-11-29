@@ -4,8 +4,8 @@
 Parameters in `<>` are required!  
 
 Parameters in `[]` are optional
-- `[xxx]` means you can write the word fade optionally,   
-- `[xxx=3]` means you can write a number optionally with the default value given
+- `[xxx]` means you can write the word xxx,   
+- `[xxx=3]` means you can write a number, if not, the given default value is used
 
 ## Commands
 Sorted by providing GameObjects:
@@ -52,9 +52,9 @@ Show a character sprite with a little animation.
     triggername from the Character animationcontroller to play, default = `Bounce`
 
 #### `<< schedule_transition >>`
-Is called on every node start, causes different behaviour for the following commands:
-    nametag, sprite, hide_dialogue
-    these commands will not do an immediate change, but wait until the next transition command causes the screen to go black
+Is called on every node start, causes different behaviour for the following commands:  
+    `nametag`, `sprite`, `hide_dialogue`  
+    these commands will not do an immediate change, but instead wait until the next transition command causes the screen to go black
     so that changes can happen invisible
 
 ### ItemCanvas/ItemBehaviour.cs:
