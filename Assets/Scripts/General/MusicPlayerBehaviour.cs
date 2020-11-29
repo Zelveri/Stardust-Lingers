@@ -109,6 +109,7 @@ public class MusicPlayerBehaviour : MonoBehaviour
                 musicPath = "Music/" + file;
                 clip = Resources.Load<AudioClip>(musicPath);
                 GameManager.dataController.UpdateMusic(file);
+                if (player.isPlaying) player.Stop();
                 player.clip = clip;
                 player.Play();
                 break;
@@ -141,9 +142,13 @@ public class MusicPlayerBehaviour : MonoBehaviour
         StartCoroutine(FadeOut(player, 1f, false));
     }
 
-    public IEnumerator StopWait()
+    /// <summary>
+    /// Waits until the musicplayer has finished fading out the music
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator WaitFadeOut()
     {
-        yield return StartCoroutine(FadeOut(player, 1f, false));
+        yield return new WaitWhile(() => player.isPlaying);
     }
 
 

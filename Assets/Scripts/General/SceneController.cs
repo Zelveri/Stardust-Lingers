@@ -223,13 +223,10 @@ public class SceneController : MonoBehaviour
             Time.timeScale = 1;
         }
         GameManager.soundEffects.StopAll();
-        GameManager.musicPlayer.Stop();
+        // wait for music to finish fading out
+        yield return StartCoroutine(GameManager.musicPlayer.WaitFadeOut());
+
         GameManager.ClearTransitionHandlers();
-        //if (CurActiveScene == Scenes.Menus)
-        //{
-        //    var async_op = SceneManager.UnloadSceneAsync((int)CurMainScene);
-        //    yield return new WaitUntil(() => async_op.isDone);
-        //}
         SceneManager.LoadScene((int)scene);
         if (scene == Scenes.main || scene == Scenes.Credits)
         {
