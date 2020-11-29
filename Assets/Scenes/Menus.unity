@@ -1306,12 +1306,12 @@ PrefabInstance:
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -1322,11 +1322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1318530514}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Save
+      value: SetTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -1336,7 +1336,12 @@ PrefabInstance:
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: play
       objectReference: {fileID: 0}
     - target: {fileID: 3809072480568797832, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -1761,7 +1766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 143.53, y: 0}
+  m_AnchoredPosition: {x: 143.52979, y: 0}
   m_SizeDelta: {x: -287.05, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &636537827
@@ -2235,12 +2240,12 @@ PrefabInstance:
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -2251,11 +2256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1318530514}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Save
+      value: SetTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -2265,7 +2270,12 @@ PrefabInstance:
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 5
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: play
       objectReference: {fileID: 0}
     - target: {fileID: 3809072480568797832, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -2826,12 +2836,12 @@ PrefabInstance:
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -2842,11 +2852,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1318530514}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Save
+      value: SetTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -2856,7 +2866,12 @@ PrefabInstance:
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 4
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: play
       objectReference: {fileID: 0}
     - target: {fileID: 3809072480568797832, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -2991,7 +3006,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 143.53, y: 0}
+  m_AnchoredPosition: {x: 143.52979, y: 0}
   m_SizeDelta: {x: -287.05, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1008587641
@@ -3799,7 +3814,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 143.53003, y: 11}
+  m_AnchoredPosition: {x: 143.53027, y: 11}
   m_SizeDelta: {x: -1337.4501, y: -805.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1327345866
@@ -4263,12 +4278,12 @@ PrefabInstance:
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -4279,11 +4294,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1318530514}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Save
+      value: SetTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -4293,7 +4308,12 @@ PrefabInstance:
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: play
       objectReference: {fileID: 0}
     - target: {fileID: 3809072480568797832, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -5684,12 +5704,12 @@ PrefabInstance:
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -5700,11 +5720,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1318530514}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Save
+      value: SetTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
@@ -5714,7 +5734,12 @@ PrefabInstance:
     - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809072479937457843, guid: 0d481a504127902478cd0a43567a7ccd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: play
       objectReference: {fileID: 0}
     - target: {fileID: 3809072480568797832, guid: 0d481a504127902478cd0a43567a7ccd,
         type: 3}
