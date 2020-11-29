@@ -14,6 +14,7 @@ public class SceneController : MonoBehaviour
         main=0,
         Menus,
         Log,
+        Credits,
         Story,
         Phone_One,
         Meeting,
