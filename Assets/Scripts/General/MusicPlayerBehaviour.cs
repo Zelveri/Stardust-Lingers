@@ -10,6 +10,8 @@ public class MusicPlayerBehaviour : MonoBehaviour
 
     string curPlayingFile = "";
 
+    static bool isFading = false;
+
     private void Awake()
     {
         
@@ -158,7 +160,7 @@ public class MusicPlayerBehaviour : MonoBehaviour
     /// <returns></returns>
     public IEnumerator WaitFadeOut()
     {
-        yield return new WaitWhile(() => player.isPlaying);
+        yield return new WaitWhile(() => isFading);
     }
 
 
@@ -172,6 +174,7 @@ public class MusicPlayerBehaviour : MonoBehaviour
     /// <returns></returns>
     public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime, bool onlyPause = false)
     {
+        isFading = true;
         float startVolume = audioSource.volume;
 
         while (audioSource.volume > 0)
@@ -191,7 +194,7 @@ public class MusicPlayerBehaviour : MonoBehaviour
             audioSource.Stop();
             audioSource.volume = startVolume;
         }
-
+        isFading = false;
     }
 
     /// <summary>
@@ -202,6 +205,7 @@ public class MusicPlayerBehaviour : MonoBehaviour
     /// <returns></returns>
     public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime)
     {
+        isFading = true;
         float targetVolume = audioSource.volume;
         audioSource.volume = 0;
 
@@ -214,6 +218,7 @@ public class MusicPlayerBehaviour : MonoBehaviour
             yield return null;
         }
         audioSource.volume = targetVolume;
+        isFading = false;
     }
 }
 
