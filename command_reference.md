@@ -6,9 +6,9 @@ Parameters in `<>` are required!
 Parameters in `[]` are optional
 - `[xxx]` means you can write the word xxx,   
 - `[xxx=3]` means you can write a number, if not, the given default value is used
-
+---
 ## Commands
-Sorted by providing GameObjects:
+Sorted by providing GameObjects:  
 
 ### YarnCommands.cs/.prefab:
 
@@ -57,6 +57,8 @@ Is called on every node start, causes different behaviour for the following comm
     these commands will not do an immediate change, but instead wait until the next transition command causes the screen to go black
     so that changes can happen invisible
 
+---
+
 ### ItemCanvas/ItemBehaviour.cs:
 
 #### `<< item <itemname> >>`
@@ -65,6 +67,7 @@ Display a sprite on the item canvas, fades in and out
     - `None`: item disappears
     - else: display sprite `"Artwork/Items/<itemname>"`
 
+---
 
 ### Phone/PhoneDialogue - LineUpdateHandler.cs
 **DO NOT USE THIS AND YarnCommands AT THE SAME TIME!!**
@@ -77,12 +80,13 @@ For phone dialogue, selects the side the message bubbles appear.
 
 #### `<< photo <imagename> >>`
 Display an image as phone message
-- **imagename**: string
+- **imagename**: string  
     loads the image `"Artwork/Photos/<imagename>"`
 
 #### `<< transition <type> [speed=1] >>`
 same as [YarnCommands transition](#transition)
 
+---
 
 ### GameManager/PersistentCommands.cs provides:
 **DO NOT USE OUTSIDE GAMEMANAGER**
@@ -94,8 +98,10 @@ Plays music
     - `Stop`: stop the music, does not need additional arguments
     - `Fade_In`: plays the sound file `"Music/<filename>"` in a loop after fading it in
     - `Fade_Out`: fades the current music out and stops it
-- **filename**: the filename of the sound file to load, not needed for `Stop` and `Fade_Out`
-- **duration**: duration of the fade in seconds, default is 3 seconds
+- **filename**: string  
+the filename of the sound file to load, not needed for `Stop` and `Fade_Out`
+- **duration**: float  
+duration of the fade in seconds, default is 3 seconds
 
 #### `<< sound <action> <filename> [loop] [fade] >>`
 Plays a sound effect
