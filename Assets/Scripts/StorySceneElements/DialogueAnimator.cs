@@ -22,6 +22,8 @@ public class DialogueAnimator : MonoBehaviour
 
     bool _isfading = false;
     bool _ishidden = true;
+    // dont clear text when theme is reloaded
+    private bool overrideTextClear;
 
     public bool IsHidden
     {
@@ -129,6 +131,7 @@ public class DialogueAnimator : MonoBehaviour
     {
         string theme_color = PlayerPrefs.GetString("theme_color");
         string boxName = theme_color + "_" + nameToTextureDict[GameManager.dataController.CurNametag];
+        overrideTextClear = true;
         StartCoroutine(DoChange(GameManager.dataController.CurNametag, boxName, theme_color, false, null));
     }
 
@@ -137,7 +140,9 @@ public class DialogueAnimator : MonoBehaviour
     /// </summary>
     public void ClearText()
     {
-        storyText.text = "";
+        // dont clear text when theme is reloaded
+        if (!overrideTextClear) storyText.text = "";
+        overrideTextClear = false;
     }
 
     /// <summary>
