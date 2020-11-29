@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -442, y: -72}
+  m_AnchoredPosition: {x: -433, y: -72}
   m_SizeDelta: {x: 388.8, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &112304468
@@ -1384,7 +1384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bruno Almedia
+  m_text: Bruno Almeida
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1594c137211620f479187b0d3c0827b4, type: 2}
   m_sharedMaterial: {fileID: 1416403175208669581, guid: 1594c137211620f479187b0d3c0827b4,
@@ -1509,7 +1509,7 @@ GameObject:
   - component: {fileID: 1999785780}
   - component: {fileID: 1999785779}
   m_Layer: 0
-  m_Name: rk-exxec
+  m_Name: ExXeptional
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1531,7 +1531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -568, y: -367}
+  m_AnchoredPosition: {x: -603, y: -367}
   m_SizeDelta: {x: 391.1, y: 74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999785779
@@ -1552,7 +1552,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Exceptional
+  m_text: 'ExXeptional
 
 '
   m_isRightToLeft: 0
