@@ -10,6 +10,7 @@ My thoughts rose to awareness, the disorienting fog shrouding them slowly cleari
 I kept my eyes closed as I stretched, realizing with a soft smile that I had ended up sleeping sideways.
 Letting out a yawn with a roll of the shoulders, I felt for the door as I stumbled my way to the bathroom.
 I nearly tripped over some unknown object on the way there, but part of me would rather suffer a fall than open my eyes without washing my face first.
+<< sound play door_close_2 >> 
 [[Sound_Meeting]]
 ===
 title: Sound_Meeting
@@ -62,6 +63,7 @@ Regardless, I took the bunny's relaxed attitude as confirmation and opened the d
 It hurried in immediately, ears flapping along with its hops.
 << sprite Bunny Shut_Smile Fade_Out >>
 Closing the door, I followed with a soft laugh.
+<< sound play door_close_1 >> 
 [[Welcome_Meeting]]
 ===
 title: Welcome_Meeting
