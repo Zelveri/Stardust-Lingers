@@ -34,7 +34,7 @@ A sharp prickling across my neck. I snap my hand back, clutching it against my c
 Was someone... watching?
 I shift my eyes downward, seeing the bunny sitting farther than expected. 
 << nametag Lune Bunny >>
-<< sprite Bunny Scared_Neutral >> 
+<< sprite Bunny Scared_Neutral Shiver >> 
 Thoom... thump!
 Thump!
 << nametag Mira >>
@@ -52,6 +52,7 @@ Hissing, I glare down at it, staggering backwards.
 << nametag Lune Bunny >>
 << sprite Bunny Shade_Scared_Grind >>
 "..."
+<< sprite Bunny Shade_Scared_Grind Shiver >>
 Thump.
 << nametag Mira >>
 I braced myself as it lunged once again, shutting my eyes in panic as I awaited another bite.
