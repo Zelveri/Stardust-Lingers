@@ -51,12 +51,12 @@ position: 789,7
 << sprite Bunny Open_Neutral >>
 "Oh my!"
 "Who are you, little one?"
-The bunny sitting before me had raised its paw, tilting its head in curiousity.
+The bunny sitting before me had raised its paw, tilting its head in curiosity.
 I crouched down, making sure not to make any sudden movements as I reached out and held my hand in front of its face.
 << sprite Bunny Open_Open >>
 There was a gentle ticklish feeling as it sniffed my hand, stepping closer to do so.
 "Aww, you're so precious. Wanna come in?"
-"Its a bit of a mess, but I'd appreciate your company."
+"It's a bit of a mess, but I'd appreciate your company."
 << sprite Bunny Shut_Smile >>
 There was a series of small motions. If I didn't know any better, I would have thought it had nodded at me in response.
 Regardless, I took the bunny's relaxed attitude as confirmation and opened the door fully to let it in.
