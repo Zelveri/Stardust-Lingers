@@ -91,6 +91,62 @@ public class SceneController : MonoBehaviour
         SceneLoad(Scenes.Meeting);
     }
 
+    /// <summary>
+    /// Toggles the Menus Scene
+    /// </summary>
+    public void ToggleMenu()
+    {
+        if (SceneIsLoading) return;
+        if (CurActiveScene >= Scenes.Story || CurActiveScene == Scenes.Title)
+        {
+            GameManager.soundEffects.PauseAll();
+            //GameManager.musicPlayer.Pause();
+            OverlaySceneLoad(Scenes.Menus);
+        }
+        else
+        {
+            ReturnToStory();
+            GameManager.soundEffects.UnPauseAll();
+            //GameManager.musicPlayer.UnPause();
+        }
+    }
+
+    /// <summary>
+    /// Will open the log if current scene is not a menu scene
+    /// </summary>
+    public void ToggleLog()
+    {
+        if (SceneIsLoading) return;
+        if (CurActiveScene != Scenes.Log && CurActiveScene >= Scenes.Story)
+        {
+            OverlaySceneLoad(Scenes.Log);
+        }
+        else if (CurActiveScene != Scenes.Menus)
+        {
+            ReturnToStory();
+        }
+    }
+
+
+    /// <summary>
+    /// Prepare current scene for additional scene load
+    /// </summary>
+    void DoScenePreps()
+    {
+        // disable main scene audio listener
+        //GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = false;
+        if (GameManager.dialogueUI.dialogueContainer) GameManager.dialogueUI.dialogueContainer.SetActive(false);
+    }
+    /// <summary>
+    /// Reset scene after returning from overlay
+    /// </summary>
+    void UndoScenePreps()
+    {
+        // disable main scene audio listener
+        //GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = true;
+        if (GameManager.dialogueUI.dialogueContainer) GameManager.dialogueUI.dialogueContainer.SetActive(true);
+    }
+
     public void LoadScene(string sceneName)
     {
         try
@@ -155,61 +211,7 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Toggles the Menus Scene
-    /// </summary>
-    public void ToggleMenu()
-    {
-        if (SceneIsLoading) return;
-        if (CurActiveScene >= Scenes.Story || CurActiveScene == Scenes.Title)
-        {
-            GameManager.soundEffects.PauseAll();
-            //GameManager.musicPlayer.Pause();
-            OverlaySceneLoad(Scenes.Menus);
-        }
-        else
-        {
-            ReturnToStory();
-            GameManager.soundEffects.UnPauseAll();
-            //GameManager.musicPlayer.UnPause();
-        }
-    }
 
-    /// <summary>
-    /// Will open the log if current scene is not a menu scene
-    /// </summary>
-    public void ToggleLog()
-    {
-        if (SceneIsLoading) return;
-        if (CurActiveScene != Scenes.Log && CurActiveScene >= Scenes.Story)
-        {
-            OverlaySceneLoad(Scenes.Log);
-        }
-        else if(CurActiveScene != Scenes.Menus)
-        {
-            ReturnToStory();
-        }
-    }
-
-
-    /// <summary>
-    /// Prepare current scene for additional scene load
-    /// </summary>
-    void DoScenePreps()
-    {
-        // disable main scene audio listener
-        //GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = false;
-        if(GameManager.dialogueUI.dialogueContainer) GameManager.dialogueUI.dialogueContainer.SetActive(false);
-    }
-    /// <summary>
-    /// Reset scene after returning from overlay
-    /// </summary>
-    void UndoScenePreps()
-    {
-        // disable main scene audio listener
-        //GameObject.Find("Main Camera").GetComponent<AudioListener>().enabled = true;
-        if(GameManager.dialogueUI.dialogueContainer) GameManager.dialogueUI.dialogueContainer.SetActive(true);
-    }
 
 
     /// <summary>
