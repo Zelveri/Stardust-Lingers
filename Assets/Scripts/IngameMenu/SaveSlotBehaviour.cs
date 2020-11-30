@@ -89,7 +89,11 @@ public class SaveSlotBehaviour : MonoBehaviour
     // on load button press
     public void OnLoad()
     {
-        if(hasSave && SaveFileHandler.CheckSaveFileExists(slotNumber)) SaveFileHandler.Load(slotNumber);
+        if (hasSave && SaveFileHandler.CheckSaveFileExists(slotNumber))
+        {
+            SaveFileHandler.Load(slotNumber);
+            loadBtn.interactable = false;
+        }
     }
 
     void UpdateButtons()

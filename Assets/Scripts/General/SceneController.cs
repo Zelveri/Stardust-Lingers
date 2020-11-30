@@ -129,6 +129,7 @@ public class SceneController : MonoBehaviour
     // returns to previous scene
     public void ReturnToStory()
     {
+        if (SceneIsLoading) return;
         GameManager.OnMenuClose.Invoke();
         StartCoroutine(DoReturn());
     }
@@ -137,16 +138,19 @@ public class SceneController : MonoBehaviour
     {
         if (CurActiveScene < Scenes.Credits && CurActiveScene > Scenes.Title)
         {
+            SceneIsLoading = true;
             yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeOut());
             var op = SceneManager.UnloadSceneAsync((int)CurActiveScene);
             yield return new WaitUntil(() => op.isDone);
             UndoScenePreps();
+            
             yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeIn());
             Time.timeScale = 1;
             // on menu exit, cause settings reload
             if (CurActiveScene == Scenes.Menus) GameManager.OnPrefsChanged.Invoke();
             CurActiveScene = OldScene;
             if (GameManager.dialogueUI && GameManager.dialogueUI.dialogueContainer) GameManager.dialogueUI.dialogueContainer.SetActive(true);
+            SceneIsLoading = false;
         }
     }
 
@@ -155,7 +159,8 @@ public class SceneController : MonoBehaviour
     /// </summary>
     public void ToggleMenu()
     {
-        if (CurActiveScene >= Scenes.Story || CurActiveScene == 0)
+        if (SceneIsLoading) return;
+        if (CurActiveScene >= Scenes.Story || CurActiveScene == Scenes.Title)
         {
             GameManager.soundEffects.PauseAll();
             //GameManager.musicPlayer.Pause();
@@ -174,6 +179,7 @@ public class SceneController : MonoBehaviour
     /// </summary>
     public void ToggleLog()
     {
+        if (SceneIsLoading) return;
         if (CurActiveScene != Scenes.Log && CurActiveScene >= Scenes.Story)
         {
             OverlaySceneLoad(Scenes.Log);
@@ -211,6 +217,7 @@ public class SceneController : MonoBehaviour
     /// <param name="scene">scene to load</param>
     public void SceneLoad(string scene)
     {
+        if (SceneIsLoading) return;
         SceneIsLoading = true;
         DoScenePreps();
         
@@ -224,6 +231,7 @@ public class SceneController : MonoBehaviour
     /// <param name="scene">scene to load</param>
     public void SceneLoad(Scenes scene)
     {
+        if (SceneIsLoading) return;
         StartCoroutine(DoSceneLoad(scene));
     }
 
@@ -244,6 +252,8 @@ public class SceneController : MonoBehaviour
         yield return StartCoroutine(GameManager.musicPlayer.WaitFadeOut());
 
         GameManager.ClearTransitionHandlers();
+        CurActiveScene = scene;
+        CurMainScene = scene;
         SceneManager.LoadScene((int)scene);
         if (scene == Scenes.Title || scene == Scenes.Credits)
         {
@@ -251,9 +261,6 @@ public class SceneController : MonoBehaviour
             GameManager.musicPlayer.PlayMenuMusic();
             yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeIn());
         }
-        CurActiveScene = scene;
-        CurMainScene = scene;
-
     }
 
     /// <summary>
@@ -273,12 +280,13 @@ public class SceneController : MonoBehaviour
     /// <param name="scene"></param>
     public void OverlaySceneLoad(Scenes scene)
     {
+        if (SceneIsLoading) return;
         StartCoroutine(DoOverlaySceneLoad(scene));
     }
 
     IEnumerator DoOverlaySceneLoad(Scenes scene)
     {
-
+        SceneIsLoading = true;
         DoScenePreps();
         // pause game
         Time.timeScale = 0;
@@ -286,9 +294,9 @@ public class SceneController : MonoBehaviour
         OldScene = CurActiveScene;
             
         yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeOut());
+        CurActiveScene = scene;
         SceneManager.LoadScene((int)scene, LoadSceneMode.Additive);
         yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeIn());
-        CurActiveScene = scene;
     }
 
     public void OverlaySceneLoad(int scene)
