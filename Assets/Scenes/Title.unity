@@ -633,7 +633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 653, y: 263.6}
+  m_AnchoredPosition: {x: 653, y: 141.6}
   m_SizeDelta: {x: 276.2, y: 114.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612189906
@@ -879,7 +879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 653, y: 18.599976}
+  m_AnchoredPosition: {x: 653, y: 382}
   m_SizeDelta: {x: 276.2, y: 104.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &700324621
@@ -1021,7 +1021,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 653, y: 137.95001}
+  m_AnchoredPosition: {x: 653, y: 264}
   m_SizeDelta: {x: 276.2, y: 104.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &868784064
@@ -1597,7 +1597,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 342, y: 257.35}
+  m_AnchoredPosition: {x: 660, y: 475}
   m_SizeDelta: {x: 250, y: 102.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1524474903
@@ -1856,7 +1856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 653, y: 400.9}
+  m_AnchoredPosition: {x: 653, y: -105}
   m_SizeDelta: {x: 276.2, y: 116.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1761059291
@@ -2158,7 +2158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 653, y: -100.400024}
+  m_AnchoredPosition: {x: 653, y: 18.6}
   m_SizeDelta: {x: 276.2, y: 104.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1834290270
@@ -2969,7 +2969,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Jump Story
+  m_Text: 'Jump Intro
+
 
 '
 --- !u!222 &2074069389
