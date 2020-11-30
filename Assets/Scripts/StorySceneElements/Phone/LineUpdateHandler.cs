@@ -46,9 +46,11 @@ public class LineUpdateHandler : MonoBehaviour
 
     public void UpdateLine(string text)
     {
+        // interface dialogue and bubble, update text
         curBubble.UpdateText(text);
     }
 
+    // update the position of all bubbles
     void UpdateBubblesPosition()
     {
         if (curBubble != null)
@@ -56,7 +58,7 @@ public class LineUpdateHandler : MonoBehaviour
             // get height change of active bubble since last update
             float height = curBubble.GetLastHeightDelta();
             // move all other bubbles up by that amount
-            bubbles?.ForEach(bubble => bubble?.MoveUp(height));
+            bubbles?.ForEach((bubble) => bubble?.MoveUp(height));
         }
     }
 
@@ -80,15 +82,13 @@ public class LineUpdateHandler : MonoBehaviour
         // select if bubble is for phone user (me, Mira) or chat partner (them, Trevis)
         if (activeSide == "me")
         {
+            // instatiate prefab for me bubble and assign phone screen as parent
             bb = Instantiate(meBubblesTemplate, phoneScreenPanel.transform).GetComponent<BubbleBehaviour>();
-
         }
         else
         {
             bb = Instantiate(themBubblesTemplate, phoneScreenPanel.transform).GetComponent<BubbleBehaviour>();
         }
-        // seta phone screen as partent for masking
-        //bb.transform.SetParent(phoneScreenPanel.transform);
         return bb;
     }
 
@@ -121,6 +121,8 @@ public class LineUpdateHandler : MonoBehaviour
     {
         transitionHandler.Transition(pars, onComplete);
     }
+
+    // for saving bubbles, not fully impemented
 
     public List<BubbleData> GetSerializableBubbles()
     {

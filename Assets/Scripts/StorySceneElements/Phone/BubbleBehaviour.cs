@@ -10,6 +10,9 @@ public class BubbleBehaviour : MonoBehaviour
     public MaskableGraphic top;
     public MaskableGraphic middle;
     public MaskableGraphic bottom;
+
+    // is this bubble for text from mira?
+    // set in the prefabs
     public bool isMeBubble;
 
     CanvasScaler canvasScaler;
@@ -36,6 +39,7 @@ public class BubbleBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // calc current height scale to react to resolution changes
         heightScale = Display.main.renderingHeight / canvasScaler.referenceResolution.y;
         AdjustBubbleSize();
     }
@@ -63,14 +67,17 @@ public class BubbleBehaviour : MonoBehaviour
 
     public void AdjustBubbleSize()
     {
+        // adjust the height of the top bar to fit all the content
         var movVect = new Vector3(0, (content.rectTransform.rect.height - middle.rectTransform.rect.height) * heightScale, 0);
-        middle.rectTransform.sizeDelta = new Vector2(middle.rectTransform.rect.width, content.rectTransform.rect.height);
-    
         top.rectTransform.Translate(movVect);
+
+        // resize the middle section to fit the content
+        middle.rectTransform.sizeDelta = new Vector2(middle.rectTransform.rect.width, content.rectTransform.rect.height);
     }
 
     public void MoveUp(float height)
     {
+        // move the whole bubble up by the given amount
         var movVect = new Vector3(0, height * heightScale, 0);
         gameObject.transform.Translate(movVect);
     }
@@ -89,13 +96,16 @@ public class BubbleBehaviour : MonoBehaviour
         // add aspect ratio fitter for ptoper image sizing
         var arf = container.AddComponent<AspectRatioFitter>();
        
-        // load image and set apripriate width / height and aspect
+        // load image and set apropriate width / height and aspect
         ((Image)content).preserveAspect = true;
         ((Image)content).sprite = Resources.Load<Sprite>("Artwork/Photos/"+filename);
+        // set aspect ratio
         arf.aspectMode = AspectRatioFitter.AspectMode.WidthControlsHeight;
         arf.aspectRatio = ((Image)content).sprite.rect.width / ((Image)content).sprite.rect.height;
         ((Image)content).rectTransform.sizeDelta = new Vector2(400f, 100f);
     }
+
+    // following functions are for saving bubbles but is not fully implemented yet
 
     public string GetContent()
     {
