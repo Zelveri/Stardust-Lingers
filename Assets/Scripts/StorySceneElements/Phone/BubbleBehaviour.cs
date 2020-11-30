@@ -12,13 +12,20 @@ public class BubbleBehaviour : MonoBehaviour
     public MaskableGraphic bottom;
     public bool isMeBubble;
 
+    Canvas canvas;
+
     Graphic content;
+
+    float heightScale = 1f;
 
     float oldHeight = 0;
 
     private void Awake()
     {
         content = container.GetComponent<Graphic>();
+        canvas = GameObject.Find("PhoneDialogue").GetComponent<Canvas>();
+        var canvasScaler = canvas.gameObject.GetComponent<CanvasScaler>();
+        heightScale = Display.main.renderingHeight / canvasScaler.referenceResolution.y;
     }
 
     // Start is called before the first frame update
@@ -30,6 +37,7 @@ public class BubbleBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         AdjustBubbleSize();
     }
 
@@ -49,14 +57,14 @@ public class BubbleBehaviour : MonoBehaviour
 
     public float GetLastHeightDelta()
     {
-        float delta = GetHeight() - oldHeight + 10;
-        oldHeight =  GetHeight() + 10;
+        float delta = GetHeight() - oldHeight + 10 * heightScale;
+        oldHeight =  GetHeight() + 10 * heightScale;
         return delta;
     }
 
     public void AdjustBubbleSize()
     {
-        var movVect = new Vector3(0, content.rectTransform.rect.height - middle.rectTransform.rect.height, 0);
+        var movVect = new Vector3(0, (content.rectTransform.rect.height - middle.rectTransform.rect.height) * heightScale, 0);
         middle.rectTransform.sizeDelta = new Vector2(middle.rectTransform.rect.width, content.rectTransform.rect.height);
     
         top.rectTransform.Translate(movVect);
@@ -64,7 +72,7 @@ public class BubbleBehaviour : MonoBehaviour
 
     public void MoveUp(float height)
     {
-        var movVect = new Vector3(0, height,0);
+        var movVect = new Vector3(0, height * heightScale, 0);
         gameObject.transform.Translate(movVect);
     }
 
