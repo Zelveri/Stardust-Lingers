@@ -5,6 +5,7 @@ position: 289,-139
 ---
 << nametag Mira >>
 << transition Fade_In >>
+<< music play Starry_Afternoon >> 
 Gentle rustling greeted the cool breeze that swirled by us as we wandered.
 I made sure to walk slowly so as not to accidentally step on the bun as it circled around me.
 "Aww, look at you go."
@@ -121,6 +122,7 @@ My only guide was words left upon screen and page.
 "Hah... that was a lot, huh?"
 I scritched at the bunny's forehead as it gave me a pondering look.
 "Thanks for listening to my nonsense, bunny."
+<< music Fade_Out 0.5 >> 
 [[Name]]
 ===
 title: Name
@@ -188,7 +190,7 @@ position: 1325,-138
 << backdrop Bedroom_Night_B >>
 << nametag Mira >> 
 << transition Fade_In >>
-"So.., you're a ghost who descended from the moon?"
+"So... you're a ghost who descended from the moon?"
 We were sitting on the bed together, Lune having comfortably claimed one of my pillows to flop over on. Revealing her true nature hadn't made her any less adorable.
 << nametag Lune >> 
 << sprite Bunny Open_Open >> 
