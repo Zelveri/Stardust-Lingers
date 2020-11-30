@@ -151,6 +151,7 @@ public class MusicPlayerBehaviour : MonoBehaviour
 
     public void Stop()
     {
+        StopAllCoroutines();
         StartCoroutine(FadeOut(player, 1f, false));
     }
 

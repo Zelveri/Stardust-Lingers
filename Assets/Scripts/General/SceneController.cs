@@ -54,6 +54,7 @@ public class SceneController : MonoBehaviour
             if (GameManager.dialogueUI.startAutomatically && startDialogueOnLoad) GameManager.dialogueRunner.StartDialogue();
             startDialogueOnLoad = true;
         }
+        Debug.Log("SceneController: " + scene.name + "Finish scene load");
         SceneIsLoading = false;
     }
 
@@ -237,11 +238,12 @@ public class SceneController : MonoBehaviour
 
     IEnumerator DoSceneLoad(Scenes scene)
     {
-
+        Debug.Log("SceneController: Prepare scene load");
         SceneIsLoading = true;
         DoScenePreps();
         if (CurActiveScene == Scenes.Title || CurActiveScene == Scenes.Menus || CurActiveScene == Scenes.Credits)
         {
+            Debug.Log("SceneController: Start scene fade out");
             yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeOut());
             // menus pauses game, return to normal time if loading a savefile
             Time.timeScale = 1;
@@ -249,15 +251,18 @@ public class SceneController : MonoBehaviour
         GameManager.soundEffects.StopAll();
         if (CurActiveScene == Scenes.Title) GameManager.musicPlayer.Stop();
         // wait for music to finish fading out
+        Debug.Log("SceneController: Waiting for music");
         yield return StartCoroutine(GameManager.musicPlayer.WaitFadeOut());
 
         GameManager.ClearTransitionHandlers();
         CurActiveScene = scene;
         CurMainScene = scene;
+        Debug.Log("SceneController: Start scene load");
         SceneManager.LoadScene((int)scene);
         if (scene == Scenes.Title || scene == Scenes.Credits)
         {
             yield return new WaitWhile(() => SceneIsLoading);
+            Debug.Log("SceneController: Start scene fade in");
             GameManager.musicPlayer.PlayMenuMusic();
             yield return StartCoroutine(GameManager.TransitionHandler.SceneFadeIn());
         }
