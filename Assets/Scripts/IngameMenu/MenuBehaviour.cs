@@ -75,6 +75,7 @@ public class MenuBehaviour : MonoBehaviour
 
     public void OnExitClick()
     {
+        gameObject.GetComponent<CanvasGroup>().interactable = false;
         //GameManager.Quit();
         GameManager.sceneController.ToMainMenu();
     }

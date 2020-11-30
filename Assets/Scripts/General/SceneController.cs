@@ -59,7 +59,7 @@ public class SceneController : MonoBehaviour
 
     public void ToMainMenu()
     {
-        ReturnToStory();
+        // ReturnToStory();
         SceneLoad(Scenes.Title);
     }
 
