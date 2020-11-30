@@ -12,7 +12,7 @@ public class BubbleBehaviour : MonoBehaviour
     public MaskableGraphic bottom;
     public bool isMeBubble;
 
-    Canvas canvas;
+    CanvasScaler canvasScaler;
 
     Graphic content;
 
@@ -23,9 +23,8 @@ public class BubbleBehaviour : MonoBehaviour
     private void Awake()
     {
         content = container.GetComponent<Graphic>();
-        canvas = GameObject.Find("PhoneDialogue").GetComponent<Canvas>();
-        var canvasScaler = canvas.gameObject.GetComponent<CanvasScaler>();
-        heightScale = Display.main.renderingHeight / canvasScaler.referenceResolution.y;
+        var canvas = GameObject.Find("PhoneDialogue").GetComponent<Canvas>();
+        canvasScaler = canvas.gameObject.GetComponent<CanvasScaler>();
     }
 
     // Start is called before the first frame update
@@ -37,7 +36,7 @@ public class BubbleBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        heightScale = Display.main.renderingHeight / canvasScaler.referenceResolution.y;
         AdjustBubbleSize();
     }
 
