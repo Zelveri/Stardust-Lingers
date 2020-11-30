@@ -152,6 +152,7 @@ public class SoundEffectsBehaviour : MonoBehaviour
     // unpause all !registered! sounds with fadein
     public void UnPauseAll()
     {
+        StopAllCoroutines();
         foreach (var player in sfxPlayers.Values)
         {
             StartCoroutine(FadeIn(player, 1f));

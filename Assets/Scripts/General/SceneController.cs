@@ -54,7 +54,7 @@ public class SceneController : MonoBehaviour
             if (GameManager.dialogueUI.startAutomatically && startDialogueOnLoad) GameManager.dialogueRunner.StartDialogue();
             startDialogueOnLoad = true;
         }
-        Debug.Log("SceneController: " + scene.name + "Finish scene load");
+        Debug.Log("SceneController: " + scene.name + ": Finish scene load");
         SceneIsLoading = false;
     }
 

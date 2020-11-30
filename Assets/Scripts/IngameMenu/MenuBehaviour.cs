@@ -51,7 +51,7 @@ public class MenuBehaviour : MonoBehaviour
     public void OnReturnClick()
     {
         gameObject.GetComponent<CanvasGroup>().interactable = false;
-        GameManager.sceneController.ReturnToStory();
+        GameManager.sceneController.ToggleMenu();
     }
 
     public void OnGearClick()
