@@ -6,6 +6,7 @@ position: 279,14
 << backdrop Bedroom_Day_A >>
 << nametag Mira >>
 << transition Fade_In >>
+<< music play Starry_Morning >> 
 My thoughts rose to awareness, the disorienting fog shrouding them slowly clearing with the warm light that cast itself over me.
 I kept my eyes closed as I stretched, realizing with a soft smile that I had ended up sleeping sideways.
 Letting out a yawn with a roll of the shoulders, I felt for the door as I stumbled my way to the bathroom.
@@ -189,6 +190,7 @@ Grabbing onto the handle, I look back at the bunny, who had rolled over to stare
 Rising, it bounded over to me.
 A shaky smile.
 "Alright, let's go."
+<< music Fade_Out 3 >> 
 << transition Fade_Out >>
 << scene Walk >>
 ===
