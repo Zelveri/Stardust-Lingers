@@ -28,6 +28,8 @@ public class MenuBehaviour : MonoBehaviour
         {
             ShowSettings();
         }
+
+        // invoked from sceneController
         GameManager.OnMenuClose.AddListener(Close);
     }
 

@@ -33,7 +33,9 @@ public class MyDialogueUI : DialogueUI
             GameManager.dialogueRunner.startNode = startNode;
         }
 
-        if(dialogueContainer) dialogueContainer.SetActive(false);
+        if (!PlayerPrefs.HasKey("text_speed")) PlayerPrefs.SetFloat("text_speed", 0.025f);
+
+        if (dialogueContainer) dialogueContainer.SetActive(false);
 
         // register default event handlers ( add to any handlers given in inspector )
         onCommand.AddListener(OnCommand);
@@ -45,6 +47,15 @@ public class MyDialogueUI : DialogueUI
         onLineEnd.AddListener(OnLineEnd);
         onOptionsStart.AddListener(OnOptionsStart);
         onOptionsEnd.AddListener(OnOptionsEnd);
+
+        GameManager.OnPrefsChanged.AddListener(UpdateSettings);
+    }
+
+    private void UpdateSettings()
+    {
+        // update text speed from menu
+        float speed = PlayerPrefs.GetFloat("text_speed");
+        textSpeed = speed;
     }
 
     // The functions below are all listeners to the event of the same name from the base class
