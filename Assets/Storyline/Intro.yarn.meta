@@ -10,23 +10,37 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
   baseLanguageID: en-US
   stringIDs:
-  - NewFile-Start-0
-  - NewFile-Start-1
-  - NewFile-Start-2
-  - NewFile-Start-3
-  - NewFile-Start-4
-  - NewFile-Start-5
-  - NewFile-Start-6
-  - NewFile-Start-7
-  - NewFile-Start-8
-  - NewFile-Start-9
-  - NewFile-Start-10
-  - NewFile-Start-11
-  - NewFile-Start-12
-  - NewFile-Awake-13
-  compilationStatus: 1
+  - line:094b769
+  - line:0c00d77
+  - line:0af5e43
+  - line:05b42f6
+  - line:064f348
+  - line:015fcc4
+  - line:0dbcbe5
+  - line:02d743f
+  - line:0a2b893
+  - line:02ecd55
+  - line:0f59b31
+  - line:0188a50
+  - line:07fe8c6
+  - line:04773e6
+  - line:0f61746
+  - line:026bbfe
+  - line:0d21750
+  - line:03a9e54
+  - line:0107487
+  - line:0fff094
+  - line:0986040
+  - line:05fa894
+  - line:07fb10d
+  - line:0af3a7b
+  - line:0d28099
+  - line:05f34b0
+  compilationStatus: 0
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
   baseLanguage: {fileID: 7128917941130120860, guid: 8919d47f7393b7042b85035c20ed109b,
     type: 3}
-  localizations: []
+  localizations:
+  - languageName: de-DE
+    text: {fileID: 4900000, guid: 230c02bb2d9ede5439f6a39e7f3aa825, type: 3}
