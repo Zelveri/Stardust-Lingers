@@ -1,0 +1,145 @@
+id,text,file,node,lineNumber
+line:08b235e,Hello?,Phone_One,Start_Phone_One,11
+line:055fd68,Hey!,Phone_One,Start_Phone_One,12
+line:0f03758,Who is this?,Phone_One,Start_Phone_One,13
+line:0204d5d,Hey!,Phone_One,Hey_Phone_One,21
+line:06e37ea,Where are you right now?,Phone_One,Hey_Phone_One,23
+line:0b7f4bc,Just heading back from work. It's nice and chilly out.,Phone_One,Hey_Phone_One,25
+line:0ed615d,Ick. Chilly is seriously not cool for me,Phone_One,Hey_Phone_One,27
+line:09a6f9a,But it is cool.,Phone_One,Hey_Phone_One,29
+line:00da0d5,...,Phone_One,Hey_Phone_One,31
+line:0ede76d,"Well, yes",Phone_One,Hey_Phone_One,32
+line:01ceb04,But I don't know how you deal with it,Phone_One,Hey_Phone_One,33
+line:03d2756,Anyways.,Phone_One,Hey_Phone_One,34
+line:0c05ef9,Look who I met at work today,Phone_One,Hey_Phone_One,35
+line:0b5213c,Awww,Phone_One,Hey_Phone_One,37
+line:0ec269a,You shouldn't hold it like that...,Phone_One,Hey_Phone_One,38
+line:0466b00,Who is this?,Phone_One,Who_Phone_One,46
+line:08fe2c5,Very funny. I know it's you lol,Phone_One,Who_Phone_One,48
+line:0ea1533,"Yea, you got me.",Phone_One,Who_Phone_One,50
+line:01fb8d2,Where are you right now?,Phone_One,Who_Phone_One,52
+line:0bb0ace,Just heading home from work.,Phone_One,Who_Phone_One,54
+line:04c3db5,How was it?,Phone_One,Who_Phone_One,56
+line:01a1fcd,Same as usual.,Phone_One,Who_Phone_One,57
+line:090f077,Could be better...,Phone_One,Who_Phone_One,58
+line:0537e69,Same as usual.,Phone_One,Same_Phone_One,66
+line:0dbd14a,"Just a bit boring, really.",Phone_One,Same_Phone_One,67
+line:034a2f3,I'd much rather be writing for my book than for the topics they tend to focus on.,Phone_One,Same_Phone_One,68
+line:04cbc79,Maybe you can write an article about me lol,Phone_One,Same_Phone_One,70
+line:02929f9,Haha no way,Phone_One,Same_Phone_One,72
+line:0122cf9,What would I even say about you?,Phone_One,Same_Phone_One,73
+line:0b436a9,You could tell them about the friend I made today,Phone_One,Same_Phone_One,75
+line:0f35f90,Awww,Phone_One,Same_Phone_One,77
+line:07ffb7c,You shouldn't hold it like that...,Phone_One,Same_Phone_One,78
+line:0090c3c,Could be better...,Phone_One,Better_Phone_One,86
+line:014fac9,"My supervisor was on my case today about my choice of words in the piece about ""Grimoire Oblique""",Phone_One,Better_Phone_One,87
+line:00fd067,"Apparently she wanted me to help sell the film, not expose it as the failure it is.",Phone_One,Better_Phone_One,88
+line:0609e45,Well it wasn't THAT bad...,Phone_One,Better_Phone_One,90
+line:011dca6,...,Phone_One,Better_Phone_One,91
+line:0887a2c,Okay maybe it was that bad,Phone_One,Better_Phone_One,92
+line:062e72b,But it's the so bad it's good kind of bad,Phone_One,Better_Phone_One,93
+line:00f1d58,That's about the only thing it has going for it.,Phone_One,Better_Phone_One,95
+line:0ff0267,"I haven't read the book myself, but from what I hear the fans sure aren't happy with it either.",Phone_One,Better_Phone_One,96
+line:041dcae,I should move on before I write myself a third article in here-,Phone_One,Better_Phone_One,97
+line:0daf9fa,What have you been up to?,Phone_One,Better_Phone_One,98
+line:0ba035b,I met a friend,Phone_One,Better_Phone_One,100
+line:0b466c7,Awww,Phone_One,Better_Phone_One,102
+line:08afb5f,You shouldn't hold it like that...,Phone_One,Better_Phone_One,103
+line:077b5a9,Aww,Phone_One,Aww_Phone_One,111
+line:09938e9,Such a cutie,Phone_One,Aww_Phone_One,112
+line:0dbe6cc,"I love calico cats, they look so pretty",Phone_One,Aww_Phone_One,113
+line:0696047,She looks pretty spooked though,Phone_One,Aww_Phone_One,114
+line:068d498,Had to catch it for the photo,Phone_One,Aww_Phone_One,116
+line:06f6cb0,"It was running around behind the counter, I think it smelled the food and came in",Phone_One,Aww_Phone_One,117
+line:0bc1865,"Well, the way you're",Phone_One,Aww_Phone_One,119
+line:00709ab,Um,Phone_One,Aww_Phone_One,120
+line:06ba8aa,"Nevermind, it's probably fine.",Phone_One,Aww_Phone_One,121
+line:0710390,? Ok,Phone_One,Aww_Phone_One,123
+line:0c50cf1,...,Phone_One,Aww_Phone_One,124
+line:09cb8ee,So hows the new place,Phone_One,Aww_Phone_One,125
+line:0447c13,It's beautiful,Phone_One,Aww_Phone_One,126
+line:03994f7,It's a little lonely,Phone_One,Aww_Phone_One,127
+line:06b3843,You shouldn't hold it like that...,Phone_One,Hold_Phone_One,135
+line:0c43764,It was just for the photo,Phone_One,Hold_Phone_One,137
+line:08842a0,I thought that was how cat moms held their babies?,Phone_One,Hold_Phone_One,138
+line:0596a2c,Only as kittens.,Phone_One,Hold_Phone_One,140
+line:0fa87dd,"It's not comfortable for adult cats, especially since they're a lot heavier!",Phone_One,Hold_Phone_One,141
+line:09cef87,Even if it looks cute it's known to cause fear and stress,Phone_One,Hold_Phone_One,142
+line:0341b1a,So you should avoid doing that.,Phone_One,Hold_Phone_One,143
+line:0ab642f,Sheesh its not that big a deal lol,Phone_One,Hold_Phone_One,145
+line:0a550d4,Guess I'll keep that in mind though,Phone_One,Hold_Phone_One,146
+line:08b8854,...,Phone_One,Hold_Phone_One,147
+line:0348e5a,So how's the new place,Phone_One,Hold_Phone_One,148
+line:0076898,It's beautiful.,Phone_One,Hold_Phone_One,149
+line:0872e07,It's a little lonely.,Phone_One,Hold_Phone_One,150
+line:0109b7a,Its beautiful.,Phone_One,Beautiful_Phone_One,158
+line:0bc0867,Every day I wake up it's as though I'm still in a dream.,Phone_One,Beautiful_Phone_One,159
+line:00a6106,"The air feels so pure, and there's just so much more green than I'm used to.",Phone_One,Beautiful_Phone_One,160
+line:03f25d3,Along with all the other lovely hues I come across on my walks.,Phone_One,Beautiful_Phone_One,161
+line:0d6ed1b,Hmm...,Phone_One,Beautiful_Phone_One,163
+line:09f17a2,Surely it's still not as beautiful as you,Phone_One,Beautiful_Phone_One,164
+line:050d5ea,"Oh, shush",Phone_One,Beautiful_Phone_One,166
+line:0bced4a,It's a different kind of beauty,Phone_One,Beautiful_Phone_One,167
+line:0b3838f,You'd understand if you could see it.,Phone_One,Beautiful_Phone_One,168
+line:04d432d,I'd like to understand,Phone_One,Beautiful_Phone_One,170
+line:0a8ccb1,"Actually, that reminds me.",Phone_One,Beautiful_Phone_One,171
+line:04b6210,Have you thought about it?,Phone_One,Beautiful_Phone_One,172
+line:083f2e0,Us living together.,Phone_One,Beautiful_Phone_One,173
+line:0c3e316,I have. It sounds nice.,Phone_One,Beautiful_Phone_One,174
+line:0020290,I don't think we should yet.,Phone_One,Beautiful_Phone_One,175
+line:0a9521e,It's a little lonely.,Phone_One,Lonely_Phone_One,183
+line:09eccd6,"Lonely, huh",Phone_One,Lonely_Phone_One,185
+line:09b9154,I could change that,Phone_One,Lonely_Phone_One,186
+line:07523b7,I suppose you could...,Phone_One,Lonely_Phone_One,188
+line:043fe19,"However, it is a refreshing kind of loneliness. Feels nice to have a bit of privacy for once.",Phone_One,Lonely_Phone_One,189
+line:0295234,Just me out here with all the little critters that roam around free.,Phone_One,Lonely_Phone_One,190
+line:0a3e514,You don't need privacy from me,Phone_One,Lonely_Phone_One,192
+line:03acb02,This city may be full of people but I also feel pretty lonely with you gone.,Phone_One,Lonely_Phone_One,193
+line:0b99a0d,Have you thought about it yet?,Phone_One,Lonely_Phone_One,194
+line:0818fcd,Us living together.,Phone_One,Lonely_Phone_One,195
+line:0bf7b7e,I have. It sounds nice.,Phone_One,Lonely_Phone_One,196
+line:017773f,I don't think we should yet.,Phone_One,Lonely_Phone_One,197
+line:056e045,I have. It sounds nice.,Phone_One,Agree_Phone_One,205
+line:0cc517a,It's also exciting that it's an actual possibility now.,Phone_One,Agree_Phone_One,206
+line:0f3e814,But I still feel nervous about it.,Phone_One,Agree_Phone_One,207
+line:0505e77,Isn't it a little soon?,Phone_One,Agree_Phone_One,208
+line:034d1ec,Not really,Phone_One,Agree_Phone_One,210
+line:0616bff,We've known each other for long enough.,Phone_One,Agree_Phone_One,211
+line:0e83ea8,I don't see a problem with it.,Phone_One,Agree_Phone_One,212
+line:0ab7ceb,Do you?,Phone_One,Agree_Phone_One,213
+line:04b0144,"No, of course not!",Phone_One,Agree_Phone_One,215
+line:06147a4,But I'm still not used to this...,Phone_One,Agree_Phone_One,216
+line:031ddbd,"Ah. Sorry, I shouldn't worry so much about it.",Phone_One,Agree_Phone_One,217
+line:0ee1fd5,I've only been here for a few days but there's already so much I want to show you.,Phone_One,Agree_Phone_One,218
+line:0fda14b,"I could send pictures, but I think it might spoil the surprise!",Phone_One,Agree_Phone_One,219
+line:0f3a628,"Pictures or not, I'd do anything to see you again",Phone_One,Agree_Phone_One,221
+line:07ca7ac,Been stuck here for way too long,Phone_One,Agree_Phone_One,222
+line:0b7b4b3,I won't be able to leave for a while but I promise I'll do it as soon as I can,Phone_One,Agree_Phone_One,223
+line:076f437,"Maybe in the meantime, you could just visit?",Phone_One,Agree_Phone_One,225
+line:0df75ee,"That way, we won't have to wait until then to see each other.",Phone_One,Agree_Phone_One,226
+line:00e081b,Sure,Phone_One,Agree_Phone_One,228
+line:07694fc,I have to go. I'll talk to you soon,Phone_One,Agree_Phone_One,229
+line:0d90c70,"Oh, okay then.",Phone_One,Agree_Phone_One,231
+line:0321889,Bye!,Phone_One,Agree_Phone_One,232
+line:0021210,I don't think we should yet.,Phone_One,Delay_Phone_One,243
+line:00683fd,You don't think?,Phone_One,Delay_Phone_One,245
+line:0eff6ff,"Why don't you think, Mira?",Phone_One,Delay_Phone_One,246
+line:0bf6aa3,I've given you plenty of time to do so,Phone_One,Delay_Phone_One,247
+line:0c36a7f,It's about time you gave me a clear answer,Phone_One,Delay_Phone_One,248
+line:05ddbd2,That's what I think.,Phone_One,Delay_Phone_One,249
+line:06cb665,"Look, it's not that I don't want us to",Phone_One,Delay_Phone_One,251
+line:0813d64,But I'm not sure about it being so soon.,Phone_One,Delay_Phone_One,252
+line:050c6f9,"I only got here a few days ago, I still need time to settle down.",Phone_One,Delay_Phone_One,253
+line:0bd9605,"This whole thing is still new to me, too...",Phone_One,Delay_Phone_One,254
+line:017719d,I thought you were serious about this,Phone_One,Delay_Phone_One,256
+line:087a063,I am!,Phone_One,Delay_Phone_One,258
+line:0f9f5a4,Sorry...,Phone_One,Delay_Phone_One,259
+line:0f09bd0,I shouldn't worry so much. It'll probably be fine.,Phone_One,Delay_Phone_One,260
+line:0bf9b7a,"Not probably, it will be",Phone_One,Delay_Phone_One,262
+line:0fce4b5,I'm not trying to sound pushy or anything you know that right,Phone_One,Delay_Phone_One,263
+line:073fac5,I just care about you a lot,Phone_One,Delay_Phone_One,264
+line:0e9f611,So I want this to work out and it won't if you keep trying to avoid this,Phone_One,Delay_Phone_One,265
+line:09bb437,I'm not avoiding anything.,Phone_One,Delay_Phone_One,267
+line:018662b,Maybe you can visit first?,Phone_One,Delay_Phone_One,268
+line:0b7014c,Before deciding. We can see how it goes from there.,Phone_One,Delay_Phone_One,269
+line:0480a7a,Okay.,Phone_One,Delay_Phone_One,271

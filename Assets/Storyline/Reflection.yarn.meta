@@ -9,9 +9,26 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
   baseLanguageID: en-US
-  stringIDs: []
+  stringIDs:
+  - line:06cef19
+  - line:0ad717f
+  - line:077826b
+  - line:05057f0
+  - line:0acaa87
+  - line:0ec3061
+  - line:0c3d6cb
+  - line:0da241e
+  - line:07387b1
+  - line:048e681
+  - line:03e6ace
+  - line:024c7bc
+  - line:0ca3f69
+  - line:0ed6417
   compilationStatus: 0
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {instanceID: 0}
-  localizations: []
+  baseLanguage: {fileID: 7128917941130120860, guid: c8248f69e6e0c8447b8ba891d4222675,
+    type: 3}
+  localizations:
+  - languageName: de
+    text: {fileID: 4900000, guid: 5b6f1abdc380c844790603d8116a3b34, type: 3}

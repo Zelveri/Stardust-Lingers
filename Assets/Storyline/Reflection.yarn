@@ -7,29 +7,29 @@ position: 586,-293
 << backdrop Black >>
 << transition Fade_In >> 
 << music play Evening_Stars >> 
-...
-Tired as I was, rest did not come as easily this time.
-After a while of rolling around and thinking about how to stop thinking long enough to fall asleep, I got up.
+... #line:06cef19
+Tired as I was, rest did not come as easily this time. #line:0ad717f
+After a while of rolling around and thinking about how to stop thinking long enough to fall asleep, I got up. #line:077826b
 << backdrop Mirror_A >>
 << transition Fade_In>>
-...
-With Lune gone from my sight, it was as though the events of the day had merely been a dream after all.
-However, I had a feeling she would be back soon.
-Strange as she was, it had been nice to focus on something else for a while.
-But here, finding it difficult to even face myself, my mind soon drifted back to the contents of that note.
-"My doubts..."
-Was it all of them he was referring to? There were too many to count.
-Or perhaps he honed in on a specific kind?
+... #line:05057f0
+With Lune gone from my sight, it was as though the events of the day had merely been a dream after all. #line:0acaa87
+However, I had a feeling she would be back soon. #line:0ec3061
+Strange as she was, it had been nice to focus on something else for a while. #line:0c3d6cb
+But here, finding it difficult to even face myself, my mind soon drifted back to the contents of that note. #line:0da241e
+"My doubts..." #line:07387b1
+Was it all of them he was referring to? There were too many to count. #line:048e681
+Or perhaps he honed in on a specific kind? #line:03e6ace
 << backdrop Mirror_B >>
 << transition Cross_Fade >>
-"Wait, but if that's the case, then maybe..."
-I reached out to my reflection.
+"Wait, but if that's the case, then maybe..." #line:024c7bc
+I reached out to my reflection. #line:0ca3f69
 << schedule_transition >>
 << backdrop Mirror_C >>
 << hide_dialogue >>
 << transition Cross_Fade >>
 
-Hide this text line.
+Hide this text line. #line:0ed6417
 << music fade_out 5 >> 
 << transition Fade_Out 0.5 >>
 << scene Credits >>

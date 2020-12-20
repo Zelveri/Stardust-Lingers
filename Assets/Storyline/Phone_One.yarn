@@ -8,9 +8,9 @@ position: -1295,-1558
 << nametag Trevis >> 
 << transition Fade_In >>
 << music play Texting_Stars >>
-Hello?
-[[ Hey! |Hey_Phone_One]]
-[[ Who is this? |Who_Phone_One]]
+Hello? #line:08b235e
+[[ Hey! |Hey_Phone_One]] #line:055fd68
+[[ Who is this? |Who_Phone_One]] #line:0f03758
 ===
 title: Hey_Phone_One
 tags: 
@@ -18,24 +18,24 @@ colorID: 0
 position: -1700,-1411
 ---
 << nametag Mira >>
-Hey!
+Hey! #line:0204d5d
 << nametag Trevis >>
-Where are you right now?
+Where are you right now? #line:06e37ea
 << nametag Mira >>
-Just heading back from work. It's nice and chilly out.
+Just heading back from work. It's nice and chilly out. #line:0b7f4bc
 << nametag Trevis >>
-Ick. Chilly is seriously not cool for me 
+Ick. Chilly is seriously not cool for me  #line:0ed615d
 << nametag Mira>>
-But it is cool.
+But it is cool. #line:09a6f9a
 << nametag Trevis>> 
-...
-Well, yes
-But I don't know how you deal with it
-Anyways.
-Look who I met at work today
+... #line:00da0d5
+Well, yes #line:0ede76d
+But I don't know how you deal with it #line:01ceb04
+Anyways. #line:03d2756
+Look who I met at work today #line:0c05ef9
 << photo Cat_Scruff >>
-[[ Awww |Aww_Phone_One]]
-[[ You shouldn't hold it like that... |Hold_Phone_One]]
+[[ Awww |Aww_Phone_One]] #line:0b5213c
+[[ You shouldn't hold it like that... |Hold_Phone_One]] #line:0ec269a
 ===
 title: Who_Phone_One
 tags: 
@@ -43,19 +43,19 @@ colorID: 0
 position: -945,-1493
 ---
 << nametag Mira >>
-Who is this?
+Who is this? #line:0466b00
 << nametag Trevis >>
-Very funny. I know it's you lol
+Very funny. I know it's you lol #line:08fe2c5
 << nametag Mira >>
-Yea, you got me.
+Yea, you got me. #line:0ea1533
 << nametag Trevis >>
-Where are you right now?
+Where are you right now? #line:01fb8d2
 << nametag Mira >>
-Just heading home from work.
+Just heading home from work. #line:0bb0ace
 << nametag Trevis>> 
-How was it?
-[[ Same as usual. |Same_Phone_One]]
-[[ Could be better... |Better_Phone_One]]
+How was it? #line:04c3db5
+[[ Same as usual. |Same_Phone_One]] #line:01a1fcd
+[[ Could be better... |Better_Phone_One]] #line:090f077
 ===
 title: Same_Phone_One
 tags: 
@@ -63,19 +63,19 @@ colorID: 0
 position: -1220,-1304
 ---
 << nametag Mira>> 
-Same as usual.
-Just a bit boring, really.
-I'd much rather be writing for my book than for the topics they tend to focus on.
+Same as usual. #line:0537e69
+Just a bit boring, really. #line:0dbd14a
+I'd much rather be writing for my book than for the topics they tend to focus on. #line:034a2f3
 << nametag Trevis >>
-Maybe you can write an article about me lol
+Maybe you can write an article about me lol #line:04cbc79
 << nametag Mira >>
-Haha no way
-What would I even say about you?
+Haha no way #line:02929f9
+What would I even say about you? #line:0122cf9
 << nametag Trevis >>
-You could tell them about the friend I made today
+You could tell them about the friend I made today #line:0b436a9
 << photo Cat_Scruff >>
-[[ Awww |Aww_Phone_One]]
-[[ You shouldn't hold it like that... |Hold_Phone_One]]
+[[ Awww |Aww_Phone_One]] #line:0f35f90
+[[ You shouldn't hold it like that... |Hold_Phone_One]] #line:07ffb7c
 ===
 title: Better_Phone_One
 tags: 
@@ -83,24 +83,24 @@ colorID: 0
 position: -915,-1145
 ---
 << nametag Mira >> 
-Could be better...
-My supervisor was on my case today about my choice of words in the piece about "Grimoire Oblique"
-Apparently she wanted me to help sell the film, not expose it as the failure it is.
+Could be better... #line:0090c3c
+My supervisor was on my case today about my choice of words in the piece about "Grimoire Oblique" #line:014fac9
+Apparently she wanted me to help sell the film, not expose it as the failure it is. #line:00fd067
 << nametag Trevis >>
-Well it wasn't THAT bad...
-...
-Okay maybe it was that bad
-But it's the so bad it's good kind of bad
+Well it wasn't THAT bad... #line:0609e45
+... #line:011dca6
+Okay maybe it was that bad #line:0887a2c
+But it's the so bad it's good kind of bad #line:062e72b
 << nametag Mira >>
-That's about the only thing it has going for it.
-I haven't read the book myself, but from what I hear the fans sure aren't happy with it either.
-I should move on before I write myself a third article in here-
-What have you been up to?
+That's about the only thing it has going for it. #line:00f1d58
+I haven't read the book myself, but from what I hear the fans sure aren't happy with it either. #line:0ff0267
+I should move on before I write myself a third article in here- #line:041dcae
+What have you been up to? #line:0daf9fa
 << nametag Trevis >>
-I met a friend
+I met a friend #line:0ba035b
 << photo Cat_Scruff >> 
-[[ Awww |Aww_Phone_One]]
-[[ You shouldn't hold it like that... |Hold_Phone_One]]
+[[ Awww |Aww_Phone_One]] #line:0b466c7
+[[ You shouldn't hold it like that... |Hold_Phone_One]] #line:08afb5f
 ===
 title: Aww_Phone_One
 tags: 
@@ -108,23 +108,23 @@ colorID: 0
 position: -1873,-1132
 ---
 << nametag Mira >>
-Aww
-Such a cutie
-I love calico cats, they look so pretty
-She looks pretty spooked though
+Aww #line:077b5a9
+Such a cutie #line:09938e9
+I love calico cats, they look so pretty #line:0dbe6cc
+She looks pretty spooked though #line:0696047
 << nametag Trevis >>
-Had to catch it for the photo
-It was running around behind the counter, I think it smelled the food and came in 
+Had to catch it for the photo #line:068d498
+It was running around behind the counter, I think it smelled the food and came in  #line:06f6cb0
 << nametag Mira >>
-Well, the way you're 
-Um
-Nevermind, it's probably fine.
+Well, the way you're  #line:0bc1865
+Um #line:00709ab
+Nevermind, it's probably fine. #line:06ba8aa
 << nametag Trevis >>
-? Ok 
-...
-So hows the new place
-[[ It's beautiful |Beautiful_Phone_One]]
-[[ It's a little lonely |Lonely_Phone_One]]
+? Ok  #line:0710390
+... #line:0c50cf1
+So hows the new place #line:09cb8ee
+[[ It's beautiful |Beautiful_Phone_One]] #line:0447c13
+[[ It's a little lonely |Lonely_Phone_One]] #line:03994f7
 ===
 title: Hold_Phone_One
 tags: 
@@ -132,22 +132,22 @@ colorID: 0
 position: -1556,-1137
 ---
 << nametag Mira >>
-You shouldn't hold it like that...
+You shouldn't hold it like that... #line:06b3843
 << nametag Trevis >>
-It was just for the photo
-I thought that was how cat moms held their babies?
+It was just for the photo #line:0c43764
+I thought that was how cat moms held their babies? #line:08842a0
 << nametag Mira>>
-Only as kittens.
-It's not comfortable for adult cats, especially since they're a lot heavier!
-Even if it looks cute it's known to cause fear and stress
-So you should avoid doing that.
+Only as kittens. #line:0596a2c
+It's not comfortable for adult cats, especially since they're a lot heavier! #line:0fa87dd
+Even if it looks cute it's known to cause fear and stress #line:09cef87
+So you should avoid doing that. #line:0341b1a
 << nametag Trevis >>
-Sheesh its not that big a deal lol
-Guess I'll keep that in mind though
-...
-So how's the new place
-[[ It's beautiful. |Beautiful_Phone_One]]
-[[ It's a little lonely. |Lonely_Phone_One]]
+Sheesh its not that big a deal lol #line:0ab642f
+Guess I'll keep that in mind though #line:0a550d4
+... #line:08b8854
+So how's the new place #line:0348e5a
+[[ It's beautiful. |Beautiful_Phone_One]] #line:0076898
+[[ It's a little lonely. |Lonely_Phone_One]] #line:0872e07
 ===
 title: Beautiful_Phone_One
 tags: 
@@ -155,24 +155,24 @@ colorID: 0
 position: -1944,-880
 ---
 << nametag Mira >>
-Its beautiful.
-Every day I wake up it's as though I'm still in a dream.
-The air feels so pure, and there's just so much more green than I'm used to.
-Along with all the other lovely hues I come across on my walks.
+Its beautiful. #line:0109b7a
+Every day I wake up it's as though I'm still in a dream. #line:0bc0867
+The air feels so pure, and there's just so much more green than I'm used to. #line:00a6106
+Along with all the other lovely hues I come across on my walks. #line:03f25d3
 << nametag Trevis >> 
-Hmm...
-Surely it's still not as beautiful as you
+Hmm... #line:0d6ed1b
+Surely it's still not as beautiful as you #line:09f17a2
 << nametag Mira >>
-Oh, shush
-It's a different kind of beauty
-You'd understand if you could see it.
+Oh, shush #line:050d5ea
+It's a different kind of beauty #line:0bced4a
+You'd understand if you could see it. #line:0b3838f
 << nametag Trevis >>
-I'd like to understand
-Actually, that reminds me.
-Have you thought about it?
-Us living together.
-[[ I have. It sounds nice. |Agree_Phone_One]]
-[[ I don't think we should yet. |Delay_Phone_One]]
+I'd like to understand #line:04d432d
+Actually, that reminds me. #line:0a8ccb1
+Have you thought about it? #line:04b6210
+Us living together. #line:083f2e0
+[[ I have. It sounds nice. |Agree_Phone_One]] #line:0c3e316
+[[ I don't think we should yet. |Delay_Phone_One]] #line:0020290
 ===
 title: Lonely_Phone_One
 tags: 
@@ -180,21 +180,21 @@ colorID: 0
 position: -1485,-880
 ---
 << nametag Mira >>
-It's a little lonely.
+It's a little lonely. #line:0a9521e
 << nametag Trevis >>
-Lonely, huh
-I could change that
+Lonely, huh #line:09eccd6
+I could change that #line:09b9154
 << nametag Mira >>
-I suppose you could...
-However, it is a refreshing kind of loneliness. Feels nice to have a bit of privacy for once.
-Just me out here with all the little critters that roam around free.
+I suppose you could... #line:07523b7
+However, it is a refreshing kind of loneliness. Feels nice to have a bit of privacy for once. #line:043fe19
+Just me out here with all the little critters that roam around free. #line:0295234
 << nametag Trevis >>
-You don't need privacy from me
-This city may be full of people but I also feel pretty lonely with you gone.
-Have you thought about it yet?
-Us living together.
-[[ I have. It sounds nice. |Agree_Phone_One]]
-[[ I don't think we should yet. |Delay_Phone_One]]
+You don't need privacy from me #line:0a3e514
+This city may be full of people but I also feel pretty lonely with you gone. #line:03acb02
+Have you thought about it yet? #line:0b99a0d
+Us living together. #line:0818fcd
+[[ I have. It sounds nice. |Agree_Phone_One]] #line:0bf7b7e
+[[ I don't think we should yet. |Delay_Phone_One]] #line:017773f
 ===
 title: Agree_Phone_One
 tags: 
@@ -202,34 +202,34 @@ colorID: 0
 position: -1877,-625
 ---
 << nametag Mira >>
-I have. It sounds nice.
-It's also exciting that it's an actual possibility now.
-But I still feel nervous about it.
-Isn't it a little soon?
+I have. It sounds nice. #line:056e045
+It's also exciting that it's an actual possibility now. #line:0cc517a
+But I still feel nervous about it. #line:0f3e814
+Isn't it a little soon? #line:0505e77
 << nametag Trevis >>
-Not really
-We've known each other for long enough.
-I don't see a problem with it.
-Do you?
+Not really #line:034d1ec
+We've known each other for long enough. #line:0616bff
+I don't see a problem with it. #line:0e83ea8
+Do you? #line:0ab7ceb
 << nametag Mira >>
-No, of course not!
-But I'm still not used to this...
-Ah. Sorry, I shouldn't worry so much about it.
-I've only been here for a few days but there's already so much I want to show you.
-I could send pictures, but I think it might spoil the surprise!
+No, of course not! #line:04b0144
+But I'm still not used to this... #line:06147a4
+Ah. Sorry, I shouldn't worry so much about it. #line:031ddbd
+I've only been here for a few days but there's already so much I want to show you. #line:0ee1fd5
+I could send pictures, but I think it might spoil the surprise! #line:0fda14b
 << nametag Trevis >> 
-Pictures or not, I'd do anything to see you again
-Been stuck here for way too long
-I won't be able to leave for a while but I promise I'll do it as soon as I can
+Pictures or not, I'd do anything to see you again #line:0f3a628
+Been stuck here for way too long #line:07ca7ac
+I won't be able to leave for a while but I promise I'll do it as soon as I can #line:0b7b4b3
 << nametag Mira >>
-Maybe in the meantime, you could just visit?
-That way, we won't have to wait until then to see each other.
+Maybe in the meantime, you could just visit? #line:076f437
+That way, we won't have to wait until then to see each other. #line:0df75ee
 << nametag Trevis >>
-Sure 
-I have to go. I'll talk to you soon
+Sure  #line:00e081b
+I have to go. I'll talk to you soon #line:07694fc
 << nametag Mira >>
-Oh, okay then.
-Bye!
+Oh, okay then. #line:0d90c70
+Bye! #line:0321889
 << music fade_out 3 >>
 << transition Fade_Out >>
 << scene Meeting >>
@@ -240,35 +240,35 @@ colorID: 0
 position: -1598,-625
 ---
 << nametag Mira >>
-I don't think we should yet.
+I don't think we should yet. #line:0021210
 << nametag Trevis >>
-You don't think?
-Why don't you think, Mira?
-I've given you plenty of time to do so
-It's about time you gave me a clear answer
-That's what I think.
+You don't think? #line:00683fd
+Why don't you think, Mira? #line:0eff6ff
+I've given you plenty of time to do so #line:0bf6aa3
+It's about time you gave me a clear answer #line:0c36a7f
+That's what I think. #line:05ddbd2
 << nametag Mira >>
-Look, it's not that I don't want us to
-But I'm not sure about it being so soon.
-I only got here a few days ago, I still need time to settle down.
-This whole thing is still new to me, too...
+Look, it's not that I don't want us to #line:06cb665
+But I'm not sure about it being so soon. #line:0813d64
+I only got here a few days ago, I still need time to settle down. #line:050c6f9
+This whole thing is still new to me, too... #line:0bd9605
 << nametag Trevis >>
-I thought you were serious about this 
+I thought you were serious about this  #line:017719d
 << nametag Mira >>
-I am!
-Sorry...
-I shouldn't worry so much. It'll probably be fine.
+I am! #line:087a063
+Sorry... #line:0f9f5a4
+I shouldn't worry so much. It'll probably be fine. #line:0f09bd0
 << nametag Trevis >>
-Not probably, it will be 
-I'm not trying to sound pushy or anything you know that right
-I just care about you a lot
-So I want this to work out and it won't if you keep trying to avoid this
+Not probably, it will be  #line:0bf9b7a
+I'm not trying to sound pushy or anything you know that right #line:0fce4b5
+I just care about you a lot #line:073fac5
+So I want this to work out and it won't if you keep trying to avoid this #line:0e9f611
 << nametag Mira >>
-I'm not avoiding anything.
-Maybe you can visit first?
-Before deciding. We can see how it goes from there.
+I'm not avoiding anything. #line:09bb437
+Maybe you can visit first? #line:018662b
+Before deciding. We can see how it goes from there. #line:0b7014c
 << nametag Trevis >>
-Okay.
+Okay. #line:0480a7a
 << music fade_out 3 >>
 << transition Fade_Out >>
 << scene Meeting >>

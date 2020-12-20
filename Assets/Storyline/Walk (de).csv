@@ -1,0 +1,143 @@
+id,text,file,node,lineNumber
+line:0606778,Gentle rustling greeted the cool breeze that swirled by us as we wandered.,Walk,Start_Walk,9
+line:0756749,I made sure to walk slowly so as not to accidentally step on the bun as it circled around me.,Walk,Start_Walk,10
+line:09e0180,"""Aww, look at you go.""",Walk,Start_Walk,11
+line:08a62d6,"""I wonder how well you know your way around here.""",Walk,Start_Walk,12
+line:03ec685,"""There's a lot that is familiar, but to be honest... so much is just a blur at this point.""",Walk,Start_Walk,13
+line:0c9c3df,"""I feel like I should remember more than I do...""",Walk,Start_Walk,14
+line:01080ab,"Though the cabin itself had permanently branded itself into my memory, the surrounding woods and fields had, despite how much I'd admired them, faded into an uncertain murmuring fog.",Walk,Start_Walk,15
+line:07447b8,Eventually we found ourselves delving deeper into the woods.,Walk,Deeper,26
+line:0d6ae37,"So much comforting shade, even in the brightness of day.",Walk,Deeper,27
+line:07600e8,"From what I did remember, I had always ended up finding my way to the denser areas, curious about what secrets they might contain.",Walk,Deeper,28
+line:0f9b084,"The trees were rows of pretty bars so easily slipped through, only to be drawn back toward its alluring enclosure.",Walk,Deeper,29
+line:08c0bdc,One so liberating in its vast captivity.,Walk,Deeper,30
+line:0f81939,One which fascinated me each time as though never experienced before.,Walk,Deeper,31
+line:07a0f82,"In those moments, leaning against such towering forms, there was safety.",Walk,Deeper,32
+line:06b7b29,"I brushed a hand against one of the trunks, wishing I could communicate my gratitude.",Walk,Deeper,33
+line:024120a,"A sharp prickling across my neck. I snap my hand back, clutching it against my chest and glancing around.",Walk,Deeper,34
+line:0dae0c4,Was someone... watching?,Walk,Deeper,35
+line:0c0a644,"I shift my eyes downward, seeing the bunny sitting farther than expected.",Walk,Deeper,36
+line:07b173d,Thoom... thump!,Walk,Deeper,39
+line:0ba0795,Thump!,Walk,Deeper,40
+line:09994e4,"It's feet hit the ground, a clear sign of some form of distress.",Walk,Deeper,42
+line:042857f,I go to pick it up in an attempt to comfort it.,Walk,Deeper,43
+line:047e837,Wrong move.,Walk,Deeper,44
+line:073128e,"Before I could wrap my hands around it, it twisted around with a grunt, a rough sting flaring furiously across my fingers.",Walk,Deeper,46
+line:0b1314a,"""AGH!""",Walk,Deeper,47
+line:0808604,"I sucked in a breath, bringing them to my mouth.",Walk,Deeper,48
+line:0bd6699,The strong saltiness of blood washed over my tongue.,Walk,Deeper,49
+line:076a2da,"Hissing, I glare down at it, staggering backwards.",Walk,Deeper,50
+line:04a0e53,"""You..!""",Walk,Deeper,51
+line:0ce8b1b,"""What was that for?!""",Walk,Deeper,52
+line:0493594,"""...""",Walk,Deeper,55
+line:0d52de7,Thump.,Walk,Deeper,57
+line:0265c66,"I braced myself as it lunged once again, shutting my eyes in panic as I awaited another bite.",Walk,Deeper,59
+line:0d23763,"Instead of skin, its teeth grazed against the cloth of my jeans, tugging frantically.",Walk,Deeper,60
+line:09c7d3c,"I bite my lip as I carefully shake my leg, hoping to free it.",Walk,Deeper,61
+line:0fe937b,"By some miracle, it gets the message and lets go, dashing away and stopping to look back at me with desperation.",Walk,Deeper,64
+line:04bf490,"Though part of me felt the urge to ignore it and continue traveling deeper, sensing an almost instinctual need to, the return of the prickling sensation skittering across my skin and the throbbing of my fingers led me to my senses.",Walk,Deeper,65
+line:0115161,"""Alright, alright! Have it your way!""",Walk,Deeper,66
+line:0d99fa6,"""Let's just get out of here...""",Walk,Deeper,67
+line:0ed3d6c,"In our retreat, a river came into view.",Walk,River,80
+line:03789cf,"As the bunny lapped at its edge, I dropped down beside and focused on the soothing rush of water.",Walk,River,81
+line:0f8a761,"There was a certain kindness in its refusal of reflections, too busy hurrying along to dwell on judgement. But although I could not see my outer self, my thoughts did not join in its hiding.",Walk,River,82
+line:0d6c347,"I began to pour them out, hoping that they too could be washed away in the stream.",Walk,River,83
+line:0018182,"""I just don't know if this is really worth it...""",Walk,River,84
+line:056a76b,The bunny paused in its drinking and made its way closer.,Walk,River,86
+line:0209eab,"It seemed a little hesitant in its approach, but tentatively rested a paw on my arm.",Walk,River,87
+line:0f41728,"""Feeling like playing nice again, huh?""",Walk,River,88
+line:049c748,I gave it a strained smile.,Walk,River,89
+line:06ea8f4,"""It's okay, I'm not mad. Something must have really spooked you back there...""",Walk,River,90
+line:04f75a6,"""...""",Walk,River,93
+line:06e05bc,"""I expected to be alone here. I'm glad that you're the one I found.""",Walk,River,95
+line:07dc48a,"""I came here for a reason, you see.""",Walk,River,96
+line:0a9b07f,"""That cabin...""",Walk,River,97
+line:01037d4,"""I worked for so long to have a place of my own like that.""",Walk,River,98
+line:053cf32,"""Away from all of my worries.""",Walk,River,99
+line:01de1f8,"""Until the biggest one of all decided to follow me.""",Walk,River,100
+line:02d7f11,"With my uninjured hand, I began to pet the fluffy fur where it now lay comfortably upon my lap.",Walk,River,102
+line:02aeef1,"""I should've been the one who'd had enough.""",Walk,River,104
+line:0d9318b,"""Instead, it was me who found myself shut outside.""",Walk,River,105
+line:0be4081,"""I had to stay with a friend, but even then, I couldn't even...""",Walk,River,106
+line:00c5d45,"""I couldn't even tell her what was really going on.""",Walk,River,107
+line:099ddd0,"""If I did, I... I would be...""",Walk,River,108
+line:02a3964,"I took a deep, shuddering breath.",Walk,River,109
+line:008231b,"""He knew exactly how to get back at me.""",Walk,River,110
+line:02ccb53,"""He'd expose me for who I used to be. There's no way I could let that happen.""",Walk,River,111
+line:024829c,"""I still can't let that happen.""",Walk,River,112
+line:065af76,"""To make sure of that, I was prepared to stay silent.""",Walk,River,113
+line:025e1d5,"""As for why he didn't say anything anyway-""",Walk,River,114
+line:0dd9245,"""I think he knew that if he revealed everything right away, there'd be no reason for me to come crawling back.""",Walk,River,115
+line:06ce7ae,"""As long as I kept his secrets, he would keep mine.""",Walk,River,116
+line:0d81d7a,"""We shared quite a few.""",Walk,River,117
+line:0c98f63,"""And now, here I am, trying to figure out the last one he's left me.""",Walk,River,118
+line:0e7069e,"At first, I hadn't believed him when he said he would be gone, but the truth soon became clear.",Walk,River,119
+line:08dd9d0,He'd vanished with a bizarre farewell that gave no clear hints as to where he had gone.,Walk,River,120
+line:0827dc5,My only guide was words left upon screen and page.,Walk,River,121
+line:0a0ed83,"""Hah... that was a lot, huh?""",Walk,River,122
+line:06bc238,I scritched at the bunny's forehead as it gave me a pondering look.,Walk,River,123
+line:04666b4,"""Thanks for listening to my nonsense, bunny.""",Walk,River,124
+line:01c6b23,"""Come to think of it, I've just been calling you bunny this whole time. I should name you.""",Walk,Name,134
+line:090929f,"""I do have a name! Its Lune.""",Walk,Name,138
+line:08c6edc,"""Ah, okay! Sorry for assuming you didn't.""",Walk,Name,140
+line:0739f50,"""...""",Walk,Name,141
+line:007f9e6,"""Wait.""",Walk,Name,142
+line:0fa98ac,My hand came to an abrupt stop as I stared down at the creature. It turned its head to cheerfully nuzzle at my arm.,Walk,Name,143
+line:060855f,"""You, um... I'm just hearing things, right?""",Walk,Name,144
+line:0cb710a,"""If by things you mean me, then yes. But that's a bit rude, isn't it?""",Walk,Name,147
+line:02b7d68,"""I ah, I m-mean- sorry!""",Walk,Name,149
+line:0162491,"Embarrassed by the cracked squeak I blurted that out in, I fumbled for words as though trying to catch bugs flying through a hurricane.",Walk,Name,150
+line:07e6830,"""Ehehe. I didn't mean to make you nervous.""",Walk,Name,153
+line:07e9b43,"""You shared so much with me, yet I hadn't even properly introduced myself!""",Walk,Name,154
+line:0d11469,"""I felt sooo awkward not saying anything.""",Walk,Name,155
+line:021059f,"""Well I feel awkward knowing you actually understood all that!""",Walk,Name,157
+line:0381fd6,"""How can you even talk!?""",Walk,Name,158
+line:01b5f25,"Almost instinctively, I began to stroke the wonderfully soft fur again in an attempt to calm my frazzled heart, despite the little one being the direct cause of it.",Walk,Name,159
+line:0e0e026,"""Because you're dreaming.""",Walk,Name,162
+line:09dabff,"""...""",Walk,Name,163
+line:0ce6dfc,"""Juuust kidding! This is totally real.""",Walk,Name,165
+line:0cea02b,"""You're a troublemaker, aren't you...""",Walk,Name,167
+line:0d4b62f,"""Maybe I am!""",Walk,Name,170
+line:03224cf,"""I can't help it, though! Being a ghost is way too fun.""",Walk,Name,171
+line:0baef34,"""...""",Walk,Name,172
+line:0ce3552,"""Just kidding?""",Walk,Name,174
+line:06c3502,"""No, I'm serious this time.""",Walk,Name,177
+line:001c146,I don't think my mind is prepared for this many beatings at once.,Walk,Name,179
+line:077582c,"I pick myself up with Lune in my arms, making a panicked sprint toward home before I got stuck out in the dark with whatever the heck they were.",Walk,Name,180
+line:0a47659,"""So... you're a ghost who descended from the moon?""",Walk,Question,193
+line:096bdeb,"We were sitting on the bed together, Lune having comfortably claimed one of my pillows to flop over on. Revealing her true nature hadn't made her any less adorable.",Walk,Question,194
+line:01bd6af,"""Yup! I was feeling pretty lonely up there. I almost never get any visitors, and half of them have been weird little robots.""",Walk,Question,197
+line:08dba0e,"""So I figured, why not be the visitor instead?""",Walk,Question,199
+line:0b2e1af,I supposed that made sense. I probably would get bored there myself after the initial excitement of seeing space wore off.,Walk,Question,201
+line:0b21fc0,"""You were only pretending to be a bunny, then?""",Walk,Question,202
+line:0e7185c,"""Hold up, when did I ever say that?""",Walk,Question,205
+line:00e83ce,"""I may have possessed this particular bunny, but that doesn't mean I'm not one myself!""",Walk,Question,206
+line:0489eeb,"""In life, I looked much like this.""",Walk,Question,208
+line:031d1a5,"""I see...""",Walk,Question,210
+line:098bdf5,"""So there really is an afterlife.""",Walk,Question,211
+line:091e3e9,"The full weight of that realization hit me as I spoke. Certainly, I'd heard of plenty of strange phenomena occurring throughout history, but there was still plenty of debate around the subject of the supernatural... and here, before me now, a being who could answer so many curiosities!",Walk,Question,212
+line:02fa0b7,"Buzzing with excitement, I shot her a grin.",Walk,Question,213
+line:0a79dbc,"""S-so, what's it like? What sorts of powers do you have? Wait, can I write this down? I'd love to write it down. Oh gosh, I've never met someone like you before, there's so much I could learn from-""",Walk,Question,214
+line:0615a49,"""Hey!""",Walk,Question,217
+line:0f90534,"""Calm down, you silly mortal. I'm not your study partner.""",Walk,Question,218
+line:04f8ae4,"""Besides, us spirits have ways to keep hidden. So don't even think about sharing what you know, okaaay?""",Walk,Question,220
+line:0a779a4,"I ceased my rambling. Her tone remained cheery, but there was a dangerous glint in her eye.",Walk,Question,222
+line:05ef702,"""O-oh... okay.""",Walk,Question,223
+line:09bd344,"""In that case, I promise not to tell anyone.""",Walk,Question,224
+line:0b717db,"""Good.""",Walk,Question,227
+line:0916f8d,An unnerving thought surfaced.,Walk,Question,229
+line:0cba779,No. Surely not.,Walk,Question,230
+line:0acf9a9,"But it was possible, wasn't it?",Walk,Question,231
+line:0e4d1c6,I shuffled closer.,Walk,Question,232
+line:0d27f86,"""Are there any... other... spirits around here?""",Walk,Question,233
+line:09d220c,"I asked in a hushed voice, now acutely aware that others could be listening in on us.",Walk,Question,234
+line:071b085,"Lune wrinkled up her nose, seeming a bit uncomfortable at the question.",Walk,Question,235
+line:0ea4653,"""Other spirits? Mmm, that's a yes, but you mean spirits like me, yes?""",Walk,Question,238
+line:0d5a36a,"""Most spirits are too faded out or distorted to really do much.""",Walk,Question,239
+line:0be3989,"""Sometimes, you get one who is fully aware like myself, who is free to take on whatever form they wish.""",Walk,Question,241
+line:0076a4d,"""No need to worry about any others, though.""",Walk,Question,243
+line:00638a0,"That did not answer what I had truly wanted to know, but I decided not to push it.",Walk,Question,245
+line:0834080,"""Alright then. Is there, um, anything you need? Before I go to sleep, I mean. Food, maybe?""",Walk,Question,246
+line:0bc0f05,"""How sweet of you to offer!""",Walk,Question,249
+line:034b31e,"""But as much as I enjoy being pampered, I can find something to munch on my own.""",Walk,Question,250
+line:00fa6b9,"With that, she hopped down from the bed and left the room.",Walk,Question,253

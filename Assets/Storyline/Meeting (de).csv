@@ -1,0 +1,91 @@
+id,text,file,node,lineNumber
+line:0613e23,"My thoughts rose to awareness, the disorienting fog shrouding them slowly clearing with the warm light that cast itself over me.",Meeting,Start_Meeting,10
+line:0a5e44a,"I kept my eyes closed as I stretched, realizing with a soft smile that I had ended up sleeping sideways.",Meeting,Start_Meeting,11
+line:01b8eeb,"Letting out a yawn with a roll of the shoulders, I felt for the door as I stumbled my way to the bathroom.",Meeting,Start_Meeting,12
+line:06ed9b8,"I nearly tripped over some unknown object on the way there, but part of me would rather suffer a fall than open my eyes without washing my face first.",Meeting,Start_Meeting,13
+line:0745ec4,"""Let's see what we have here...""",Meeting,Sound_Meeting,25
+line:0320c5b,I was about to head to the kitchen to see if anything edible was left when there was an odd sound.,Meeting,Sound_Meeting,26
+line:03985c9,"It was barely audible, but I had just managed to make it out.",Meeting,Sound_Meeting,27
+line:05c070e,"""Scritch...""",Meeting,Sound_Meeting,29
+line:0ba428a,"""Scriii... scritch...""",Meeting,Sound_Meeting,30
+line:0de4fb3,"""Umm.""",Meeting,Sound_Meeting,32
+line:06197a3,"I try to decipher the source of the sound, and find that it is coming from my door. I peek out the window, but...",Meeting,Sound_Meeting,33
+line:01e68d3,No one seems to be there?,Meeting,Sound_Meeting,34
+line:034a3c4,"""Scriii... Riii... Scritch.""",Meeting,Sound_Meeting,36
+line:0ad5187,"Feeling a bit unsettled, I nibble at my lip and open the door by just a crack.",Meeting,Sound_Meeting,38
+line:028d1c3,The scratching stops.,Meeting,Sound_Meeting,39
+line:0457456,My gaze is met with nothing but the rustling flora and the gentle flutters of a nearby butterfly.,Meeting,Sound_Meeting,40
+line:0171b8c,Until I look down and see it peeking back at me.,Meeting,Sound_Meeting,41
+line:06d08e8,"""Oh my!""",Meeting,Visitor_Meeting,53
+line:0ac0e98,"""Who are you, little one?""",Meeting,Visitor_Meeting,54
+line:01a1d70,"The bunny sitting before me had raised its paw, tilting its head in curiosity.",Meeting,Visitor_Meeting,55
+line:0cafc82,"I crouched down, making sure not to make any sudden movements as I reached out and held my hand in front of its face.",Meeting,Visitor_Meeting,56
+line:038b425,"There was a gentle ticklish feeling as it sniffed my hand, stepping closer to do so.",Meeting,Visitor_Meeting,58
+line:0a329ac,"""Aww, you're so precious. Wanna come in?""",Meeting,Visitor_Meeting,59
+line:0e2b3ab,"""It's a bit of a mess, but I'd appreciate your company.""",Meeting,Visitor_Meeting,60
+line:04a0983,"There was a series of small motions. If I didn't know any better, I would have thought it had nodded at me in response.",Meeting,Visitor_Meeting,62
+line:0d06ac3,"Regardless, I took the bunny's relaxed attitude as confirmation and opened the door fully to let it in.",Meeting,Visitor_Meeting,63
+line:0c554c5,"It hurried in immediately, ears flapping along with its hops.",Meeting,Visitor_Meeting,64
+line:09e6f29,"Closing the door, I followed with a soft laugh.",Meeting,Visitor_Meeting,66
+line:06acfae,"""Welcome home, bunny. Make sure to watch your step.""",Meeting,Welcome_Meeting,79
+line:0f84a48,"It wiggled its nose and stood up on its hind legs, surveying the landscape of scattered belongings.",Meeting,Welcome_Meeting,80
+line:03161ac,I left it to its exploration and made my way toward the fridge.,Meeting,Welcome_Meeting,81
+line:014b62e,"""Ugh!""",Meeting,Kitchen_Meeting,93
+line:0c29c1f,I scrunched up my face in disgust. There's no way that milk wasn't expired.,Meeting,Kitchen_Meeting,94
+line:069830d,"The rotting lettuce heads by it weren't doing too well either. I considered giving them to the bunny, but it would be cruel to welcome a guest with possible food poisoning.",Meeting,Kitchen_Meeting,95
+line:0e0705d,"Dumping it all right into the trash with a thump, I return my attention to the other items inside.",Meeting,Kitchen_Meeting,96
+line:08dddfc,"There were a few apples which looked salvagable, but not much else.",Meeting,Kitchen_Meeting,97
+line:08ed8a8,"Checking through the cupboards, I was met with a can of saltine crackers and a range of cereals. Besides that, a decent amount of jars and canned foods.",Meeting,Kitchen_Meeting,98
+line:015078d,"I prepared a plate of the crackers, slashing layers of jam across them. Each mark signaled one's fate as a sacrifice to my hunger.",Meeting,Kitchen_Meeting,99
+line:0c4415e,"Slicing up a duo of apples to go alongside them, I sighed in relief at the fact that no horrid worm creatures were revealed in the process.",Meeting,Kitchen_Meeting,100
+line:0daef81,"""Bunbun? Where'd you go?""",Meeting,Sharing_Meeting,111
+line:0530b5c,A brush against my leg.,Meeting,Sharing_Meeting,113
+line:0de98bd,"""There you are! C'mon, let's go sit.""",Meeting,Sharing_Meeting,114
+line:05c67dc,"I put the plate on the couch and held out my arms toward the bunny, who seemed to understand and hopped closer to be picked up.",Meeting,Sharing_Meeting,116
+line:0ba8edc,"Lifting the soft bundle of cuteness, I sat us down and began to pick away at my plate as I pet it with my spare hand.",Meeting,Sharing_Meeting,117
+line:03ac8e2,It's head ducked underneath my arm and leaned toward the plate.,Meeting,Sharing_Meeting,119
+line:078b7b8,"""Aww, are you hungry too?""",Meeting,Sharing_Meeting,120
+line:008480d,"""Here, try this.""",Meeting,Sharing_Meeting,121
+line:08d4022,"I presented to it a slice of apple. Eagerly, it munched away at it, brushing its mouth against me. Eventually, it transitioned into licking my palm.",Meeting,Sharing_Meeting,125
+line:0501503,I let out a soft gasp.,Meeting,Sharing_Meeting,126
+line:0a2c248,"Feeling my heart swell with affection, I wondered why it was so trusting. Actually, bunnies like this don't usually live in the wild, do they?",Meeting,Sharing_Meeting,127
+line:0487eff,Perhaps it had been abandoned?,Meeting,Sharing_Meeting,128
+line:038aa4f,The thought of dropping such a sweetie out alone in the woods was baffling. Who could do such a thing?,Meeting,Sharing_Meeting,129
+line:0bb344a,"But here it was, having appeared before my doorstep. If it was looking for a new home, it certainly succeeded.",Meeting,Sharing_Meeting,130
+line:0e6cae7,I vowed to make this place suitable for the both of us.,Meeting,Sharing_Meeting,131
+line:0a76e93,"Before that, there was still an unfinished matter to deal with. A matter that I knew would gnaw at my mind relentlessly, removing any feeling of comfort that would allow this place to feel like the dream I'd long been chasing.",Meeting,Sharing_Meeting,132
+line:02889fe,"I watched in a trance, smiling as it made its way through a second slice.",Meeting,Sharing_Meeting,133
+line:002ba9e,"Once it had its fill of licks and tried to nose its way to what remained on the plate, I lifted the food out of range with a giggle.",Meeting,Search_Meeting,145
+line:038db40,"""I think that's enough.""",Meeting,Search_Meeting,146
+line:024d034,"""As sweet as you are, you should be careful about having too much sugar.""""",Meeting,Search_Meeting,147
+line:0a3f400,"It huffed, seemingly quite annoyed at the rejection, and promptly jumped off my lap.",Meeting,Search_Meeting,149
+line:06cb796,"Immediately feeling guilty, I was tempted to offer more after all, but sternly reminded myself that it was only for its own good.",Meeting,Search_Meeting,150
+line:09b169f,Hah. If only I held the same amount of care toward my own diet.,Meeting,Search_Meeting,151
+line:0f1375f,I watched it wander off and sighed. It was time to begin the search.,Meeting,Search_Meeting,153
+line:0c1f842,"First, I did a bit of cleanup, gathering up all of the obvious trash and depositing it in bins outside. Having done so, I sat on the floor and sifted through a few boxes.",Meeting,Search_Meeting,156
+line:0acee06,Old receipts of placating gifts and planned invitations.,Meeting,Search_Meeting,157
+line:04ce174,Books containing abandoned worlds once frequently visited.,Meeting,Search_Meeting,158
+line:05bccb4,"I traced a finger over inky gems clutched in pale lace gloves, lips barely grazing their surface, the leaning man captured so elegantly on the dusted cover.",Meeting,Search_Meeting,159
+line:0cb20b6,"An entry in the very series that connected paths which tangled up and tensed at the slightest drift, at a mere suggestion of separation.",Meeting,Search_Meeting,160
+line:0cce129,"Frayed as they were, threads of that connection still lingered.",Meeting,Search_Meeting,161
+line:09af3c6,I put the book aside.,Meeting,Search_Meeting,162
+line:0b69bae,"An abrupt sneeze caused me to turn toward the table, where the bunny was laying underneath, faced away from me.",Meeting,Search_Meeting,163
+line:00213fe,"Beside it was a stack of documents, and above...",Meeting,Search_Meeting,164
+line:0a8c78a,"I shifted onto my knees and crouched down, lowering my head to see the corner of a paper curling down from the underside of the table.",Meeting,Search_Meeting,165
+line:0d11f16,"""Could it be..?""",Meeting,Note_Meeting,173
+line:0c71214,"I braced myself on one hand as I used the other to clutch at the corner, peeling it off carefully.",Meeting,Note_Meeting,174
+line:0ec63c4,I made sure not to bump my head as I retreated and grasped at the note with trembling hands.,Meeting,Note_Meeting,176
+line:0dc4c48,"The first of three, if the message was to be trusted.",Meeting,Note_Meeting,177
+line:0e89ad0,But what could it mean...,Meeting,Note_Meeting,178
+line:0a7eac9,"Perplexed, I gravitated toward my notebook and tried scribbling out a few ideas.",Meeting,Note_Meeting,180
+line:0d151cb,"Surely the second note was not directly on myself, so there had to be some location or object these words were connected to.",Meeting,Note_Meeting,181
+line:0c822b6,"At the same time, it felt as though they could apply to anything. I groaned. Why did he have to be so vague?",Meeting,Note_Meeting,182
+line:03814a2,The telltale snap of lead only served to heighten my irritation.,Meeting,Note_Meeting,183
+line:04e5a26,"""Great...""",Meeting,Note_Meeting,184
+line:0c80d66,"""Maybe I should go for a walk.""",Meeting,Note_Meeting,185
+line:0afcb48,"Getting up with a stretch, I headed toward the door.",Meeting,Note_Meeting,186
+line:0f8b75d,"Grabbing onto the handle, I look back at the bunny, who had rolled over to stare.",Meeting,Note_Meeting,187
+line:05981e3,"""Do you want to come along?""",Meeting,Note_Meeting,188
+line:0dbd137,"Rising, it bounded over to me.",Meeting,Note_Meeting,190
+line:0c2147a,A shaky smile.,Meeting,Note_Meeting,191
+line:0b7e65f,"""Alright, let's go.""",Meeting,Note_Meeting,192
