@@ -2,21 +2,26 @@ TODO for phone:
     -> adjust Log spacing
     -> fix nametag not showing
 
+TODO fade background direct ( already with <transition Fade> ?)
+
+TODO scrollbar for settings
+
+TODO language select
+
 TODO continue button if save already present with last saved 
 
-FIXME photo command after nametag does not move bubbles
+FIXME photo command after nametag does not move bubbles ( has workaraound with text before photo )
 
 FIXME sprite command None always registers to transition, useful?
 
 TODO more debug log messages for all the commands
 
-Hide UI button to be able to look at art
-
-Maybe not hide character?
+TODO Hide UI button to be able to look at art
+        -> Maybe not hide character?
 
 Nice to have:
 
-TODO  write command reference
+TODO continue dialogue button ,arrow or something
 
 TODO vignette?
 
